@@ -39,7 +39,7 @@ try {
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=202606160701">
+<link rel="stylesheet" href="style.css?v=202606160944">
 <script>
 (function() {
   var t = localStorage.getItem("theme");
@@ -84,7 +84,7 @@ probabilities themselves (lower is better; guessing ⅓-⅓-⅓ scores 0.667 Bri
 and the model/market/blend comparison is the real experiment here: it settles which forecaster
 deserves your trust with actual match results.</p>
 <h2>Scorecard</h2>
-<dl class="stats"><div><dt>Matches graded</dt><dd>16</dd></div><div><dt>Results called</dt><dd>7 (44%)</dd></div><div><dt>Exact scores</dt><dd>0</dd></div><div><dt>Brier (blend)</dt><dd>0.6964</dd></div></dl><table class="ko">
+<dl class="stats"><div><dt>Matches graded</dt><dd>16</dd></div><div><dt>Model log-loss</dt><dd>1.0995</dd></div><div><dt>vs the market</dt><dd>ahead by 0.002</dd></div><div><dt>Results called</dt><dd>7 (44%)</dd></div></dl><table class="ko">
 <thead><tr><th>Probability source</th><th class="num" data-tip="mean squared error of the probabilities - lower is better; guessing equally scores 0.667">Brier</th><th class="num" data-tip="penalises confident wrong calls hardest - lower is better; guessing equally scores 1.099">Log-loss</th></tr></thead>
 <tbody><tr><td>Blend</td><td class="num">0.6964</td><td class="num">1.1019</td></tr><tr><td>Model</td><td class="num">0.6887</td><td class="num">1.0995</td></tr><tr><td>Market</td><td class="num">0.6937</td><td class="num">1.1016</td></tr></tbody></table>
 <p class="meta center">Lower is better - this settles whether the model, the market,

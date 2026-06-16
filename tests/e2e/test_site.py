@@ -273,6 +273,12 @@ class TestBuiltSite(unittest.TestCase):
             for needle in ("Who forecasts best", "Matchday by matchday",
                            "Sharpest calls", "Calibration so far"):
                 self.assertIn(needle, html)
+            # reframed headline leads with model log-loss vs the market,
+            # not raw hit-rate (model 0.92 vs market 0.89 -> behind by 0.030)
+            self.assertIn("Model log-loss", html)
+            self.assertIn("vs the market", html)
+            self.assertIn("behind by 0.030", html)
+            self.assertIn("log-loss against the market", html)
             self.assertNotIn("{", html.split("<main")[1].split("</main>")[0]
                              .replace("{ ", ""))
         finally:

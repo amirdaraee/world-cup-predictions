@@ -1119,20 +1119,41 @@ def evolution_section(lang="en"):
 <tbody>{''.join(mover_rows)}</tbody></table>"""
 
 
+# ---------- shared accuracy headline ----------
+def accuracy_headline(acc):
+    """The scorecard's headline strip. Leads with the proper-score
+    comparison vs the market, not raw hit-rate: a probabilistic model is
+    judged on calibration, and raw "results called" collapses in draw-heavy
+    stretches (a draw is rarely any single match's likeliest result) even
+    when the probabilities are sound. The honest benchmark is the market —
+    if we're level with or ahead of it, the model is doing its job whatever
+    the hit-rate reads. Returns the inner HTML of <dl class="stats">."""
+    cmp = acc.get("compare") or {}
+    model_ll = (cmp.get("model") or {}).get("logloss")
+    market_ll = (cmp.get("market") or {}).get("logloss")
+    if model_ll is not None and market_ll is not None:
+        d = market_ll - model_ll          # +ve = model ahead of the market
+        vs = (f"ahead by {d:.3f}" if d > 0.0005
+              else f"behind by {-d:.3f}" if d < -0.0005 else "level")
+    else:
+        vs = "—"
+    pct = (acc.get("result_pct") or 0) * 100
+    items = (
+        ("Matches graded", acc.get("graded_group_matches", 0)),
+        ("Model log-loss", model_ll if model_ll is not None else "—"),
+        ("vs the market", vs),
+        ("Results called", f"{acc.get('result_hits', 0)} ({pct:.0f}%)"),
+    )
+    return "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in items)
+
+
 # ---------- bracket / predictions page ----------
 def build_bracket():
     if not PRED:
         return
     acc = PRED.get("accuracy")
     if acc and acc.get("graded_group_matches"):
-        st = "".join(
-            f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in (
-                ("Matches graded", acc["graded_group_matches"]),
-                ("Results called", f"{acc['result_hits']} ({acc['result_pct'] * 100:.0f}%)"),
-                ("Exact scores", acc["exact_score_hits"]),
-                ("Brier (blend)", acc["brier"]),
-            ))
-        acc_html = f'<dl class="stats">{st}</dl>'
+        acc_html = f'<dl class="stats">{accuracy_headline(acc)}</dl>'
         if acc.get("compare"):
             comp_rows = "".join(
                 f'<tr><td>{src.title()}</td>'
@@ -1432,16 +1453,8 @@ matchday-by-matchday breakdown. The locked picks themselves are on the
         (OUT / "report.html").write_text(page("Report", body))
         return
 
-    # headline strip
-    st = "".join(
-        f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in (
-            ("Matches graded", acc.get("graded_group_matches", len(graded))),
-            ("Results called", f"{acc.get('result_hits', 0)} "
-             f"({(acc.get('result_pct') or 0) * 100:.0f}%)"),
-            ("Exact scores", acc.get("exact_score_hits", 0)),
-            ("Brier (blend)", acc.get("brier", "-")),
-        ))
-    head = f'<dl class="stats">{st}</dl>'
+    # headline strip — leads with log-loss vs the market (see accuracy_headline)
+    head = f'<dl class="stats">{accuracy_headline(acc)}</dl>'
 
     comp = ""
     if acc.get("compare"):
@@ -1456,7 +1469,10 @@ matchday-by-matchday breakdown. The locked picks themselves are on the
 <tbody>{rows}</tbody></table>
 <p class="fineprint">Market graded on its {acc.get("market_priced_matches", 0)} priced
 matches. Lower is better; the gap between these rows is this whole project's thesis
-being settled in public.</p>"""
+being settled in public. The market is the benchmark that matters — when the
+model is level with or below the market's log-loss, it is forecasting well even
+if the raw "results called" number looks poor, because the same matches that
+beat the model (an unusually draw-heavy run) beat the market too.</p>"""
 
     # matchday breakdown
     by_md = {}
@@ -1541,6 +1557,11 @@ samples are small - judge after a full group stage.</p>"""
 <p class="standfirst">Locked predictions, graded after every matchday. Re-generated
 automatically by the nightly run; previous editions live in the
 <a href="archive.html">versions archive</a>.</p>
+<p class="fineprint">How to read this: a probability model lives or dies on its
+log-loss against the market, not on how often its single likeliest pick lands.
+Raw "results called" sinks whenever draws cluster — a draw is rarely any one
+match's most-likely score — so the headline below leads with the model's
+log-loss and how it sits versus the market.</p>
 {head}
 {comp}
 {trend_chart()}

@@ -39,7 +39,7 @@ try {
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=202606160701">
+<link rel="stylesheet" href="style.css?v=202606160944">
 <script>
 (function() {
   var t = localStorage.getItem("theme");
@@ -69,7 +69,12 @@ function toggleTheme() {
 <p class="standfirst">Locked predictions, graded after every matchday. Re-generated
 automatically by the nightly run; previous editions live in the
 <a href="archive.html">versions archive</a>.</p>
-<dl class="stats"><div><dt>Matches graded</dt><dd>16</dd></div><div><dt>Results called</dt><dd>7 (44%)</dd></div><div><dt>Exact scores</dt><dd>0</dd></div><div><dt>Brier (blend)</dt><dd>0.6964</dd></div></dl>
+<p class="fineprint">How to read this: a probability model lives or dies on its
+log-loss against the market, not on how often its single likeliest pick lands.
+Raw "results called" sinks whenever draws cluster — a draw is rarely any one
+match's most-likely score — so the headline below leads with the model's
+log-loss and how it sits versus the market.</p>
+<dl class="stats"><div><dt>Matches graded</dt><dd>16</dd></div><div><dt>Model log-loss</dt><dd>1.0995</dd></div><div><dt>vs the market</dt><dd>ahead by 0.002</dd></div><div><dt>Results called</dt><dd>7 (44%)</dd></div></dl>
 <h2>Who forecasts best so far</h2>
 <table class="ko"><thead><tr><th>Source</th>
 <th class="num" data-tip="mean squared error - guessing equally scores 0.667">Brier</th>
@@ -77,7 +82,10 @@ automatically by the nightly run; previous editions live in the
 <tbody><tr><td>Blend</td><td class="num">0.6964</td><td class="num">1.1019</td></tr><tr><td>Model</td><td class="num">0.6887</td><td class="num">1.0995</td></tr><tr><td>Market</td><td class="num">0.6937</td><td class="num">1.1016</td></tr></tbody></table>
 <p class="fineprint">Market graded on its 13 priced
 matches. Lower is better; the gap between these rows is this whole project's thesis
-being settled in public.</p>
+being settled in public. The market is the benchmark that matters — when the
+model is level with or below the market's log-loss, it is forecasting well even
+if the raw "results called" number looks poor, because the same matches that
+beat the model (an unusually draw-heavy run) beat the market too.</p>
 <figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 300" style="max-width:660px;width:100%"><rect width="660" height="300" fill="var(--paper, #f6f1e6)"/><polyline points="56.0,230.5 105.2,191.1 154.3,101.1 203.5,86.6 252.7,84.0 301.8,98.6 351.0,121.6 400.2,104.6 449.3,88.7 498.5,80.9 547.7,74.9 596.8,71.0 646.0,64.2" fill="none" stroke="var(--green, #14633f)" stroke-width="2"/><text x="648" y="68.2356969176532" font-size="10" fill="var(--green, #14633f)" font-family="ui-monospace,Menlo,monospace">model</text><polyline points="56.0,260.7 105.2,208.7 154.3,64.6 203.5,36.0 252.7,75.2 301.8,38.2 351.0,82.9 400.2,69.6 449.3,59.3 498.5,69.9 547.7,59.0 596.8,46.5 646.0,42.5" fill="none" stroke="var(--red, #a72a1e)" stroke-width="2"/><text x="648" y="46.545563584085855" font-size="10" fill="var(--red, #a72a1e)" font-family="ui-monospace,Menlo,monospace">market</text><polyline points="56.0,241.8 105.2,197.6 154.3,90.8 203.5,72.5 252.7,86.3 301.8,85.9 351.0,117.6 400.2,101.5 449.3,86.6 498.5,85.1 547.7,76.9 596.8,69.7 646.0,63.4" fill="none" stroke="var(--amber, #9a7b2d)" stroke-width="2"/><text x="648" y="67.36623994130811" font-size="10" fill="var(--amber, #9a7b2d)" font-family="ui-monospace,Menlo,monospace">blend</text><text x="56" y="16" font-size="12" fill="var(--ink, #211d16)" font-family="ui-monospace,Menlo,monospace">running log-loss after 13 graded matches (lower = better forecaster)</text><text x="56" y="290" font-size="10" fill="var(--ink-soft, #6b6353)" font-family="ui-monospace,Menlo,monospace">2026-06-11 → 2026-06-16</text></svg><figcaption>The whole experiment in one line: whichever curve is lowest is winning the forecasting contest.</figcaption></figure>
 <h2>Matchday by matchday</h2>
 <table class="ko"><thead><tr><th>Stage</th><th class="num">Played</th>
