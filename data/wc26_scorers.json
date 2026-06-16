@@ -9,6 +9,8 @@
     1489375,
     1489376,
     1489377,
+    1489378,
+    1489379,
     1489380,
     1538999,
     1539000,
@@ -28,6 +30,11 @@
     },
     "Y. Ayari": {
       "team": "Sweden",
+      "goals": 2,
+      "assists_from": []
+    },
+    "E. Just": {
+      "team": "New Zealand",
       "goals": 2,
       "assists_from": []
     },
@@ -183,6 +190,26 @@
     },
     "E. Ashour": {
       "team": "Egypt",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Abdulelah Al-Amri": {
+      "team": "Saudi Arabia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Maximiliano Araújo": {
+      "team": "Uruguay",
+      "goals": 1,
+      "assists_from": []
+    },
+    "R. Rezaeian": {
+      "team": "Iran",
+      "goals": 1,
+      "assists_from": []
+    },
+    "M. Mohebi": {
+      "team": "Iran",
       "goals": 1,
       "assists_from": []
     }

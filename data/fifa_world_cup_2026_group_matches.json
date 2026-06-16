@@ -180,8 +180,8 @@
       "away": "Uruguay",
       "venue": "Hard Rock Stadium",
       "city": "Miami",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-1"
     },
     {
       "match_id": 1489378,
@@ -192,8 +192,8 @@
       "away": "New Zealand",
       "venue": "SoFi Stadium",
       "city": "Los Angeles",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "2-2"
     },
     {
       "match_id": 1489383,
