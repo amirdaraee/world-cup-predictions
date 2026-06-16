@@ -12,6 +12,7 @@
     1489378,
     1489379,
     1489380,
+    1489383,
     1538999,
     1539000,
     1539001,
@@ -35,6 +36,11 @@
     },
     "E. Just": {
       "team": "New Zealand",
+      "goals": 2,
+      "assists_from": []
+    },
+    "K. Mbappe": {
+      "team": "France",
       "goals": 2,
       "assists_from": []
     },
@@ -210,6 +216,16 @@
     },
     "M. Mohebi": {
       "team": "Iran",
+      "goals": 1,
+      "assists_from": []
+    },
+    "B. Barcola": {
+      "team": "France",
+      "goals": 1,
+      "assists_from": []
+    },
+    "I. Mbaye": {
+      "team": "Senegal",
       "goals": 1,
       "assists_from": []
     }
