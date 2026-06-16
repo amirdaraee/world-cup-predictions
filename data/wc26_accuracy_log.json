@@ -1,0 +1,89 @@
+{
+  "note": "Per-matchday accuracy snapshots. Tracks live log-loss convergence toward backtest_logloss_target. Append-only; written by pipeline/wc26_accuracy_track.py.",
+  "snapshots": [
+    {
+      "date": "2026-06-15",
+      "generated": "2026-06-15 16:07 UTC",
+      "graded_group_matches": 12,
+      "result_hits": 7,
+      "result_pct": 0.5833,
+      "exact_score_hits": 0,
+      "moneyline": {
+        "blend": {
+          "brier": 0.6165,
+          "logloss": 1.006
+        },
+        "model": {
+          "brier": 0.6201,
+          "logloss": 1.018
+        },
+        "market": {
+          "brier": 0.617,
+          "logloss": 1.0097
+        },
+        "market_priced_matches": 10
+      },
+      "totals_ou25_locked": {
+        "graded": 6,
+        "model": {
+          "hit": 3,
+          "of": 6,
+          "logloss": 0.5937
+        },
+        "market": {
+          "hit": 3,
+          "of": 6,
+          "logloss": 0.5979
+        },
+        "blend": {
+          "hit": 3,
+          "of": 6,
+          "logloss": 0.5926
+        }
+      },
+      "backtest_logloss_target": 0.8185
+    },
+    {
+      "date": "2026-06-16",
+      "generated": "2026-06-16 09:37 UTC",
+      "graded_group_matches": 16,
+      "result_hits": 7,
+      "result_pct": 0.4375,
+      "exact_score_hits": 0,
+      "moneyline": {
+        "blend": {
+          "brier": 0.6964,
+          "logloss": 1.1019
+        },
+        "model": {
+          "brier": 0.6887,
+          "logloss": 1.0995
+        },
+        "market": {
+          "brier": 0.6937,
+          "logloss": 1.1016
+        },
+        "market_priced_matches": 13
+      },
+      "totals_ou25_locked": {
+        "graded": 10,
+        "model": {
+          "hit": 5,
+          "of": 10,
+          "logloss": 0.6301
+        },
+        "market": {
+          "hit": 5,
+          "of": 10,
+          "logloss": 0.7019
+        },
+        "blend": {
+          "hit": 5,
+          "of": 10,
+          "logloss": 0.6519
+        }
+      },
+      "backtest_logloss_target": 0.8185
+    }
+  ]
+}
