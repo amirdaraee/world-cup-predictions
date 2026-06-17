@@ -12,13 +12,21 @@
     1489378,
     1489379,
     1489380,
+    1489381,
+    1489382,
     1489383,
     1538999,
     1539000,
     1539001,
-    1539002
+    1539002,
+    1539016
   ],
   "scorers": {
+    "L. Messi": {
+      "team": "Argentina",
+      "goals": 3,
+      "assists_from": []
+    },
     "F. Balogun": {
       "team": "United States",
       "goals": 2,
@@ -41,6 +49,11 @@
     },
     "K. Mbappe": {
       "team": "France",
+      "goals": 2,
+      "assists_from": []
+    },
+    "Erling Haaland": {
+      "team": "Norway",
       "goals": 2,
       "assists_from": []
     },
@@ -226,6 +239,31 @@
     },
     "I. Mbaye": {
       "team": "Senegal",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Aymen Hussein": {
+      "team": "Iraq",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Leo Østigård": {
+      "team": "Norway",
+      "goals": 1,
+      "assists_from": []
+    },
+    "R. Schmid": {
+      "team": "Austria",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Olwan": {
+      "team": "Jordan",
+      "goals": 1,
+      "assists_from": []
+    },
+    "M. Arnautovic": {
+      "team": "Austria",
       "goals": 1,
       "assists_from": []
     }

@@ -216,8 +216,8 @@
       "away": "Norway",
       "venue": "Gillette Stadium",
       "city": "Boston",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-4"
     },
     {
       "match_id": 1489381,
@@ -228,8 +228,8 @@
       "away": "Algeria",
       "venue": "Arrowhead Stadium",
       "city": "Kansas City",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "3-0"
     },
     {
       "match_id": 1489382,
@@ -240,8 +240,8 @@
       "away": "Jordan",
       "venue": "Levi's Stadium",
       "city": "San Francisco Bay Area",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "3-1"
     },
     {
       "match_id": 1539003,
