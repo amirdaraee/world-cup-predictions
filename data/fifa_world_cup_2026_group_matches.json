@@ -252,8 +252,8 @@
       "away": "DR Congo",
       "venue": "NRG Stadium",
       "city": "Houston",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-1"
     },
     {
       "match_id": 1489384,
@@ -264,7 +264,7 @@
       "away": "Croatia",
       "venue": "AT&T Stadium",
       "city": "Dallas",
-      "status": "Not Started",
+      "status": "Second Half",
       "score": null
     },
     {

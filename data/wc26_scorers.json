@@ -19,6 +19,7 @@
     1539000,
     1539001,
     1539002,
+    1539003,
     1539016
   ],
   "scorers": {
@@ -264,6 +265,16 @@
     },
     "M. Arnautovic": {
       "team": "Austria",
+      "goals": 1,
+      "assists_from": []
+    },
+    "J. Neves": {
+      "team": "Portugal",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Y. Wissa": {
+      "team": "DR Congo",
       "goals": 1,
       "assists_from": []
     }
