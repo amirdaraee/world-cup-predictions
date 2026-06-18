@@ -300,8 +300,8 @@
       "away": "South Africa",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-1"
     },
     {
       "match_id": 1539005,
@@ -312,8 +312,8 @@
       "away": "Bosnia and Herzegovina",
       "venue": "SoFi Stadium",
       "city": "Los Angeles",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "4-1"
     },
     {
       "match_id": 1489387,

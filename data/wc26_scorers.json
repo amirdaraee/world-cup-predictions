@@ -23,6 +23,8 @@
     1539001,
     1539002,
     1539003,
+    1539004,
+    1539005,
     1539016
   ],
   "scorers": {
@@ -63,6 +65,11 @@
     },
     "Harry Kane": {
       "team": "England",
+      "goals": 2,
+      "assists_from": []
+    },
+    "J. Manzambi": {
+      "team": "Switzerland",
       "goals": 2,
       "assists_from": []
     },
@@ -328,6 +335,31 @@
     },
     "J. Campaz": {
       "team": "Colombia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "M. Sadilek": {
+      "team": "Czechia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "T. Mokoena": {
+      "team": "South Africa",
+      "goals": 1,
+      "assists_from": []
+    },
+    "R. Vargas": {
+      "team": "Switzerland",
+      "goals": 1,
+      "assists_from": []
+    },
+    "E. Mahmic": {
+      "team": "Bosnia and Herzegovina",
+      "goals": 1,
+      "assists_from": []
+    },
+    "G. Xhaka": {
+      "team": "Switzerland",
       "goals": 1,
       "assists_from": []
     }
