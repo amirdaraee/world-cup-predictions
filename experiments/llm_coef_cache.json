@@ -1,0 +1,150 @@
+{
+ "key": "0295e572f707537f",
+ "model": "claude-opus-4-8",
+ "adj": [
+  {
+   "i": 0,
+   "home_mult": 0.95,
+   "away_mult": 1.05,
+   "why": "Mexico's blunt friendly form; South Africa winning consistently"
+  },
+  {
+   "i": 1,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Ratings and form align, no adjustment"
+  },
+  {
+   "i": 2,
+   "home_mult": 0.9,
+   "away_mult": 1.05,
+   "why": "Canada low-scoring; Bosnia sharp in attack"
+  },
+  {
+   "i": 3,
+   "home_mult": 1.05,
+   "away_mult": 0.95,
+   "why": "USA strong at home, beat Paraguay twice"
+  },
+  {
+   "i": 4,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Model captures Swiss dominance well"
+  },
+  {
+   "i": 5,
+   "home_mult": 1.0,
+   "away_mult": 1.05,
+   "why": "Morocco unbeaten, defensively excellent recently"
+  },
+  {
+   "i": 6,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Scotland form already reflected"
+  },
+  {
+   "i": 7,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Even matchup, no clear edge"
+  },
+  {
+   "i": 8,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Germany mismatch already priced in"
+  },
+  {
+   "i": 9,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Japan strong but model balanced"
+  },
+  {
+   "i": 10,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Tight defensive game as modeled"
+  },
+  {
+   "i": 11,
+   "home_mult": 0.9,
+   "away_mult": 1.0,
+   "why": "Sweden dismal recent results overrated"
+  },
+  {
+   "i": 12,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Spain mismatch correctly large"
+  },
+  {
+   "i": 13,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "No adjustment needed"
+  },
+  {
+   "i": 14,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Uruguay edge well captured"
+  },
+  {
+   "i": 15,
+   "home_mult": 1.05,
+   "away_mult": 0.9,
+   "why": "New Zealand on heavy losing streak"
+  },
+  {
+   "i": 16,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Both elite, balanced model"
+  },
+  {
+   "i": 17,
+   "home_mult": 1.0,
+   "away_mult": 1.05,
+   "why": "Norway prolific attacking form"
+  },
+  {
+   "i": 18,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Argentina favorite already reflected"
+  },
+  {
+   "i": 19,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Jordan good form but priced fairly"
+  },
+  {
+   "i": 20,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Portugal favored appropriately"
+  },
+  {
+   "i": 21,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "England form already strong in model"
+  },
+  {
+   "i": 22,
+   "home_mult": 1.0,
+   "away_mult": 1.0,
+   "why": "Balanced contest, no edge"
+  },
+  {
+   "i": 23,
+   "home_mult": 1.0,
+   "away_mult": 1.05,
+   "why": "Colombia in outstanding scoring form"
+  }
+ ]
+}

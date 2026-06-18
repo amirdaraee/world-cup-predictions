@@ -227,3 +227,87 @@ Known and accepted: the value prior's mild look-ahead (today's values
 grade last year's matches) — shipped below optimum as a haircut and now
 also flagged in the README. The honest position, now stated publicly:
 backtests are setup, the tournament is the experiment.
+
+## Round-1 self-assessment (2026-06-18, group matchday 1 complete)
+
+First full round graded (24/24). Blend log-loss **0.980**, model 1.016,
+market 0.912; results called 13/24 (54%); 9 draws (38% vs ~25% baseline).
+Convergence log (`wc26_accuracy_log.json`): blend 1.006 → 1.102 → **0.980**
+at 12/16/24 graded — the mid-round dip was a partial-round artifact;
++0.16 off the 0.819 backtest and trending down. Three findings below; all
+analysis was WC-blind and nothing in the model or params was changed.
+Probes parked in `experiments/` (excluded from the matchday commit),
+re-runnable each round.
+
+**1. The "market beats the model" headline was apples-to-oranges.** The
+compare block grades the model over all 24 graded but the market over only
+the 21 it priced. Like-for-like on the same 21: locked model 0.960 vs
+market 0.909 (market ahead 0.05); the full-24 model 1.016 is **dominated
+by 3 unpriced matches** — Spain 0-0 Cape Verde (model 75% Spain) and
+Canada 1-1 Bosnia (76% Canada), favourites held to draws, plus Korea.
+The market never had to forecast those, so it cannot lose on them. A model
+**refit through the eve of kickoff** scores 0.887 on the 21 — ahead of the
+market; the 0.07 gap to the locked 0.960 is the cost of freezing the
+bracket early. The live site uses the refit, so the published model is
+competitive-to-ahead of the market on priced matches. The locked figure
+the scorecard grades is the pessimistic one. Takeaway: report model and
+market on the **same** match set.
+
+**2. WC-blind tuning probe (`experiments/tune_holdout.py`): no retune
+justified.** Fit every variant at cutoff 2026-06-10 (CSV verified WC-blind),
+score on the 24, then re-check each promising knob on the rolling-window
+historical CV (4,188 matches) — a tweak only counts if it helps the round
+*without* costing on the big sample. The draw-heavy round flatters anything
+adding draw mass: rho −0.15 wins the holdout (−0.016) but is **worse** on
+history (0.88245 vs 0.88178); shrink 12 (−0.005 holdout) and margin_cap 4
+are the same trap (history 0.89113 / 0.88208, both worse) — adopting them
+would fit a 38%-draw fluke. Only survivor: **rho −0.05 → −0.10** is a
+costless tie on history (0.88180) and the largest honest live gain
+(−0.0085) — track it, optionally flip after the draw rate normalizes; even
+this is within 24-match noise. Squad-value prior **vindicated live**:
+turning it off costs +0.028, strengthening to 0.6 costs +0.035 — shipped
+β=0.35 sits at the live optimum, independent of the historical validation.
+
+**3. Alt-method bake-off (`experiments/altmethods_holdout.py`): the
+goal-grid earns its keep.** Five families fit WC-blind, scored on the
+common 21-match subset (all can price): **DC 0.887**, market 0.909,
+ordered-logit-on-Elo-gap 1.019, Elo→Poisson 1.027, frequency floor 1.052.
+Our Dixon-Coles is the best method on the round — ahead of the market and
+well ahead of both pure rating-gap approaches, which barely clear the
+no-skill floor. Modeling the 3-way outcome directly from a rating
+difference (with or without a goal grid on top) throws away most of the
+signal the full team-by-team attack/defense Poisson captures — real
+evidence the DC complexity is not decoration.
+
+**Net:** the round-1 "accuracy drop" was (a) a draw cluster and (b) a
+mismatched model-vs-market comparison — not a model defect. Params held
+as-is; re-run all three probes after round 2.
+
+## LLM goal-rate coefficient — tested, not adopted (2026-06-18)
+
+Tested the idea of an LLM coefficient inside the formula: let
+claude-opus-4-8 read each match's pre-match dossier and output two
+multiplicative coefficients in [0.80, 1.20] on the DC expected goals
+(`lambda1·c_home`, `lambda2·c_away`), then rescore the grid.
+`experiments/llm_coef_holdout.py`; coefficients frozen in
+`experiments/llm_coef_cache.json` (re-scoring never re-bills).
+- **Look-ahead-free by construction**: DC fit at cutoff 2026-06-10; Opus
+  4.8's training cutoff (Jan 2026) predates the June tournament; the prompt
+  carried ONLY pre-match data (frozen form to 2026-06-09, FIFA rank, squad
+  value, our own xG + 1X2) with no web search, no tools, no result.
+- **Result on the 24**: DC baseline log-loss 0.9818 → DC×LLM **0.9772**
+  (−0.0045), half-strength 0.9793 (−0.0025); hit-rate unchanged 14/24. The
+  LLM nudged 8/24 matches, all gentle, with sensible rationales (downweight
+  Sweden's poor form, upweight Norway/Colombia attack) — but direction was a
+  wash (it downweighted Sweden 0.90; Sweden won 5-1).
+- **Verdict: no demonstrated edge, real downside.** −0.0045 over 24 matches
+  is ~−0.1 total — under a quarter of one match's log-loss swing, i.e.
+  noise. The coefficient is a *sampled* generation, not a fitted parameter,
+  so it isn't even reproducible (re-run → different nudges), and wiring it to
+  *live* news would reintroduce the look-ahead/contamination risk the project
+  is built to avoid. This is a quantitative confirmation of the standing
+  rule: LLM output stays colour, not calculation; the one sanctioned
+  LLM→numbers path (`betting/news_check.py`) is reduce-only by design. If
+  ever revisited, the only defensible form is reduce-only — let it dampen
+  overconfident favourites, never amplify — and only once there are enough
+  matches to measure. Not adopted; kept as an experiment.
