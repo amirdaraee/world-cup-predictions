@@ -12,12 +12,25 @@
     1489378,
     1489379,
     1489380,
+    1489381,
+    1489382,
+    1489383,
+    1489384,
+    1489385,
+    1489386,
     1538999,
     1539000,
     1539001,
-    1539002
+    1539002,
+    1539003,
+    1539016
   ],
   "scorers": {
+    "L. Messi": {
+      "team": "Argentina",
+      "goals": 3,
+      "assists_from": []
+    },
     "F. Balogun": {
       "team": "United States",
       "goals": 2,
@@ -35,6 +48,21 @@
     },
     "E. Just": {
       "team": "New Zealand",
+      "goals": 2,
+      "assists_from": []
+    },
+    "K. Mbappe": {
+      "team": "France",
+      "goals": 2,
+      "assists_from": []
+    },
+    "E. Haaland": {
+      "team": "Norway",
+      "goals": 2,
+      "assists_from": []
+    },
+    "Harry Kane": {
+      "team": "England",
       "goals": 2,
       "assists_from": []
     },
@@ -210,6 +238,96 @@
     },
     "M. Mohebi": {
       "team": "Iran",
+      "goals": 1,
+      "assists_from": []
+    },
+    "B. Barcola": {
+      "team": "France",
+      "goals": 1,
+      "assists_from": []
+    },
+    "I. Mbaye": {
+      "team": "Senegal",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Hussein": {
+      "team": "Iraq",
+      "goals": 1,
+      "assists_from": []
+    },
+    "L. Ostigard": {
+      "team": "Norway",
+      "goals": 1,
+      "assists_from": []
+    },
+    "R. Schmid": {
+      "team": "Austria",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Olwan": {
+      "team": "Jordan",
+      "goals": 1,
+      "assists_from": []
+    },
+    "M. Arnautovic": {
+      "team": "Austria",
+      "goals": 1,
+      "assists_from": []
+    },
+    "João Neves": {
+      "team": "Portugal",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Yoane Wissa": {
+      "team": "DR Congo",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Martin Baturina": {
+      "team": "Croatia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Petar Musa": {
+      "team": "Croatia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Jude Bellingham": {
+      "team": "England",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Marcus Rashford": {
+      "team": "England",
+      "goals": 1,
+      "assists_from": []
+    },
+    "C. Yirenkyi": {
+      "team": "Ghana",
+      "goals": 1,
+      "assists_from": []
+    },
+    "D. Munoz": {
+      "team": "Colombia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Fayzullaev": {
+      "team": "Uzbekistan",
+      "goals": 1,
+      "assists_from": []
+    },
+    "L. Diaz": {
+      "team": "Colombia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "J. Campaz": {
+      "team": "Colombia",
       "goals": 1,
       "assists_from": []
     }
