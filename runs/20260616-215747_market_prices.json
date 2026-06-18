@@ -1,0 +1,5980 @@
+{
+  "fetched_at": "2026-06-16 21:57 UTC",
+  "source": "Polymarket Gamma API",
+  "prices": {
+    "1489369": {
+      "moneyline": {
+        "home": 1.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "slug": "fifwc-mex-rsa-2026-06-11",
+      "volume": 15053444,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-mex-rsa-2026-06-11-exact-score",
+      "exact_score": {
+        "0-0": 0.0,
+        "1-0": 0.0,
+        "1-1": 0.0,
+        "0-3": 0.0,
+        "2-1": 0.0,
+        "1-3": 0.0,
+        "3-1": 0.0,
+        "3-2": 0.0,
+        "other": 0.0,
+        "0-1": 0.0,
+        "0-2": 0.0,
+        "2-0": 1.0,
+        "1-2": 0.0,
+        "3-0": 0.0,
+        "2-2": 0.0,
+        "2-3": 0.0,
+        "3-3": 0.0
+      },
+      "more_markets_slug": "fifwc-mex-rsa-2026-06-11-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 0.0,
+        "over_3.5": 0.0,
+        "over_5.5": 0.0,
+        "over_4.5": 0.0,
+        "over_6.5": 0.0,
+        "over_7.5": 0.0,
+        "over_8.5": 0.0
+      },
+      "team_totals": {
+        "away_over_1.5": 0.0,
+        "home_over_2.5": 0.0,
+        "away_over_2.5": 0.0,
+        "home_over_0.5": 1.0,
+        "home_over_1.5": 1.0,
+        "away_over_0.5": 0.0
+      },
+      "btts": 0.0,
+      "spread": {
+        "home_-1.5": 1.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-mex-rsa-2026-06-11-halftime-result",
+      "halftime": {
+        "draw": 0.0,
+        "home": 1.0,
+        "away": 0.0
+      },
+      "second_half_slug": "fifwc-mex-rsa-2026-06-11-second-half-result",
+      "second_half": {
+        "home": 1.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "first_to_score_slug": "fifwc-mex-rsa-2026-06-11-first-to-score",
+      "first_to_score": {
+        "home": 1.0,
+        "neither": 0.0,
+        "away": 0.0
+      },
+      "corners_slug": "fifwc-mex-rsa-2026-06-11-total-corners",
+      "corners": {
+        "over_9.5": 0.0,
+        "over_10.5": 0.0,
+        "over_12.5": 0.0,
+        "over_13.5": 0.0,
+        "over_7.5": 0.0,
+        "over_8.5": 0.0,
+        "over_11.5": 0.0
+      }
+    },
+    "1538999": {
+      "moneyline": {
+        "draw": 0.0,
+        "away": 0.0,
+        "home": 1.0
+      },
+      "slug": "fifwc-kr-cze-2026-06-11",
+      "volume": 15558014,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-kr-cze-2026-06-11-exact-score",
+      "exact_score": {
+        "0-0": 0.0,
+        "1-0": 0.0,
+        "1-1": 0.0,
+        "0-3": 0.0,
+        "2-1": 1.0,
+        "1-3": 0.0,
+        "3-1": 0.0,
+        "3-2": 0.0,
+        "other": 0.0,
+        "0-1": 0.0,
+        "0-2": 0.0,
+        "2-0": 0.0,
+        "1-2": 0.0,
+        "3-0": 0.0,
+        "2-2": 0.0,
+        "2-3": 0.0,
+        "3-3": 0.0
+      },
+      "more_markets_slug": "fifwc-kr-cze-2026-06-11-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 1.0,
+        "over_3.5": 0.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0,
+        "over_6.5": 0.0,
+        "over_7.5": 0.0
+      },
+      "team_totals": {
+        "home_over_0.5": 1.0,
+        "away_over_0.5": 1.0,
+        "away_over_1.5": 0.0,
+        "home_over_1.5": 1.0,
+        "away_over_2.5": 0.0,
+        "home_over_2.5": 0.0
+      },
+      "btts": 1.0,
+      "spread": {
+        "home_-1.5": 0.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-kr-cze-2026-06-11-halftime-result",
+      "halftime": {
+        "draw": 1.0,
+        "home": 0.0,
+        "away": 0.0
+      },
+      "second_half_slug": "fifwc-kr-cze-2026-06-11-second-half-result",
+      "second_half": {
+        "draw": 0.0,
+        "away": 0.0,
+        "home": 1.0
+      },
+      "first_to_score_slug": "fifwc-kr-cze-2026-06-11-first-to-score",
+      "first_to_score": {
+        "neither": 0.0,
+        "home": 0.0,
+        "away": 1.0
+      },
+      "corners_slug": "fifwc-kr-cze-2026-06-11-total-corners",
+      "corners": {
+        "over_11.5": 0.0,
+        "over_8.5": 1.0,
+        "over_13.5": 0.0,
+        "over_9.5": 0.0,
+        "over_7.5": 1.0,
+        "over_12.5": 0.0,
+        "over_10.5": 0.0
+      }
+    },
+    "1539000": {
+      "moneyline": {
+        "draw": 1.0,
+        "away": 0.0,
+        "home": 0.0
+      },
+      "slug": "fifwc-can-bih-2026-06-12",
+      "volume": 18697246,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-can-bih-2026-06-12-exact-score",
+      "exact_score": {
+        "0-0": 0.0,
+        "0-1": 0.0,
+        "1-0": 0.0,
+        "0-2": 0.0,
+        "1-1": 1.0,
+        "2-0": 0.0,
+        "0-3": 0.0,
+        "1-2": 0.0,
+        "2-1": 0.0,
+        "3-0": 0.0,
+        "1-3": 0.0,
+        "2-2": 0.0,
+        "3-1": 0.0,
+        "2-3": 0.0,
+        "3-2": 0.0,
+        "3-3": 0.0,
+        "other": 0.0
+      },
+      "more_markets_slug": "fifwc-can-bih-2026-06-12-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 0.0,
+        "over_3.5": 0.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0
+      },
+      "team_totals": {
+        "home_over_1.5": 0.0,
+        "away_over_0.5": 1.0,
+        "away_over_1.5": 0.0,
+        "home_over_0.5": 1.0,
+        "home_over_2.5": 0.0,
+        "away_over_2.5": 0.0
+      },
+      "btts": 1.0,
+      "spread": {
+        "home_-1.5": 0.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-can-bih-2026-06-12-halftime-result",
+      "halftime": {
+        "draw": 0.0,
+        "home": 0.0,
+        "away": 1.0
+      },
+      "second_half_slug": "fifwc-can-bih-2026-06-12-second-half-result",
+      "second_half": {
+        "away": 0.0,
+        "home": 1.0,
+        "draw": 0.0
+      },
+      "first_to_score_slug": "fifwc-can-bih-2026-06-12-first-to-score",
+      "first_to_score": {
+        "away": 1.0,
+        "home": 0.0,
+        "neither": 0.0
+      },
+      "corners_slug": "fifwc-can-bih-2026-06-12-total-corners",
+      "corners": {
+        "over_10.5": 1.0,
+        "over_11.5": 1.0,
+        "over_8.5": 1.0,
+        "over_9.5": 1.0,
+        "over_12.5": 1.0,
+        "over_13.5": 0.0,
+        "over_7.5": 1.0,
+        "over_6.5": 1.0
+      }
+    },
+    "1489370": {
+      "moneyline": {
+        "draw": 0.0,
+        "home": 1.0,
+        "away": 0.0
+      },
+      "slug": "fifwc-usa-par-2026-06-12",
+      "volume": 39314226,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-usa-par-2026-06-12-exact-score",
+      "exact_score": {
+        "0-0": 0.0,
+        "0-1": 0.0,
+        "1-0": 0.0,
+        "0-2": 0.0,
+        "1-1": 0.0,
+        "2-0": 0.0,
+        "0-3": 0.0,
+        "1-2": 0.0,
+        "2-1": 0.0,
+        "3-0": 0.0,
+        "1-3": 0.0,
+        "2-2": 0.0,
+        "3-1": 0.0,
+        "2-3": 0.0,
+        "3-2": 0.0,
+        "3-3": 0.0,
+        "other": 1.0
+      },
+      "more_markets_slug": "fifwc-usa-par-2026-06-12-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 1.0,
+        "over_3.5": 1.0,
+        "over_4.5": 1.0,
+        "over_5.5": 0.0
+      },
+      "team_totals": {
+        "home_over_2.5": 1.0,
+        "home_over_1.5": 1.0,
+        "away_over_0.5": 1.0,
+        "away_over_2.5": 0.0,
+        "home_over_0.5": 1.0,
+        "away_over_1.5": 0.0
+      },
+      "btts": 1.0,
+      "spread": {
+        "home_-1.5": 1.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 1.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-usa-par-2026-06-12-halftime-result",
+      "halftime": {
+        "home": 1.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "second_half_slug": "fifwc-usa-par-2026-06-12-second-half-result",
+      "second_half": {
+        "home": 0.0,
+        "away": 0.0,
+        "draw": 1.0
+      },
+      "first_to_score_slug": "fifwc-usa-par-2026-06-12-first-to-score",
+      "first_to_score": {
+        "away": 0.0,
+        "home": 1.0,
+        "neither": 0.0
+      },
+      "corners_slug": "fifwc-usa-par-2026-06-12-total-corners",
+      "corners": {
+        "over_11.5": 0.0,
+        "over_9.5": 0.0,
+        "over_8.5": 0.0,
+        "over_7.5": 0.0,
+        "over_13.5": 0.0,
+        "over_12.5": 0.0,
+        "over_10.5": 0.0,
+        "over_6.5": 0.0
+      }
+    },
+    "1489373": {
+      "moneyline": {
+        "draw": 1.0,
+        "away": 0.0,
+        "home": 0.0
+      },
+      "slug": "fifwc-qat-che-2026-06-13",
+      "volume": 15599200,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-qat-che-2026-06-13-exact-score",
+      "exact_score": {
+        "0-0": 0.0,
+        "0-1": 0.0,
+        "1-0": 0.0,
+        "0-2": 0.0,
+        "1-1": 1.0,
+        "2-0": 0.0,
+        "0-3": 0.0,
+        "1-2": 0.0,
+        "2-1": 0.0,
+        "3-0": 0.0,
+        "1-3": 0.0,
+        "2-2": 0.0,
+        "3-1": 0.0,
+        "2-3": 0.0,
+        "3-2": 0.0,
+        "3-3": 0.0,
+        "other": 0.0
+      },
+      "more_markets_slug": "fifwc-qat-che-2026-06-13-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 0.0,
+        "over_3.5": 0.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0,
+        "over_6.5": 0.0,
+        "over_7.5": 0.0,
+        "over_8.5": 0.0,
+        "over_9.5": 0.0
+      },
+      "team_totals": {
+        "home_over_1.5": 0.0,
+        "home_over_2.5": 0.0,
+        "away_over_0.5": 1.0,
+        "away_over_1.5": 0.0,
+        "away_over_2.5": 0.0,
+        "home_over_0.5": 1.0
+      },
+      "btts": 1.0,
+      "spread": {
+        "home_-1.5": 0.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0,
+        "away_-3.5": 0.0,
+        "home_-3.5": 0.0
+      },
+      "halftime_slug": "fifwc-qat-che-2026-06-13-halftime-result",
+      "halftime": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 1.0
+      },
+      "second_half_slug": "fifwc-qat-che-2026-06-13-second-half-result",
+      "second_half": {
+        "draw": 0.0,
+        "away": 0.0,
+        "home": 1.0
+      },
+      "first_to_score_slug": "fifwc-qat-che-2026-06-13-first-to-score",
+      "first_to_score": {
+        "away": 1.0,
+        "home": 0.0,
+        "neither": 0.0
+      },
+      "corners_slug": "fifwc-qat-che-2026-06-13-total-corners",
+      "corners": {
+        "over_10.5": 1.0,
+        "over_8.5": 1.0,
+        "over_9.5": 1.0,
+        "over_11.5": 1.0,
+        "over_13.5": 0.0,
+        "over_12.5": 1.0,
+        "over_7.5": 1.0,
+        "over_6.5": 1.0
+      }
+    },
+    "1489371": {
+      "moneyline": {
+        "away": 0.0,
+        "home": 0.0,
+        "draw": 1.0
+      },
+      "slug": "fifwc-bra-mar-2026-06-13",
+      "volume": 26089930,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-bra-mar-2026-06-13-exact-score",
+      "exact_score": {
+        "0-0": 0.0,
+        "0-1": 0.0,
+        "1-0": 0.0,
+        "0-2": 0.0,
+        "1-1": 1.0,
+        "2-0": 0.0,
+        "0-3": 0.0,
+        "1-2": 0.0,
+        "2-1": 0.0,
+        "3-0": 0.0,
+        "1-3": 0.0,
+        "2-2": 0.0,
+        "3-1": 0.0,
+        "2-3": 0.0,
+        "3-2": 0.0,
+        "3-3": 0.0,
+        "other": 0.0
+      },
+      "more_markets_slug": "fifwc-bra-mar-2026-06-13-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 0.0,
+        "over_3.5": 0.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0
+      },
+      "team_totals": {
+        "away_over_2.5": 0.0,
+        "home_over_1.5": 0.0,
+        "home_over_2.5": 0.0,
+        "away_over_1.5": 0.0,
+        "home_over_0.5": 1.0,
+        "away_over_0.5": 1.0
+      },
+      "btts": 1.0,
+      "spread": {
+        "home_-1.5": 0.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-bra-mar-2026-06-13-halftime-result",
+      "halftime": {
+        "home": 0.0,
+        "draw": 1.0,
+        "away": 0.0
+      },
+      "second_half_slug": "fifwc-bra-mar-2026-06-13-second-half-result",
+      "second_half": {
+        "away": 0.0,
+        "draw": 1.0,
+        "home": 0.0
+      },
+      "first_to_score_slug": "fifwc-bra-mar-2026-06-13-first-to-score",
+      "first_to_score": {
+        "away": 1.0,
+        "neither": 0.0,
+        "home": 0.0
+      },
+      "corners_slug": "fifwc-bra-mar-2026-06-13-total-corners",
+      "corners": {
+        "over_8.5": 0.0,
+        "over_11.5": 0.0,
+        "over_10.5": 0.0,
+        "over_7.5": 1.0,
+        "over_12.5": 0.0,
+        "over_13.5": 0.0,
+        "over_9.5": 0.0,
+        "over_6.5": 1.0
+      }
+    },
+    "1489372": {
+      "moneyline": {
+        "away": 1.0,
+        "home": 0.0,
+        "draw": 0.0
+      },
+      "slug": "fifwc-hai-sco-2026-06-13",
+      "volume": 24714463,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-hai-sco-2026-06-13-exact-score",
+      "exact_score": {
+        "0-0": 0.0,
+        "0-1": 1.0,
+        "1-0": 0.0,
+        "0-2": 0.0,
+        "1-1": 0.0,
+        "2-0": 0.0,
+        "0-3": 0.0,
+        "1-2": 0.0,
+        "2-1": 0.0,
+        "3-0": 0.0,
+        "1-3": 0.0,
+        "2-2": 0.0,
+        "3-1": 0.0,
+        "2-3": 0.0,
+        "3-2": 0.0,
+        "3-3": 0.0,
+        "other": 0.0
+      },
+      "more_markets_slug": "fifwc-hai-sco-2026-06-13-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 0.0,
+        "over_2.5": 0.0,
+        "over_3.5": 0.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0,
+        "over_6.5": 0.0
+      },
+      "team_totals": {
+        "home_over_1.5": 0.0,
+        "away_over_2.5": 0.0,
+        "away_over_0.5": 1.0,
+        "home_over_0.5": 0.0,
+        "home_over_2.5": 0.0,
+        "away_over_1.5": 0.0
+      },
+      "btts": 0.0,
+      "spread": {
+        "home_-1.5": 0.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-hai-sco-2026-06-13-halftime-result",
+      "halftime": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 1.0
+      },
+      "second_half_slug": "fifwc-hai-sco-2026-06-13-second-half-result",
+      "second_half": {
+        "away": 0.0,
+        "draw": 1.0,
+        "home": 0.0
+      },
+      "first_to_score_slug": "fifwc-hai-sco-2026-06-13-first-to-score",
+      "first_to_score": {
+        "away": 1.0,
+        "neither": 0.0,
+        "home": 0.0
+      },
+      "corners_slug": "fifwc-hai-sco-2026-06-13-total-corners",
+      "corners": {
+        "over_13.5": 0.0,
+        "over_9.5": 0.0,
+        "over_7.5": 0.0,
+        "over_12.5": 0.0,
+        "over_8.5": 0.0,
+        "over_10.5": 0.0,
+        "over_11.5": 0.0,
+        "over_6.5": 1.0
+      }
+    },
+    "1539001": {
+      "moneyline": {
+        "draw": 0.0,
+        "away": 0.0,
+        "home": 1.0
+      },
+      "slug": "fifwc-aus-tur-2026-06-14",
+      "volume": 22064408,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-aus-tur-2026-06-14-exact-score",
+      "exact_score": {
+        "0-0": 0.0,
+        "0-1": 0.0,
+        "1-0": 0.0,
+        "0-2": 0.0,
+        "1-1": 0.0,
+        "2-0": 1.0,
+        "0-3": 0.0,
+        "1-2": 0.0,
+        "2-1": 0.0,
+        "3-0": 0.0,
+        "1-3": 0.0,
+        "2-2": 0.0,
+        "3-1": 0.0,
+        "2-3": 0.0,
+        "3-2": 0.0,
+        "3-3": 0.0,
+        "other": 0.0
+      },
+      "more_markets_slug": "fifwc-aus-tur-2026-06-14-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 0.0,
+        "over_3.5": 0.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0
+      },
+      "team_totals": {
+        "home_over_2.5": 0.0,
+        "away_over_2.5": 0.0,
+        "home_over_1.5": 1.0,
+        "away_over_0.5": 0.0,
+        "home_over_0.5": 1.0,
+        "away_over_1.5": 0.0
+      },
+      "btts": 0.0,
+      "spread": {
+        "home_-1.5": 1.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-aus-tur-2026-06-14-halftime-result",
+      "halftime": {
+        "home": 1.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "second_half_slug": "fifwc-aus-tur-2026-06-14-second-half-result",
+      "second_half": {
+        "away": 0.0,
+        "home": 1.0,
+        "draw": 0.0
+      },
+      "first_to_score_slug": "fifwc-aus-tur-2026-06-14-first-to-score",
+      "first_to_score": {
+        "neither": 0.0,
+        "home": 1.0,
+        "away": 0.0
+      },
+      "corners_slug": "fifwc-aus-tur-2026-06-14-total-corners",
+      "corners": {
+        "over_12.5": 1.0,
+        "over_9.5": 1.0,
+        "over_13.5": 0.0,
+        "over_7.5": 1.0,
+        "over_10.5": 1.0,
+        "over_11.5": 1.0,
+        "over_8.5": 1.0,
+        "over_6.5": 1.0
+      }
+    },
+    "1489374": {
+      "moneyline": {
+        "home": 1.0,
+        "away": 0.0,
+        "draw": 0.0
+      },
+      "slug": "fifwc-ger-kor-2026-06-14",
+      "volume": 25533393,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-ger-kor-2026-06-14-exact-score",
+      "exact_score": {
+        "0-0": 0.0,
+        "0-1": 0.0,
+        "1-0": 0.0,
+        "0-2": 0.0,
+        "1-1": 0.0,
+        "2-0": 0.0,
+        "0-3": 0.0,
+        "1-2": 0.0,
+        "2-1": 0.0,
+        "3-0": 0.0,
+        "1-3": 0.0,
+        "2-2": 0.0,
+        "3-1": 0.0,
+        "2-3": 0.0,
+        "3-3": 0.0,
+        "3-2": 0.0,
+        "other": 1.0
+      },
+      "more_markets_slug": "fifwc-ger-kor-2026-06-14-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 1.0,
+        "over_3.5": 1.0,
+        "over_4.5": 1.0,
+        "over_5.5": 1.0,
+        "over_6.5": 1.0,
+        "over_7.5": 1.0,
+        "over_9.5": 0.0,
+        "over_8.5": 0.0
+      },
+      "team_totals": {
+        "home_over_1.5": 1.0,
+        "home_over_2.5": 1.0,
+        "away_over_0.5": 1.0,
+        "home_over_0.5": 1.0,
+        "home_over_3.5": 1.0,
+        "away_over_1.5": 0.0,
+        "away_over_2.5": 0.0
+      },
+      "btts": 1.0,
+      "spread": {
+        "home_-1.5": 1.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 1.0,
+        "away_-2.5": 0.0,
+        "home_-3.5": 1.0,
+        "home_-4.5": 1.0,
+        "home_-5.5": 1.0
+      },
+      "halftime_slug": "fifwc-ger-kor-2026-06-14-halftime-result",
+      "halftime": {
+        "home": 1.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "second_half_slug": "fifwc-ger-kor-2026-06-14-second-half-result",
+      "second_half": {
+        "away": 0.0,
+        "draw": 0.0,
+        "home": 1.0
+      },
+      "first_to_score_slug": "fifwc-ger-kor-2026-06-14-first-to-score",
+      "first_to_score": {
+        "away": 0.0,
+        "home": 1.0,
+        "neither": 0.0
+      },
+      "corners_slug": "fifwc-ger-kor-2026-06-14-total-corners",
+      "corners": {
+        "over_7.5": 1.0,
+        "over_12.5": 0.0,
+        "over_13.5": 0.0,
+        "over_11.5": 0.0,
+        "over_10.5": 0.0,
+        "over_8.5": 1.0,
+        "over_9.5": 0.0,
+        "over_6.5": 1.0
+      }
+    },
+    "1489376": {
+      "moneyline": {
+        "away": 0.0,
+        "draw": 1.0,
+        "home": 0.0
+      },
+      "slug": "fifwc-nld-jpn-2026-06-14",
+      "volume": 28412937,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-nld-jpn-2026-06-14-exact-score",
+      "exact_score": {
+        "0-2": 0.0,
+        "2-0": 0.0,
+        "1-2": 0.0,
+        "3-0": 0.0,
+        "2-2": 1.0,
+        "2-3": 0.0,
+        "3-3": 0.0,
+        "0-0": 0.0,
+        "1-0": 0.0,
+        "1-1": 0.0,
+        "0-3": 0.0,
+        "2-1": 0.0,
+        "1-3": 0.0,
+        "3-1": 0.0,
+        "3-2": 0.0,
+        "other": 0.0,
+        "0-1": 0.0
+      },
+      "more_markets_slug": "fifwc-nld-jpn-2026-06-14-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 1.0,
+        "over_3.5": 1.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0,
+        "over_6.5": 0.0,
+        "over_7.5": 0.0,
+        "over_8.5": 0.0
+      },
+      "team_totals": {
+        "away_over_0.5": 1.0,
+        "away_over_1.5": 1.0,
+        "home_over_1.5": 1.0,
+        "home_over_2.5": 0.0,
+        "away_over_2.5": 0.0,
+        "home_over_0.5": 1.0
+      },
+      "btts": 1.0,
+      "spread": {
+        "home_-1.5": 0.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-nld-jpn-2026-06-14-halftime-result",
+      "halftime": {
+        "home": 0.0,
+        "away": 0.0,
+        "draw": 1.0
+      },
+      "second_half_slug": "fifwc-nld-jpn-2026-06-14-second-half-result",
+      "second_half": {
+        "away": 0.0,
+        "draw": 1.0,
+        "home": 0.0
+      },
+      "first_to_score_slug": "fifwc-nld-jpn-2026-06-14-first-to-score",
+      "first_to_score": {
+        "home": 1.0,
+        "neither": 0.0,
+        "away": 0.0
+      },
+      "corners_slug": "fifwc-nld-jpn-2026-06-14-total-corners",
+      "corners": {
+        "over_13.5": 0.0,
+        "over_10.5": 0.0,
+        "over_11.5": 0.0,
+        "over_9.5": 0.0,
+        "over_7.5": 1.0,
+        "over_12.5": 0.0,
+        "over_8.5": 1.0,
+        "over_6.5": 1.0
+      }
+    },
+    "1489375": {
+      "moneyline": {
+        "draw": 0.0,
+        "away": 0.0,
+        "home": 1.0
+      },
+      "slug": "fifwc-civ-ecu-2026-06-14",
+      "volume": 16083534,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-civ-ecu-2026-06-14-exact-score",
+      "exact_score": {
+        "0-1": 0.0,
+        "0-2": 0.0,
+        "2-0": 0.0,
+        "1-2": 0.0,
+        "3-0": 0.0,
+        "2-2": 0.0,
+        "2-3": 0.0,
+        "3-3": 0.0,
+        "0-0": 0.0,
+        "1-0": 1.0,
+        "1-1": 0.0,
+        "0-3": 0.0,
+        "2-1": 0.0,
+        "1-3": 0.0,
+        "3-1": 0.0,
+        "3-2": 0.0,
+        "other": 0.0
+      },
+      "more_markets_slug": "fifwc-civ-ecu-2026-06-14-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 0.0,
+        "over_2.5": 0.0,
+        "over_3.5": 0.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0,
+        "over_7.5": 0.0,
+        "over_8.5": 0.0,
+        "over_6.5": 0.0
+      },
+      "team_totals": {
+        "home_over_0.5": 1.0,
+        "away_over_1.5": 0.0,
+        "away_over_2.5": 0.0,
+        "home_over_1.5": 0.0,
+        "home_over_2.5": 0.0,
+        "away_over_0.5": 0.0
+      },
+      "btts": 0.0,
+      "spread": {
+        "home_-1.5": 0.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-civ-ecu-2026-06-14-halftime-result",
+      "halftime": {
+        "home": 0.0,
+        "away": 0.0,
+        "draw": 1.0
+      },
+      "second_half_slug": "fifwc-civ-ecu-2026-06-14-second-half-result",
+      "second_half": {
+        "home": 1.0,
+        "away": 0.0,
+        "draw": 0.0
+      },
+      "first_to_score_slug": "fifwc-civ-ecu-2026-06-14-first-to-score",
+      "first_to_score": {
+        "neither": 0.0,
+        "away": 0.0,
+        "home": 1.0
+      },
+      "corners_slug": "fifwc-civ-ecu-2026-06-14-total-corners",
+      "corners": {
+        "over_12.5": 0.0,
+        "over_11.5": 0.0,
+        "over_8.5": 0.0,
+        "over_10.5": 0.0,
+        "over_9.5": 0.0,
+        "over_13.5": 0.0,
+        "over_7.5": 1.0,
+        "over_6.5": 1.0
+      }
+    },
+    "1539002": {
+      "moneyline": {
+        "home": 1.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "slug": "fifwc-swe-tun-2026-06-14",
+      "volume": 21842942,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-swe-tun-2026-06-14-exact-score",
+      "exact_score": {
+        "0-1": 0.0,
+        "0-2": 0.0,
+        "2-0": 0.0,
+        "1-2": 0.0,
+        "3-0": 0.0,
+        "2-2": 0.0,
+        "2-3": 0.0,
+        "3-3": 0.0,
+        "0-0": 0.0,
+        "1-0": 0.0,
+        "1-1": 0.0,
+        "0-3": 0.0,
+        "2-1": 0.0,
+        "1-3": 0.0,
+        "3-1": 0.0,
+        "3-2": 0.0,
+        "other": 1.0
+      },
+      "more_markets_slug": "fifwc-swe-tun-2026-06-14-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 1.0,
+        "over_3.5": 1.0,
+        "over_4.5": 1.0,
+        "over_5.5": 1.0
+      },
+      "team_totals": {
+        "home_over_0.5": 1.0,
+        "away_over_0.5": 1.0,
+        "away_over_1.5": 0.0,
+        "away_over_2.5": 0.0,
+        "home_over_1.5": 1.0,
+        "home_over_2.5": 1.0
+      },
+      "btts": 1.0,
+      "spread": {
+        "home_-1.5": 1.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 1.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-swe-tun-2026-06-14-halftime-result",
+      "halftime": {
+        "draw": 0.0,
+        "home": 1.0,
+        "away": 0.0
+      },
+      "second_half_slug": "fifwc-swe-tun-2026-06-14-second-half-result",
+      "second_half": {
+        "home": 1.0,
+        "away": 0.0,
+        "draw": 0.0
+      },
+      "first_to_score_slug": "fifwc-swe-tun-2026-06-14-first-to-score",
+      "first_to_score": {
+        "neither": 0.0,
+        "away": 0.0,
+        "home": 1.0
+      },
+      "corners_slug": "fifwc-swe-tun-2026-06-14-total-corners",
+      "corners": {
+        "over_7.5": 0.0,
+        "over_9.5": 0.0,
+        "over_10.5": 0.0,
+        "over_13.5": 0.0,
+        "over_12.5": 0.0,
+        "over_11.5": 0.0,
+        "over_8.5": 0.0,
+        "over_6.5": 0.0
+      }
+    },
+    "1489380": {
+      "moneyline": {
+        "home": 0.0,
+        "draw": 1.0,
+        "away": 0.0
+      },
+      "slug": "fifwc-esp-cvi-2026-06-15",
+      "volume": 32517722,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-esp-cvi-2026-06-15-exact-score",
+      "exact_score": {
+        "0-0": 1.0,
+        "1-0": 0.0,
+        "1-1": 0.0,
+        "0-3": 0.0,
+        "0-1": 0.0,
+        "0-2": 0.0,
+        "2-0": 0.0,
+        "1-2": 0.0,
+        "3-0": 0.0,
+        "2-2": 0.0,
+        "2-3": 0.0,
+        "3-3": 0.0,
+        "2-1": 0.0,
+        "1-3": 0.0,
+        "3-1": 0.0,
+        "3-2": 0.0,
+        "other": 0.0
+      },
+      "more_markets_slug": "fifwc-esp-cvi-2026-06-15-more-markets",
+      "totals": {
+        "over_0.5": 0.0,
+        "over_1.5": 0.0,
+        "over_2.5": 0.0,
+        "over_3.5": 0.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0
+      },
+      "team_totals": {
+        "away_over_2.5": 0.0,
+        "home_over_2.5": 0.0,
+        "home_over_0.5": 0.0,
+        "home_over_1.5": 0.0,
+        "home_over_3.5": 0.0,
+        "away_over_1.5": 0.0,
+        "away_over_0.5": 0.0
+      },
+      "btts": 0.0,
+      "spread": {
+        "home_-1.5": 0.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0,
+        "away_-4.5": 0.0,
+        "home_-3.5": 0.0,
+        "home_-4.5": 0.0,
+        "away_-3.5": 0.0
+      },
+      "halftime_slug": "fifwc-esp-cvi-2026-06-15-halftime-result",
+      "halftime": {
+        "home": 0.0,
+        "away": 0.0,
+        "draw": 1.0
+      },
+      "second_half_slug": "fifwc-esp-cvi-2026-06-15-second-half-result",
+      "second_half": {
+        "away": 0.0,
+        "draw": 1.0,
+        "home": 0.0
+      },
+      "first_to_score_slug": "fifwc-esp-cvi-2026-06-15-first-to-score",
+      "first_to_score": {
+        "away": 0.0,
+        "neither": 1.0,
+        "home": 0.0
+      },
+      "corners_slug": "fifwc-esp-cvi-2026-06-15-total-corners",
+      "corners": {
+        "over_12.5": 0.0,
+        "over_13.5": 0.0,
+        "over_7.5": 1.0,
+        "over_10.5": 1.0,
+        "over_11.5": 1.0,
+        "over_8.5": 1.0,
+        "over_9.5": 1.0,
+        "over_6.5": 1.0
+      }
+    },
+    "1489377": {
+      "moneyline": {
+        "draw": 1.0,
+        "away": 0.0,
+        "home": 0.0
+      },
+      "slug": "fifwc-bel-egy-2026-06-15",
+      "volume": 35997260,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-bel-egy-2026-06-15-exact-score",
+      "exact_score": {
+        "other": 0.0,
+        "0-1": 0.0,
+        "0-2": 0.0,
+        "2-0": 0.0,
+        "1-2": 0.0,
+        "3-0": 0.0,
+        "2-2": 0.0,
+        "2-3": 0.0,
+        "3-3": 0.0,
+        "0-0": 0.0,
+        "1-0": 0.0,
+        "1-1": 1.0,
+        "0-3": 0.0,
+        "2-1": 0.0,
+        "1-3": 0.0,
+        "3-1": 0.0,
+        "3-2": 0.0
+      },
+      "more_markets_slug": "fifwc-bel-egy-2026-06-15-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 0.0,
+        "over_3.5": 0.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0,
+        "over_6.5": 0.0
+      },
+      "team_totals": {
+        "away_over_0.5": 1.0,
+        "home_over_0.5": 1.0,
+        "away_over_2.5": 0.0,
+        "away_over_1.5": 0.0,
+        "home_over_1.5": 0.0,
+        "home_over_2.5": 0.0
+      },
+      "btts": 1.0,
+      "spread": {
+        "home_-1.5": 0.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-bel-egy-2026-06-15-halftime-result",
+      "halftime": {
+        "home": 0.0,
+        "away": 1.0,
+        "draw": 0.0
+      },
+      "second_half_slug": "fifwc-bel-egy-2026-06-15-second-half-result",
+      "second_half": {
+        "draw": 0.0,
+        "home": 1.0,
+        "away": 0.0
+      },
+      "first_to_score_slug": "fifwc-bel-egy-2026-06-15-first-to-score",
+      "first_to_score": {
+        "home": 0.0,
+        "away": 1.0,
+        "neither": 0.0
+      },
+      "corners_slug": "fifwc-bel-egy-2026-06-15-total-corners",
+      "corners": {
+        "over_9.5": 0.0,
+        "over_7.5": 1.0,
+        "over_12.5": 0.0,
+        "over_13.5": 0.0,
+        "over_11.5": 0.0,
+        "over_8.5": 1.0,
+        "over_10.5": 0.0,
+        "over_6.5": 1.0
+      }
+    },
+    "1489379": {
+      "moneyline": {
+        "home": 0.0,
+        "draw": 1.0,
+        "away": 0.0
+      },
+      "slug": "fifwc-ksa-ury-2026-06-15",
+      "volume": 25779673,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-ksa-ury-2026-06-15-exact-score",
+      "exact_score": {
+        "1-0": 0.0,
+        "1-1": 1.0,
+        "0-3": 0.0,
+        "2-1": 0.0,
+        "1-3": 0.0,
+        "3-1": 0.0,
+        "3-2": 0.0,
+        "other": 0.0,
+        "0-0": 0.0,
+        "0-2": 0.0,
+        "2-0": 0.0,
+        "1-2": 0.0,
+        "3-0": 0.0,
+        "2-2": 0.0,
+        "2-3": 0.0,
+        "3-3": 0.0,
+        "0-1": 0.0
+      },
+      "more_markets_slug": "fifwc-ksa-ury-2026-06-15-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 0.0,
+        "over_3.5": 0.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0
+      },
+      "team_totals": {
+        "away_over_0.5": 1.0,
+        "home_over_0.5": 1.0,
+        "home_over_1.5": 0.0,
+        "home_over_2.5": 0.0,
+        "away_over_1.5": 0.0,
+        "away_over_2.5": 0.0
+      },
+      "btts": 1.0,
+      "spread": {
+        "home_-1.5": 0.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-ksa-ury-2026-06-15-halftime-result",
+      "halftime": {
+        "home": 1.0,
+        "away": 0.0,
+        "draw": 0.0
+      },
+      "second_half_slug": "fifwc-ksa-ury-2026-06-15-second-half-result",
+      "second_half": {
+        "away": 1.0,
+        "draw": 0.0,
+        "home": 0.0
+      },
+      "first_to_score_slug": "fifwc-ksa-ury-2026-06-15-first-to-score",
+      "first_to_score": {
+        "home": 1.0,
+        "neither": 0.0,
+        "away": 0.0
+      },
+      "corners_slug": "fifwc-ksa-ury-2026-06-15-total-corners",
+      "corners": {
+        "over_13.5": 1.0,
+        "over_12.5": 1.0,
+        "over_9.5": 1.0,
+        "over_10.5": 1.0,
+        "over_7.5": 1.0,
+        "over_8.5": 1.0,
+        "over_11.5": 1.0,
+        "over_6.5": 1.0
+      }
+    },
+    "1489378": {
+      "moneyline": {
+        "home": 0.0,
+        "draw": 1.0,
+        "away": 0.0
+      },
+      "slug": "fifwc-irn-nzl-2026-06-15",
+      "volume": 32750104,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-irn-nzl-2026-06-15-exact-score",
+      "exact_score": {
+        "0-0": 0.0,
+        "1-0": 0.0,
+        "1-1": 0.0,
+        "0-3": 0.0,
+        "2-1": 0.0,
+        "1-3": 0.0,
+        "3-1": 0.0,
+        "3-2": 0.0,
+        "other": 0.0,
+        "0-1": 0.0,
+        "0-2": 0.0,
+        "2-0": 0.0,
+        "1-2": 0.0,
+        "3-0": 0.0,
+        "2-2": 1.0,
+        "2-3": 0.0,
+        "3-3": 0.0
+      },
+      "more_markets_slug": "fifwc-irn-nzl-2026-06-15-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 1.0,
+        "over_3.5": 1.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0
+      },
+      "team_totals": {
+        "away_over_0.5": 1.0,
+        "away_over_1.5": 1.0,
+        "away_over_2.5": 0.0,
+        "home_over_2.5": 0.0,
+        "home_over_0.5": 1.0,
+        "home_over_1.5": 1.0
+      },
+      "btts": 1.0,
+      "spread": {
+        "home_-1.5": 0.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-irn-nzl-2026-06-15-halftime-result",
+      "halftime": {
+        "home": 0.0,
+        "away": 0.0,
+        "draw": 1.0
+      },
+      "second_half_slug": "fifwc-irn-nzl-2026-06-15-second-half-result",
+      "second_half": {
+        "draw": 1.0,
+        "home": 0.0,
+        "away": 0.0
+      },
+      "first_to_score_slug": "fifwc-irn-nzl-2026-06-15-first-to-score",
+      "first_to_score": {
+        "home": 0.0,
+        "away": 1.0,
+        "neither": 0.0
+      },
+      "corners_slug": "fifwc-irn-nzl-2026-06-15-total-corners",
+      "corners": {
+        "over_12.5": 0.0,
+        "over_7.5": 0.0,
+        "over_13.5": 0.0,
+        "over_10.5": 0.0,
+        "over_11.5": 0.0,
+        "over_8.5": 0.0,
+        "over_9.5": 0.0,
+        "over_6.5": 0.0
+      }
+    },
+    "1489383": {
+      "moneyline": {
+        "home": 1.0,
+        "away": 0.0,
+        "draw": 0.0
+      },
+      "slug": "fifwc-fra-sen-2026-06-16",
+      "volume": 28930750,
+      "liquidity": 0,
+      "exact_score_slug": "fifwc-fra-sen-2026-06-16-exact-score",
+      "exact_score": {
+        "0-0": 0.0,
+        "1-0": 0.0,
+        "1-1": 0.0,
+        "0-3": 0.0,
+        "2-1": 0.0,
+        "1-3": 0.0,
+        "3-1": 1.0,
+        "3-2": 0.0,
+        "other": 0.0,
+        "0-1": 0.0,
+        "0-2": 0.0,
+        "2-0": 0.0,
+        "1-2": 0.0,
+        "3-0": 0.0,
+        "2-2": 0.0,
+        "2-3": 0.0,
+        "3-3": 0.0
+      },
+      "more_markets_slug": "fifwc-fra-sen-2026-06-16-more-markets",
+      "totals": {
+        "over_0.5": 1.0,
+        "over_1.5": 1.0,
+        "over_2.5": 1.0,
+        "over_3.5": 1.0,
+        "over_4.5": 0.0,
+        "over_5.5": 0.0
+      },
+      "team_totals": {
+        "home_over_1.5": 1.0,
+        "home_over_2.5": 1.0,
+        "away_over_0.5": 1.0,
+        "away_over_2.5": 0.0,
+        "home_over_0.5": 1.0,
+        "away_over_1.5": 0.0
+      },
+      "btts": 1.0,
+      "spread": {
+        "home_-1.5": 1.0,
+        "away_-1.5": 0.0,
+        "home_-2.5": 0.0,
+        "away_-2.5": 0.0
+      },
+      "halftime_slug": "fifwc-fra-sen-2026-06-16-halftime-result",
+      "halftime": {
+        "home": 0.0,
+        "away": 0.0,
+        "draw": 1.0
+      },
+      "second_half_slug": "fifwc-fra-sen-2026-06-16-second-half-result",
+      "second_half": {
+        "home": 1.0,
+        "away": 0.0,
+        "draw": 0.0
+      },
+      "first_to_score_slug": "fifwc-fra-sen-2026-06-16-first-to-score",
+      "first_to_score": {
+        "away": 0.0,
+        "neither": 0.0,
+        "home": 1.0
+      },
+      "corners_slug": "fifwc-fra-sen-2026-06-16-total-corners",
+      "corners": {
+        "over_7.5": 1.0,
+        "over_12.5": 0.0,
+        "over_13.5": 0.0,
+        "over_9.5": 1.0,
+        "over_10.5": 0.0,
+        "over_11.5": 0.0,
+        "over_8.5": 1.0,
+        "over_6.5": 1.0
+      }
+    },
+    "1539016": {
+      "moneyline": {
+        "draw": 0.145,
+        "home": 0.065,
+        "away": 0.795
+      },
+      "slug": "fifwc-irq-nor-2026-06-16",
+      "volume": 4775025,
+      "liquidity": 8057031,
+      "exact_score_slug": "fifwc-irq-nor-2026-06-16-exact-score",
+      "exact_score": {
+        "0-0": 0.0485,
+        "1-0": 0.029,
+        "1-1": 0.0695,
+        "0-3": 0.135,
+        "2-1": 0.022,
+        "1-3": 0.075,
+        "3-1": 0.0065,
+        "3-2": 0.005,
+        "other": 0.245,
+        "0-1": 0.11,
+        "0-2": 0.155,
+        "2-0": 0.0085,
+        "1-2": 0.085,
+        "3-0": 0.0025,
+        "2-2": 0.024,
+        "2-3": 0.0255,
+        "3-3": 0.006
+      },
+      "more_markets_slug": "fifwc-irq-nor-2026-06-16-more-markets",
+      "totals": {
+        "over_0.5": 0.953,
+        "over_1.5": 0.825,
+        "over_3.5": 0.37,
+        "over_2.5": 0.595,
+        "over_4.5": 0.195,
+        "over_5.5": 0.095,
+        "over_6.5": 0.039,
+        "over_7.5": 0.0205,
+        "over_8.5": 0.0115
+      },
+      "team_totals": {
+        "home_over_0.5": 0.435,
+        "home_over_1.5": 0.115,
+        "home_over_2.5": 0.023,
+        "away_over_0.5": 0.923,
+        "away_over_1.5": 0.725,
+        "away_over_2.5": 0.455
+      },
+      "btts": 0.415,
+      "spread": {
+        "away_-1.5": 0.595,
+        "away_-2.5": 0.345,
+        "home_-2.5": 0.0015,
+        "home_-1.5": 0.019,
+        "away_-3.5": 0.185,
+        "home_-3.5": 0.001
+      },
+      "halftime_slug": "fifwc-irq-nor-2026-06-16-halftime-result",
+      "halftime": {
+        "home": 0.085,
+        "away": 0.615,
+        "draw": 0.315
+      },
+      "second_half_slug": "fifwc-irq-nor-2026-06-16-second-half-result",
+      "second_half": {
+        "home": 0.0775,
+        "draw": 0.265,
+        "away": 0.68
+      },
+      "first_to_score_slug": "fifwc-irq-nor-2026-06-16-first-to-score",
+      "first_to_score": {
+        "home": 0.17,
+        "away": 0.795,
+        "neither": 0.0475
+      },
+      "corners_slug": "fifwc-irq-nor-2026-06-16-total-corners",
+      "corners": {
+        "over_12.5": 0.205,
+        "over_7.5": 0.75,
+        "over_13.5": 0.145,
+        "over_10.5": 0.395,
+        "over_11.5": 0.31,
+        "over_8.5": 0.645,
+        "over_9.5": 0.515,
+        "over_6.5": 0.845
+      }
+    },
+    "1489381": {
+      "moneyline": {
+        "draw": 0.205,
+        "away": 0.115,
+        "home": 0.675
+      },
+      "slug": "fifwc-arg-alg-2026-06-16",
+      "volume": 2342928,
+      "liquidity": 6731469,
+      "exact_score_slug": "fifwc-arg-alg-2026-06-16-exact-score",
+      "exact_score": {
+        "0-0": 0.0705,
+        "1-0": 0.155,
+        "1-1": 0.095,
+        "0-3": 0.002,
+        "2-1": 0.105,
+        "1-3": 0.006,
+        "3-1": 0.08,
+        "3-2": 0.025,
+        "other": 0.14,
+        "0-1": 0.0355,
+        "0-2": 0.0205,
+        "2-0": 0.155,
+        "1-2": 0.0325,
+        "3-0": 0.1,
+        "2-2": 0.031,
+        "2-3": 0.009,
+        "3-3": 0.0115
+      },
+      "more_markets_slug": "fifwc-arg-alg-2026-06-16-more-markets",
+      "totals": {
+        "over_0.5": 0.935,
+        "over_1.5": 0.745,
+        "over_3.5": 0.265,
+        "over_2.5": 0.485,
+        "over_5.5": 0.055,
+        "over_4.5": 0.125
+      },
+      "team_totals": {
+        "home_over_0.5": 0.87,
+        "home_over_1.5": 0.59,
+        "away_over_1.5": 0.155,
+        "away_over_0.5": 0.495,
+        "away_over_2.5": 0.0305,
+        "home_over_2.5": 0.305
+      },
+      "btts": 0.435,
+      "spread": {
+        "home_-1.5": 0.415,
+        "away_-1.5": 0.029,
+        "home_-2.5": 0.205,
+        "away_-2.5": 0.008
+      },
+      "halftime_slug": "fifwc-arg-alg-2026-06-16-halftime-result",
+      "halftime": {
+        "home": 0.505,
+        "away": 0.115,
+        "draw": 0.395
+      },
+      "second_half_slug": "fifwc-arg-alg-2026-06-16-second-half-result",
+      "second_half": {
+        "away": 0.11,
+        "draw": 0.345,
+        "home": 0.565
+      },
+      "first_to_score_slug": "fifwc-arg-alg-2026-06-16-first-to-score",
+      "first_to_score": {
+        "home": 0.715,
+        "neither": 0.07,
+        "away": 0.225
+      },
+      "corners_slug": "fifwc-arg-alg-2026-06-16-total-corners",
+      "corners": {
+        "over_12.5": 0.095,
+        "over_13.5": 0.07,
+        "over_7.5": 0.575,
+        "over_11.5": 0.165,
+        "over_8.5": 0.435,
+        "over_10.5": 0.25,
+        "over_9.5": 0.325,
+        "over_6.5": 0.71
+      }
+    },
+    "1489382": {
+      "moneyline": {
+        "home": 0.715,
+        "draw": 0.185,
+        "away": 0.105
+      },
+      "slug": "fifwc-aut-jor-2026-06-17",
+      "volume": 871945,
+      "liquidity": 3690515,
+      "exact_score_slug": "fifwc-aut-jor-2026-06-17-exact-score",
+      "exact_score": {
+        "0-0": 0.055,
+        "1-0": 0.135,
+        "1-1": 0.1,
+        "0-3": 0.0025,
+        "2-1": 0.11,
+        "1-3": 0.006,
+        "3-1": 0.075,
+        "3-2": 0.0275,
+        "other": 0.175,
+        "0-1": 0.041,
+        "0-2": 0.0095,
+        "2-0": 0.155,
+        "1-2": 0.0335,
+        "3-0": 0.11,
+        "2-2": 0.0385,
+        "2-3": 0.006,
+        "3-3": 0.0055
+      },
+      "more_markets_slug": "fifwc-aut-jor-2026-06-17-more-markets",
+      "totals": {
+        "over_0.5": 0.943,
+        "over_1.5": 0.775,
+        "over_2.5": 0.535,
+        "over_3.5": 0.305,
+        "over_4.5": 0.155,
+        "over_5.5": 0.065
+      },
+      "team_totals": {
+        "home_over_2.5": 0.355,
+        "away_over_2.5": 0.0365,
+        "home_over_1.5": 0.63,
+        "away_over_0.5": 0.495,
+        "away_over_1.5": 0.145,
+        "home_over_0.5": 0.885
+      },
+      "btts": 0.435,
+      "spread": {
+        "home_-1.5": 0.465,
+        "away_-1.5": 0.0265,
+        "home_-2.5": 0.245,
+        "away_-2.5": 0.007,
+        "away_-3.5": 0.0035,
+        "home_-3.5": 0.105
+      },
+      "halftime_slug": "fifwc-aut-jor-2026-06-17-halftime-result",
+      "halftime": {
+        "draw": 0.375,
+        "home": 0.525,
+        "away": 0.105
+      },
+      "second_half_slug": "fifwc-aut-jor-2026-06-17-second-half-result",
+      "second_half": {
+        "draw": 0.32,
+        "away": 0.09,
+        "home": 0.585
+      },
+      "first_to_score_slug": "fifwc-aut-jor-2026-06-17-first-to-score",
+      "first_to_score": {
+        "home": 0.745,
+        "neither": 0.0705,
+        "away": 0.215
+      },
+      "corners_slug": "fifwc-aut-jor-2026-06-17-total-corners",
+      "corners": {
+        "over_13.5": 0.115,
+        "over_8.5": 0.545,
+        "over_11.5": 0.215,
+        "over_10.5": 0.315,
+        "over_7.5": 0.68,
+        "over_12.5": 0.16,
+        "over_9.5": 0.415,
+        "over_6.5": 0.805
+      }
+    },
+    "1539003": {
+      "moneyline": {
+        "away": 0.075,
+        "home": 0.755,
+        "draw": 0.165
+      },
+      "slug": "fifwc-prt-cdr-2026-06-17",
+      "volume": 786536,
+      "liquidity": 2679017,
+      "exact_score_slug": "fifwc-prt-cdr-2026-06-17-exact-score",
+      "exact_score": {
+        "0-0": 0.055,
+        "1-0": 0.135,
+        "1-1": 0.075,
+        "0-3": 0.0035,
+        "2-1": 0.095,
+        "1-3": 0.0085,
+        "3-1": 0.065,
+        "3-2": 0.0185,
+        "other": 0.205,
+        "0-1": 0.034,
+        "0-2": 0.0115,
+        "2-0": 0.165,
+        "1-2": 0.021,
+        "3-0": 0.125,
+        "2-2": 0.0275,
+        "2-3": 0.015,
+        "3-3": 0.012
+      },
+      "more_markets_slug": "fifwc-prt-cdr-2026-06-17-more-markets",
+      "totals": {
+        "over_0.5": 0.945,
+        "over_1.5": 0.785,
+        "over_2.5": 0.545,
+        "over_4.5": 0.155,
+        "over_3.5": 0.315,
+        "over_5.5": 0.065
+      },
+      "team_totals": {
+        "home_over_1.5": 0.66,
+        "home_over_0.5": 0.9,
+        "away_over_2.5": 0.026,
+        "home_over_2.5": 0.385,
+        "away_over_0.5": 0.445,
+        "away_over_1.5": 0.12
+      },
+      "btts": 0.405,
+      "spread": {
+        "home_-1.5": 0.515,
+        "away_-1.5": 0.0185,
+        "home_-2.5": 0.285,
+        "away_-2.5": 0.006,
+        "home_-3.5": 0.125
+      },
+      "halftime_slug": "fifwc-prt-cdr-2026-06-17-halftime-result",
+      "halftime": {
+        "draw": 0.355,
+        "home": 0.565,
+        "away": 0.09
+      },
+      "second_half_slug": "fifwc-prt-cdr-2026-06-17-second-half-result",
+      "second_half": {
+        "home": 0.61,
+        "away": 0.1,
+        "draw": 0.285
+      },
+      "first_to_score_slug": "fifwc-prt-cdr-2026-06-17-first-to-score",
+      "first_to_score": {
+        "home": 0.78,
+        "away": 0.185,
+        "neither": 0.038
+      },
+      "corners_slug": "fifwc-prt-cdr-2026-06-17-total-corners",
+      "corners": {
+        "over_12.5": 0.175,
+        "over_8.5": 0.6,
+        "over_11.5": 0.265,
+        "over_13.5": 0.145,
+        "over_7.5": 0.725,
+        "over_10.5": 0.355,
+        "over_9.5": 0.485,
+        "over_6.5": 0.83
+      }
+    },
+    "1489384": {
+      "moneyline": {
+        "away": 0.185,
+        "home": 0.565,
+        "draw": 0.255
+      },
+      "slug": "fifwc-eng-hrv-2026-06-17",
+      "volume": 492934,
+      "liquidity": 2275608,
+      "exact_score_slug": "fifwc-eng-hrv-2026-06-17-exact-score",
+      "exact_score": {
+        "0-0": 0.085,
+        "1-0": 0.135,
+        "1-1": 0.125,
+        "0-3": 0.012,
+        "2-1": 0.105,
+        "1-3": 0.019,
+        "3-1": 0.055,
+        "3-2": 0.0235,
+        "other": 0.09,
+        "0-1": 0.07,
+        "0-2": 0.03,
+        "2-0": 0.125,
+        "1-2": 0.045,
+        "3-0": 0.055,
+        "2-2": 0.045,
+        "2-3": 0.016,
+        "3-3": 0.0165
+      },
+      "more_markets_slug": "fifwc-eng-hrv-2026-06-17-more-markets",
+      "totals": {
+        "over_0.5": 0.905,
+        "over_2.5": 0.435,
+        "over_3.5": 0.225,
+        "over_4.5": 0.105,
+        "over_1.5": 0.695,
+        "over_5.5": 0.045,
+        "over_6.5": 0.0155,
+        "over_7.5": 0.006,
+        "over_8.5": 0.006
+      },
+      "team_totals": {
+        "home_over_1.5": 0.48,
+        "away_over_2.5": 0.0455,
+        "home_over_0.5": 0.805,
+        "away_over_1.5": 0.2,
+        "home_over_2.5": 0.21,
+        "away_over_0.5": 0.56
+      },
+      "btts": 0.465,
+      "spread": {
+        "home_-1.5": 0.295,
+        "away_-1.5": 0.055,
+        "home_-2.5": 0.125,
+        "away_-2.5": 0.0115
+      },
+      "halftime_slug": "fifwc-eng-hrv-2026-06-17-halftime-result",
+      "halftime": {
+        "away": 0.16,
+        "draw": 0.445,
+        "home": 0.4
+      },
+      "second_half_slug": "fifwc-eng-hrv-2026-06-17-second-half-result",
+      "second_half": {
+        "away": 0.18,
+        "home": 0.45,
+        "draw": 0.38
+      },
+      "first_to_score_slug": "fifwc-eng-hrv-2026-06-17-first-to-score",
+      "first_to_score": {
+        "neither": 0.091,
+        "home": 0.6,
+        "away": 0.315
+      },
+      "corners_slug": "fifwc-eng-hrv-2026-06-17-total-corners",
+      "corners": {
+        "over_7.5": 0.695,
+        "over_8.5": 0.545,
+        "over_9.5": 0.405,
+        "over_13.5": 0.1,
+        "over_12.5": 0.165,
+        "over_10.5": 0.32,
+        "over_11.5": 0.225,
+        "over_6.5": 0.845
+      }
+    },
+    "1489385": {
+      "moneyline": {
+        "home": 0.425,
+        "draw": 0.295,
+        "away": 0.285
+      },
+      "slug": "fifwc-gha-pan-2026-06-17",
+      "volume": 304186,
+      "liquidity": 2674903,
+      "exact_score_slug": "fifwc-gha-pan-2026-06-17-exact-score",
+      "exact_score": {
+        "0-0": 0.095,
+        "1-0": 0.125,
+        "1-1": 0.14,
+        "0-3": 0.0165,
+        "2-1": 0.095,
+        "1-3": 0.022,
+        "3-1": 0.0415,
+        "3-2": 0.02,
+        "other": 0.095,
+        "0-1": 0.1,
+        "0-2": 0.045,
+        "2-0": 0.08,
+        "1-2": 0.07,
+        "3-0": 0.038,
+        "2-2": 0.045,
+        "2-3": 0.024,
+        "3-3": 0.0105
+      },
+      "more_markets_slug": "fifwc-gha-pan-2026-06-17-more-markets",
+      "totals": {
+        "over_0.5": 0.9,
+        "over_2.5": 0.405,
+        "over_4.5": 0.085,
+        "over_1.5": 0.665,
+        "over_3.5": 0.2,
+        "over_5.5": 0.032
+      },
+      "team_totals": {
+        "away_over_0.5": 0.645,
+        "home_over_2.5": 0.14,
+        "home_over_0.5": 0.745,
+        "home_over_1.5": 0.37,
+        "away_over_2.5": 0.07,
+        "away_over_1.5": 0.27
+      },
+      "btts": 0.485,
+      "spread": {
+        "home_-1.5": 0.195,
+        "home_-2.5": 0.065,
+        "away_-2.5": 0.023,
+        "away_-1.5": 0.1
+      },
+      "halftime_slug": "fifwc-gha-pan-2026-06-17-halftime-result",
+      "halftime": {
+        "home": 0.32,
+        "away": 0.215,
+        "draw": 0.46
+      },
+      "second_half_slug": "fifwc-gha-pan-2026-06-17-second-half-result",
+      "second_half": {
+        "away": 0.255,
+        "home": 0.35,
+        "draw": 0.4
+      },
+      "first_to_score_slug": "fifwc-gha-pan-2026-06-17-first-to-score",
+      "first_to_score": {
+        "home": 0.525,
+        "away": 0.39,
+        "neither": 0.085
+      },
+      "corners_slug": "fifwc-gha-pan-2026-06-17-total-corners",
+      "corners": {
+        "over_10.5": 0.265,
+        "over_8.5": 0.465,
+        "over_9.5": 0.355,
+        "over_11.5": 0.2,
+        "over_12.5": 0.135,
+        "over_6.5": 0.775,
+        "over_7.5": 0.62
+      }
+    },
+    "1489386": {
+      "moneyline": {
+        "home": 0.095,
+        "draw": 0.195,
+        "away": 0.715
+      },
+      "slug": "fifwc-uzb-col-2026-06-17",
+      "volume": 205278,
+      "liquidity": 1966608,
+      "exact_score_slug": "fifwc-uzb-col-2026-06-17-exact-score",
+      "exact_score": {
+        "0-0": 0.07,
+        "1-0": 0.038,
+        "1-1": 0.095,
+        "0-3": 0.105,
+        "2-1": 0.0265,
+        "1-3": 0.065,
+        "3-1": 0.006,
+        "3-2": 0.0065,
+        "other": 0.155,
+        "0-1": 0.145,
+        "0-2": 0.15,
+        "2-0": 0.0145,
+        "1-2": 0.095,
+        "3-0": 0.0045,
+        "2-2": 0.034,
+        "2-3": 0.025,
+        "3-3": 0.008
+      },
+      "more_markets_slug": "fifwc-uzb-col-2026-06-17-more-markets",
+      "totals": {
+        "over_0.5": 0.935,
+        "over_2.5": 0.495,
+        "over_3.5": 0.27,
+        "over_4.5": 0.125,
+        "over_5.5": 0.045,
+        "over_1.5": 0.745
+      },
+      "team_totals": {
+        "home_over_0.5": 0.47,
+        "away_over_2.5": 0.32,
+        "home_over_2.5": 0.0215,
+        "home_over_1.5": 0.115,
+        "away_over_0.5": 0.875,
+        "away_over_1.5": 0.61
+      },
+      "btts": 0.405,
+      "spread": {
+        "home_-1.5": 0.022,
+        "away_-1.5": 0.455,
+        "home_-2.5": 0.0045,
+        "away_-2.5": 0.225
+      },
+      "halftime_slug": "fifwc-uzb-col-2026-06-17-halftime-result",
+      "halftime": {
+        "home": 0.105,
+        "away": 0.505,
+        "draw": 0.39
+      },
+      "second_half_slug": "fifwc-uzb-col-2026-06-17-second-half-result",
+      "second_half": {
+        "home": 0.1,
+        "draw": 0.33,
+        "away": 0.565
+      },
+      "first_to_score_slug": "fifwc-uzb-col-2026-06-17-first-to-score",
+      "first_to_score": {
+        "home": 0.195,
+        "neither": 0.055,
+        "away": 0.74
+      },
+      "corners_slug": "fifwc-uzb-col-2026-06-17-total-corners",
+      "corners": {
+        "over_10.5": 0.285,
+        "over_11.5": 0.225,
+        "over_8.5": 0.505,
+        "over_9.5": 0.375,
+        "over_7.5": 0.62,
+        "over_12.5": 0.14,
+        "over_6.5": 0.765
+      }
+    },
+    "1539004": {
+      "moneyline": {
+        "draw": 0.255,
+        "home": 0.545,
+        "away": 0.205
+      },
+      "slug": "fifwc-cze-rsa-2026-06-18",
+      "volume": 236651,
+      "liquidity": 1497697,
+      "exact_score_slug": "fifwc-cze-rsa-2026-06-18-exact-score",
+      "exact_score": {
+        "0-0": 0.08,
+        "1-0": 0.14,
+        "1-1": 0.125,
+        "0-3": 0.0155,
+        "2-1": 0.095,
+        "1-3": 0.02,
+        "3-1": 0.055,
+        "3-2": 0.0285,
+        "other": 0.065,
+        "0-1": 0.07,
+        "0-2": 0.0445,
+        "2-0": 0.11,
+        "1-2": 0.05,
+        "3-0": 0.055,
+        "2-2": 0.055,
+        "2-3": 0.0185,
+        "3-3": 0.0155
+      },
+      "more_markets_slug": "fifwc-cze-rsa-2026-06-18-more-markets",
+      "totals": {
+        "over_0.5": 0.92,
+        "over_2.5": 0.455,
+        "over_4.5": 0.105,
+        "over_1.5": 0.715,
+        "over_3.5": 0.235,
+        "over_5.5": 0.0455
+      },
+      "team_totals": {
+        "home_over_0.5": 0.81,
+        "home_over_2.5": 0.21,
+        "away_over_1.5": 0.225,
+        "away_over_2.5": 0.0495,
+        "away_over_0.5": 0.595,
+        "home_over_1.5": 0.475
+      },
+      "btts": 0.485,
+      "spread": {
+        "home_-1.5": 0.275,
+        "home_-2.5": 0.115,
+        "away_-1.5": 0.06,
+        "away_-2.5": 0.012
+      },
+      "halftime_slug": "fifwc-cze-rsa-2026-06-18-halftime-result",
+      "halftime": {
+        "home": 0.39,
+        "away": 0.175,
+        "draw": 0.43
+      },
+      "second_half_slug": "fifwc-cze-rsa-2026-06-18-second-half-result",
+      "second_half": {
+        "away": 0.18,
+        "draw": 0.375,
+        "home": 0.455
+      },
+      "first_to_score_slug": "fifwc-cze-rsa-2026-06-18-first-to-score",
+      "first_to_score": {
+        "home": 0.54,
+        "away": 0.285,
+        "neither": 0.08
+      },
+      "corners_slug": "fifwc-cze-rsa-2026-06-18-total-corners",
+      "corners": {
+        "over_11.5": 0.22,
+        "over_9.5": 0.39,
+        "over_8.5": 0.515,
+        "over_10.5": 0.275,
+        "over_12.5": 0.15,
+        "over_6.5": 0.77,
+        "over_7.5": 0.63
+      }
+    },
+    "1539005": {
+      "moneyline": {
+        "away": 0.155,
+        "home": 0.625,
+        "draw": 0.235
+      },
+      "slug": "fifwc-che-bih-2026-06-18",
+      "volume": 117572,
+      "liquidity": 1513359,
+      "exact_score_slug": "fifwc-che-bih-2026-06-18-exact-score",
+      "exact_score": {
+        "0-0": 0.085,
+        "1-0": 0.15,
+        "1-1": 0.125,
+        "0-3": 0.0175,
+        "2-1": 0.1,
+        "1-3": 0.0215,
+        "3-1": 0.065,
+        "3-2": 0.0285,
+        "other": 0.105,
+        "0-1": 0.075,
+        "0-2": 0.0325,
+        "2-0": 0.13,
+        "1-2": 0.045,
+        "3-0": 0.095,
+        "2-2": 0.055,
+        "2-3": 0.0245,
+        "3-3": 0.019
+      },
+      "more_markets_slug": "fifwc-che-bih-2026-06-18-more-markets",
+      "totals": {
+        "over_0.5": 0.92,
+        "over_2.5": 0.45,
+        "over_4.5": 0.105,
+        "over_1.5": 0.715,
+        "over_3.5": 0.235,
+        "over_5.5": 0.039
+      },
+      "team_totals": {
+        "home_over_1.5": 0.525,
+        "home_over_2.5": 0.245,
+        "away_over_0.5": 0.53,
+        "home_over_0.5": 0.84,
+        "away_over_1.5": 0.155,
+        "away_over_2.5": 0.031
+      },
+      "btts": 0.445,
+      "spread": {
+        "home_-1.5": 0.355,
+        "home_-2.5": 0.155,
+        "away_-1.5": 0.0365,
+        "away_-2.5": 0.0135
+      },
+      "halftime_slug": "fifwc-che-bih-2026-06-18-halftime-result",
+      "halftime": {
+        "home": 0.44,
+        "away": 0.14,
+        "draw": 0.415
+      },
+      "second_half_slug": "fifwc-che-bih-2026-06-18-second-half-result",
+      "second_half": {
+        "away": 0.13,
+        "draw": 0.365,
+        "home": 0.49
+      },
+      "first_to_score_slug": "fifwc-che-bih-2026-06-18-first-to-score",
+      "first_to_score": {
+        "neither": 0.1,
+        "home": 0.56,
+        "away": 0.205
+      },
+      "corners_slug": "fifwc-che-bih-2026-06-18-total-corners",
+      "corners": {
+        "over_10.5": 0.39,
+        "over_11.5": 0.28,
+        "over_9.5": 0.49,
+        "over_8.5": 0.62,
+        "over_12.5": 0.195,
+        "over_6.5": 0.815,
+        "over_7.5": 0.725
+      }
+    },
+    "1489387": {
+      "moneyline": {
+        "draw": 0.165,
+        "home": 0.755,
+        "away": 0.085
+      },
+      "slug": "fifwc-can-qat-2026-06-18",
+      "volume": 237172,
+      "liquidity": 1711244,
+      "exact_score_slug": "fifwc-can-qat-2026-06-18-exact-score",
+      "exact_score": {
+        "0-0": 0.05,
+        "1-0": 0.13,
+        "1-1": 0.085,
+        "0-3": 0.007,
+        "2-1": 0.09,
+        "1-3": 0.0115,
+        "3-1": 0.075,
+        "3-2": 0.0265,
+        "other": 0.205,
+        "0-1": 0.0375,
+        "0-2": 0.0125,
+        "2-0": 0.15,
+        "1-2": 0.0245,
+        "3-0": 0.115,
+        "2-2": 0.037,
+        "2-3": 0.0245,
+        "3-3": 0.0245
+      },
+      "more_markets_slug": "fifwc-can-qat-2026-06-18-more-markets",
+      "totals": {
+        "over_0.5": 0.94,
+        "over_1.5": 0.775,
+        "over_2.5": 0.545,
+        "over_3.5": 0.315,
+        "over_4.5": 0.155,
+        "over_5.5": 0.0645
+      },
+      "team_totals": {
+        "away_over_0.5": 0.445,
+        "away_over_2.5": 0.031,
+        "home_over_2.5": 0.39,
+        "home_over_1.5": 0.655,
+        "home_over_0.5": 0.9,
+        "away_over_1.5": 0.12
+      },
+      "btts": 0.395,
+      "spread": {
+        "home_-1.5": 0.515,
+        "away_-1.5": 0.02,
+        "home_-2.5": 0.285,
+        "away_-2.5": 0.0065,
+        "home_-3.5": 0.135,
+        "away_-3.5": 0.005
+      },
+      "halftime_slug": "fifwc-can-qat-2026-06-18-halftime-result",
+      "halftime": {
+        "home": 0.56,
+        "away": 0.085,
+        "draw": 0.35
+      },
+      "second_half_slug": "fifwc-can-qat-2026-06-18-second-half-result",
+      "second_half": {
+        "away": 0.07,
+        "draw": 0.3,
+        "home": 0.62
+      },
+      "first_to_score_slug": "fifwc-can-qat-2026-06-18-first-to-score",
+      "first_to_score": {
+        "home": 0.775,
+        "away": 0.155,
+        "neither": 0.047
+      },
+      "corners_slug": "fifwc-can-qat-2026-06-18-total-corners",
+      "corners": {
+        "over_8.5": 0.635,
+        "over_11.5": 0.295,
+        "over_9.5": 0.51,
+        "over_10.5": 0.41,
+        "over_12.5": 0.195,
+        "over_6.5": 0.825,
+        "over_7.5": 0.755
+      }
+    },
+    "1489388": {
+      "moneyline": {
+        "draw": 0.285,
+        "away": 0.245,
+        "home": 0.485
+      },
+      "slug": "fifwc-mex-kr-2026-06-18",
+      "volume": 481939,
+      "liquidity": 1354676,
+      "exact_score_slug": "fifwc-mex-kr-2026-06-18-exact-score",
+      "exact_score": {
+        "0-0": 0.09,
+        "1-0": 0.155,
+        "1-1": 0.14,
+        "0-3": 0.0295,
+        "2-1": 0.105,
+        "1-3": 0.043,
+        "3-1": 0.046,
+        "3-2": 0.035,
+        "other": 0.045,
+        "0-1": 0.105,
+        "0-2": 0.04,
+        "2-0": 0.105,
+        "1-2": 0.065,
+        "3-0": 0.0445,
+        "2-2": 0.045,
+        "2-3": 0.0255,
+        "3-3": 0.0275
+      },
+      "more_markets_slug": "fifwc-mex-kr-2026-06-18-more-markets",
+      "totals": {
+        "over_0.5": 0.9,
+        "over_1.5": 0.665,
+        "over_2.5": 0.405,
+        "over_3.5": 0.205,
+        "over_4.5": 0.085,
+        "over_5.5": 0.0295
+      },
+      "team_totals": {
+        "away_over_0.5": 0.605,
+        "home_over_1.5": 0.405,
+        "home_over_2.5": 0.16,
+        "home_over_0.5": 0.755,
+        "away_over_1.5": 0.225,
+        "away_over_2.5": 0.045
+      },
+      "btts": 0.465,
+      "spread": {
+        "home_-1.5": 0.225,
+        "away_-1.5": 0.075,
+        "home_-2.5": 0.075,
+        "away_-2.5": 0.016
+      },
+      "halftime_slug": "fifwc-mex-kr-2026-06-18-halftime-result",
+      "halftime": {
+        "home": 0.345,
+        "away": 0.195,
+        "draw": 0.46
+      },
+      "second_half_slug": "fifwc-mex-kr-2026-06-18-second-half-result",
+      "second_half": {
+        "away": 0.215,
+        "home": 0.39,
+        "draw": 0.4
+      },
+      "first_to_score_slug": "fifwc-mex-kr-2026-06-18-first-to-score",
+      "first_to_score": {
+        "home": 0.58,
+        "neither": 0.095,
+        "away": 0.34
+      },
+      "corners_slug": "fifwc-mex-kr-2026-06-18-total-corners",
+      "corners": {
+        "over_9.5": 0.415,
+        "over_8.5": 0.535,
+        "over_10.5": 0.305,
+        "over_11.5": 0.235,
+        "over_12.5": 0.16,
+        "over_6.5": 0.765,
+        "over_7.5": 0.655
+      }
+    },
+    "1489391": {
+      "moneyline": {
+        "draw": 0.215,
+        "away": 0.175,
+        "home": 0.615
+      },
+      "slug": "fifwc-usa-aus-2026-06-19",
+      "volume": 455355,
+      "liquidity": 1381434,
+      "exact_score_slug": "fifwc-usa-aus-2026-06-19-exact-score",
+      "exact_score": {
+        "0-0": 0.07,
+        "1-0": 0.14,
+        "1-1": 0.1,
+        "0-3": 0.0245,
+        "2-1": 0.1,
+        "1-3": 0.0245,
+        "3-1": 0.06,
+        "3-2": 0.0325,
+        "other": 0.09,
+        "0-1": 0.06,
+        "0-2": 0.0355,
+        "2-0": 0.125,
+        "1-2": 0.05,
+        "3-0": 0.065,
+        "2-2": 0.032,
+        "2-3": 0.0245,
+        "3-3": 0.0245
+      },
+      "more_markets_slug": "fifwc-usa-aus-2026-06-19-more-markets",
+      "totals": {
+        "over_0.5": 0.935,
+        "over_1.5": 0.735,
+        "over_2.5": 0.485,
+        "over_3.5": 0.265,
+        "over_4.5": 0.125,
+        "over_5.5": 0.054
+      },
+      "team_totals": {
+        "away_over_2.5": 0.051,
+        "home_over_2.5": 0.26,
+        "away_over_1.5": 0.215,
+        "home_over_1.5": 0.53,
+        "home_over_0.5": 0.835,
+        "away_over_0.5": 0.565
+      },
+      "btts": 0.475,
+      "spread": {
+        "home_-1.5": 0.345,
+        "away_-1.5": 0.055,
+        "home_-2.5": 0.16,
+        "away_-2.5": 0.0145
+      },
+      "halftime_slug": "fifwc-usa-aus-2026-06-19-halftime-result",
+      "halftime": {
+        "home": 0.435,
+        "away": 0.155,
+        "draw": 0.41
+      },
+      "second_half_slug": "fifwc-usa-aus-2026-06-19-second-half-result",
+      "second_half": {
+        "home": 0.475,
+        "away": 0.145,
+        "draw": 0.355
+      },
+      "first_to_score_slug": "fifwc-usa-aus-2026-06-19-first-to-score",
+      "first_to_score": {
+        "away": 0.27,
+        "home": 0.635,
+        "neither": 0.07
+      },
+      "corners_slug": "fifwc-usa-aus-2026-06-19-total-corners",
+      "corners": {
+        "over_10.5": 0.34,
+        "over_11.5": 0.23,
+        "over_12.5": 0.18,
+        "over_6.5": 0.79,
+        "over_7.5": 0.695,
+        "over_8.5": 0.575,
+        "over_9.5": 0.45
+      }
+    },
+    "1489390": {
+      "moneyline": {
+        "home": 0.175,
+        "draw": 0.265,
+        "away": 0.565
+      },
+      "slug": "fifwc-sco-mar-2026-06-19",
+      "volume": 179752,
+      "liquidity": 1316378,
+      "exact_score_slug": "fifwc-sco-mar-2026-06-19-exact-score",
+      "exact_score": {
+        "0-0": 0.1,
+        "0-2": 0.115,
+        "2-0": 0.0275,
+        "1-2": 0.095,
+        "3-0": 0.0155,
+        "2-2": 0.0385,
+        "2-3": 0.0255,
+        "3-3": 0.025,
+        "1-0": 0.07,
+        "1-1": 0.12,
+        "0-3": 0.06,
+        "2-1": 0.045,
+        "1-3": 0.05,
+        "3-1": 0.025,
+        "3-2": 0.025,
+        "other": 0.075,
+        "0-1": 0.15
+      },
+      "more_markets_slug": "fifwc-sco-mar-2026-06-19-more-markets",
+      "totals": {
+        "over_0.5": 0.905,
+        "over_1.5": 0.685,
+        "over_2.5": 0.415,
+        "over_3.5": 0.21,
+        "over_4.5": 0.09,
+        "over_5.5": 0.031
+      },
+      "team_totals": {
+        "home_over_1.5": 0.185,
+        "away_over_0.5": 0.805,
+        "away_over_2.5": 0.2,
+        "away_over_1.5": 0.475,
+        "home_over_0.5": 0.54,
+        "home_over_2.5": 0.039
+      },
+      "btts": 0.45,
+      "spread": {
+        "home_-1.5": 0.045,
+        "away_-1.5": 0.285,
+        "home_-2.5": 0.0145,
+        "away_-2.5": 0.115
+      },
+      "halftime_slug": "fifwc-sco-mar-2026-06-19-halftime-result",
+      "halftime": {
+        "home": 0.165,
+        "away": 0.395,
+        "draw": 0.445
+      },
+      "second_half_slug": "fifwc-sco-mar-2026-06-19-second-half-result",
+      "second_half": {
+        "draw": 0.385,
+        "away": 0.45,
+        "home": 0.165
+      },
+      "first_to_score_slug": "fifwc-sco-mar-2026-06-19-first-to-score",
+      "first_to_score": {
+        "away": 0.6,
+        "home": 0.245,
+        "neither": 0.085
+      },
+      "corners_slug": "fifwc-sco-mar-2026-06-19-total-corners",
+      "corners": {
+        "over_12.5": 0.16,
+        "over_8.5": 0.52,
+        "over_10.5": 0.29,
+        "over_7.5": 0.65,
+        "over_11.5": 0.225,
+        "over_6.5": 0.76,
+        "over_9.5": 0.385
+      }
+    },
+    "1489389": {
+      "moneyline": {
+        "home": 0.885,
+        "draw": 0.0805,
+        "away": 0.0425
+      },
+      "slug": "fifwc-bra-hai-2026-06-19",
+      "volume": 401384,
+      "liquidity": 1172477,
+      "exact_score_slug": "fifwc-bra-hai-2026-06-19-exact-score",
+      "exact_score": {
+        "0-1": 0.013,
+        "0-2": 0.014,
+        "2-0": 0.115,
+        "1-2": 0.0275,
+        "3-0": 0.155,
+        "2-2": 0.0135,
+        "2-3": 0.0145,
+        "3-3": 0.0145,
+        "0-0": 0.0155,
+        "1-0": 0.085,
+        "1-1": 0.0245,
+        "0-3": 0.013,
+        "2-1": 0.075,
+        "1-3": 0.0145,
+        "3-1": 0.0705,
+        "3-2": 0.013,
+        "other": 0.36
+      },
+      "more_markets_slug": "fifwc-bra-hai-2026-06-19-more-markets",
+      "totals": {
+        "over_1.5": 0.875,
+        "over_3.5": 0.5,
+        "over_5.5": 0.17,
+        "over_0.5": 0.977,
+        "over_2.5": 0.705,
+        "over_4.5": 0.315
+      },
+      "team_totals": {
+        "away_over_0.5": 0.39,
+        "home_over_1.5": 0.825,
+        "away_over_2.5": 0.014,
+        "home_over_3.5": 0.365,
+        "away_over_1.5": 0.085,
+        "home_over_0.5": 0.961,
+        "home_over_2.5": 0.61
+      },
+      "btts": 0.385,
+      "spread": {
+        "home_-1.5": 0.725,
+        "home_-2.5": 0.495,
+        "home_-3.5": 0.305,
+        "away_-1.5": 0.0065,
+        "away_-2.5": 0.0055,
+        "home_-4.5": 0.18,
+        "away_-3.5": 0.0005,
+        "away_-4.5": 0.0005
+      },
+      "halftime_slug": "fifwc-bra-hai-2026-06-19-halftime-result",
+      "halftime": {
+        "home": 0.695,
+        "away": 0.055,
+        "draw": 0.255
+      },
+      "second_half_slug": "fifwc-bra-hai-2026-06-19-second-half-result",
+      "second_half": {
+        "home": 0.755,
+        "draw": 0.195,
+        "away": 0.029
+      },
+      "first_to_score_slug": "fifwc-bra-hai-2026-06-19-first-to-score",
+      "first_to_score": {
+        "home": 0.64,
+        "away": 0.12,
+        "neither": 0.0255
+      },
+      "corners_slug": "fifwc-bra-hai-2026-06-19-total-corners",
+      "corners": {
+        "over_10.5": 0.425,
+        "over_11.5": 0.34,
+        "over_12.5": 0.245,
+        "over_6.5": 0.87,
+        "over_7.5": 0.79,
+        "over_8.5": 0.67,
+        "over_9.5": 0.555
+      }
+    },
+    "1539006": {
+      "moneyline": {
+        "draw": 0.285,
+        "away": 0.245,
+        "home": 0.475
+      },
+      "slug": "fifwc-tur-par-2026-06-19",
+      "volume": 109602,
+      "liquidity": 1410436,
+      "exact_score_slug": "fifwc-tur-par-2026-06-19-exact-score",
+      "exact_score": {
+        "0-1": 0.08,
+        "0-2": 0.045,
+        "2-0": 0.09,
+        "1-2": 0.055,
+        "3-0": 0.067,
+        "2-2": 0.06,
+        "2-3": 0.025,
+        "3-3": 0.025,
+        "0-0": 0.1,
+        "1-0": 0.14,
+        "1-1": 0.14,
+        "0-3": 0.025,
+        "2-1": 0.105,
+        "1-3": 0.025,
+        "3-1": 0.05,
+        "3-2": 0.028,
+        "other": 0.08
+      },
+      "more_markets_slug": "fifwc-tur-par-2026-06-19-more-markets",
+      "totals": {
+        "over_0.5": 0.915,
+        "over_2.5": 0.455,
+        "over_4.5": 0.1,
+        "over_1.5": 0.715,
+        "over_3.5": 0.235,
+        "over_5.5": 0.0355
+      },
+      "team_totals": {
+        "home_over_2.5": 0.175,
+        "home_over_1.5": 0.435,
+        "home_over_0.5": 0.78,
+        "away_over_0.5": 0.62,
+        "away_over_1.5": 0.26,
+        "away_over_2.5": 0.07
+      },
+      "btts": 0.505,
+      "spread": {
+        "home_-1.5": 0.235,
+        "home_-2.5": 0.09,
+        "away_-1.5": 0.085,
+        "away_-2.5": 0.0215
+      },
+      "halftime_slug": "fifwc-tur-par-2026-06-19-halftime-result",
+      "halftime": {
+        "home": 0.355,
+        "away": 0.205,
+        "draw": 0.445
+      },
+      "second_half_slug": "fifwc-tur-par-2026-06-19-second-half-result",
+      "second_half": {
+        "away": 0.22,
+        "home": 0.38,
+        "draw": 0.405
+      },
+      "first_to_score_slug": "fifwc-tur-par-2026-06-19-first-to-score",
+      "first_to_score": {
+        "neither": 0.07,
+        "away": 0.32,
+        "home": 0.515
+      },
+      "corners_slug": "fifwc-tur-par-2026-06-19-total-corners",
+      "corners": {
+        "over_7.5": 0.64,
+        "over_8.5": 0.505,
+        "over_12.5": 0.135,
+        "over_11.5": 0.21,
+        "over_9.5": 0.395,
+        "over_10.5": 0.28,
+        "over_6.5": 0.75
+      }
+    },
+    "1539007": {
+      "moneyline": {
+        "home": 0.565,
+        "draw": 0.245,
+        "away": 0.195
+      },
+      "slug": "fifwc-nld-swe-2026-06-20",
+      "volume": 74745,
+      "liquidity": 986310,
+      "exact_score_slug": "fifwc-nld-swe-2026-06-20-exact-score",
+      "exact_score": {
+        "0-1": 0.06,
+        "0-2": 0.029,
+        "2-0": 0.1,
+        "1-2": 0.055,
+        "3-0": 0.065,
+        "2-2": 0.05,
+        "2-3": 0.035,
+        "3-3": 0.025,
+        "0-0": 0.07,
+        "1-0": 0.12,
+        "1-1": 0.12,
+        "0-3": 0.025,
+        "2-1": 0.1,
+        "1-3": 0.0225,
+        "3-1": 0.065,
+        "3-2": 0.0305,
+        "other": 0.11
+      },
+      "more_markets_slug": "fifwc-nld-swe-2026-06-20-more-markets",
+      "totals": {
+        "over_0.5": 0.935,
+        "over_2.5": 0.515,
+        "over_4.5": 0.135,
+        "over_1.5": 0.76,
+        "over_3.5": 0.285,
+        "over_5.5": 0.055
+      },
+      "team_totals": {
+        "away_over_0.5": 0.625,
+        "home_over_0.5": 0.845,
+        "away_over_1.5": 0.235,
+        "home_over_1.5": 0.53,
+        "home_over_2.5": 0.25,
+        "away_over_2.5": 0.0565
+      },
+      "btts": 0.515,
+      "spread": {
+        "home_-1.5": 0.315,
+        "home_-2.5": 0.14,
+        "away_-1.5": 0.059,
+        "away_-2.5": 0.013
+      },
+      "halftime_slug": "fifwc-nld-swe-2026-06-20-halftime-result",
+      "halftime": {
+        "home": 0.42,
+        "away": 0.175,
+        "draw": 0.41
+      },
+      "second_half_slug": "fifwc-nld-swe-2026-06-20-second-half-result",
+      "second_half": {
+        "away": 0.175,
+        "home": 0.46,
+        "draw": 0.37
+      },
+      "first_to_score_slug": "fifwc-nld-swe-2026-06-20-first-to-score",
+      "first_to_score": {
+        "away": 0.225,
+        "home": 0.495,
+        "neither": 0.045
+      }
+    },
+    "1489393": {
+      "moneyline": {
+        "home": 0.635,
+        "away": 0.165,
+        "draw": 0.205
+      },
+      "slug": "fifwc-ger-civ-2026-06-20",
+      "volume": 236653,
+      "liquidity": 1350751,
+      "exact_score_slug": "fifwc-ger-civ-2026-06-20-exact-score",
+      "exact_score": {
+        "0-1": 0.075,
+        "0-2": 0.045,
+        "2-0": 0.12,
+        "1-2": 0.0435,
+        "3-0": 0.115,
+        "2-2": 0.055,
+        "2-3": 0.03,
+        "3-3": 0.0255,
+        "0-0": 0.045,
+        "1-0": 0.1,
+        "1-1": 0.11,
+        "0-3": 0.0315,
+        "2-1": 0.1,
+        "1-3": 0.0305,
+        "3-1": 0.12,
+        "3-2": 0.0455,
+        "other": 0.215
+      },
+      "more_markets_slug": "fifwc-ger-civ-2026-06-20-more-markets",
+      "totals": {
+        "over_0.5": 0.9455,
+        "over_2.5": 0.585,
+        "over_4.5": 0.185,
+        "over_1.5": 0.805,
+        "over_3.5": 0.355,
+        "over_5.5": 0.085
+      },
+      "team_totals": {
+        "away_over_0.5": 0.625,
+        "away_over_2.5": 0.077,
+        "home_over_2.5": 0.325,
+        "away_over_1.5": 0.245,
+        "home_over_0.5": 0.905,
+        "home_over_1.5": 0.6
+      },
+      "btts": 0.555,
+      "spread": {
+        "home_-1.5": 0.385,
+        "home_-2.5": 0.19,
+        "away_-1.5": 0.0485,
+        "away_-2.5": 0.013
+      },
+      "halftime_slug": "fifwc-ger-civ-2026-06-20-halftime-result",
+      "halftime": {
+        "home": 0.455,
+        "away": 0.155,
+        "draw": 0.375
+      },
+      "second_half_slug": "fifwc-ger-civ-2026-06-20-second-half-result",
+      "second_half": {
+        "home": 0.51,
+        "away": 0.16,
+        "draw": 0.33
+      },
+      "first_to_score_slug": "fifwc-ger-civ-2026-06-20-first-to-score",
+      "first_to_score": {
+        "away": 0.26,
+        "neither": 0.055,
+        "home": 0.47
+      }
+    },
+    "1489392": {
+      "moneyline": {
+        "draw": 0.085,
+        "away": 0.0345,
+        "home": 0.885
+      },
+      "slug": "fifwc-ecu-kor-2026-06-20",
+      "volume": 422302,
+      "liquidity": 1562562,
+      "exact_score_slug": "fifwc-ecu-kor-2026-06-20-exact-score",
+      "exact_score": {
+        "0-0": 0.033,
+        "1-0": 0.1,
+        "1-1": 0.04,
+        "0-3": 0.03,
+        "2-1": 0.06,
+        "1-3": 0.0305,
+        "3-1": 0.06,
+        "3-2": 0.0175,
+        "other": 0.305,
+        "0-1": 0.0355,
+        "0-2": 0.024,
+        "2-0": 0.15,
+        "1-2": 0.0355,
+        "3-0": 0.15,
+        "2-2": 0.017,
+        "2-3": 0.03,
+        "3-3": 0.0305
+      },
+      "more_markets_slug": "fifwc-ecu-kor-2026-06-20-more-markets",
+      "totals": {
+        "over_0.5": 0.973,
+        "over_2.5": 0.665,
+        "over_4.5": 0.245,
+        "over_1.5": 0.855,
+        "over_3.5": 0.445,
+        "over_5.5": 0.125
+      },
+      "team_totals": {
+        "home_over_1.5": 0.81,
+        "home_over_0.5": 0.955,
+        "home_over_2.5": 0.565,
+        "away_over_0.5": 0.32,
+        "away_over_1.5": 0.06,
+        "away_over_2.5": 0.0455
+      },
+      "btts": 0.31,
+      "spread": {
+        "home_-1.5": 0.715,
+        "home_-2.5": 0.495,
+        "away_-1.5": 0.0065,
+        "away_-2.5": 0.003
+      },
+      "halftime_slug": "fifwc-ecu-kor-2026-06-20-halftime-result",
+      "halftime": {
+        "home": 0.685,
+        "draw": 0.265,
+        "away": 0.0445
+      },
+      "second_half_slug": "fifwc-ecu-kor-2026-06-20-second-half-result",
+      "second_half": {
+        "draw": 0.205,
+        "home": 0.755,
+        "away": 0.0395
+      },
+      "first_to_score_slug": "fifwc-ecu-kor-2026-06-20-first-to-score",
+      "first_to_score": {
+        "away": 0.11,
+        "home": 0.805,
+        "neither": 0.06
+      }
+    },
+    "1489394": {
+      "moneyline": {
+        "draw": 0.235,
+        "away": 0.645,
+        "home": 0.125
+      },
+      "slug": "fifwc-tun-jpn-2026-06-21",
+      "volume": 98104,
+      "liquidity": 1074128,
+      "exact_score_slug": "fifwc-tun-jpn-2026-06-21-exact-score",
+      "exact_score": {
+        "2-3": 0.047,
+        "3-3": 0.034,
+        "0-0": 0.1,
+        "1-0": 0.05,
+        "1-1": 0.11,
+        "0-3": 0.095,
+        "2-1": 0.037,
+        "1-3": 0.085,
+        "0-1": 0.155,
+        "0-2": 0.13,
+        "2-0": 0.02,
+        "1-2": 0.1,
+        "3-0": 0.034,
+        "2-2": 0.04,
+        "3-1": 0.0155,
+        "3-2": 0.035,
+        "other": 0.325
+      },
+      "more_markets_slug": "fifwc-tun-jpn-2026-06-21-more-markets",
+      "totals": {
+        "over_0.5": 0.925,
+        "over_2.5": 0.455,
+        "over_4.5": 0.105,
+        "over_1.5": 0.715,
+        "over_3.5": 0.24,
+        "over_5.5": 0.0375
+      },
+      "team_totals": {
+        "home_over_0.5": 0.5,
+        "home_over_2.5": 0.031,
+        "away_over_1.5": 0.55,
+        "away_over_2.5": 0.245,
+        "home_over_1.5": 0.145,
+        "away_over_0.5": 0.86
+      },
+      "btts": 0.44,
+      "spread": {
+        "home_-1.5": 0.034,
+        "home_-2.5": 0.005,
+        "away_-1.5": 0.355,
+        "away_-2.5": 0.155
+      },
+      "halftime_slug": "fifwc-tun-jpn-2026-06-21-halftime-result",
+      "halftime": {
+        "draw": 0.42,
+        "home": 0.13,
+        "away": 0.45
+      },
+      "second_half_slug": "fifwc-tun-jpn-2026-06-21-second-half-result",
+      "second_half": {
+        "draw": 0.365,
+        "home": 0.125,
+        "away": 0.51
+      },
+      "first_to_score_slug": "fifwc-tun-jpn-2026-06-21-first-to-score",
+      "first_to_score": {
+        "neither": 0.07,
+        "home": 0.165,
+        "away": 0.535
+      }
+    },
+    "1489397": {
+      "moneyline": {
+        "home": 0.875,
+        "draw": 0.085,
+        "away": 0.0395
+      },
+      "slug": "fifwc-esp-ksa-2026-06-21",
+      "volume": 245062,
+      "liquidity": 1264628,
+      "exact_score_slug": "fifwc-esp-ksa-2026-06-21-exact-score",
+      "exact_score": {
+        "0-1": 0.0375,
+        "0-2": 0.03,
+        "2-0": 0.145,
+        "1-2": 0.034,
+        "3-0": 0.155,
+        "2-2": 0.016,
+        "2-3": 0.0155,
+        "3-3": 0.03,
+        "0-0": 0.05,
+        "1-0": 0.105,
+        "1-1": 0.038,
+        "0-3": 0.03,
+        "2-1": 0.06,
+        "1-3": 0.03,
+        "3-1": 0.06,
+        "3-2": 0.037,
+        "other": 0.28
+      },
+      "more_markets_slug": "fifwc-esp-ksa-2026-06-21-more-markets",
+      "totals": {
+        "over_0.5": 0.9745,
+        "over_2.5": 0.655,
+        "over_4.5": 0.24,
+        "over_1.5": 0.845,
+        "over_3.5": 0.425,
+        "over_5.5": 0.12
+      },
+      "team_totals": {
+        "home_over_1.5": 0.81,
+        "away_over_0.5": 0.32,
+        "home_over_2.5": 0.57,
+        "away_over_2.5": 0.011,
+        "home_over_0.5": 0.9395,
+        "away_over_1.5": 0.055
+      },
+      "btts": 0.315,
+      "spread": {
+        "home_-1.5": 0.695,
+        "home_-2.5": 0.475,
+        "away_-1.5": 0.007,
+        "away_-2.5": 0.0015
+      },
+      "halftime_slug": "fifwc-esp-ksa-2026-06-21-halftime-result",
+      "halftime": {
+        "home": 0.685,
+        "away": 0.0555,
+        "draw": 0.275
+      },
+      "second_half_slug": "fifwc-esp-ksa-2026-06-21-second-half-result",
+      "second_half": {
+        "home": 0.755,
+        "away": 0.0405,
+        "draw": 0.2
+      },
+      "first_to_score_slug": "fifwc-esp-ksa-2026-06-21-first-to-score",
+      "first_to_score": {
+        "away": 0.26,
+        "neither": 0.06,
+        "home": 0.715
+      }
+    },
+    "1489395": {
+      "moneyline": {
+        "away": 0.115,
+        "home": 0.695,
+        "draw": 0.195
+      },
+      "slug": "fifwc-bel-irn-2026-06-21",
+      "volume": 103380,
+      "liquidity": 1090632,
+      "exact_score_slug": "fifwc-bel-irn-2026-06-21-exact-score",
+      "exact_score": {
+        "0-1": 0.039,
+        "0-2": 0.0385,
+        "2-0": 0.13,
+        "1-2": 0.045,
+        "3-0": 0.1,
+        "2-2": 0.045,
+        "2-3": 0.0325,
+        "3-3": 0.0305,
+        "0-0": 0.08,
+        "1-0": 0.145,
+        "1-1": 0.095,
+        "0-3": 0.0305,
+        "2-1": 0.095,
+        "1-3": 0.0325,
+        "3-1": 0.06,
+        "3-2": 0.0425,
+        "other": 0.165
+      },
+      "more_markets_slug": "fifwc-bel-irn-2026-06-21-more-markets",
+      "totals": {
+        "over_0.5": 0.945,
+        "over_2.5": 0.515,
+        "over_4.5": 0.14,
+        "over_1.5": 0.755,
+        "over_3.5": 0.285,
+        "over_5.5": 0.055
+      },
+      "team_totals": {
+        "home_over_0.5": 0.89,
+        "away_over_1.5": 0.15,
+        "home_over_2.5": 0.335,
+        "away_over_0.5": 0.48,
+        "home_over_1.5": 0.625,
+        "away_over_2.5": 0.0225
+      },
+      "btts": 0.44,
+      "spread": {
+        "home_-1.5": 0.425,
+        "home_-2.5": 0.215,
+        "away_-1.5": 0.0285,
+        "away_-2.5": 0.0055
+      },
+      "halftime_slug": "fifwc-bel-irn-2026-06-21-halftime-result",
+      "halftime": {
+        "home": 0.495,
+        "away": 0.115,
+        "draw": 0.385
+      },
+      "second_half_slug": "fifwc-bel-irn-2026-06-21-second-half-result",
+      "second_half": {
+        "away": 0.12,
+        "home": 0.565,
+        "draw": 0.33
+      },
+      "first_to_score_slug": "fifwc-bel-irn-2026-06-21-first-to-score",
+      "first_to_score": {
+        "home": 0.555,
+        "neither": 0.07,
+        "away": 0.15
+      }
+    },
+    "1489398": {
+      "moneyline": {
+        "draw": 0.225,
+        "home": 0.665,
+        "away": 0.115
+      },
+      "slug": "fifwc-ury-cvi-2026-06-21",
+      "volume": 69727,
+      "liquidity": 1115598,
+      "exact_score_slug": "fifwc-ury-cvi-2026-06-21-exact-score",
+      "exact_score": {
+        "0-1": 0.055,
+        "0-2": 0.034,
+        "2-0": 0.15,
+        "1-2": 0.055,
+        "3-0": 0.09,
+        "2-2": 0.055,
+        "2-3": 0.0345,
+        "3-3": 0.0325,
+        "0-0": 0.1,
+        "1-0": 0.185,
+        "1-1": 0.105,
+        "0-3": 0.0325,
+        "2-1": 0.105,
+        "1-3": 0.034,
+        "3-1": 0.07,
+        "3-2": 0.042,
+        "other": 0.13
+      },
+      "more_markets_slug": "fifwc-ury-cvi-2026-06-21-more-markets",
+      "totals": {
+        "over_0.5": 0.919,
+        "over_2.5": 0.405,
+        "over_4.5": 0.085,
+        "over_1.5": 0.665,
+        "over_3.5": 0.21,
+        "over_5.5": 0.049
+      },
+      "team_totals": {
+        "home_over_0.5": 0.845,
+        "away_over_2.5": 0.0865,
+        "away_over_0.5": 0.445,
+        "away_over_1.5": 0.11,
+        "home_over_1.5": 0.52,
+        "home_over_2.5": 0.235
+      },
+      "btts": 0.38,
+      "spread": {
+        "home_-1.5": 0.355,
+        "home_-2.5": 0.155,
+        "away_-1.5": 0.0275,
+        "away_-2.5": 0.015
+      },
+      "halftime_slug": "fifwc-ury-cvi-2026-06-21-halftime-result",
+      "halftime": {
+        "home": 0.46,
+        "away": 0.105,
+        "draw": 0.43
+      },
+      "second_half_slug": "fifwc-ury-cvi-2026-06-21-second-half-result",
+      "second_half": {
+        "away": 0.48,
+        "home": 0.48,
+        "draw": 0.48
+      },
+      "first_to_score_slug": "fifwc-ury-cvi-2026-06-21-first-to-score",
+      "first_to_score": {
+        "home": 0.65,
+        "away": 0.175,
+        "neither": 0.065
+      }
+    },
+    "1489396": {
+      "moneyline": {
+        "home": 0.165,
+        "draw": 0.235,
+        "away": 0.595
+      },
+      "slug": "fifwc-nzl-egy-2026-06-21",
+      "volume": 79301,
+      "liquidity": 1192367,
+      "exact_score_slug": "fifwc-nzl-egy-2026-06-21-exact-score",
+      "exact_score": {
+        "0-1": 0.16,
+        "0-2": 0.135,
+        "2-0": 0.025,
+        "1-2": 0.095,
+        "3-0": 0.0345,
+        "2-2": 0.0375,
+        "2-3": 0.04,
+        "3-3": 0.03,
+        "other": 0.1,
+        "0-0": 0.075,
+        "1-0": 0.06,
+        "1-1": 0.105,
+        "0-3": 0.08,
+        "2-1": 0.045,
+        "1-3": 0.0305,
+        "3-1": 0.035,
+        "3-2": 0.035
+      },
+      "more_markets_slug": "fifwc-nzl-egy-2026-06-21-more-markets",
+      "totals": {
+        "over_2.5": 0.435,
+        "over_4.5": 0.095,
+        "over_1.5": 0.695,
+        "over_5.5": 0.038,
+        "over_0.5": 0.91,
+        "over_3.5": 0.23
+      },
+      "team_totals": {
+        "home_over_0.5": 0.51,
+        "away_over_0.5": 0.825,
+        "away_over_1.5": 0.535,
+        "away_over_2.5": 0.235,
+        "home_over_2.5": 0.05,
+        "home_over_1.5": 0.18
+      },
+      "btts": 0.43,
+      "spread": {
+        "home_-2.5": 0.0085,
+        "home_-1.5": 0.045,
+        "away_-1.5": 0.315,
+        "away_-2.5": 0.135
+      },
+      "halftime_slug": "fifwc-nzl-egy-2026-06-21-halftime-result",
+      "halftime": {
+        "home": 0.14,
+        "away": 0.425,
+        "draw": 0.43
+      },
+      "second_half_slug": "fifwc-nzl-egy-2026-06-21-second-half-result",
+      "second_half": {
+        "away": 0.485,
+        "draw": 0.485,
+        "home": 0.49
+      },
+      "first_to_score_slug": "fifwc-nzl-egy-2026-06-21-first-to-score",
+      "first_to_score": {
+        "neither": 0.065,
+        "away": 0.585,
+        "home": 0.26
+      }
+    },
+    "1489399": {
+      "moneyline": {
+        "draw": 0.235,
+        "away": 0.155,
+        "home": 0.615
+      },
+      "slug": "fifwc-arg-aut-2026-06-22",
+      "volume": 69066,
+      "liquidity": 1221520,
+      "exact_score_slug": "fifwc-arg-aut-2026-06-22-exact-score",
+      "exact_score": {
+        "0-0": 0.085,
+        "1-0": 0.115,
+        "1-1": 0.095,
+        "0-3": 0.035,
+        "2-1": 0.1,
+        "1-3": 0.04,
+        "3-1": 0.065,
+        "3-2": 0.045,
+        "other": 0.295,
+        "0-1": 0.07,
+        "0-2": 0.05,
+        "2-0": 0.12,
+        "1-2": 0.065,
+        "3-0": 0.085,
+        "2-2": 0.0575,
+        "2-3": 0.04,
+        "3-3": 0.0345
+      },
+      "more_markets_slug": "fifwc-arg-aut-2026-06-22-more-markets",
+      "totals": {
+        "over_0.5": 0.93,
+        "over_4.5": 0.12,
+        "over_3.5": 0.265,
+        "over_2.5": 0.485,
+        "over_1.5": 0.735,
+        "over_5.5": 0.05
+      },
+      "team_totals": {
+        "home_over_0.5": 0.845,
+        "home_over_1.5": 0.53,
+        "away_over_0.5": 0.56,
+        "away_over_1.5": 0.2,
+        "home_over_2.5": 0.26,
+        "away_over_2.5": 0.075
+      },
+      "btts": 0.48,
+      "spread": {
+        "home_-1.5": 0.335,
+        "away_-1.5": 0.0445,
+        "home_-2.5": 0.15,
+        "away_-2.5": 0.012
+      },
+      "halftime_slug": "fifwc-arg-aut-2026-06-22-halftime-result",
+      "halftime": {
+        "home": 0.44,
+        "away": 0.135,
+        "draw": 0.4
+      },
+      "second_half_slug": "fifwc-arg-aut-2026-06-22-second-half-result",
+      "second_half": {
+        "draw": 0.485,
+        "away": 0.49,
+        "home": 0.485
+      },
+      "first_to_score_slug": "fifwc-arg-aut-2026-06-22-first-to-score",
+      "first_to_score": {
+        "neither": 0.065,
+        "home": 0.615,
+        "away": 0.255
+      }
+    },
+    "1539017": {
+      "moneyline": {
+        "draw": 0.095,
+        "away": 0.0345,
+        "home": 0.875
+      },
+      "slug": "fifwc-fra-irq-2026-06-22",
+      "volume": 187983,
+      "liquidity": 1297365,
+      "exact_score_slug": "fifwc-fra-irq-2026-06-22-exact-score",
+      "exact_score": {
+        "0-0": 0.053,
+        "1-0": 0.115,
+        "1-1": 0.065,
+        "0-3": 0.0295,
+        "2-1": 0.09,
+        "1-3": 0.0295,
+        "3-1": 0.08,
+        "3-2": 0.035,
+        "other": 0.27,
+        "0-1": 0.036,
+        "0-2": 0.0295,
+        "2-0": 0.165,
+        "1-2": 0.031,
+        "3-0": 0.155,
+        "2-2": 0.0305,
+        "2-3": 0.0295,
+        "3-3": 0.0295
+      },
+      "more_markets_slug": "fifwc-fra-irq-2026-06-22-more-markets",
+      "totals": {
+        "over_2.5": 0.665,
+        "over_5.5": 0.11,
+        "over_0.5": 0.9735,
+        "over_4.5": 0.255,
+        "over_1.5": 0.855,
+        "over_3.5": 0.445
+      },
+      "team_totals": {
+        "away_over_2.5": 0.0145,
+        "home_over_0.5": 0.96,
+        "away_over_0.5": 0.33,
+        "away_over_1.5": 0.065,
+        "home_over_1.5": 0.81,
+        "home_over_2.5": 0.57
+      },
+      "btts": 0.305,
+      "spread": {
+        "away_-2.5": 0.0015,
+        "home_-1.5": 0.705,
+        "away_-1.5": 0.0055,
+        "home_-2.5": 0.5
+      },
+      "halftime_slug": "fifwc-fra-irq-2026-06-22-halftime-result",
+      "halftime": {
+        "home": 0.695,
+        "away": 0.05,
+        "draw": 0.25
+      },
+      "second_half_slug": "fifwc-fra-irq-2026-06-22-second-half-result",
+      "second_half": {
+        "away": 0.485,
+        "draw": 0.485,
+        "home": 0.485
+      },
+      "first_to_score_slug": "fifwc-fra-irq-2026-06-22-first-to-score",
+      "first_to_score": {
+        "home": 0.85,
+        "neither": 0.0505,
+        "away": 0.105
+      }
+    },
+    "1489401": {
+      "moneyline": {
+        "away": 0.315,
+        "home": 0.415,
+        "draw": 0.285
+      },
+      "slug": "fifwc-nor-sen-2026-06-22",
+      "volume": 80336,
+      "liquidity": 1352785,
+      "exact_score_slug": "fifwc-nor-sen-2026-06-22-exact-score",
+      "exact_score": {
+        "0-1": 0.09,
+        "0-2": 0.05,
+        "2-0": 0.085,
+        "1-2": 0.085,
+        "3-0": 0.045,
+        "2-2": 0.07,
+        "2-3": 0.0195,
+        "3-3": 0.0155,
+        "0-0": 0.07,
+        "1-0": 0.105,
+        "1-1": 0.14,
+        "0-3": 0.019,
+        "2-1": 0.095,
+        "1-3": 0.0265,
+        "3-1": 0.065,
+        "3-2": 0.026,
+        "other": 0.1
+      },
+      "more_markets_slug": "fifwc-nor-sen-2026-06-22-more-markets",
+      "totals": {
+        "over_1.5": 0.735,
+        "over_2.5": 0.475,
+        "over_0.5": 0.925,
+        "over_3.5": 0.26,
+        "over_4.5": 0.12,
+        "over_5.5": 0.05
+      },
+      "team_totals": {
+        "away_over_1.5": 0.36,
+        "away_over_2.5": 0.115,
+        "home_over_1.5": 0.415,
+        "away_over_0.5": 0.71,
+        "home_over_0.5": 0.77,
+        "home_over_2.5": 0.15
+      },
+      "btts": 0.54,
+      "spread": {
+        "away_-1.5": 0.12,
+        "home_-1.5": 0.185,
+        "home_-2.5": 0.065,
+        "away_-2.5": 0.0365
+      },
+      "halftime_slug": "fifwc-nor-sen-2026-06-22-halftime-result",
+      "halftime": {
+        "home": 0.315,
+        "away": 0.255,
+        "draw": 0.41
+      },
+      "second_half_slug": "fifwc-nor-sen-2026-06-22-second-half-result",
+      "second_half": {
+        "home": 0.485,
+        "away": 0.485,
+        "draw": 0.485
+      },
+      "first_to_score_slug": "fifwc-nor-sen-2026-06-22-first-to-score",
+      "first_to_score": {
+        "away": 0.42,
+        "neither": 0.08,
+        "home": 0.49
+      }
+    },
+    "1489400": {
+      "moneyline": {
+        "draw": 0.215,
+        "home": 0.13,
+        "away": 0.645
+      },
+      "slug": "fifwc-jor-alg-2026-06-22",
+      "volume": 78480,
+      "liquidity": 1129865,
+      "exact_score_slug": "fifwc-jor-alg-2026-06-22-exact-score",
+      "exact_score": {
+        "0-0": 0.065,
+        "0-1": 0.135,
+        "1-0": 0.065,
+        "0-2": 0.13,
+        "1-1": 0.095,
+        "2-0": 0.021,
+        "0-3": 0.08,
+        "1-2": 0.1,
+        "2-1": 0.06,
+        "3-0": 0.0115,
+        "1-3": 0.06,
+        "2-2": 0.0445,
+        "3-1": 0.033,
+        "2-3": 0.0455,
+        "3-2": 0.0115,
+        "3-3": 0.0115,
+        "other": 0.125
+      },
+      "more_markets_slug": "fifwc-jor-alg-2026-06-22-more-markets",
+      "totals": {
+        "over_3.5": 0.27,
+        "over_4.5": 0.12,
+        "over_0.5": 0.93,
+        "over_1.5": 0.745,
+        "over_2.5": 0.495,
+        "over_5.5": 0.049
+      },
+      "team_totals": {
+        "away_over_1.5": 0.56,
+        "home_over_1.5": 0.18,
+        "home_over_2.5": 0.052,
+        "away_over_0.5": 0.865,
+        "away_over_2.5": 0.28,
+        "home_over_0.5": 0.535
+      },
+      "btts": 0.45,
+      "spread": {
+        "away_-2.5": 0.19,
+        "home_-2.5": 0.0125,
+        "home_-1.5": 0.0325,
+        "away_-1.5": 0.385
+      },
+      "halftime_slug": "fifwc-jor-alg-2026-06-22-halftime-result",
+      "halftime": {
+        "home": 0.135,
+        "draw": 0.4,
+        "away": 0.44
+      },
+      "second_half_slug": "fifwc-jor-alg-2026-06-22-second-half-result",
+      "second_half": {
+        "away": 0.48,
+        "draw": 0.49,
+        "home": 0.485
+      },
+      "first_to_score_slug": "fifwc-jor-alg-2026-06-22-first-to-score",
+      "first_to_score": {
+        "neither": 0.08,
+        "away": 0.655,
+        "home": 0.23
+      }
+    },
+    "1489404": {
+      "moneyline": {
+        "home": 0.795,
+        "draw": 0.135,
+        "away": 0.075
+      },
+      "slug": "fifwc-prt-uzb-2026-06-23",
+      "volume": 53788,
+      "liquidity": 939144,
+      "exact_score_slug": "fifwc-prt-uzb-2026-06-23-exact-score",
+      "exact_score": {
+        "0-0": 0.05,
+        "0-1": 0.027,
+        "1-0": 0.105,
+        "0-2": 0.0345,
+        "1-1": 0.07,
+        "2-0": 0.135,
+        "0-3": 0.035,
+        "1-2": 0.025,
+        "2-1": 0.095,
+        "3-0": 0.11,
+        "1-3": 0.035,
+        "2-2": 0.0295,
+        "3-1": 0.085,
+        "2-3": 0.035,
+        "3-2": 0.047,
+        "3-3": 0.0345,
+        "other": 0.2
+      },
+      "more_markets_slug": "fifwc-prt-uzb-2026-06-23-more-markets",
+      "totals": {
+        "over_1.5": 0.82,
+        "over_5.5": 0.075,
+        "over_0.5": 0.953,
+        "over_2.5": 0.61,
+        "over_3.5": 0.37,
+        "over_4.5": 0.195
+      },
+      "team_totals": {
+        "home_over_0.5": 0.93,
+        "home_over_1.5": 0.715,
+        "away_over_0.5": 0.465,
+        "away_over_1.5": 0.14,
+        "home_over_2.5": 0.46,
+        "away_over_2.5": 0.047
+      },
+      "btts": 0.42,
+      "spread": {
+        "home_-1.5": 0.555,
+        "away_-1.5": 0.0205,
+        "home_-2.5": 0.335,
+        "away_-2.5": 0.015
+      },
+      "halftime_slug": "fifwc-prt-uzb-2026-06-23-halftime-result",
+      "halftime": {
+        "home": 0.585,
+        "draw": 0.305,
+        "away": 0.065
+      },
+      "second_half_slug": "fifwc-prt-uzb-2026-06-23-second-half-result",
+      "second_half": {
+        "away": 0.485,
+        "home": 0.48,
+        "draw": 0.485
+      },
+      "first_to_score_slug": "fifwc-prt-uzb-2026-06-23-first-to-score",
+      "first_to_score": {
+        "away": 0.16,
+        "neither": 0.045,
+        "home": 0.75
+      }
+    },
+    "1489402": {
+      "moneyline": {
+        "draw": 0.165,
+        "away": 0.095,
+        "home": 0.745
+      },
+      "slug": "fifwc-eng-gha-2026-06-23",
+      "volume": 89527,
+      "liquidity": 1098353,
+      "exact_score_slug": "fifwc-eng-gha-2026-06-23-exact-score",
+      "exact_score": {
+        "0-0": 0.055,
+        "0-1": 0.051,
+        "1-0": 0.13,
+        "0-2": 0.0165,
+        "1-1": 0.085,
+        "2-0": 0.14,
+        "0-3": 0.035,
+        "1-2": 0.0275,
+        "2-1": 0.095,
+        "3-0": 0.11,
+        "1-3": 0.035,
+        "2-2": 0.029,
+        "3-1": 0.08,
+        "2-3": 0.035,
+        "3-2": 0.045,
+        "3-3": 0.0345,
+        "other": 0.155
+      },
+      "more_markets_slug": "fifwc-eng-gha-2026-06-23-more-markets",
+      "totals": {
+        "over_1.5": 0.785,
+        "over_5.5": 0.065,
+        "over_0.5": 0.9455,
+        "over_2.5": 0.565,
+        "over_4.5": 0.16,
+        "over_3.5": 0.32
+      },
+      "team_totals": {
+        "away_over_0.5": 0.445,
+        "away_over_2.5": 0.047,
+        "home_over_0.5": 0.9,
+        "home_over_1.5": 0.665,
+        "home_over_2.5": 0.395,
+        "away_over_1.5": 0.14
+      },
+      "btts": 0.42,
+      "spread": {
+        "away_-2.5": 0.0025,
+        "home_-1.5": 0.495,
+        "home_-2.5": 0.275,
+        "away_-1.5": 0.023
+      },
+      "halftime_slug": "fifwc-eng-gha-2026-06-23-halftime-result",
+      "halftime": {
+        "home": 0.53,
+        "draw": 0.35,
+        "away": 0.085
+      },
+      "second_half_slug": "fifwc-eng-gha-2026-06-23-second-half-result",
+      "second_half": {
+        "draw": 0.49,
+        "away": 0.48,
+        "home": 0.49
+      },
+      "first_to_score_slug": "fifwc-eng-gha-2026-06-23-first-to-score",
+      "first_to_score": {
+        "home": 0.745,
+        "away": 0.2,
+        "neither": 0.075
+      }
+    },
+    "1489403": {
+      "moneyline": {
+        "away": 0.625,
+        "home": 0.145,
+        "draw": 0.235
+      },
+      "slug": "fifwc-pan-hrv-2026-06-23",
+      "volume": 31638,
+      "liquidity": 1035682,
+      "exact_score_slug": "fifwc-pan-hrv-2026-06-23-exact-score",
+      "exact_score": {
+        "0-0": 0.1,
+        "0-1": 0.155,
+        "1-0": 0.08,
+        "0-2": 0.145,
+        "1-1": 0.12,
+        "2-0": 0.0435,
+        "0-3": 0.095,
+        "1-2": 0.105,
+        "2-1": 0.055,
+        "3-0": 0.035,
+        "1-3": 0.085,
+        "2-2": 0.0555,
+        "3-1": 0.035,
+        "2-3": 0.0465,
+        "3-2": 0.055,
+        "3-3": 0.035,
+        "other": 0.125
+      },
+      "more_markets_slug": "fifwc-pan-hrv-2026-06-23-more-markets",
+      "totals": {
+        "over_1.5": 0.725,
+        "over_3.5": 0.235,
+        "over_0.5": 0.915,
+        "over_2.5": 0.45,
+        "over_4.5": 0.09,
+        "over_5.5": 0.036
+      },
+      "team_totals": {
+        "home_over_0.5": 0.525,
+        "away_over_2.5": 0.265,
+        "away_over_0.5": 0.85,
+        "away_over_1.5": 0.545,
+        "home_over_1.5": 0.19,
+        "home_over_2.5": 0.0495
+      },
+      "btts": 0.465,
+      "spread": {
+        "home_-1.5": 0.0355,
+        "away_-1.5": 0.345,
+        "home_-2.5": 0.01,
+        "away_-2.5": 0.155
+      },
+      "halftime_slug": "fifwc-pan-hrv-2026-06-23-halftime-result",
+      "halftime": {
+        "home": 0.115,
+        "draw": 0.39,
+        "away": 0.45
+      },
+      "second_half_slug": "fifwc-pan-hrv-2026-06-23-second-half-result",
+      "second_half": {
+        "draw": 0.48,
+        "home": 0.48,
+        "away": 0.48
+      },
+      "first_to_score_slug": "fifwc-pan-hrv-2026-06-23-first-to-score",
+      "first_to_score": {
+        "home": 0.245,
+        "away": 0.665,
+        "neither": 0.08
+      }
+    },
+    "1539008": {
+      "moneyline": {
+        "draw": 0.225,
+        "home": 0.655,
+        "away": 0.125
+      },
+      "slug": "fifwc-col-cdr-2026-06-23",
+      "volume": 26232,
+      "liquidity": 1012326,
+      "exact_score_slug": "fifwc-col-cdr-2026-06-23-exact-score",
+      "exact_score": {
+        "0-0": 0.1,
+        "0-1": 0.05,
+        "1-0": 0.175,
+        "0-2": 0.02,
+        "1-1": 0.095,
+        "2-0": 0.165,
+        "0-3": 0.03,
+        "1-2": 0.0505,
+        "2-1": 0.115,
+        "3-0": 0.1,
+        "1-3": 0.035,
+        "2-2": 0.0305,
+        "3-1": 0.065,
+        "2-3": 0.035,
+        "3-2": 0.04,
+        "3-3": 0.03,
+        "other": 0.265
+      },
+      "more_markets_slug": "fifwc-col-cdr-2026-06-23-more-markets",
+      "totals": {
+        "over_3.5": 0.23,
+        "over_5.5": 0.039,
+        "over_0.5": 0.92,
+        "over_2.5": 0.435,
+        "over_4.5": 0.075,
+        "over_1.5": 0.705
+      },
+      "team_totals": {
+        "home_over_0.5": 0.79,
+        "home_over_2.5": 0.265,
+        "away_over_0.5": 0.47,
+        "away_over_1.5": 0.14,
+        "home_over_1.5": 0.495,
+        "away_over_2.5": 0.0415
+      },
+      "btts": 0.405,
+      "spread": {
+        "home_-1.5": 0.375,
+        "home_-2.5": 0.17,
+        "away_-2.5": 0.0095,
+        "away_-1.5": 0.0265
+      },
+      "halftime_slug": "fifwc-col-cdr-2026-06-23-halftime-result",
+      "halftime": {
+        "draw": 0.415,
+        "home": 0.455,
+        "away": 0.12
+      },
+      "second_half_slug": "fifwc-col-cdr-2026-06-23-second-half-result",
+      "second_half": {
+        "away": 0.48,
+        "home": 0.48,
+        "draw": 0.495
+      },
+      "first_to_score_slug": "fifwc-col-cdr-2026-06-23-first-to-score",
+      "first_to_score": {
+        "home": 0.6,
+        "away": 0.38,
+        "neither": 0.31
+      }
+    },
+    "1489408": {
+      "moneyline": {
+        "home": 0.455,
+        "draw": 0.285,
+        "away": 0.275
+      },
+      "slug": "fifwc-che-can-2026-06-24",
+      "volume": 27624,
+      "liquidity": 883988,
+      "exact_score_slug": "fifwc-che-can-2026-06-24-exact-score",
+      "exact_score": {
+        "0-0": 0.105,
+        "0-1": 0.095,
+        "1-0": 0.11,
+        "0-2": 0.07,
+        "1-1": 0.15,
+        "2-0": 0.12,
+        "0-3": 0.04,
+        "1-2": 0.075,
+        "2-1": 0.085,
+        "3-0": 0.055,
+        "1-3": 0.045,
+        "2-2": 0.05,
+        "3-1": 0.066,
+        "2-3": 0.04,
+        "3-2": 0.045,
+        "3-3": 0.035,
+        "other": 0.095
+      },
+      "more_markets_slug": "fifwc-che-can-2026-06-24-more-markets",
+      "totals": {
+        "over_1.5": 0.715,
+        "over_3.5": 0.24,
+        "over_5.5": 0.033,
+        "over_0.5": 0.925,
+        "over_2.5": 0.45,
+        "over_4.5": 0.115
+      },
+      "team_totals": {
+        "home_over_1.5": 0.395,
+        "home_over_2.5": 0.16,
+        "away_over_2.5": 0.105,
+        "away_over_1.5": 0.27,
+        "home_over_0.5": 0.765,
+        "away_over_0.5": 0.65
+      },
+      "btts": 0.515,
+      "spread": {
+        "home_-1.5": 0.22,
+        "home_-2.5": 0.08,
+        "away_-2.5": 0.0315,
+        "away_-1.5": 0.1
+      },
+      "halftime_slug": "fifwc-che-can-2026-06-24-halftime-result",
+      "halftime": {
+        "home": 0.335,
+        "draw": 0.445,
+        "away": 0.22
+      },
+      "second_half_slug": "fifwc-che-can-2026-06-24-second-half-result",
+      "second_half": {
+        "home": 0.485,
+        "draw": 0.485,
+        "away": 0.485
+      },
+      "first_to_score_slug": "fifwc-che-can-2026-06-24-first-to-score",
+      "first_to_score": {
+        "neither": 0.155,
+        "home": 0.54,
+        "away": 0.445
+      }
+    },
+    "1539009": {
+      "moneyline": {
+        "away": 0.155,
+        "home": 0.625,
+        "draw": 0.225
+      },
+      "slug": "fifwc-bih-qat-2026-06-24",
+      "volume": 40229,
+      "liquidity": 899966,
+      "exact_score_slug": "fifwc-bih-qat-2026-06-24-exact-score",
+      "exact_score": {
+        "0-0": 0.09,
+        "0-1": 0.075,
+        "1-0": 0.13,
+        "0-2": 0.027,
+        "1-1": 0.095,
+        "2-0": 0.13,
+        "0-3": 0.035,
+        "1-2": 0.095,
+        "2-1": 0.115,
+        "3-0": 0.09,
+        "1-3": 0.035,
+        "2-2": 0.055,
+        "3-1": 0.085,
+        "2-3": 0.035,
+        "3-2": 0.045,
+        "3-3": 0.03,
+        "other": 0.115
+      },
+      "more_markets_slug": "fifwc-bih-qat-2026-06-24-more-markets",
+      "totals": {
+        "over_1.5": 0.73,
+        "over_2.5": 0.475,
+        "over_3.5": 0.25,
+        "over_5.5": 0.061,
+        "over_0.5": 0.925,
+        "over_4.5": 0.105
+      },
+      "team_totals": {
+        "home_over_1.5": 0.545,
+        "away_over_0.5": 0.555,
+        "home_over_0.5": 0.86,
+        "away_over_1.5": 0.205,
+        "away_over_2.5": 0.055,
+        "home_over_2.5": 0.27
+      },
+      "btts": 0.46,
+      "spread": {
+        "home_-1.5": 0.345,
+        "home_-2.5": 0.155,
+        "away_-1.5": 0.039,
+        "away_-2.5": 0.005
+      },
+      "halftime_slug": "fifwc-bih-qat-2026-06-24-halftime-result",
+      "halftime": {
+        "home": 0.44,
+        "draw": 0.4,
+        "away": 0.12
+      },
+      "second_half_slug": "fifwc-bih-qat-2026-06-24-second-half-result",
+      "second_half": {
+        "draw": 0.485,
+        "home": 0.485,
+        "away": 0.485
+      },
+      "first_to_score_slug": "fifwc-bih-qat-2026-06-24-first-to-score",
+      "first_to_score": {
+        "home": 0.635,
+        "away": 0.25,
+        "neither": 0.075
+      }
+    },
+    "1489405": {
+      "moneyline": {
+        "home": 0.755,
+        "draw": 0.165,
+        "away": 0.085
+      },
+      "slug": "fifwc-mar-hai-2026-06-24",
+      "volume": 60750,
+      "liquidity": 1172449,
+      "exact_score_slug": "fifwc-mar-hai-2026-06-24-exact-score",
+      "exact_score": {
+        "0-0": 0.075,
+        "0-1": 0.03,
+        "1-0": 0.11,
+        "0-2": 0.014,
+        "1-1": 0.06,
+        "2-0": 0.17,
+        "0-3": 0.03,
+        "1-2": 0.0445,
+        "2-1": 0.095,
+        "3-0": 0.1,
+        "1-3": 0.0155,
+        "2-2": 0.045,
+        "3-1": 0.105,
+        "2-3": 0.0115,
+        "3-2": 0.0475,
+        "3-3": 0.0325,
+        "other": 0.14
+      },
+      "more_markets_slug": "fifwc-mar-hai-2026-06-24-more-markets",
+      "totals": {
+        "over_3.5": 0.355,
+        "over_1.5": 0.805,
+        "over_5.5": 0.1,
+        "over_4.5": 0.2,
+        "over_0.5": 0.9505,
+        "over_2.5": 0.58
+      },
+      "team_totals": {
+        "home_over_0.5": 0.91,
+        "home_over_2.5": 0.395,
+        "away_over_1.5": 0.145,
+        "away_over_2.5": 0.0735,
+        "away_over_0.5": 0.445,
+        "home_over_1.5": 0.715
+      },
+      "btts": 0.43,
+      "spread": {
+        "away_-2.5": 0.005,
+        "away_-1.5": 0.027,
+        "home_-1.5": 0.53,
+        "home_-2.5": 0.315
+      },
+      "halftime_slug": "fifwc-mar-hai-2026-06-24-halftime-result",
+      "halftime": {
+        "home": 0.59,
+        "draw": 0.33,
+        "away": 0.095
+      },
+      "second_half_slug": "fifwc-mar-hai-2026-06-24-second-half-result",
+      "second_half": {
+        "draw": 0.485,
+        "away": 0.485,
+        "home": 0.485
+      },
+      "first_to_score_slug": "fifwc-mar-hai-2026-06-24-first-to-score",
+      "first_to_score": {
+        "home": 0.79,
+        "away": 0.205,
+        "neither": 0.075
+      }
+    },
+    "1489406": {
+      "moneyline": {
+        "draw": 0.175,
+        "away": 0.695,
+        "home": 0.135
+      },
+      "slug": "fifwc-sco-bra-2026-06-24",
+      "volume": 91911,
+      "liquidity": 1003403,
+      "exact_score_slug": "fifwc-sco-bra-2026-06-24-exact-score",
+      "exact_score": {
+        "0-0": 0.092,
+        "0-1": 0.12,
+        "1-0": 0.085,
+        "0-2": 0.125,
+        "1-1": 0.095,
+        "2-0": 0.019,
+        "0-3": 0.065,
+        "1-2": 0.1,
+        "2-1": 0.04,
+        "3-0": 0.0325,
+        "1-3": 0.055,
+        "2-2": 0.0365,
+        "3-1": 0.0115,
+        "3-2": 0.0355,
+        "other": 0.28,
+        "2-3": 0.038,
+        "3-3": 0.0325
+      },
+      "more_markets_slug": "fifwc-sco-bra-2026-06-24-more-markets",
+      "totals": {
+        "over_1.5": 0.775,
+        "over_5.5": 0.055,
+        "over_3.5": 0.29,
+        "over_0.5": 0.945,
+        "over_2.5": 0.53,
+        "over_4.5": 0.13
+      },
+      "team_totals": {
+        "home_over_1.5": 0.17,
+        "away_over_1.5": 0.59,
+        "home_over_2.5": 0.0785,
+        "away_over_0.5": 0.885,
+        "away_over_2.5": 0.33,
+        "home_over_0.5": 0.5
+      },
+      "btts": 0.45,
+      "spread": {
+        "away_-1.5": 0.435,
+        "away_-2.5": 0.215,
+        "home_-1.5": 0.049,
+        "home_-2.5": 0.0025
+      },
+      "halftime_slug": "fifwc-sco-bra-2026-06-24-halftime-result",
+      "halftime": {
+        "home": 0.1,
+        "draw": 0.375,
+        "away": 0.51
+      },
+      "second_half_slug": "fifwc-sco-bra-2026-06-24-second-half-result",
+      "second_half": {
+        "home": 0.485,
+        "away": 0.48,
+        "draw": 0.485
+      },
+      "first_to_score_slug": "fifwc-sco-bra-2026-06-24-first-to-score",
+      "first_to_score": {
+        "home": 0.205,
+        "away": 0.665,
+        "neither": 0.08
+      }
+    },
+    "1539010": {
+      "moneyline": {
+        "home": 0.205,
+        "draw": 0.265,
+        "away": 0.545
+      },
+      "slug": "fifwc-cze-mex-2026-06-24",
+      "volume": 37601,
+      "liquidity": 1098958,
+      "exact_score_slug": "fifwc-cze-mex-2026-06-24-exact-score",
+      "exact_score": {
+        "0-0": 0.09,
+        "1-0": 0.08,
+        "1-1": 0.105,
+        "0-3": 0.07,
+        "2-1": 0.07,
+        "1-3": 0.055,
+        "3-1": 0.035,
+        "3-2": 0.035,
+        "0-1": 0.125,
+        "0-2": 0.115,
+        "2-0": 0.05,
+        "1-2": 0.105,
+        "3-0": 0.035,
+        "2-2": 0.065,
+        "2-3": 0.0425,
+        "3-3": 0.03,
+        "other": 0.1
+      },
+      "more_markets_slug": "fifwc-cze-mex-2026-06-24-more-markets",
+      "totals": {
+        "over_2.5": 0.44,
+        "over_5.5": 0.0355,
+        "over_1.5": 0.71,
+        "over_3.5": 0.22,
+        "over_0.5": 0.905,
+        "over_4.5": 0.085
+      },
+      "team_totals": {
+        "home_over_1.5": 0.23,
+        "away_over_0.5": 0.805,
+        "home_over_0.5": 0.605,
+        "away_over_1.5": 0.475,
+        "home_over_2.5": 0.075,
+        "away_over_2.5": 0.21
+      },
+      "btts": 0.505,
+      "spread": {
+        "home_-1.5": 0.065,
+        "home_-2.5": 0.0125,
+        "away_-2.5": 0.1,
+        "away_-1.5": 0.285
+      },
+      "halftime_slug": "fifwc-cze-mex-2026-06-24-halftime-result",
+      "halftime": {
+        "home": 0.18,
+        "away": 0.365,
+        "draw": 0.435
+      },
+      "second_half_slug": "fifwc-cze-mex-2026-06-24-second-half-result",
+      "second_half": {
+        "draw": 0.485,
+        "home": 0.485,
+        "away": 0.485
+      },
+      "first_to_score_slug": "fifwc-cze-mex-2026-06-24-first-to-score",
+      "first_to_score": {
+        "home": 0.385,
+        "away": 0.595,
+        "neither": 0.145
+      }
+    },
+    "1489407": {
+      "moneyline": {
+        "home": 0.165,
+        "draw": 0.225,
+        "away": 0.615
+      },
+      "slug": "fifwc-rsa-kr-2026-06-24",
+      "volume": 58639,
+      "liquidity": 968076,
+      "exact_score_slug": "fifwc-rsa-kr-2026-06-24-exact-score",
+      "exact_score": {
+        "0-1": 0.155,
+        "0-2": 0.135,
+        "2-0": 0.044,
+        "0-0": 0.105,
+        "1-0": 0.135,
+        "1-1": 0.115,
+        "0-3": 0.105,
+        "1-2": 0.11,
+        "2-1": 0.055,
+        "3-0": 0.05,
+        "1-3": 0.095,
+        "2-2": 0.065,
+        "3-1": 0.0485,
+        "2-3": 0.08,
+        "3-2": 0.05,
+        "3-3": 0.0345,
+        "other": 0.12
+      },
+      "more_markets_slug": "fifwc-rsa-kr-2026-06-24-more-markets",
+      "totals": {
+        "over_4.5": 0.12,
+        "over_0.5": 0.93,
+        "over_2.5": 0.475,
+        "over_1.5": 0.73,
+        "over_3.5": 0.26,
+        "over_5.5": 0.065
+      },
+      "team_totals": {
+        "home_over_1.5": 0.165,
+        "away_over_2.5": 0.26,
+        "away_over_0.5": 0.85,
+        "away_over_1.5": 0.535,
+        "home_over_0.5": 0.555,
+        "home_over_2.5": 0.063
+      },
+      "btts": 0.465,
+      "spread": {
+        "home_-2.5": 0.0075,
+        "home_-1.5": 0.058,
+        "away_-2.5": 0.15,
+        "away_-1.5": 0.345
+      },
+      "halftime_slug": "fifwc-rsa-kr-2026-06-24-halftime-result",
+      "halftime": {
+        "away": 0.41,
+        "home": 0.145,
+        "draw": 0.43
+      },
+      "second_half_slug": "fifwc-rsa-kr-2026-06-24-second-half-result",
+      "second_half": {
+        "draw": 0.485,
+        "away": 0.485,
+        "home": 0.485
+      },
+      "first_to_score_slug": "fifwc-rsa-kr-2026-06-24-first-to-score",
+      "first_to_score": {
+        "home": 0.26,
+        "away": 0.68,
+        "neither": 0.07
+      }
+    },
+    "1489410": {
+      "moneyline": {
+        "draw": 0.245,
+        "away": 0.57,
+        "home": 0.195
+      },
+      "slug": "fifwc-ecu-ger-2026-06-25",
+      "volume": 80896,
+      "liquidity": 1007535,
+      "exact_score_slug": "fifwc-ecu-ger-2026-06-25-exact-score",
+      "exact_score": {
+        "0-0": 0.065,
+        "0-1": 0.13,
+        "1-0": 0.06,
+        "0-2": 0.1,
+        "1-1": 0.105,
+        "2-0": 0.081,
+        "0-3": 0.0615,
+        "1-2": 0.11,
+        "2-1": 0.055,
+        "3-0": 0.0345,
+        "1-3": 0.06,
+        "2-2": 0.05,
+        "3-1": 0.0395,
+        "2-3": 0.048,
+        "3-2": 0.0345,
+        "3-3": 0.0145,
+        "other": 0.11
+      },
+      "more_markets_slug": "fifwc-ecu-ger-2026-06-25-more-markets",
+      "totals": {
+        "over_1.5": 0.755,
+        "over_5.5": 0.05,
+        "over_2.5": 0.5,
+        "over_4.5": 0.12,
+        "over_0.5": 0.935,
+        "over_3.5": 0.28
+      },
+      "team_totals": {
+        "away_over_0.5": 0.835,
+        "away_over_1.5": 0.525,
+        "home_over_0.5": 0.605,
+        "home_over_1.5": 0.225,
+        "away_over_2.5": 0.22,
+        "home_over_2.5": 0.255
+      },
+      "btts": 0.51,
+      "spread": {
+        "away_-2.5": 0.135,
+        "home_-2.5": 0.012,
+        "home_-1.5": 0.065,
+        "away_-1.5": 0.315
+      },
+      "halftime_slug": "fifwc-ecu-ger-2026-06-25-halftime-result",
+      "halftime": {
+        "home": 0.15,
+        "away": 0.415,
+        "draw": 0.38
+      },
+      "second_half_slug": "fifwc-ecu-ger-2026-06-25-second-half-result",
+      "second_half": {
+        "home": 0.485,
+        "away": 0.485,
+        "draw": 0.485
+      },
+      "first_to_score_slug": "fifwc-ecu-ger-2026-06-25-first-to-score",
+      "first_to_score": {
+        "home": 0.315,
+        "away": 0.605,
+        "neither": 0.075
+      }
+    },
+    "1489409": {
+      "moneyline": {
+        "home": 0.055,
+        "away": 0.845,
+        "draw": 0.105
+      },
+      "slug": "fifwc-kor-civ-2026-06-25",
+      "volume": 112202,
+      "liquidity": 880247,
+      "exact_score_slug": "fifwc-kor-civ-2026-06-25-exact-score",
+      "exact_score": {
+        "0-1": 0.12,
+        "0-2": 0.15,
+        "2-0": 0.135,
+        "1-2": 0.13,
+        "3-0": 0.045,
+        "2-2": 0.055,
+        "2-3": 0.075,
+        "3-3": 0.0345,
+        "0-0": 0.085,
+        "1-0": 0.035,
+        "1-1": 0.1,
+        "0-3": 0.14,
+        "2-1": 0.075,
+        "1-3": 0.09,
+        "3-1": 0.035,
+        "3-2": 0.05,
+        "other": 0.235
+      },
+      "more_markets_slug": "fifwc-kor-civ-2026-06-25-more-markets",
+      "totals": {
+        "over_1.5": 0.87,
+        "over_3.5": 0.43,
+        "over_5.5": 0.13,
+        "over_2.5": 0.66,
+        "over_0.5": 0.955,
+        "over_4.5": 0.24
+      },
+      "team_totals": {
+        "away_over_1.5": 0.79,
+        "away_over_0.5": 0.94,
+        "home_over_0.5": 0.395,
+        "home_over_1.5": 0.1,
+        "home_over_2.5": 0.196,
+        "away_over_2.5": 0.54
+      },
+      "btts": 0.36,
+      "spread": {
+        "away_-1.5": 0.675,
+        "away_-2.5": 0.435,
+        "home_-1.5": 0.017,
+        "home_-2.5": 0.014
+      },
+      "halftime_slug": "fifwc-kor-civ-2026-06-25-halftime-result",
+      "halftime": {
+        "draw": 0.305,
+        "home": 0.05,
+        "away": 0.515
+      },
+      "second_half_slug": "fifwc-kor-civ-2026-06-25-second-half-result",
+      "second_half": {
+        "home": 0.485,
+        "draw": 0.485,
+        "away": 0.485
+      },
+      "first_to_score_slug": "fifwc-kor-civ-2026-06-25-first-to-score",
+      "first_to_score": {
+        "home": 0.145,
+        "away": 0.82,
+        "neither": 0.045
+      }
+    },
+    "1539011": {
+      "moneyline": {
+        "draw": 0.28,
+        "home": 0.455,
+        "away": 0.275
+      },
+      "slug": "fifwc-jpn-swe-2026-06-25",
+      "volume": 34531,
+      "liquidity": 1092051,
+      "exact_score_slug": "fifwc-jpn-swe-2026-06-25-exact-score",
+      "exact_score": {
+        "0-1": 0.08,
+        "0-2": 0.05,
+        "2-0": 0.09,
+        "1-2": 0.07,
+        "3-0": 0.055,
+        "2-2": 0.055,
+        "2-3": 0.04,
+        "3-3": 0.035,
+        "0-0": 0.085,
+        "1-0": 0.1,
+        "1-1": 0.115,
+        "0-3": 0.04,
+        "2-1": 0.105,
+        "1-3": 0.045,
+        "3-1": 0.08,
+        "3-2": 0.045,
+        "other": 0.095
+      },
+      "more_markets_slug": "fifwc-jpn-swe-2026-06-25-more-markets",
+      "totals": {
+        "over_2.5": 0.475,
+        "over_4.5": 0.085,
+        "over_1.5": 0.725,
+        "over_5.5": 0.042,
+        "over_3.5": 0.235,
+        "over_0.5": 0.93
+      },
+      "team_totals": {
+        "home_over_1.5": 0.43,
+        "away_over_0.5": 0.67,
+        "home_over_2.5": 0.175,
+        "away_over_2.5": 0.1,
+        "away_over_1.5": 0.285,
+        "home_over_0.5": 0.785
+      },
+      "btts": 0.54,
+      "spread": {
+        "home_-2.5": 0.075,
+        "away_-1.5": 0.095,
+        "away_-2.5": 0.0275,
+        "home_-1.5": 0.21
+      },
+      "halftime_slug": "fifwc-jpn-swe-2026-06-25-halftime-result",
+      "halftime": {
+        "draw": 0.415,
+        "home": 0.315,
+        "away": 0.245
+      },
+      "second_half_slug": "fifwc-jpn-swe-2026-06-25-second-half-result",
+      "second_half": {
+        "draw": 0.475,
+        "home": 0.36,
+        "away": 0.35
+      },
+      "first_to_score_slug": "fifwc-jpn-swe-2026-06-25-first-to-score",
+      "first_to_score": {
+        "home": 0.525,
+        "away": 0.38,
+        "neither": 0.075
+      }
+    },
+    "1489412": {
+      "moneyline": {
+        "home": 0.105,
+        "draw": 0.165,
+        "away": 0.735
+      },
+      "slug": "fifwc-tun-nld-2026-06-25",
+      "volume": 61258,
+      "liquidity": 950748,
+      "exact_score_slug": "fifwc-tun-nld-2026-06-25-exact-score",
+      "exact_score": {
+        "0-1": 0.105,
+        "0-2": 0.14,
+        "2-0": 0.035,
+        "1-2": 0.09,
+        "3-0": 0.0295,
+        "2-2": 0.031,
+        "2-3": 0.0195,
+        "3-3": 0.026,
+        "0-0": 0.085,
+        "1-0": 0.0405,
+        "1-1": 0.06,
+        "0-3": 0.1,
+        "2-1": 0.0515,
+        "1-3": 0.065,
+        "3-1": 0.031,
+        "3-2": 0.032,
+        "other": 0.12
+      },
+      "more_markets_slug": "fifwc-tun-nld-2026-06-25-more-markets",
+      "totals": {
+        "over_4.5": 0.17,
+        "over_0.5": 0.95,
+        "over_2.5": 0.565,
+        "over_5.5": 0.08,
+        "over_1.5": 0.805,
+        "over_3.5": 0.345
+      },
+      "team_totals": {
+        "away_over_1.5": 0.67,
+        "home_over_2.5": 0.08,
+        "home_over_0.5": 0.505,
+        "away_over_2.5": 0.395,
+        "home_over_1.5": 0.13,
+        "away_over_0.5": 0.895
+      },
+      "btts": 0.435,
+      "spread": {
+        "home_-1.5": 0.025,
+        "home_-2.5": 0.0125,
+        "away_-2.5": 0.26,
+        "away_-1.5": 0.505
+      },
+      "halftime_slug": "fifwc-tun-nld-2026-06-25-halftime-result",
+      "halftime": {
+        "home": 0.11,
+        "draw": 0.36,
+        "away": 0.52
+      },
+      "second_half_slug": "fifwc-tun-nld-2026-06-25-second-half-result",
+      "second_half": {
+        "away": 0.485,
+        "draw": 0.49,
+        "home": 0.485
+      },
+      "first_to_score_slug": "fifwc-tun-nld-2026-06-25-first-to-score",
+      "first_to_score": {
+        "home": 0.215,
+        "away": 0.735,
+        "neither": 0.065
+      }
+    },
+    "1539012": {
+      "moneyline": {
+        "draw": 0.255,
+        "home": 0.335,
+        "away": 0.425
+      },
+      "slug": "fifwc-tur-usa-2026-06-25",
+      "volume": 99121,
+      "liquidity": 1001060,
+      "exact_score_slug": "fifwc-tur-usa-2026-06-25-exact-score",
+      "exact_score": {
+        "0-0": 0.085,
+        "1-0": 0.085,
+        "1-1": 0.105,
+        "0-3": 0.045,
+        "2-1": 0.09,
+        "1-3": 0.05,
+        "3-1": 0.045,
+        "3-2": 0.04,
+        "other": 0.125,
+        "0-1": 0.095,
+        "0-2": 0.085,
+        "2-0": 0.07,
+        "1-2": 0.1,
+        "3-0": 0.04,
+        "2-2": 0.07,
+        "2-3": 0.045,
+        "3-3": 0.035
+      },
+      "more_markets_slug": "fifwc-tur-usa-2026-06-25-more-markets",
+      "totals": {
+        "over_4.5": 0.125,
+        "over_1.5": 0.775,
+        "over_2.5": 0.52,
+        "over_3.5": 0.3,
+        "over_0.5": 0.935,
+        "over_5.5": 0.06
+      },
+      "team_totals": {
+        "home_over_0.5": 0.725,
+        "away_over_1.5": 0.41,
+        "away_over_2.5": 0.175,
+        "home_over_1.5": 0.38,
+        "home_over_2.5": 0.155,
+        "away_over_0.5": 0.78
+      },
+      "btts": 0.585,
+      "spread": {
+        "away_-1.5": 0.185,
+        "home_-2.5": 0.05,
+        "home_-1.5": 0.145,
+        "away_-2.5": 0.08
+      },
+      "halftime_slug": "fifwc-tur-usa-2026-06-25-halftime-result",
+      "halftime": {
+        "draw": 0.42,
+        "home": 0.24,
+        "away": 0.3
+      },
+      "second_half_slug": "fifwc-tur-usa-2026-06-25-second-half-result",
+      "second_half": {
+        "draw": 0.485,
+        "home": 0.48,
+        "away": 0.48
+      },
+      "first_to_score_slug": "fifwc-tur-usa-2026-06-25-first-to-score",
+      "first_to_score": {
+        "home": 0.445,
+        "away": 0.52,
+        "neither": 0.145
+      }
+    },
+    "1489411": {
+      "moneyline": {
+        "away": 0.285,
+        "home": 0.44,
+        "draw": 0.285
+      },
+      "slug": "fifwc-par-aus-2026-06-25",
+      "volume": 26170,
+      "liquidity": 863226,
+      "exact_score_slug": "fifwc-par-aus-2026-06-25-exact-score",
+      "exact_score": {
+        "0-0": 0.115,
+        "0-1": 0.105,
+        "1-0": 0.13,
+        "0-2": 0.05,
+        "1-1": 0.155,
+        "2-0": 0.08,
+        "0-3": 0.04,
+        "1-2": 0.07,
+        "2-1": 0.09,
+        "3-0": 0.055,
+        "1-3": 0.045,
+        "2-2": 0.05,
+        "3-1": 0.055,
+        "2-3": 0.04,
+        "3-2": 0.04,
+        "3-3": 0.03,
+        "other": 0.075
+      },
+      "more_markets_slug": "fifwc-par-aus-2026-06-25-more-markets",
+      "totals": {
+        "over_1.5": 0.685,
+        "over_5.5": 0.0475,
+        "over_4.5": 0.075,
+        "over_0.5": 0.915,
+        "over_2.5": 0.41,
+        "over_3.5": 0.19
+      },
+      "team_totals": {
+        "home_over_0.5": 0.73,
+        "away_over_2.5": 0.08,
+        "away_over_0.5": 0.64,
+        "home_over_2.5": 0.15,
+        "away_over_1.5": 0.235,
+        "home_over_1.5": 0.395
+      },
+      "btts": 0.48,
+      "spread": {
+        "away_-1.5": 0.095,
+        "home_-2.5": 0.07,
+        "home_-1.5": 0.195,
+        "away_-2.5": 0.0155
+      },
+      "halftime_slug": "fifwc-par-aus-2026-06-25-halftime-result",
+      "halftime": {
+        "home": 0.325,
+        "draw": 0.45,
+        "away": 0.195
+      },
+      "second_half_slug": "fifwc-par-aus-2026-06-25-second-half-result",
+      "second_half": {
+        "draw": 0.495,
+        "home": 0.48,
+        "away": 0.485
+      },
+      "first_to_score_slug": "fifwc-par-aus-2026-06-25-first-to-score",
+      "first_to_score": {
+        "home": 0.5,
+        "away": 0.375,
+        "neither": 0.08
+      }
+    },
+    "1539074": {
+      "moneyline": {
+        "home": 0.705,
+        "away": 0.115,
+        "draw": 0.185
+      },
+      "slug": "fifwc-sen-irq-2026-06-26",
+      "volume": 25703,
+      "liquidity": 1028157,
+      "exact_score_slug": "fifwc-sen-irq-2026-06-26-exact-score",
+      "exact_score": {
+        "0-0": 0.065,
+        "1-0": 0.125,
+        "1-1": 0.125,
+        "0-3": 0.027,
+        "2-1": 0.105,
+        "1-3": 0.03,
+        "3-1": 0.06,
+        "3-2": 0.0395,
+        "other": 0.135,
+        "0-1": 0.05,
+        "0-2": 0.0175,
+        "2-0": 0.15,
+        "1-2": 0.048,
+        "3-0": 0.125,
+        "2-2": 0.045,
+        "2-3": 0.0555,
+        "3-3": 0.0275
+      },
+      "more_markets_slug": "fifwc-sen-irq-2026-06-26-more-markets",
+      "totals": {
+        "over_0.5": 0.945,
+        "over_2.5": 0.515,
+        "over_4.5": 0.13,
+        "over_1.5": 0.765,
+        "over_3.5": 0.285,
+        "over_5.5": 0.05
+      },
+      "team_totals": {
+        "home_over_0.5": 0.89,
+        "home_over_2.5": 0.34,
+        "away_over_1.5": 0.15,
+        "home_over_1.5": 0.62,
+        "away_over_0.5": 0.455,
+        "away_over_2.5": 0.254
+      },
+      "btts": 0.435,
+      "spread": {
+        "home_-1.5": 0.485,
+        "home_-2.5": 0.23,
+        "away_-1.5": 0.0295,
+        "away_-2.5": 0.005
+      },
+      "halftime_slug": "fifwc-sen-irq-2026-06-26-halftime-result",
+      "halftime": {
+        "draw": 0.365,
+        "home": 0.52,
+        "away": 0.11
+      },
+      "second_half_slug": "fifwc-sen-irq-2026-06-26-second-half-result",
+      "second_half": {
+        "away": 0.475,
+        "home": 0.475,
+        "draw": 0.495
+      },
+      "first_to_score_slug": "fifwc-sen-irq-2026-06-26-first-to-score",
+      "first_to_score": {
+        "neither": 0.06,
+        "home": 0.725,
+        "away": 0.22
+      }
+    },
+    "1489416": {
+      "moneyline": {
+        "home": 0.225,
+        "draw": 0.255,
+        "away": 0.535
+      },
+      "slug": "fifwc-nor-fra-2026-06-26",
+      "volume": 64536,
+      "liquidity": 1196563,
+      "exact_score_slug": "fifwc-nor-fra-2026-06-26-exact-score",
+      "exact_score": {
+        "0-1": 0.11,
+        "0-2": 0.095,
+        "0-3": 0.065,
+        "2-1": 0.08,
+        "1-3": 0.065,
+        "3-1": 0.04,
+        "3-2": 0.04,
+        "other": 0.145,
+        "0-0": 0.105,
+        "1-0": 0.08,
+        "1-1": 0.105,
+        "2-0": 0.055,
+        "1-2": 0.115,
+        "3-0": 0.035,
+        "2-2": 0.06,
+        "2-3": 0.045,
+        "3-3": 0.035
+      },
+      "more_markets_slug": "fifwc-nor-fra-2026-06-26-more-markets",
+      "totals": {
+        "over_2.5": 0.515,
+        "over_3.5": 0.285,
+        "over_4.5": 0.135,
+        "over_5.5": 0.05,
+        "over_0.5": 0.935,
+        "over_1.5": 0.75
+      },
+      "team_totals": {
+        "away_over_0.5": 0.815,
+        "home_over_2.5": 0.085,
+        "away_over_2.5": 0.23,
+        "home_over_0.5": 0.62,
+        "home_over_1.5": 0.255,
+        "away_over_1.5": 0.49
+      },
+      "btts": 0.505,
+      "spread": {
+        "home_-1.5": 0.07,
+        "away_-1.5": 0.28,
+        "home_-2.5": 0.0265,
+        "away_-2.5": 0.12
+      },
+      "halftime_slug": "fifwc-nor-fra-2026-06-26-halftime-result",
+      "halftime": {
+        "draw": 0.415,
+        "home": 0.16,
+        "away": 0.38
+      },
+      "second_half_slug": "fifwc-nor-fra-2026-06-26-second-half-result",
+      "second_half": {
+        "away": 0.485,
+        "home": 0.485,
+        "draw": 0.485
+      },
+      "first_to_score_slug": "fifwc-nor-fra-2026-06-26-first-to-score",
+      "first_to_score": {
+        "home": 0.335,
+        "away": 0.585,
+        "neither": 0.075
+      }
+    },
+    "1489417": {
+      "moneyline": {
+        "home": 0.155,
+        "away": 0.635,
+        "draw": 0.225
+      },
+      "slug": "fifwc-ury-esp-2026-06-26",
+      "volume": 23188,
+      "liquidity": 1138509,
+      "exact_score_slug": "fifwc-ury-esp-2026-06-26-exact-score",
+      "exact_score": {
+        "0-0": 0.085,
+        "1-0": 0.05,
+        "1-1": 0.11,
+        "0-3": 0.11,
+        "2-1": 0.04,
+        "1-3": 0.08,
+        "3-1": 0.0325,
+        "3-2": 0.031,
+        "other": 0.135,
+        "0-1": 0.13,
+        "0-2": 0.13,
+        "2-0": 0.024,
+        "1-2": 0.12,
+        "3-0": 0.0305,
+        "2-2": 0.04,
+        "2-3": 0.042,
+        "3-3": 0.03
+      },
+      "more_markets_slug": "fifwc-ury-esp-2026-06-26-more-markets",
+      "totals": {
+        "over_1.5": 0.765,
+        "over_3.5": 0.285,
+        "over_5.5": 0.055,
+        "over_0.5": 0.93,
+        "over_2.5": 0.505,
+        "over_4.5": 0.15
+      },
+      "team_totals": {
+        "away_over_1.5": 0.555,
+        "home_over_1.5": 0.215,
+        "away_over_2.5": 0.27,
+        "home_over_2.5": 0.105,
+        "away_over_0.5": 0.86,
+        "home_over_0.5": 0.535
+      },
+      "btts": 0.485,
+      "spread": {
+        "away_-1.5": 0.385,
+        "away_-2.5": 0.16,
+        "home_-1.5": 0.108,
+        "home_-2.5": 0.2415
+      },
+      "halftime_slug": "fifwc-ury-esp-2026-06-26-halftime-result",
+      "halftime": {
+        "home": 0.125,
+        "away": 0.4,
+        "draw": 0.335
+      },
+      "second_half_slug": "fifwc-ury-esp-2026-06-26-second-half-result",
+      "second_half": {
+        "away": 0.49,
+        "home": 0.49,
+        "draw": 0.49
+      },
+      "first_to_score_slug": "fifwc-ury-esp-2026-06-26-first-to-score",
+      "first_to_score": {
+        "home": 0.355,
+        "away": 0.575,
+        "neither": 0.16
+      },
+      "corners_slug": "fifwc-ury-esp-2026-06-26-total-corners",
+      "corners": {
+        "over_7.5": 0.785,
+        "over_12.5": 0.175,
+        "over_13.5": 0.325
+      }
+    },
+    "1489413": {
+      "moneyline": {
+        "away": 0.4,
+        "home": 0.345,
+        "draw": 0.265
+      },
+      "slug": "fifwc-cvi-ksa-2026-06-26",
+      "volume": 128268,
+      "liquidity": 1117832,
+      "exact_score_slug": "fifwc-cvi-ksa-2026-06-26-exact-score",
+      "exact_score": {
+        "0-0": 0.1,
+        "1-0": 0.115,
+        "1-1": 0.13,
+        "0-3": 0.0525,
+        "2-1": 0.075,
+        "1-3": 0.0475,
+        "3-1": 0.047,
+        "3-2": 0.039,
+        "other": 0.075,
+        "0-1": 0.12,
+        "0-2": 0.065,
+        "2-0": 0.06,
+        "1-2": 0.095,
+        "3-0": 0.0415,
+        "2-2": 0.045,
+        "2-3": 0.0415,
+        "3-3": 0.0295
+      },
+      "more_markets_slug": "fifwc-cvi-ksa-2026-06-26-more-markets",
+      "totals": {
+        "over_5.5": 0.0285,
+        "over_0.5": 0.915,
+        "over_1.5": 0.7,
+        "over_2.5": 0.435,
+        "over_3.5": 0.34,
+        "over_4.5": 0.12
+      },
+      "team_totals": {
+        "home_over_0.5": 0.685,
+        "home_over_2.5": 0.115,
+        "home_over_1.5": 0.31,
+        "away_over_0.5": 0.715,
+        "away_over_2.5": 0.115,
+        "away_over_1.5": 0.35
+      },
+      "btts": 0.45,
+      "spread": {
+        "home_-1.5": 0.155,
+        "away_-1.5": 0.155,
+        "home_-2.5": 0.046,
+        "away_-2.5": 0.0535
+      },
+      "halftime_slug": "fifwc-cvi-ksa-2026-06-26-halftime-result",
+      "halftime": {
+        "home": 0.215,
+        "away": 0.31,
+        "draw": 0.43
+      },
+      "second_half_slug": "fifwc-cvi-ksa-2026-06-26-second-half-result",
+      "second_half": {
+        "away": 0.485,
+        "home": 0.485,
+        "draw": 0.485
+      },
+      "first_to_score_slug": "fifwc-cvi-ksa-2026-06-26-first-to-score",
+      "first_to_score": {
+        "home": 0.435,
+        "away": 0.475,
+        "neither": 0.065
+      }
+    },
+    "1489414": {
+      "moneyline": {
+        "away": 0.245,
+        "home": 0.465,
+        "draw": 0.295
+      },
+      "slug": "fifwc-egy-irn-2026-06-26",
+      "volume": 43324,
+      "liquidity": 953572,
+      "exact_score_slug": "fifwc-egy-irn-2026-06-26-exact-score",
+      "exact_score": {
+        "0-0": 0.105,
+        "1-0": 0.155,
+        "1-1": 0.165,
+        "0-3": 0.0305,
+        "2-1": 0.095,
+        "1-3": 0.0325,
+        "3-1": 0.052,
+        "3-2": 0.0335,
+        "other": 0.1,
+        "0-1": 0.095,
+        "0-2": 0.06,
+        "2-0": 0.105,
+        "1-2": 0.08,
+        "3-0": 0.046,
+        "2-2": 0.0565,
+        "2-3": 0.031,
+        "3-3": 0.027
+      },
+      "more_markets_slug": "fifwc-egy-irn-2026-06-26-more-markets",
+      "totals": {
+        "over_0.5": 0.905,
+        "over_1.5": 0.655,
+        "over_2.5": 0.365,
+        "over_3.5": 0.145,
+        "over_4.5": 0.08,
+        "over_5.5": 0.026
+      },
+      "team_totals": {
+        "away_over_2.5": 0.055,
+        "home_over_0.5": 0.735,
+        "home_over_1.5": 0.405,
+        "home_over_2.5": 0.13,
+        "away_over_0.5": 0.575,
+        "away_over_1.5": 0.225
+      },
+      "btts": 0.44,
+      "spread": {
+        "home_-1.5": 0.205,
+        "away_-1.5": 0.085,
+        "home_-2.5": 0.075,
+        "away_-2.5": 0.028
+      },
+      "halftime_slug": "fifwc-egy-irn-2026-06-26-halftime-result",
+      "halftime": {
+        "home": 0.285,
+        "away": 0.195,
+        "draw": 0.475
+      },
+      "second_half_slug": "fifwc-egy-irn-2026-06-26-second-half-result",
+      "second_half": {
+        "away": 0.485,
+        "home": 0.485,
+        "draw": 0.48
+      },
+      "first_to_score_slug": "fifwc-egy-irn-2026-06-26-first-to-score",
+      "first_to_score": {
+        "home": 0.51,
+        "away": 0.35,
+        "neither": 0.105
+      },
+      "corners_slug": "fifwc-egy-irn-2026-06-26-total-corners",
+      "corners": {
+        "over_12.5": 0.515,
+        "over_13.5": 0.51,
+        "over_7.5": 0.645
+      }
+    },
+    "1489415": {
+      "moneyline": {
+        "away": 0.785,
+        "home": 0.085,
+        "draw": 0.145
+      },
+      "slug": "fifwc-nzl-bel-2026-06-26",
+      "volume": 75347,
+      "liquidity": 1086713,
+      "exact_score_slug": "fifwc-nzl-bel-2026-06-26-exact-score",
+      "exact_score": {
+        "0-0": 0.0565,
+        "1-0": 0.03,
+        "1-1": 0.1,
+        "0-3": 0.115,
+        "2-1": 0.0235,
+        "1-3": 0.1,
+        "3-1": 0.0305,
+        "3-2": 0.03,
+        "other": 0.205,
+        "0-1": 0.12,
+        "0-2": 0.15,
+        "2-0": 0.0405,
+        "1-2": 0.085,
+        "3-0": 0.05,
+        "2-2": 0.026,
+        "2-3": 0.04,
+        "3-3": 0.0305
+      },
+      "more_markets_slug": "fifwc-nzl-bel-2026-06-26-more-markets",
+      "totals": {
+        "over_0.5": 0.919,
+        "over_2.5": 0.58,
+        "over_4.5": 0.17,
+        "over_1.5": 0.82,
+        "over_3.5": 0.345,
+        "over_5.5": 0.095
+      },
+      "team_totals": {
+        "home_over_2.5": 0.018,
+        "home_over_1.5": 0.13,
+        "home_over_0.5": 0.415,
+        "away_over_0.5": 0.91,
+        "away_over_1.5": 0.705,
+        "away_over_2.5": 0.44
+      },
+      "btts": 0.395,
+      "spread": {
+        "home_-1.5": 0.08,
+        "home_-2.5": 0.006,
+        "away_-1.5": 0.575,
+        "away_-2.5": 0.335
+      },
+      "halftime_slug": "fifwc-nzl-bel-2026-06-26-halftime-result",
+      "halftime": {
+        "home": 0.07,
+        "away": 0.58,
+        "draw": 0.345
+      },
+      "second_half_slug": "fifwc-nzl-bel-2026-06-26-second-half-result",
+      "second_half": {
+        "home": 0.195,
+        "away": 0.735,
+        "draw": 0.245
+      },
+      "first_to_score_slug": "fifwc-nzl-bel-2026-06-26-first-to-score",
+      "first_to_score": {
+        "home": 0.18,
+        "away": 0.765,
+        "neither": 0.07
+      },
+      "corners_slug": "fifwc-nzl-bel-2026-06-26-total-corners",
+      "corners": {
+        "over_7.5": 0.78,
+        "over_13.5": 0.505,
+        "over_12.5": 0.515
+      }
+    },
+    "1489420": {
+      "moneyline": {
+        "home": 0.585,
+        "draw": 0.255,
+        "away": 0.165
+      },
+      "slug": "fifwc-hrv-gha-2026-06-27",
+      "volume": 18010,
+      "liquidity": 891793,
+      "exact_score_slug": "fifwc-hrv-gha-2026-06-27-exact-score",
+      "exact_score": {
+        "0-0": 0.095,
+        "1-0": 0.14,
+        "1-1": 0.115,
+        "0-3": 0.0295,
+        "2-1": 0.105,
+        "1-3": 0.0325,
+        "3-1": 0.063,
+        "3-2": 0.0415,
+        "other": 0.1,
+        "0-1": 0.08,
+        "0-2": 0.0455,
+        "2-0": 0.135,
+        "1-2": 0.065,
+        "3-0": 0.074,
+        "2-2": 0.06,
+        "2-3": 0.0315,
+        "3-3": 0.0295
+      },
+      "more_markets_slug": "fifwc-hrv-gha-2026-06-27-more-markets",
+      "totals": {
+        "over_1.5": 0.73,
+        "over_3.5": 0.23,
+        "over_5.5": 0.1875,
+        "over_0.5": 0.915,
+        "over_2.5": 0.47,
+        "over_4.5": 0.085
+      },
+      "team_totals": {
+        "away_over_2.5": 0.074,
+        "home_over_1.5": 0.51,
+        "away_over_0.5": 0.55,
+        "home_over_0.5": 0.805,
+        "home_over_2.5": 0.22,
+        "away_over_1.5": 0.195
+      },
+      "btts": 0.47,
+      "spread": {
+        "away_-1.5": 0.039,
+        "away_-2.5": 0.202,
+        "home_-1.5": 0.33,
+        "home_-2.5": 0.135
+      },
+      "halftime_slug": "fifwc-hrv-gha-2026-06-27-halftime-result",
+      "halftime": {
+        "home": 0.395,
+        "away": 0.135,
+        "draw": 0.45
+      },
+      "second_half_slug": "fifwc-hrv-gha-2026-06-27-second-half-result",
+      "second_half": {
+        "draw": 0.485,
+        "home": 0.485,
+        "away": 0.485
+      },
+      "first_to_score_slug": "fifwc-hrv-gha-2026-06-27-first-to-score",
+      "first_to_score": {
+        "home": 0.635,
+        "away": 0.265,
+        "neither": 0.07
+      },
+      "corners_slug": "fifwc-hrv-gha-2026-06-27-total-corners",
+      "corners": {
+        "over_13.5": 0.51,
+        "over_12.5": 0.51,
+        "over_7.5": 0.5
+      }
+    },
+    "1489422": {
+      "moneyline": {
+        "draw": 0.145,
+        "away": 0.765,
+        "home": 0.095
+      },
+      "slug": "fifwc-pan-eng-2026-06-27",
+      "volume": 76294,
+      "liquidity": 891414,
+      "exact_score_slug": "fifwc-pan-eng-2026-06-27-exact-score",
+      "exact_score": {
+        "0-0": 0.07,
+        "1-0": 0.047,
+        "1-1": 0.085,
+        "0-3": 0.105,
+        "2-1": 0.0275,
+        "1-3": 0.11,
+        "3-1": 0.0285,
+        "3-2": 0.029,
+        "other": 0.25,
+        "0-1": 0.12,
+        "0-2": 0.14,
+        "2-0": 0.0145,
+        "1-2": 0.09,
+        "3-0": 0.05,
+        "2-2": 0.03,
+        "2-3": 0.042,
+        "3-3": 0.0275
+      },
+      "more_markets_slug": "fifwc-pan-eng-2026-06-27-more-markets",
+      "totals": {
+        "over_0.5": 0.9415,
+        "over_1.5": 0.81,
+        "over_2.5": 0.59,
+        "over_3.5": 0.36,
+        "over_4.5": 0.175,
+        "over_5.5": 0.07
+      },
+      "team_totals": {
+        "home_over_1.5": 0.17,
+        "away_over_0.5": 0.92,
+        "home_over_2.5": 0.071,
+        "away_over_1.5": 0.7,
+        "home_over_0.5": 0.49,
+        "away_over_2.5": 0.445
+      },
+      "btts": 0.42,
+      "spread": {
+        "home_-1.5": 0.0235,
+        "away_-1.5": 0.545,
+        "home_-2.5": 0.0015,
+        "away_-2.5": 0.305
+      },
+      "halftime_slug": "fifwc-pan-eng-2026-06-27-halftime-result",
+      "halftime": {
+        "home": 0.085,
+        "away": 0.57,
+        "draw": 0.33
+      },
+      "second_half_slug": "fifwc-pan-eng-2026-06-27-second-half-result",
+      "second_half": {
+        "draw": 0.445,
+        "home": 0.36,
+        "away": 0.545
+      },
+      "first_to_score_slug": "fifwc-pan-eng-2026-06-27-first-to-score",
+      "first_to_score": {
+        "home": 0.21,
+        "away": 0.755,
+        "neither": 0.045
+      },
+      "corners_slug": "fifwc-pan-eng-2026-06-27-total-corners",
+      "corners": {
+        "over_7.5": 0.505,
+        "over_12.5": 0.505,
+        "over_13.5": 0.505
+      }
+    },
+    "1489419": {
+      "moneyline": {
+        "draw": 0.275,
+        "home": 0.255,
+        "away": 0.475
+      },
+      "slug": "fifwc-col-prt-2026-06-27",
+      "volume": 61351,
+      "liquidity": 843789,
+      "exact_score_slug": "fifwc-col-prt-2026-06-27-exact-score",
+      "exact_score": {
+        "0-0": 0.065,
+        "1-0": 0.09,
+        "1-1": 0.13,
+        "0-3": 0.0535,
+        "2-1": 0.08,
+        "1-3": 0.068,
+        "2-3": 0.245,
+        "3-3": 0.0265,
+        "0-1": 0.105,
+        "0-2": 0.085,
+        "2-0": 0.055,
+        "1-2": 0.31,
+        "3-0": 0.0375,
+        "2-2": 0.07,
+        "3-1": 0.041,
+        "3-2": 0.0395,
+        "other": 0.09
+      },
+      "more_markets_slug": "fifwc-col-prt-2026-06-27-more-markets",
+      "totals": {
+        "over_0.5": 0.915,
+        "over_1.5": 0.725,
+        "over_2.5": 0.465,
+        "over_3.5": 0.235,
+        "over_4.5": 0.085,
+        "over_5.5": 0.0425
+      },
+      "team_totals": {
+        "home_over_2.5": 0.315,
+        "home_over_1.5": 0.355,
+        "away_over_1.5": 0.45,
+        "home_over_0.5": 0.645,
+        "away_over_2.5": 0.315,
+        "away_over_0.5": 0.645
+      },
+      "btts": 0.495,
+      "spread": {
+        "home_-1.5": 0.08,
+        "away_-1.5": 0.215,
+        "home_-2.5": 0.0135,
+        "away_-2.5": 0.08
+      },
+      "halftime_slug": "fifwc-col-prt-2026-06-27-halftime-result",
+      "halftime": {
+        "home": 0.19,
+        "away": 0.345,
+        "draw": 0.385
+      },
+      "second_half_slug": "fifwc-col-prt-2026-06-27-second-half-result",
+      "second_half": {
+        "draw": 0.495,
+        "home": 0.475,
+        "away": 0.485
+      },
+      "first_to_score_slug": "fifwc-col-prt-2026-06-27-first-to-score",
+      "first_to_score": {
+        "home": 0.375,
+        "away": 0.53,
+        "neither": 0.085
+      },
+      "corners_slug": "fifwc-col-prt-2026-06-27-total-corners",
+      "corners": {
+        "over_7.5": 0.505,
+        "over_12.5": 0.51,
+        "over_13.5": 0.505
+      }
+    },
+    "1539013": {
+      "moneyline": {
+        "draw": 0.285,
+        "home": 0.405,
+        "away": 0.315
+      },
+      "slug": "fifwc-cdr-uzb-2026-06-27",
+      "volume": 9576,
+      "liquidity": 1008672,
+      "exact_score_slug": "fifwc-cdr-uzb-2026-06-27-exact-score",
+      "exact_score": {
+        "0-1": 0.09,
+        "0-2": 0.0545,
+        "2-0": 0.08,
+        "1-2": 0.075,
+        "3-0": 0.0485,
+        "2-2": 0.0475,
+        "2-3": 0.0415,
+        "3-3": 0.0315,
+        "0-0": 0.105,
+        "1-0": 0.3,
+        "1-1": 0.18,
+        "0-3": 0.0395,
+        "2-1": 0.08,
+        "1-3": 0.042,
+        "3-1": 0.0485,
+        "3-2": 0.042,
+        "other": 0.105
+      },
+      "more_markets_slug": "fifwc-cdr-uzb-2026-06-27-more-markets",
+      "totals": {
+        "over_0.5": 0.925,
+        "over_2.5": 0.415,
+        "over_4.5": 0.08,
+        "over_1.5": 0.685,
+        "over_3.5": 0.195,
+        "over_5.5": 0.183
+      },
+      "team_totals": {
+        "away_over_0.5": 0.535,
+        "away_over_2.5": 0.315,
+        "home_over_0.5": 0.515,
+        "home_over_1.5": 0.375,
+        "away_over_1.5": 0.375,
+        "home_over_2.5": 0.325
+      },
+      "btts": 0.475,
+      "spread": {
+        "home_-1.5": 0.17,
+        "home_-2.5": 0.05,
+        "away_-1.5": 0.105,
+        "away_-2.5": 0.0405
+      },
+      "halftime_slug": "fifwc-cdr-uzb-2026-06-27-halftime-result",
+      "halftime": {
+        "draw": 0.46,
+        "home": 0.3,
+        "away": 0.21
+      },
+      "second_half_slug": "fifwc-cdr-uzb-2026-06-27-second-half-result",
+      "second_half": {
+        "draw": 0.49,
+        "home": 0.485,
+        "away": 0.48
+      },
+      "first_to_score_slug": "fifwc-cdr-uzb-2026-06-27-first-to-score",
+      "first_to_score": {
+        "home": 0.525,
+        "away": 0.45,
+        "neither": 0.135
+      },
+      "corners_slug": "fifwc-cdr-uzb-2026-06-27-total-corners",
+      "corners": {
+        "over_12.5": 0.505,
+        "over_7.5": 0.51,
+        "over_13.5": 0.515
+      }
+    },
+    "1489418": {
+      "moneyline": {
+        "home": 0.255,
+        "draw": 0.305,
+        "away": 0.435
+      },
+      "slug": "fifwc-alg-aut-2026-06-27",
+      "volume": 20964,
+      "liquidity": 815633,
+      "exact_score_slug": "fifwc-alg-aut-2026-06-27-exact-score",
+      "exact_score": {
+        "0-0": 0.09,
+        "1-0": 0.095,
+        "1-1": 0.105,
+        "0-3": 0.053,
+        "2-1": 0.09,
+        "1-3": 0.075,
+        "3-1": 0.0415,
+        "3-2": 0.0385,
+        "other": 0.145,
+        "0-1": 0.115,
+        "0-2": 0.095,
+        "2-0": 0.07,
+        "1-2": 0.105,
+        "3-0": 0.0375,
+        "2-2": 0.065,
+        "2-3": 0.042,
+        "3-3": 0.032
+      },
+      "more_markets_slug": "fifwc-alg-aut-2026-06-27-more-markets",
+      "totals": {
+        "over_1.5": 0.705,
+        "over_3.5": 0.22,
+        "over_5.5": 0.0285,
+        "over_0.5": 0.905,
+        "over_2.5": 0.445,
+        "over_4.5": 0.085
+      },
+      "team_totals": {
+        "home_over_2.5": 0.095,
+        "away_over_2.5": 0.16,
+        "home_over_0.5": 0.67,
+        "home_over_1.5": 0.275,
+        "away_over_0.5": 0.765,
+        "away_over_1.5": 0.4
+      },
+      "btts": 0.52,
+      "spread": {
+        "away_-1.5": 0.195,
+        "away_-2.5": 0.08,
+        "home_-1.5": 0.085,
+        "home_-2.5": 0.0125
+      },
+      "halftime_slug": "fifwc-alg-aut-2026-06-27-halftime-result",
+      "halftime": {
+        "draw": 0.46,
+        "home": 0.2,
+        "away": 0.32
+      },
+      "second_half_slug": "fifwc-alg-aut-2026-06-27-second-half-result",
+      "second_half": {
+        "home": 0.485,
+        "away": 0.48,
+        "draw": 0.48
+      },
+      "first_to_score_slug": "fifwc-alg-aut-2026-06-27-first-to-score",
+      "first_to_score": {
+        "home": 0.385,
+        "away": 0.515,
+        "neither": 0.08
+      }
+    },
+    "1489421": {
+      "moneyline": {
+        "draw": 0.125,
+        "away": 0.825,
+        "home": 0.065
+      },
+      "slug": "fifwc-jor-arg-2026-06-27",
+      "volume": 38306,
+      "liquidity": 998206,
+      "exact_score_slug": "fifwc-jor-arg-2026-06-27-exact-score",
+      "exact_score": {
+        "0-1": 0.085,
+        "0-2": 0.145,
+        "2-0": 0.028,
+        "1-2": 0.1,
+        "3-0": 0.05,
+        "2-2": 0.045,
+        "2-3": 0.0365,
+        "3-3": 0.0275,
+        "0-0": 0.075,
+        "1-0": 0.0455,
+        "1-1": 0.068,
+        "0-3": 0.085,
+        "2-1": 0.037,
+        "1-3": 0.105,
+        "3-1": 0.0285,
+        "3-2": 0.029,
+        "other": 0.245
+      },
+      "more_markets_slug": "fifwc-jor-arg-2026-06-27-more-markets",
+      "totals": {
+        "over_0.5": 0.951,
+        "over_1.5": 0.825,
+        "over_2.5": 0.62,
+        "over_3.5": 0.38,
+        "over_4.5": 0.18,
+        "over_5.5": 0.075
+      },
+      "team_totals": {
+        "home_over_2.5": 0.16,
+        "away_over_0.5": 0.9,
+        "home_over_0.5": 0.425,
+        "home_over_1.5": 0.1,
+        "away_over_1.5": 0.745,
+        "away_over_2.5": 0.455
+      },
+      "btts": 0.41,
+      "spread": {
+        "home_-1.5": 0.0265,
+        "away_-1.5": 0.595,
+        "home_-2.5": 0.0135,
+        "away_-2.5": 0.37
+      },
+      "halftime_slug": "fifwc-jor-arg-2026-06-27-halftime-result",
+      "halftime": {
+        "draw": 0.325,
+        "home": 0.065,
+        "away": 0.61
+      },
+      "second_half_slug": "fifwc-jor-arg-2026-06-27-second-half-result",
+      "second_half": {
+        "home": 0.275,
+        "draw": 0.48,
+        "away": 0.49
+      },
+      "first_to_score_slug": "fifwc-jor-arg-2026-06-27-first-to-score",
+      "first_to_score": {
+        "home": 0.27,
+        "away": 0.775,
+        "neither": 0.14
+      },
+      "corners_slug": "fifwc-jor-arg-2026-06-27-total-corners",
+      "corners": {
+        "over_7.5": 0.5,
+        "over_13.5": 0.51,
+        "over_12.5": 0.495
+      }
+    }
+  },
+  "futures": {
+    "champion": {
+      "Spain": 0.1375,
+      "New Zealand": 0.0005,
+      "Switzerland": 0.0085,
+      "England": 0.1055,
+      "France": 0.1865,
+      "South Korea": 0.0035,
+      "Haiti": 0.0005,
+      "Brazil": 0.0665,
+      "Jordan": 0.0005,
+      "Cura\u00e7ao": 0.0005,
+      "Argentina": 0.1105,
+      "Germany": 0.0605,
+      "Colombia": 0.0155,
+      "Iran": 0.0005,
+      "Portugal": 0.1035,
+      "Ghana": 0.0015,
+      "Netherlands": 0.0455,
+      "Algeria": 0.0015,
+      "Bosnia and Herzegovina": 0.0015,
+      "United States": 0.0215,
+      "Canada": 0.0025,
+      "Turkey": 0.0045,
+      "Uruguay": 0.0065,
+      "Mexico": 0.0145,
+      "Paraguay": 0.0015,
+      "Scotland": 0.0025,
+      "Japan": 0.0175,
+      "Norway": 0.0285,
+      "Tunisia": 0.0005,
+      "Ecuador": 0.0045,
+      "Uzbekistan": 0.0005,
+      "Morocco": 0.0235,
+      "Panama": 0.0005,
+      "Iraq": 0.0005,
+      "South Africa": 0.0005,
+      "Senegal": 0.0065,
+      "Ivory Coast": 0.0055,
+      "DR Congo": 0.0005,
+      "Cape Verde": 0.0005,
+      "Czech Republic": 0.0005,
+      "Qatar": 0.0005,
+      "Belgium": 0.0175,
+      "Australia": 0.0045,
+      "Saudi Arabia": 0.0005,
+      "Austria": 0.0045,
+      "Croatia": 0.0085,
+      "Egypt": 0.0025,
+      "Sweden": 0.0055
+    },
+    "final": {
+      "South Korea": 0.017,
+      "Czech Republic": 0.0135,
+      "Switzerland": 0.029,
+      "Bosnia and Herzegovina": 0.014,
+      "Morocco": 0.083,
+      "Haiti": 0.0015,
+      "Australia": 0.0125,
+      "Turkey": 0.0105,
+      "Ecuador": 0.0255,
+      "Cura\u00e7ao": 0.0015,
+      "Mexico": 0.0565,
+      "South Africa": 0.019,
+      "Canada": 0.0155,
+      "Qatar": 0.0115,
+      "Brazil": 0.145,
+      "Scotland": 0.017,
+      "United States": 0.06,
+      "Paraguay": 0.012,
+      "Germany": 0.14,
+      "Ivory Coast": 0.0175,
+      "Netherlands": 0.105,
+      "Japan": 0.0465,
+      "Sweden": 0.0345,
+      "Iran": 0.008,
+      "New Zealand": 0.019,
+      "Uruguay": 0.0365,
+      "Cape Verde": 0.006,
+      "Senegal": 0.028,
+      "Iraq": 0.0085,
+      "Austria": 0.018,
+      "Jordan": 0.0025,
+      "Colombia": 0.0645,
+      "DR Congo": 0.007,
+      "Croatia": 0.0345,
+      "Ghana": 0.0145,
+      "Tunisia": 0.0095,
+      "Belgium": 0.055,
+      "Egypt": 0.009,
+      "Spain": 0.255,
+      "Saudi Arabia": 0.012,
+      "France": 0.28,
+      "Norway": 0.075,
+      "Argentina": 0.19,
+      "Algeria": 0.019,
+      "Portugal": 0.2,
+      "Uzbekistan": 0.0065,
+      "England": 0.24,
+      "Panama": 0.0025
+    },
+    "sf": {
+      "Haiti": 0.003,
+      "Panama": 0.006,
+      "Iran": 0.0235,
+      "Egypt": 0.027,
+      "Canada": 0.026,
+      "Morocco": 0.14,
+      "Norway": 0.15,
+      "Colombia": 0.145,
+      "Cura\u00e7ao": 0.0155,
+      "Japan": 0.12,
+      "Tunisia": 0.0115,
+      "Qatar": 0.0135,
+      "Bosnia and Herzegovina": 0.0295,
+      "Brazil": 0.225,
+      "Australia": 0.024,
+      "Paraguay": 0.0225,
+      "Netherlands": 0.215,
+      "Turkey": 0.065,
+      "Saudi Arabia": 0.0115,
+      "Ecuador": 0.0475,
+      "Ghana": 0.0315,
+      "Belgium": 0.14,
+      "France": 0.415,
+      "Argentina": 0.335,
+      "Austria": 0.0535,
+      "Jordan": 0.0185,
+      "Croatia": 0.0855,
+      "DR Congo": 0.0315,
+      "Germany": 0.26,
+      "Algeria": 0.0305,
+      "Portugal": 0.325,
+      "Mexico": 0.11,
+      "Switzerland": 0.095,
+      "Sweden": 0.059,
+      "Spain": 0.405,
+      "South Korea": 0.0545,
+      "New Zealand": 0.0165,
+      "Ivory Coast": 0.0555,
+      "Iraq": 0.0025,
+      "Uzbekistan": 0.0195,
+      "Scotland": 0.027,
+      "United States": 0.15,
+      "Cape Verde": 0.0375,
+      "Senegal": 0.0675,
+      "South Africa": 0.019,
+      "Uruguay": 0.06,
+      "Czech Republic": 0.02,
+      "England": 0.35
+    },
+    "qf": {
+      "Cape Verde": 0.068,
+      "Croatia": 0.19,
+      "Norway": 0.305,
+      "Iraq": 0.021,
+      "Algeria": 0.08,
+      "Uzbekistan": 0.0185,
+      "Argentina": 0.55,
+      "Austria": 0.15,
+      "Portugal": 0.515,
+      "Colombia": 0.275,
+      "Ghana": 0.0495,
+      "Mexico": 0.3,
+      "Sweden": 0.145,
+      "South Korea": 0.155,
+      "Ivory Coast": 0.135,
+      "Cura\u00e7ao": 0.0025,
+      "Tunisia": 0.019,
+      "Jordan": 0.0155,
+      "South Africa": 0.0165,
+      "Czech Republic": 0.055,
+      "Germany": 0.415,
+      "Canada": 0.125,
+      "Haiti": 0.0055,
+      "Spain": 0.555,
+      "England": 0.54,
+      "Switzerland": 0.255,
+      "Qatar": 0.03,
+      "Brazil": 0.465,
+      "Senegal": 0.19,
+      "Bosnia and Herzegovina": 0.055,
+      "Saudi Arabia": 0.1295,
+      "France": 0.6,
+      "Morocco": 0.3,
+      "Netherlands": 0.36,
+      "Panama": 0.0195,
+      "Scotland": 0.085,
+      "Turkey": 0.12,
+      "United States": 0.34,
+      "Australia": 0.0945,
+      "Paraguay": 0.045,
+      "Japan": 0.26,
+      "New Zealand": 0.0165,
+      "Uruguay": 0.215,
+      "Ecuador": 0.155,
+      "Egypt": 0.165,
+      "Belgium": 0.36,
+      "Iran": 0.0525,
+      "DR Congo": 0.047
+    },
+    "r16": {
+      "Mexico": 0.59,
+      "DR Congo": 0.11,
+      "South Korea": 0.47,
+      "South Africa": 0.0425,
+      "Portugal": 0.755,
+      "Czech Republic": 0.215,
+      "Australia": 0.345,
+      "Canada": 0.425,
+      "Switzerland": 0.535,
+      "Turkey": 0.22,
+      "Qatar": 0.0545,
+      "Cape Verde": 0.0755,
+      "France": 0.82,
+      "Uzbekistan": 0.09,
+      "Bosnia and Herzegovina": 0.185,
+      "Austria": 0.285,
+      "Brazil": 0.66,
+      "Uruguay": 0.39,
+      "Morocco": 0.5,
+      "Paraguay": 0.155,
+      "Ecuador": 0.355,
+      "Saudi Arabia": 0.12,
+      "Scotland": 0.26,
+      "Japan": 0.405,
+      "Tunisia": 0.304,
+      "Jordan": 0.0605,
+      "Haiti": 0.021,
+      "Spain": 0.74,
+      "United States": 0.645,
+      "Netherlands": 0.535,
+      "Germany": 0.725,
+      "Croatia": 0.41,
+      "Ivory Coast": 0.415,
+      "Cura\u00e7ao": 0.026,
+      "New Zealand": 0.09,
+      "Sweden": 0.395,
+      "Belgium": 0.605,
+      "Algeria": 0.22,
+      "Colombia": 0.53,
+      "Iran": 0.16,
+      "Egypt": 0.355,
+      "Ghana": 0.135,
+      "Senegal": 0.33,
+      "Panama": 0.055,
+      "Norway": 0.565,
+      "Iraq": 0.144,
+      "Argentina": 0.685,
+      "England": 0.765
+    },
+    "r32": {
+      "South Korea": 0.925,
+      "Czech Republic": 0.545,
+      "Switzerland": 0.886,
+      "Bosnia and Herzegovina": 0.675,
+      "Morocco": 0.93,
+      "Haiti": 0.051,
+      "Australia": 0.865,
+      "Turkey": 0.52,
+      "Ecuador": 0.785,
+      "Cura\u00e7ao": 0.0285,
+      "Japan": 0.855,
+      "Sweden": 0.944,
+      "Iran": 0.4125,
+      "New Zealand": 0.305,
+      "Uruguay": 0.775,
+      "Cape Verde": 0.425,
+      "Senegal": 0.655,
+      "Iraq": 0.115,
+      "Austria": 0.81,
+      "Jordan": 0.21,
+      "Colombia": 0.895,
+      "Mexico": 0.971,
+      "South Africa": 0.17,
+      "Canada": 0.845,
+      "Qatar": 0.265,
+      "Brazil": 0.955,
+      "Scotland": 0.75,
+      "United States": 0.975,
+      "Paraguay": 0.385,
+      "Germany": 0.995,
+      "Ivory Coast": 0.956,
+      "Netherlands": 0.925,
+      "Tunisia": 0.075,
+      "Belgium": 0.9255,
+      "Egypt": 0.825,
+      "Spain": 0.9675,
+      "Saudi Arabia": 0.425,
+      "France": 0.9955,
+      "Norway": 0.85,
+      "Argentina": 0.963,
+      "Algeria": 0.665,
+      "Portugal": 0.9685,
+      "Uzbekistan": 0.305,
+      "England": 0.963,
+      "Panama": 0.345,
+      "DR Congo": 0.405,
+      "Croatia": 0.835,
+      "Ghana": 0.485
+    },
+    "win_group": {
+      "Mexico": 0.615,
+      "South Korea": 0.345,
+      "South Africa": 0.005,
+      "Czech Republic": 0.0355,
+      "Canada": 0.345,
+      "Qatar": 0.0375,
+      "Bosnia and Herzegovina": 0.155,
+      "Switzerland": 0.465,
+      "Scotland": 0.11,
+      "Brazil": 0.585,
+      "Haiti": 0.005,
+      "Morocco": 0.295,
+      "Paraguay": 0.0185,
+      "Turkey": 0.075,
+      "United States": 0.685,
+      "Australia": 0.206,
+      "Cura\u00e7ao": 0.004,
+      "Ecuador": 0.045,
+      "Germany": 0.725,
+      "Ivory Coast": 0.202,
+      "Tunisia": 0.007,
+      "Japan": 0.285,
+      "Netherlands": 0.435,
+      "Sweden": 0.285,
+      "New Zealand": 0.0355,
+      "Iran": 0.073,
+      "Egypt": 0.265,
+      "Belgium": 0.625,
+      "Cape Verde": 0.0325,
+      "Uruguay": 0.215,
+      "Spain": 0.725,
+      "Saudi Arabia": 0.0235,
+      "Senegal": 0.0175,
+      "Norway": 0.18,
+      "France": 0.82,
+      "Iraq": 0.004,
+      "Algeria": 0.1205,
+      "Jordan": 0.0115,
+      "Argentina": 0.705,
+      "Austria": 0.18,
+      "Colombia": 0.315,
+      "DR Congo": 0.0325,
+      "Portugal": 0.625,
+      "Uzbekistan": 0.0265,
+      "England": 0.695,
+      "Ghana": 0.053,
+      "Croatia": 0.225,
+      "Panama": 0.0255
+    }
+  }
+}

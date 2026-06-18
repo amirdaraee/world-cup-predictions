@@ -1,0 +1,1195 @@
+{
+ "generated": "2026-06-17 06:47 UTC",
+ "method": "Elo (margin-aware K) -> Poisson goals map -> same DC grid; structurally independent second opinion, display-only",
+ "params": {
+  "K": 64.0,
+  "H_elo": 75.0,
+  "rho": -0.05,
+  "goals_map": {
+   "a": 0.1182998013142098,
+   "b": 0.8328125000000003,
+   "c": 0.25734375
+  }
+ },
+ "backtest": {
+  "logloss_1x2": 0.8583,
+  "n": 1071,
+  "split": "2025-06-01"
+ },
+ "top_ratings": {
+  "Spain": 2091,
+  "Argentina": 2057,
+  "Morocco": 2006,
+  "Brazil": 2002,
+  "France": 1996,
+  "Japan": 1984,
+  "Colombia": 1970,
+  "England": 1940,
+  "Algeria": 1926,
+  "Ecuador": 1920,
+  "Portugal": 1918,
+  "Belgium": 1904,
+  "Germany": 1903,
+  "Mexico": 1902,
+  "Senegal": 1899,
+  "Netherlands": 1890,
+  "Norway": 1888,
+  "Nigeria": 1887,
+  "Iran": 1885,
+  "Ivory Coast": 1878
+ },
+ "matches": {
+  "1489369": {
+   "moneyline": {
+    "home": 0.7696,
+    "draw": 0.1556,
+    "away": 0.0748
+   },
+   "xg": {
+    "home": 2.48,
+    "away": 0.66
+   },
+   "elo": {
+    "home": 1902,
+    "away": 1645
+   },
+   "disagreement": 0.048
+  },
+  "1538999": {
+   "moneyline": {
+    "home": 0.4752,
+    "draw": 0.2857,
+    "away": 0.2392
+   },
+   "xg": {
+    "home": 1.39,
+    "away": 0.91
+   },
+   "elo": {
+    "home": 1805,
+    "away": 1703
+   },
+   "disagreement": 0.0093
+  },
+  "1539000": {
+   "moneyline": {
+    "home": 0.8699,
+    "draw": 0.0958,
+    "away": 0.0343
+   },
+   "xg": {
+    "home": 3.1,
+    "away": 0.53
+   },
+   "elo": {
+    "home": 1868,
+    "away": 1505
+   },
+   "disagreement": 0.1002
+  },
+  "1489370": {
+   "moneyline": {
+    "home": 0.4169,
+    "draw": 0.276,
+    "away": 0.3071
+   },
+   "xg": {
+    "home": 1.4,
+    "away": 1.17
+   },
+   "elo": {
+    "home": 1756,
+    "away": 1774
+   },
+   "disagreement": 0.1292
+  },
+  "1489373": {
+   "moneyline": {
+    "home": 0.0526,
+    "draw": 0.1412,
+    "away": 0.8062
+   },
+   "xg": {
+    "home": 0.51,
+    "away": 2.5
+   },
+   "elo": {
+    "home": 1494,
+    "away": 1877
+   },
+   "disagreement": 0.0105
+  },
+  "1489371": {
+   "moneyline": {
+    "home": 0.3448,
+    "draw": 0.3007,
+    "away": 0.3545
+   },
+   "xg": {
+    "home": 1.12,
+    "away": 1.14
+   },
+   "elo": {
+    "home": 2002,
+    "away": 2006
+   },
+   "disagreement": 0.0844
+  },
+  "1489372": {
+   "moneyline": {
+    "home": 0.3153,
+    "draw": 0.2994,
+    "away": 0.3853
+   },
+   "xg": {
+    "home": 1.06,
+    "away": 1.2
+   },
+   "elo": {
+    "home": 1702,
+    "away": 1732
+   },
+   "disagreement": 0.0734
+  },
+  "1539001": {
+   "moneyline": {
+    "home": 0.3419,
+    "draw": 0.3006,
+    "away": 0.3574
+   },
+   "xg": {
+    "home": 1.11,
+    "away": 1.14
+   },
+   "elo": {
+    "home": 1847,
+    "away": 1854
+   },
+   "disagreement": 0.0349
+  },
+  "1489374": {
+   "moneyline": {
+    "home": 0.7258,
+    "draw": 0.1876,
+    "away": 0.0866
+   },
+   "xg": {
+    "home": 2.13,
+    "away": 0.6
+   },
+   "elo": {
+    "home": 1903,
+    "away": 1598
+   },
+   "disagreement": 0.1737
+  },
+  "1489376": {
+   "moneyline": {
+    "home": 0.2475,
+    "draw": 0.288,
+    "away": 0.4645
+   },
+   "xg": {
+    "home": 0.93,
+    "away": 1.37
+   },
+   "elo": {
+    "home": 1890,
+    "away": 1984
+   },
+   "disagreement": 0.0989
+  },
+  "1489375": {
+   "moneyline": {
+    "home": 0.3019,
+    "draw": 0.2981,
+    "away": 0.4
+   },
+   "xg": {
+    "home": 1.03,
+    "away": 1.23
+   },
+   "elo": {
+    "home": 1878,
+    "away": 1920
+   },
+   "disagreement": 0.0776
+  },
+  "1539002": {
+   "moneyline": {
+    "home": 0.2862,
+    "draw": 0.296,
+    "away": 0.4178
+   },
+   "xg": {
+    "home": 1.0,
+    "away": 1.27
+   },
+   "elo": {
+    "home": 1664,
+    "away": 1720
+   },
+   "disagreement": 0.1342
+  },
+  "1489380": {
+   "moneyline": {
+    "home": 0.7986,
+    "draw": 0.1458,
+    "away": 0.0556
+   },
+   "xg": {
+    "home": 2.46,
+    "away": 0.52
+   },
+   "elo": {
+    "home": 2091,
+    "away": 1716
+   },
+   "disagreement": 0.0819
+  },
+  "1489377": {
+   "moneyline": {
+    "home": 0.4486,
+    "draw": 0.2911,
+    "away": 0.2603
+   },
+   "xg": {
+    "home": 1.33,
+    "away": 0.95
+   },
+   "elo": {
+    "home": 1904,
+    "away": 1823
+   },
+   "disagreement": 0.1079
+  },
+  "1489379": {
+   "moneyline": {
+    "home": 0.1652,
+    "draw": 0.2536,
+    "away": 0.5812
+   },
+   "xg": {
+    "home": 0.76,
+    "away": 1.66
+   },
+   "elo": {
+    "home": 1647,
+    "away": 1833
+   },
+   "disagreement": 0.0745
+  },
+  "1489378": {
+   "moneyline": {
+    "home": 0.6616,
+    "draw": 0.2198,
+    "away": 0.1186
+   },
+   "xg": {
+    "home": 1.9,
+    "away": 0.67
+   },
+   "elo": {
+    "home": 1885,
+    "away": 1634
+   },
+   "disagreement": 0.1926
+  },
+  "1489383": {
+   "moneyline": {
+    "home": 0.4682,
+    "draw": 0.2872,
+    "away": 0.2446
+   },
+   "xg": {
+    "home": 1.38,
+    "away": 0.92
+   },
+   "elo": {
+    "home": 1996,
+    "away": 1899
+   },
+   "disagreement": 0.0282
+  },
+  "1539016": {
+   "moneyline": {
+    "home": 0.1932,
+    "draw": 0.2684,
+    "away": 0.5383
+   },
+   "xg": {
+    "home": 0.82,
+    "away": 1.54
+   },
+   "elo": {
+    "home": 1736,
+    "away": 1888
+   },
+   "disagreement": 0.1716
+  },
+  "1489381": {
+   "moneyline": {
+    "home": 0.5121,
+    "draw": 0.2763,
+    "away": 0.2116
+   },
+   "xg": {
+    "home": 1.48,
+    "away": 0.86
+   },
+   "elo": {
+    "home": 2057,
+    "away": 1926
+   },
+   "disagreement": 0.1283
+  },
+  "1489382": {
+   "moneyline": {
+    "home": 0.4652,
+    "draw": 0.2878,
+    "away": 0.247
+   },
+   "xg": {
+    "home": 1.37,
+    "away": 0.92
+   },
+   "elo": {
+    "home": 1826,
+    "away": 1732
+   },
+   "disagreement": 0.1803
+  },
+  "1539003": {
+   "moneyline": {
+    "home": 0.5072,
+    "draw": 0.2776,
+    "away": 0.2151
+   },
+   "xg": {
+    "home": 1.47,
+    "away": 0.86
+   },
+   "elo": {
+    "home": 1918,
+    "away": 1790
+   },
+   "disagreement": 0.1505
+  },
+  "1489384": {
+   "moneyline": {
+    "home": 0.4936,
+    "draw": 0.2812,
+    "away": 0.2251
+   },
+   "xg": {
+    "home": 1.44,
+    "away": 0.88
+   },
+   "elo": {
+    "home": 1940,
+    "away": 1824
+   },
+   "disagreement": 0.0894
+  },
+  "1489385": {
+   "moneyline": {
+    "home": 0.1789,
+    "draw": 0.2613,
+    "away": 0.5598
+   },
+   "xg": {
+    "home": 0.79,
+    "away": 1.6
+   },
+   "elo": {
+    "home": 1601,
+    "away": 1769
+   },
+   "disagreement": 0.2812
+  },
+  "1489386": {
+   "moneyline": {
+    "home": 0.1833,
+    "draw": 0.2636,
+    "away": 0.5531
+   },
+   "xg": {
+    "home": 0.8,
+    "away": 1.58
+   },
+   "elo": {
+    "home": 1807,
+    "away": 1970
+   },
+   "disagreement": 0.0342
+  },
+  "1539004": {
+   "moneyline": {
+    "home": 0.4185,
+    "draw": 0.2959,
+    "away": 0.2856
+   },
+   "xg": {
+    "home": 1.27,
+    "away": 1.0
+   },
+   "elo": {
+    "home": 1703,
+    "away": 1645
+   },
+   "disagreement": 0.0531
+  },
+  "1539005": {
+   "moneyline": {
+    "home": 0.7956,
+    "draw": 0.1476,
+    "away": 0.0567
+   },
+   "xg": {
+    "home": 2.44,
+    "away": 0.52
+   },
+   "elo": {
+    "home": 1877,
+    "away": 1505
+   },
+   "disagreement": 0.0896
+  },
+  "1489387": {
+   "moneyline": {
+    "home": 0.8784,
+    "draw": 0.0903,
+    "away": 0.0313
+   },
+   "xg": {
+    "home": 3.17,
+    "away": 0.52
+   },
+   "elo": {
+    "home": 1868,
+    "away": 1494
+   },
+   "disagreement": 0.0158
+  },
+  "1489388": {
+   "moneyline": {
+    "home": 0.5718,
+    "draw": 0.2421,
+    "away": 0.1861
+   },
+   "xg": {
+    "home": 1.78,
+    "away": 0.92
+   },
+   "elo": {
+    "home": 1902,
+    "away": 1805
+   },
+   "disagreement": 0.0748
+  },
+  "1489391": {
+   "moneyline": {
+    "home": 0.3244,
+    "draw": 0.2776,
+    "away": 0.3979
+   },
+   "xg": {
+    "home": 1.2,
+    "away": 1.36
+   },
+   "elo": {
+    "home": 1756,
+    "away": 1847
+   },
+   "disagreement": 0.15
+  },
+  "1489390": {
+   "moneyline": {
+    "home": 0.104,
+    "draw": 0.2063,
+    "away": 0.6897
+   },
+   "xg": {
+    "home": 0.64,
+    "away": 1.99
+   },
+   "elo": {
+    "home": 1732,
+    "away": 2006
+   },
+   "disagreement": 0.0344
+  },
+  "1489389": {
+   "moneyline": {
+    "home": 0.7194,
+    "draw": 0.191,
+    "away": 0.0896
+   },
+   "xg": {
+    "home": 2.1,
+    "away": 0.6
+   },
+   "elo": {
+    "home": 2002,
+    "away": 1702
+   },
+   "disagreement": 0.164
+  },
+  "1539006": {
+   "moneyline": {
+    "home": 0.4466,
+    "draw": 0.2915,
+    "away": 0.2619
+   },
+   "xg": {
+    "home": 1.33,
+    "away": 0.95
+   },
+   "elo": {
+    "home": 1854,
+    "away": 1774
+   },
+   "disagreement": 0.0422
+  },
+  "1539007": {
+   "moneyline": {
+    "home": 0.6315,
+    "draw": 0.2333,
+    "away": 0.1351
+   },
+   "xg": {
+    "home": 1.8,
+    "away": 0.7
+   },
+   "elo": {
+    "home": 1890,
+    "away": 1664
+   },
+   "disagreement": 0.0233
+  },
+  "1489393": {
+   "moneyline": {
+    "home": 0.3796,
+    "draw": 0.2997,
+    "away": 0.3206
+   },
+   "xg": {
+    "home": 1.19,
+    "away": 1.07
+   },
+   "elo": {
+    "home": 1903,
+    "away": 1878
+   },
+   "disagreement": 0.0872
+  },
+  "1489392": {
+   "moneyline": {
+    "home": 0.7443,
+    "draw": 0.1775,
+    "away": 0.0782
+   },
+   "xg": {
+    "home": 2.2,
+    "away": 0.58
+   },
+   "elo": {
+    "home": 1920,
+    "away": 1598
+   },
+   "disagreement": 0.0229
+  },
+  "1489394": {
+   "moneyline": {
+    "home": 0.1107,
+    "draw": 0.2126,
+    "away": 0.6767
+   },
+   "xg": {
+    "home": 0.65,
+    "away": 1.95
+   },
+   "elo": {
+    "home": 1720,
+    "away": 1984
+   },
+   "disagreement": 0.0508
+  },
+  "1489397": {
+   "moneyline": {
+    "home": 0.8591,
+    "draw": 0.107,
+    "away": 0.0339
+   },
+   "xg": {
+    "home": 2.84,
+    "away": 0.45
+   },
+   "elo": {
+    "home": 2091,
+    "away": 1647
+   },
+   "disagreement": 0.0097
+  },
+  "1489395": {
+   "moneyline": {
+    "home": 0.3728,
+    "draw": 0.3001,
+    "away": 0.3271
+   },
+   "xg": {
+    "home": 1.17,
+    "away": 1.08
+   },
+   "elo": {
+    "home": 1904,
+    "away": 1885
+   },
+   "disagreement": 0.2271
+  },
+  "1489398": {
+   "moneyline": {
+    "home": 0.4938,
+    "draw": 0.2812,
+    "away": 0.225
+   },
+   "xg": {
+    "home": 1.44,
+    "away": 0.88
+   },
+   "elo": {
+    "home": 1833,
+    "away": 1716
+   },
+   "disagreement": 0.1776
+  },
+  "1489396": {
+   "moneyline": {
+    "home": 0.1626,
+    "draw": 0.2521,
+    "away": 0.5854
+   },
+   "xg": {
+    "home": 0.76,
+    "away": 1.67
+   },
+   "elo": {
+    "home": 1634,
+    "away": 1823
+   },
+   "disagreement": 0.1332
+  },
+  "1489399": {
+   "moneyline": {
+    "home": 0.6379,
+    "draw": 0.2305,
+    "away": 0.1315
+   },
+   "xg": {
+    "home": 1.82,
+    "away": 0.7
+   },
+   "elo": {
+    "home": 2057,
+    "away": 1826
+   },
+   "disagreement": 0.0627
+  },
+  "1539017": {
+   "moneyline": {
+    "home": 0.6731,
+    "draw": 0.2144,
+    "away": 0.1126
+   },
+   "xg": {
+    "home": 1.93,
+    "away": 0.65
+   },
+   "elo": {
+    "home": 1996,
+    "away": 1736
+   },
+   "disagreement": 0.1584
+  },
+  "1489401": {
+   "moneyline": {
+    "home": 0.3363,
+    "draw": 0.3005,
+    "away": 0.3632
+   },
+   "xg": {
+    "home": 1.1,
+    "away": 1.15
+   },
+   "elo": {
+    "home": 1888,
+    "away": 1899
+   },
+   "disagreement": 0.0091
+  },
+  "1489400": {
+   "moneyline": {
+    "home": 0.1584,
+    "draw": 0.2495,
+    "away": 0.5921
+   },
+   "xg": {
+    "home": 0.75,
+    "away": 1.69
+   },
+   "elo": {
+    "home": 1732,
+    "away": 1926
+   },
+   "disagreement": 0.1446
+  },
+  "1489404": {
+   "moneyline": {
+    "home": 0.4857,
+    "draw": 0.2832,
+    "away": 0.2311
+   },
+   "xg": {
+    "home": 1.42,
+    "away": 0.89
+   },
+   "elo": {
+    "home": 1918,
+    "away": 1807
+   },
+   "disagreement": 0.1778
+  },
+  "1489402": {
+   "moneyline": {
+    "home": 0.7627,
+    "draw": 0.1671,
+    "away": 0.0702
+   },
+   "xg": {
+    "home": 2.28,
+    "away": 0.55
+   },
+   "elo": {
+    "home": 1940,
+    "away": 1601
+   },
+   "disagreement": 0.0119
+  },
+  "1489403": {
+   "moneyline": {
+    "home": 0.2886,
+    "draw": 0.2964,
+    "away": 0.415
+   },
+   "xg": {
+    "home": 1.01,
+    "away": 1.26
+   },
+   "elo": {
+    "home": 1769,
+    "away": 1824
+   },
+   "disagreement": 0.2666
+  },
+  "1539008": {
+   "moneyline": {
+    "home": 0.5746,
+    "draw": 0.2561,
+    "away": 0.1693
+   },
+   "xg": {
+    "home": 1.64,
+    "away": 0.77
+   },
+   "elo": {
+    "home": 1970,
+    "away": 1790
+   },
+   "disagreement": 0.0302
+  },
+  "1489408": {
+   "moneyline": {
+    "home": 0.4532,
+    "draw": 0.2712,
+    "away": 0.2756
+   },
+   "xg": {
+    "home": 1.48,
+    "away": 1.1
+   },
+   "elo": {
+    "home": 1877,
+    "away": 1868
+   },
+   "disagreement": 0.1561
+  },
+  "1539009": {
+   "moneyline": {
+    "home": 0.3626,
+    "draw": 0.3005,
+    "away": 0.3369
+   },
+   "xg": {
+    "home": 1.15,
+    "away": 1.1
+   },
+   "elo": {
+    "home": 1505,
+    "away": 1494
+   },
+   "disagreement": 0.0625
+  },
+  "1489405": {
+   "moneyline": {
+    "home": 0.724,
+    "draw": 0.1885,
+    "away": 0.0874
+   },
+   "xg": {
+    "home": 2.12,
+    "away": 0.6
+   },
+   "elo": {
+    "home": 2006,
+    "away": 1702
+   },
+   "disagreement": 0.0474
+  },
+  "1489406": {
+   "moneyline": {
+    "home": 0.1065,
+    "draw": 0.2087,
+    "away": 0.6848
+   },
+   "xg": {
+    "home": 0.64,
+    "away": 1.97
+   },
+   "elo": {
+    "home": 1732,
+    "away": 2002
+   },
+   "disagreement": 0.1028
+  },
+  "1539010": {
+   "moneyline": {
+    "home": 0.206,
+    "draw": 0.2509,
+    "away": 0.5431
+   },
+   "xg": {
+    "home": 0.96,
+    "away": 1.71
+   },
+   "elo": {
+    "home": 1703,
+    "away": 1902
+   },
+   "disagreement": 0.082
+  },
+  "1489407": {
+   "moneyline": {
+    "home": 0.1867,
+    "draw": 0.2653,
+    "away": 0.5479
+   },
+   "xg": {
+    "home": 0.81,
+    "away": 1.57
+   },
+   "elo": {
+    "home": 1645,
+    "away": 1805
+   },
+   "disagreement": 0.0365
+  },
+  "1489410": {
+   "moneyline": {
+    "home": 0.3695,
+    "draw": 0.3003,
+    "away": 0.3303
+   },
+   "xg": {
+    "home": 1.17,
+    "away": 1.09
+   },
+   "elo": {
+    "home": 1920,
+    "away": 1903
+   },
+   "disagreement": 0.0772
+  },
+  "1489409": {
+   "moneyline": {
+    "home": 0.1004,
+    "draw": 0.2026,
+    "away": 0.6971
+   },
+   "xg": {
+    "home": 0.63,
+    "away": 2.02
+   },
+   "elo": {
+    "home": 1598,
+    "away": 1878
+   },
+   "disagreement": 0.0621
+  },
+  "1539011": {
+   "moneyline": {
+    "home": 0.7412,
+    "draw": 0.1792,
+    "away": 0.0796
+   },
+   "xg": {
+    "home": 2.19,
+    "away": 0.58
+   },
+   "elo": {
+    "home": 1984,
+    "away": 1664
+   },
+   "disagreement": 0.1217
+  },
+  "1489412": {
+   "moneyline": {
+    "home": 0.1784,
+    "draw": 0.261,
+    "away": 0.5606
+   },
+   "xg": {
+    "home": 0.79,
+    "away": 1.6
+   },
+   "elo": {
+    "home": 1720,
+    "away": 1890
+   },
+   "disagreement": 0.0815
+  },
+  "1539012": {
+   "moneyline": {
+    "home": 0.5724,
+    "draw": 0.2419,
+    "away": 0.1857
+   },
+   "xg": {
+    "home": 1.78,
+    "away": 0.92
+   },
+   "elo": {
+    "home": 1854,
+    "away": 1756
+   },
+   "disagreement": 0.3446
+  },
+  "1489411": {
+   "moneyline": {
+    "home": 0.2687,
+    "draw": 0.2929,
+    "away": 0.4383
+   },
+   "xg": {
+    "home": 0.97,
+    "away": 1.31
+   },
+   "elo": {
+    "home": 1774,
+    "away": 1847
+   },
+   "disagreement": 0.0476
+  },
+  "1539074": {
+   "moneyline": {
+    "home": 0.553,
+    "draw": 0.2636,
+    "away": 0.1834
+   },
+   "xg": {
+    "home": 1.58,
+    "away": 0.8
+   },
+   "elo": {
+    "home": 1899,
+    "away": 1736
+   },
+   "disagreement": 0.1395
+  },
+  "1489416": {
+   "moneyline": {
+    "home": 0.2333,
+    "draw": 0.2839,
+    "away": 0.4828
+   },
+   "xg": {
+    "home": 0.9,
+    "away": 1.41
+   },
+   "elo": {
+    "home": 1888,
+    "away": 1996
+   },
+   "disagreement": 0.0591
+  },
+  "1489417": {
+   "moneyline": {
+    "home": 0.1135,
+    "draw": 0.2153,
+    "away": 0.6712
+   },
+   "xg": {
+    "home": 0.66,
+    "away": 1.93
+   },
+   "elo": {
+    "home": 1833,
+    "away": 2091
+   },
+   "disagreement": 0.1483
+  },
+  "1489413": {
+   "moneyline": {
+    "home": 0.4328,
+    "draw": 0.2938,
+    "away": 0.2734
+   },
+   "xg": {
+    "home": 1.3,
+    "away": 0.98
+   },
+   "elo": {
+    "home": 1716,
+    "away": 1647
+   },
+   "disagreement": 0.1081
+  },
+  "1489414": {
+   "moneyline": {
+    "home": 0.2807,
+    "draw": 0.2951,
+    "away": 0.4242
+   },
+   "xg": {
+    "home": 0.99,
+    "away": 1.28
+   },
+   "elo": {
+    "home": 1823,
+    "away": 1885
+   },
+   "disagreement": 0.0947
+  },
+  "1489415": {
+   "moneyline": {
+    "home": 0.1065,
+    "draw": 0.2086,
+    "away": 0.6849
+   },
+   "xg": {
+    "home": 0.64,
+    "away": 1.98
+   },
+   "elo": {
+    "home": 1634,
+    "away": 1904
+   },
+   "disagreement": 0.0357
+  },
+  "1489420": {
+   "moneyline": {
+    "home": 0.628,
+    "draw": 0.2349,
+    "away": 0.1371
+   },
+   "xg": {
+    "home": 1.79,
+    "away": 0.71
+   },
+   "elo": {
+    "home": 1824,
+    "away": 1601
+   },
+   "disagreement": 0.0573
+  },
+  "1489422": {
+   "moneyline": {
+    "home": 0.1769,
+    "draw": 0.2603,
+    "away": 0.5628
+   },
+   "xg": {
+    "home": 0.79,
+    "away": 1.61
+   },
+   "elo": {
+    "home": 1769,
+    "away": 1940
+   },
+   "disagreement": 0.2993
+  },
+  "1489419": {
+   "moneyline": {
+    "home": 0.4133,
+    "draw": 0.2966,
+    "away": 0.2901
+   },
+   "xg": {
+    "home": 1.26,
+    "away": 1.01
+   },
+   "elo": {
+    "home": 1970,
+    "away": 1918
+   },
+   "disagreement": 0.1415
+  },
+  "1539013": {
+   "moneyline": {
+    "home": 0.3301,
+    "draw": 0.3003,
+    "away": 0.3696
+   },
+   "xg": {
+    "home": 1.09,
+    "away": 1.17
+   },
+   "elo": {
+    "home": 1790,
+    "away": 1807
+   },
+   "disagreement": 0.0788
+  },
+  "1489418": {
+   "moneyline": {
+    "home": 0.472,
+    "draw": 0.2864,
+    "away": 0.2416
+   },
+   "xg": {
+    "home": 1.39,
+    "away": 0.91
+   },
+   "elo": {
+    "home": 1926,
+    "away": 1826
+   },
+   "disagreement": 0.0396
+  },
+  "1489421": {
+   "moneyline": {
+    "home": 0.0768,
+    "draw": 0.1758,
+    "away": 0.7474
+   },
+   "xg": {
+    "home": 0.57,
+    "away": 2.22
+   },
+   "elo": {
+    "home": 1732,
+    "away": 2057
+   },
+   "disagreement": 0.1676
+  }
+ }
+}

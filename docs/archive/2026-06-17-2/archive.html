@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Versions · WC26 Form Book</title>
+<meta property="og:title" content="Versions · WC26 Form Book">
+<meta property="og:description" content="World Cup 2026 probabilities from an open statistical model: match fair prices vs the betting market, tournament odds, and a locked bracket graded in public.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://wcformbook.com/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wcformbook.com/img/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23211d16'/%3E%3Cpath d='M8 4l3 2.2-1.1 3.6H6.1L5 6.2z' fill='%23f6f1e6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script>
+// Google Consent Mode v2 — analytics stays OFF until the visitor opts in.
+// gtag.js is not even loaded until consent is granted (this run or a prior
+// visit), so no GA cookie or request fires beforehand.
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied', ad_user_data: 'denied',
+  ad_personalization: 'denied', analytics_storage: 'denied'
+});
+function wcfbLoadGA() {
+  gtag('consent', 'update', { analytics_storage: 'granted' });
+  if (window.wcfbGALoaded) return;
+  window.wcfbGALoaded = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-EG56KHB1SX';
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'G-EG56KHB1SX');
+}
+try {
+  if (localStorage.getItem('wcfb_consent') === 'granted') wcfbLoadGA();
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=202606172146">
+<script>
+(function() {
+  var t = localStorage.getItem("theme");
+  if (t) document.documentElement.dataset.theme = t;
+})();
+function toggleTheme() {
+  var el = document.documentElement;
+  var dark = el.dataset.theme === "dark" ||
+    (!el.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+  el.dataset.theme = dark ? "light" : "dark";
+  localStorage.setItem("theme", el.dataset.theme);
+}
+</script>
+</head>
+<body>
+<div class="snapnote">Snapshot of 2026-06-17-2 - predictions as they stood then. <a href="../../index.html">Back to the latest →</a></div>
+<header class="masthead">
+  <a class="skip" href="#main">skip to content</a>
+  <button class="themebtn" onclick="toggleTheme()" title="light / dark" aria-label="toggle light or dark theme">◐</button>
+  
+  <div class="kicker">The Form Book - research edition</div>
+  <a class="wordmark" href="index.html">World&nbsp;Cup&nbsp;26</a>
+  <nav><a href="index.html">Groups</a><span>·</span><a href="matches.html">Matches</a><span>·</span><a href="futures.html">Futures</a><span>·</span><a href="awards.html">Awards</a><span>·</span><a href="bracket.html">Bracket</a><span>·</span><a href="report.html">Report</a><span>·</span><a href="glossary.html">Glossary</a><span>·</span><a href="method.html">Method</a></nav>
+</header>
+
+<main id="main">
+<h1>Previous versions</h1>
+<p class="standfirst">The model recalculates after every matchday, but predictions shouldn't
+vanish when they age - each snapshot below is the complete site, frozen as it stood that day.
+Compare any past view against what actually happened.</p>
+<p class="fineprint">Snapshots are immutable copies (every page and stylesheet). The live site
+always reflects the latest data; the locked bracket on the live site never changes by design -
+what changes between versions are the simulations, prices, futures and award odds.</p>
+<table class="ko" style="max-width:420px">
+<thead><tr><th class="num">#</th><th>Snapshot</th></tr></thead>
+<tbody><tr><td class="num">18</td><td><a href="archive/2026-06-17/index.html">2026-06-17</a></td></tr><tr><td class="num">17</td><td><a href="archive/2026-06-16-2/index.html">2026-06-16-2</a></td></tr><tr><td class="num">16</td><td><a href="archive/2026-06-16/index.html">2026-06-16</a></td></tr><tr><td class="num">15</td><td><a href="archive/2026-06-15-2/index.html">2026-06-15-2</a></td></tr><tr><td class="num">14</td><td><a href="archive/2026-06-15/index.html">2026-06-15</a></td></tr><tr><td class="num">13</td><td><a href="archive/2026-06-14-3/index.html">2026-06-14-3</a></td></tr><tr><td class="num">12</td><td><a href="archive/2026-06-14-2/index.html">2026-06-14-2</a></td></tr><tr><td class="num">11</td><td><a href="archive/2026-06-14/index.html">2026-06-14</a></td></tr><tr><td class="num">10</td><td><a href="archive/2026-06-13-2/index.html">2026-06-13-2</a></td></tr><tr><td class="num">9</td><td><a href="archive/2026-06-13/index.html">2026-06-13</a></td></tr><tr><td class="num">8</td><td><a href="archive/2026-06-12-2/index.html">2026-06-12-2</a></td></tr><tr><td class="num">7</td><td><a href="archive/2026-06-12/index.html">2026-06-12</a></td></tr><tr><td class="num">6</td><td><a href="archive/2026-06-11-3/index.html">2026-06-11-3</a></td></tr><tr><td class="num">5</td><td><a href="archive/2026-06-11-2/index.html">2026-06-11-2</a></td></tr><tr><td class="num">4</td><td><a href="archive/2026-06-11/index.html">2026-06-11</a></td></tr><tr><td class="num">3</td><td><a href="archive/2026-06-10-3/index.html">2026-06-10-3</a></td></tr><tr><td class="num">2</td><td><a href="archive/2026-06-10-2/index.html">2026-06-10-2</a></td></tr><tr><td class="num">1</td><td><a href="archive/2026-06-10/index.html">2026-06-10</a></td></tr></tbody></table>
+</main>
+<footer>
+  <p>Form chips read most-recent first. Stats computed over each team's last 10 completed internationals.</p>
+  <p>Model run: 2026-06-17 21:46 UTC · Polymarket snapshot: 2026-06-17 21:46 UTC · every run archived in runs/</p>
+  <p>Data: API-Football · FIFA rankings 2026 · <a href="method.html">how this works</a> ·
+  <a href="archive.html">previous versions</a> ·
+  <a href="https://github.com/amirdaraee/world-cup-predictions">code on GitHub</a> ·
+  personal research, verify before staking. ·
+  <a href="#" onclick="wcfbCookies();return false;">cookie choices</a></p>
+</footer>
+<div id="cookie-consent" role="dialog" aria-label="Cookie consent" hidden>
+  <p>We use cookies to analyse traffic and understand how the site is
+  used. You can accept or decline — your choice is remembered.</p>
+  <div class="cc-btns">
+    <button id="cc-reject" class="cc-no">Decline</button>
+    <button id="cc-accept" class="cc-yes">Accept</button>
+  </div>
+</div>
+<script>
+(function() {
+  var box = document.getElementById('cookie-consent');
+  if (!box) return;
+  function stored() { try { return localStorage.getItem('wcfb_consent'); }
+                       catch (e) { return null; } }
+  function decide(v) {
+    try { localStorage.setItem('wcfb_consent', v); } catch (e) {}
+    box.hidden = true;
+    if (v === 'granted' && window.wcfbLoadGA) wcfbLoadGA();
+  }
+  if (!stored()) box.hidden = false;   // first visit: ask
+  document.getElementById('cc-accept').onclick = function() { decide('granted'); };
+  document.getElementById('cc-reject').onclick = function() { decide('denied'); };
+  // let anyone reopen the choice from the footer (easy to withdraw consent)
+  window.wcfbCookies = function() { box.hidden = false; };
+})();
+</script>
+</body>
+</html>

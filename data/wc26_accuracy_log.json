@@ -86,8 +86,134 @@
       "backtest_logloss_target": 0.8185
     },
     {
+      "date": "2026-06-16",
+      "generated": "2026-06-16 21:58 UTC",
+      "graded_group_matches": 17,
+      "result_hits": 8,
+      "result_pct": 0.4706,
+      "exact_score_hits": 0,
+      "moneyline": {
+        "blend": {
+          "brier": 0.6772,
+          "logloss": 1.0773
+        },
+        "model": {
+          "brier": 0.6784,
+          "logloss": 1.0866
+        },
+        "market": {
+          "brier": 0.6567,
+          "logloss": 1.0524
+        },
+        "market_priced_matches": 14
+      },
+      "totals_ou25_locked": {
+        "graded": 11,
+        "model": {
+          "hit": 5,
+          "of": 11,
+          "logloss": 0.6565
+        },
+        "market": {
+          "hit": 5,
+          "of": 11,
+          "logloss": 0.702
+        },
+        "blend": {
+          "hit": 5,
+          "of": 11,
+          "logloss": 0.6691
+        }
+      },
+      "backtest_logloss_target": 0.8185
+    },
+    {
+      "date": "2026-06-17",
+      "generated": "2026-06-17 06:48 UTC",
+      "graded_group_matches": 20,
+      "result_hits": 11,
+      "result_pct": 0.55,
+      "exact_score_hits": 0,
+      "moneyline": {
+        "blend": {
+          "brier": 0.6131,
+          "logloss": 0.9938
+        },
+        "model": {
+          "brier": 0.6336,
+          "logloss": 1.0281
+        },
+        "market": {
+          "brier": 0.5593,
+          "logloss": 0.9193
+        },
+        "market_priced_matches": 17
+      },
+      "totals_ou25_locked": {
+        "graded": 14,
+        "model": {
+          "hit": 6,
+          "of": 14,
+          "logloss": 0.6796
+        },
+        "market": {
+          "hit": 7,
+          "of": 14,
+          "logloss": 0.6787
+        },
+        "blend": {
+          "hit": 7,
+          "of": 14,
+          "logloss": 0.6758
+        }
+      },
+      "backtest_logloss_target": 0.8185
+    },
+    {
+      "date": "2026-06-17",
+      "generated": "2026-06-17 21:46 UTC",
+      "graded_group_matches": 21,
+      "result_hits": 11,
+      "result_pct": 0.5238,
+      "exact_score_hits": 0,
+      "moneyline": {
+        "blend": {
+          "brier": 0.6303,
+          "logloss": 1.0133
+        },
+        "model": {
+          "brier": 0.6423,
+          "logloss": 1.0376
+        },
+        "market": {
+          "brier": 0.5995,
+          "logloss": 0.9686
+        },
+        "market_priced_matches": 18
+      },
+      "totals_ou25_locked": {
+        "graded": 15,
+        "model": {
+          "hit": 7,
+          "of": 15,
+          "logloss": 0.6656
+        },
+        "market": {
+          "hit": 7,
+          "of": 15,
+          "logloss": 0.6875
+        },
+        "blend": {
+          "hit": 8,
+          "of": 15,
+          "logloss": 0.6689
+        }
+      },
+      "backtest_logloss_target": 0.8185
+    },
+    {
       "date": "2026-06-18",
-      "generated": "2026-06-18 07:18 UTC",
+      "generated": "2026-06-18 06:39 UTC",
       "graded_group_matches": 24,
       "result_hits": 13,
       "result_pct": 0.5417,
