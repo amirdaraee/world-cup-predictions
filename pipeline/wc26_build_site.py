@@ -17,6 +17,10 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 OUT = ROOT / "docs"   # served by GitHub Pages (main branch /docs)
 DOMAIN = "wcformbook.com"   # custom domain; build emits docs/CNAME for Pages
+SITE_NAME = "WC26 Form Book"
+DEFAULT_DESC = ("World Cup 2026 probabilities from an open statistical model: "
+                "match fair prices vs the betting market, tournament odds, and "
+                "a locked bracket graded in public.")
 BUILD_V = datetime.now(timezone.utc).strftime("%Y%m%d%H%M")  # css cache-buster
 
 teams_data = json.load(open(DATA / "fifa_world_cup_2026.json"))
@@ -215,8 +219,39 @@ def team_link(name, depth=0):
     return f'<a class="tlink" href="{pre}teams/{slug(name)}.html">{escape(name)}</a>'
 
 
-def page(title, body, depth=0, crumb="", lang="en", rtl=False, alt_lang=None):
+def page(title, body, depth=0, crumb="", lang="en", rtl=False, alt_lang=None,
+         desc=None, canon=None):
     pre = "../" * depth
+    full_title = f"{title} · {SITE_NAME}"
+    desc = escape(desc or DEFAULT_DESC)
+    canon_url = f"https://{DOMAIN}/{canon}" if canon is not None else None
+    seo = (f'<meta name="description" content="{desc}">\n'
+           '<meta name="robots" content="index, follow, max-image-preview:large">\n'
+           f'<meta property="og:title" content="{escape(full_title)}">\n'
+           f'<meta property="og:description" content="{desc}">\n'
+           f'<meta property="og:site_name" content="{SITE_NAME}">\n'
+           f'<meta property="og:locale" content="{"fa_IR" if rtl else "en_US"}">\n'
+           '<meta property="og:type" content="website">\n'
+           f'<meta property="og:image" content="https://{DOMAIN}/img/og.png">\n'
+           + (f'<meta property="og:url" content="{canon_url}">\n' if canon_url else "")
+           + '<meta name="twitter:card" content="summary_large_image">\n'
+           f'<meta name="twitter:title" content="{escape(full_title)}">\n'
+           f'<meta name="twitter:description" content="{desc}">\n'
+           f'<meta name="twitter:image" content="https://{DOMAIN}/img/og.png">\n'
+           + (f'<link rel="canonical" href="{canon_url}">\n' if canon_url else ""))
+    # favicons (SVG covers Google Search + all modern browsers; manifest for PWA)
+    icons = (f'<link rel="icon" type="image/svg+xml" href="{pre}favicon.svg">\n'
+             f'<link rel="mask-icon" href="{pre}favicon.svg" color="#211d16">\n'
+             f'<link rel="manifest" href="{pre}site.webmanifest">\n'
+             '<meta name="theme-color" content="#211d16">')
+    jsonld = (
+        '<script type="application/ld+json">'
+        + json.dumps({
+            "@context": "https://schema.org", "@type": "WebSite",
+            "name": SITE_NAME, "url": f"https://{DOMAIN}/",
+            "description": DEFAULT_DESC,
+            "inLanguage": "fa" if rtl else "en"}, ensure_ascii=False)
+        + '</script>')
     # our title= attrs become CSS tooltips (instant, styled, tap-friendly)
     body = body.replace(' title="', ' data-tip="')
     fa_font = ('<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">'
@@ -228,14 +263,9 @@ def page(title, body, depth=0, crumb="", lang="en", rtl=False, alt_lang=None):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{escape(title)} · WC26 Form Book</title>
-<meta property="og:title" content="{escape(title)} · WC26 Form Book">
-<meta property="og:description" content="World Cup 2026 probabilities from an open statistical model: match fair prices vs the betting market, tournament odds, and a locked bracket graded in public.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://{DOMAIN}/img/og.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://{DOMAIN}/img/og.png">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23211d16'/%3E%3Cpath d='M8 4l3 2.2-1.1 3.6H6.1L5 6.2z' fill='%23f6f1e6'/%3E%3C/svg%3E">
+<title>{escape(full_title)}</title>
+{seo}{icons}
+{jsonld}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <script>
 // Google Consent Mode v2 — analytics stays OFF until the visitor opts in.
@@ -431,7 +461,11 @@ but mid-pack by title odds; the model prefers recent goals to reputation). The <
 marker matters beyond ceremony: hosts get a fitted home-crowd boost (~+30% scoring) whenever they
 play in their own country, which is most of their matches.</p>
 <div class="groups">{''.join(cards)}</div>"""
-    (OUT / "index.html").write_text(page("Groups", body))
+    (OUT / "index.html").write_text(page(
+        "Groups", body, canon="",
+        desc="Live World Cup 2026 group standings and match-by-match win "
+             "probabilities from an open Dixon-Coles model, blended with "
+             "Polymarket betting-market prices."))
 
 
 # ---------- matches list ----------
@@ -472,7 +506,11 @@ zones, landing a calendar day later than the local date Polymarket uses in its m
 On matchday 3 both games in a group kick off simultaneously (FIFA's anti-collusion rule since 1982),
 so their in-play prices move together.</p>
 {''.join(sections)}"""
-    (OUT / "matches.html").write_text(page("Matches", body))
+    (OUT / "matches.html").write_text(page(
+        "Matches", body, canon="matches.html",
+        desc="Every World Cup 2026 fixture with model win/draw/loss "
+             "probabilities, expected goals and fair prices versus the live "
+             "betting market."))
 
 
 # ---------- team pages ----------
@@ -957,7 +995,11 @@ favours outsiders, because chaos always does.</p>
 <th class="num" title="reach the quarter-finals">QF</th><th class="num" title="reach the semi-finals">SF</th><th class="num" title="reach the final">Final</th><th class="num" title="win the tournament - column sums to 100% across all teams">Champion</th><th class="num" title="live Polymarket price for Champion">Mkt</th><th class="num" title="model minus market on Champion - positive means the market sells it cheaper than the ensemble values it">Edge</th></tr></thead>
 <tbody>{''.join(rows)}</tbody>
 </table>"""
-    (OUT / "futures.html").write_text(page("Futures", body))
+    (OUT / "futures.html").write_text(page(
+        "Futures", body, canon="futures.html",
+        desc="World Cup 2026 outright odds — group winners, knockout run and "
+             "title chances from a 100,000-run tournament simulation, next to "
+             "the market."))
 
 
 def trend_chart():
@@ -1245,7 +1287,10 @@ roughest calls, matchday breakdowns - lives on the <a href="report.html">Report<
 <div class="groups">{gt_html}</div>
 <h2>Group-stage match tracker</h2>
 {track_html}"""
-    (OUT / "bracket.html").write_text(page("Bracket", body))
+    (OUT / "bracket.html").write_text(page(
+        "Bracket", body, canon="bracket.html",
+        desc="Our locked pre-tournament World Cup 2026 bracket prediction, "
+             "graded match-by-match in public against the real results."))
 
 
 # ---------- awards page ----------
@@ -1336,7 +1381,10 @@ with each candidate's team title odds for context.</p>
 <th class="num">Team champion (model)</th></tr></thead>
 <tbody>{ball_rows}</tbody></table>
 <p class="modelnote">{escape(AWARDS["method"])} Prices as of {AWARDS["prices_at"]}.</p>"""
-    (OUT / "awards.html").write_text(page("Awards", body))
+    (OUT / "awards.html").write_text(page(
+        "Awards", body, canon="awards.html",
+        desc="World Cup 2026 Golden Boot and top-scorer-nation odds from a "
+             "goals model, alongside the live award-market prices."))
 
 
 # ---------- player dossier pages ----------
@@ -1450,7 +1498,11 @@ log-loss) for the model, the market and the blend; the running trend of who is
 forecasting best; calibration buckets; the sharpest and roughest calls; and a
 matchday-by-matchday breakdown. The locked picks themselves are on the
 <a href="bracket.html">Bracket</a> page.</p>"""
-        (OUT / "report.html").write_text(page("Report", body))
+        (OUT / "report.html").write_text(page(
+        "Report", body, canon="report.html",
+        desc="How accurate are the predictions? Live World Cup 2026 model "
+             "accuracy — log-loss versus the market, calibration and hit rate, "
+             "updated each matchday."))
         return
 
     # headline strip — leads with log-loss vs the market (see accuracy_headline)
@@ -1569,7 +1621,11 @@ log-loss and how it sits versus the market.</p>
 {goals_html}
 {calls}
 {cal}"""
-    (OUT / "report.html").write_text(page("Report", body))
+    (OUT / "report.html").write_text(page(
+        "Report", body, canon="report.html",
+        desc="How accurate are the predictions? Live World Cup 2026 model "
+             "accuracy — log-loss versus the market, calibration and hit rate, "
+             "updated each matchday."))
 
 
 def goals_grade(graded):
@@ -2039,7 +2095,11 @@ review, the way odds compilers do it. The model is a fair-value anchor, not an o
 <p class="fineprint">این صفحه به فارسی هم در دسترس است -
 <a href="method-fa.html">نسخهٔ فارسی</a>.</p>"""
     (OUT / "method.html").write_text(
-        page("Method", body, alt_lang=("method-fa.html", "فارسی")))
+        page("Method", body, alt_lang=("method-fa.html", "فارسی"),
+             canon="method.html",
+             desc="How the model works: a weighted Dixon-Coles Poisson fit on "
+                  "international results, validated out-of-sample, with every "
+                  "assumption and known blind spot documented."))
 
 
 def build_method_fa():
@@ -2426,10 +2486,15 @@ ol.timeline b { font-family: "Fraunces", serif; }
 /* Elo second opinion */
 .secondop{max-width:680px;margin:6px auto}
 .elo-disagree{color:#ffc94d}
-/* plain-language glossary */
-dl.glossary{margin:0 0 1.6rem}
-dl.glossary dt{font-weight:600;margin-top:1rem}
-dl.glossary dd{margin:.15rem 0 0;color:var(--ink-soft);max-width:62ch}
+/* plain-language glossary — term/definition grid that fills the column */
+dl.glossary{display:grid;grid-template-columns:minmax(9rem,15rem) 1fr;
+  column-gap:1.8rem;row-gap:.7rem;align-items:baseline;margin:0 0 1.6rem}
+dl.glossary dt{font-weight:600;margin:0}
+dl.glossary dd{margin:0;color:var(--ink-soft)}
+@media (max-width:640px){
+  dl.glossary{grid-template-columns:1fr;row-gap:0}
+  dl.glossary dt{margin-top:1rem}
+  dl.glossary dd{margin-top:.15rem}}
 /* cookie consent (Google Consent Mode v2) */
 #cookie-consent{position:fixed;right:1rem;bottom:1rem;z-index:50;
   max-width:min(340px,calc(100vw - 2rem));background:var(--paper-2);
@@ -2929,7 +2994,47 @@ English, no maths assumed. Skim it, or jump to a section.</p>
 whole site is open on
 <a href="https://github.com/amirdaraee/world-cup-predictions">GitHub</a> — and
 remember, none of this is betting advice.</p>"""
-    (OUT / "glossary.html").write_text(page("Glossary", body))
+    (OUT / "glossary.html").write_text(page(
+        "Glossary", body, canon="glossary.html",
+        desc="Plain-English glossary of football prediction and betting-market "
+             "terms — probability, log-loss, closing-line value and more, no "
+             "maths assumed."))
+
+
+FAVICON_SVG = (
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">'
+    '<rect width="32" height="32" rx="6" fill="#211d16"/>'
+    '<path d="M16 6.5l7.1 5.16-2.71 8.34H11.6L8.9 11.66z" fill="#f6f1e6"/>'
+    '</svg>\n')
+
+
+def emit_seo_assets():
+    """favicon, web manifest, robots.txt and a sitemap of every live page —
+    written into docs/ each build (build_all wipes and regenerates docs/)."""
+    (OUT / "favicon.svg").write_text(FAVICON_SVG)
+    (OUT / "site.webmanifest").write_text(json.dumps({
+        "name": SITE_NAME, "short_name": "Form Book", "description": DEFAULT_DESC,
+        "start_url": "/", "display": "standalone",
+        "background_color": "#f6f1e6", "theme_color": "#211d16",
+        "icons": [{"src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any"}],
+    }, indent=2, ensure_ascii=False))
+    (OUT / "robots.txt").write_text(
+        "User-agent: *\nAllow: /\n"
+        f"Sitemap: https://{DOMAIN}/sitemap.xml\n")
+    # sitemap: every live .html except the immutable archive snapshots
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    urls = []
+    for f in sorted(OUT.rglob("*.html")):
+        rel = f.relative_to(OUT).as_posix()
+        if rel.startswith("archive/"):
+            continue
+        loc = f"https://{DOMAIN}/" + ("" if rel == "index.html" else rel)
+        urls.append(f"  <url><loc>{escape(loc)}</loc>"
+                    f"<lastmod>{today}</lastmod></url>")
+    (OUT / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(urls) + "\n</urlset>\n")
 
 
 def build_all(snapshot=False):
@@ -2963,6 +3068,7 @@ def build_all(snapshot=False):
     if snapshot:
         take_snapshot()
         build_archive_index()   # live index now lists the new snapshot
+    emit_seo_assets()   # favicon, manifest, robots.txt, sitemap (after all pages)
     n = len(list(OUT.glob("*.html"))) + len(list((OUT / "teams").glob("*.html"))) \
         + len(list((OUT / "matches").glob("*.html")))
     snaps = len(list((OUT / "archive").iterdir())) if (OUT / "archive").exists() else 0

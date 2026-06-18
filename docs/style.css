@@ -41,10 +41,15 @@ ol.timeline b { font-family: "Fraunces", serif; }
 /* Elo second opinion */
 .secondop{max-width:680px;margin:6px auto}
 .elo-disagree{color:#ffc94d}
-/* plain-language glossary */
-dl.glossary{margin:0 0 1.6rem}
-dl.glossary dt{font-weight:600;margin-top:1rem}
-dl.glossary dd{margin:.15rem 0 0;color:var(--ink-soft);max-width:62ch}
+/* plain-language glossary — term/definition grid that fills the column */
+dl.glossary{display:grid;grid-template-columns:minmax(9rem,15rem) 1fr;
+  column-gap:1.8rem;row-gap:.7rem;align-items:baseline;margin:0 0 1.6rem}
+dl.glossary dt{font-weight:600;margin:0}
+dl.glossary dd{margin:0;color:var(--ink-soft)}
+@media (max-width:640px){
+  dl.glossary{grid-template-columns:1fr;row-gap:0}
+  dl.glossary dt{margin-top:1rem}
+  dl.glossary dd{margin-top:.15rem}}
 /* cookie consent (Google Consent Mode v2) */
 #cookie-consent{position:fixed;right:1rem;bottom:1rem;z-index:50;
   max-width:min(340px,calc(100vw - 2rem));background:var(--paper-2);

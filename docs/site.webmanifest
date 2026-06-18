@@ -1,0 +1,16 @@
+{
+  "name": "WC26 Form Book",
+  "short_name": "Form Book",
+  "description": "World Cup 2026 probabilities from an open statistical model: match fair prices vs the betting market, tournament odds, and a locked bracket graded in public.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f1e6",
+  "theme_color": "#211d16",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}
