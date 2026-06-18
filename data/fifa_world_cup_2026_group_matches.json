@@ -264,8 +264,8 @@
       "away": "Croatia",
       "venue": "AT&T Stadium",
       "city": "Dallas",
-      "status": "Second Half",
-      "score": null
+      "status": "Match Finished",
+      "score": "4-2"
     },
     {
       "match_id": 1489385,
@@ -276,8 +276,8 @@
       "away": "Panama",
       "venue": "BMO Field",
       "city": "Toronto",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-0"
     },
     {
       "match_id": 1489386,
@@ -288,8 +288,8 @@
       "away": "Colombia",
       "venue": "Estadio Azteca",
       "city": "Mexico City",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-3"
     },
     {
       "match_id": 1539004,

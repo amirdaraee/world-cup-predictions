@@ -15,6 +15,9 @@
     1489381,
     1489382,
     1489383,
+    1489384,
+    1489385,
+    1489386,
     1538999,
     1539000,
     1539001,
@@ -55,6 +58,11 @@
     },
     "Erling Haaland": {
       "team": "Norway",
+      "goals": 2,
+      "assists_from": []
+    },
+    "Harry Kane": {
+      "team": "England",
       "goals": 2,
       "assists_from": []
     },
@@ -275,6 +283,51 @@
     },
     "Y. Wissa": {
       "team": "DR Congo",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Martin Baturina": {
+      "team": "Croatia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Petar Musa": {
+      "team": "Croatia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Jude Bellingham": {
+      "team": "England",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Marcus Rashford": {
+      "team": "England",
+      "goals": 1,
+      "assists_from": []
+    },
+    "C. Yirenkyi": {
+      "team": "Ghana",
+      "goals": 1,
+      "assists_from": []
+    },
+    "D. Munoz": {
+      "team": "Colombia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Fayzullaev": {
+      "team": "Uzbekistan",
+      "goals": 1,
+      "assists_from": []
+    },
+    "L. Diaz": {
+      "team": "Colombia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "J. Campaz": {
+      "team": "Colombia",
       "goals": 1,
       "assists_from": []
     }
