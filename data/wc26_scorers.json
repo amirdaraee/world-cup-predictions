@@ -18,6 +18,8 @@
     1489384,
     1489385,
     1489386,
+    1489387,
+    1489388,
     1538999,
     1539000,
     1539001,
@@ -30,6 +32,11 @@
   "scorers": {
     "L. Messi": {
       "team": "Argentina",
+      "goals": 3,
+      "assists_from": []
+    },
+    "Jonathan David": {
+      "team": "Canada",
       "goals": 3,
       "assists_from": []
     },
@@ -360,6 +367,21 @@
     },
     "G. Xhaka": {
       "team": "Switzerland",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Cyle Larin": {
+      "team": "Canada",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Nathan-Dylan Saliba": {
+      "team": "Canada",
+      "goals": 1,
+      "assists_from": []
+    },
+    "L. Romo": {
+      "team": "Mexico",
       "goals": 1,
       "assists_from": []
     }

@@ -324,8 +324,8 @@
       "away": "Qatar",
       "venue": "BC Place",
       "city": "Vancouver",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "6-0"
     },
     {
       "match_id": 1489388,
@@ -336,8 +336,8 @@
       "away": "South Korea",
       "venue": "Estadio Akron",
       "city": "Guadalajara",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-0"
     },
     {
       "match_id": 1489391,
