@@ -20,6 +20,7 @@
     1489386,
     1489387,
     1489388,
+    1489391,
     1538999,
     1539000,
     1539001,
@@ -382,6 +383,11 @@
     },
     "L. Romo": {
       "team": "Mexico",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Freeman": {
+      "team": "United States",
       "goals": 1,
       "assists_from": []
     }
