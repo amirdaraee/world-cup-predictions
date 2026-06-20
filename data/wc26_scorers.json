@@ -20,6 +20,8 @@
     1489386,
     1489387,
     1489388,
+    1489389,
+    1489390,
     1489391,
     1538999,
     1539000,
@@ -28,6 +30,7 @@
     1539003,
     1539004,
     1539005,
+    1539006,
     1539016
   ],
   "scorers": {
@@ -78,6 +81,16 @@
     },
     "J. Manzambi": {
       "team": "Switzerland",
+      "goals": 2,
+      "assists_from": []
+    },
+    "Vinicius Junior": {
+      "team": "Brazil",
+      "goals": 2,
+      "assists_from": []
+    },
+    "M. Cunha": {
+      "team": "Brazil",
       "goals": 2,
       "assists_from": []
     },
@@ -133,11 +146,6 @@
     },
     "I. Saibari": {
       "team": "Morocco",
-      "goals": 1,
-      "assists_from": []
-    },
-    "Vinicius Junior": {
-      "team": "Brazil",
       "goals": 1,
       "assists_from": []
     },
@@ -388,6 +396,16 @@
     },
     "A. Freeman": {
       "team": "United States",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Ismael Saibari": {
+      "team": "Morocco",
+      "goals": 1,
+      "assists_from": []
+    },
+    "M. Galarza": {
+      "team": "Paraguay",
       "goals": 1,
       "assists_from": []
     }
