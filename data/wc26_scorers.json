@@ -31,6 +31,7 @@
     1539004,
     1539005,
     1539006,
+    1539007,
     1539016
   ],
   "scorers": {
@@ -91,6 +92,16 @@
     },
     "M. Cunha": {
       "team": "Brazil",
+      "goals": 2,
+      "assists_from": []
+    },
+    "B. Brobbey": {
+      "team": "Netherlands",
+      "goals": 2,
+      "assists_from": []
+    },
+    "C. Gakpo": {
+      "team": "Netherlands",
       "goals": 2,
       "assists_from": []
     },
@@ -406,6 +417,16 @@
     },
     "M. Galarza": {
       "team": "Paraguay",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Elanga": {
+      "team": "Sweden",
+      "goals": 1,
+      "assists_from": []
+    },
+    "C. Summerville": {
+      "team": "Netherlands",
       "goals": 1,
       "assists_from": []
     }

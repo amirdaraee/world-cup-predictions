@@ -396,8 +396,8 @@
       "away": "Sweden",
       "venue": "NRG Stadium",
       "city": "Houston",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "5-1"
     },
     {
       "match_id": 1489393,
@@ -408,7 +408,7 @@
       "away": "Ivory Coast",
       "venue": "BMO Field",
       "city": "Toronto",
-      "status": "Not Started",
+      "status": "Second Half",
       "score": null
     },
     {
