@@ -23,6 +23,9 @@
     1489389,
     1489390,
     1489391,
+    1489392,
+    1489393,
+    1489394,
     1538999,
     1539000,
     1539001,
@@ -102,6 +105,16 @@
     },
     "C. Gakpo": {
       "team": "Netherlands",
+      "goals": 2,
+      "assists_from": []
+    },
+    "Deniz Undav": {
+      "team": "Germany",
+      "goals": 2,
+      "assists_from": []
+    },
+    "A. Ueda": {
+      "team": "Japan",
       "goals": 2,
       "assists_from": []
     },
@@ -427,6 +440,21 @@
     },
     "C. Summerville": {
       "team": "Netherlands",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Franck Kessié": {
+      "team": "Ivory Coast",
+      "goals": 1,
+      "assists_from": []
+    },
+    "D. Kamada": {
+      "team": "Japan",
+      "goals": 1,
+      "assists_from": []
+    },
+    "J. Ito": {
+      "team": "Japan",
       "goals": 1,
       "assists_from": []
     }

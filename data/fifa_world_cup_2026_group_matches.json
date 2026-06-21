@@ -408,8 +408,8 @@
       "away": "Ivory Coast",
       "venue": "BMO Field",
       "city": "Toronto",
-      "status": "Second Half",
-      "score": null
+      "status": "Match Finished",
+      "score": "2-1"
     },
     {
       "match_id": 1489392,
@@ -420,8 +420,8 @@
       "away": "Curaçao",
       "venue": "Arrowhead Stadium",
       "city": "Kansas City",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-0"
     },
     {
       "match_id": 1489394,
@@ -432,8 +432,8 @@
       "away": "Japan",
       "venue": "Estadio BBVA",
       "city": "Monterrey",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-4"
     },
     {
       "match_id": 1489397,
