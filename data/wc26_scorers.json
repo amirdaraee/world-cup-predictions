@@ -26,6 +26,8 @@
     1489392,
     1489393,
     1489394,
+    1489395,
+    1489397,
     1538999,
     1539000,
     1539001,
@@ -115,6 +117,11 @@
     },
     "A. Ueda": {
       "team": "Japan",
+      "goals": 2,
+      "assists_from": []
+    },
+    "M. Oyarzabal": {
+      "team": "Spain",
       "goals": 2,
       "assists_from": []
     },
@@ -455,6 +462,11 @@
     },
     "J. Ito": {
       "team": "Japan",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Lamine Yamal": {
+      "team": "Spain",
       "goals": 1,
       "assists_from": []
     }

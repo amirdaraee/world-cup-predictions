@@ -444,8 +444,8 @@
       "away": "Saudi Arabia",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "4-0"
     },
     {
       "match_id": 1489395,
@@ -456,8 +456,8 @@
       "away": "Iran",
       "venue": "SoFi Stadium",
       "city": "Los Angeles",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-0"
     },
     {
       "match_id": 1489398,
