@@ -546,6 +546,48 @@
         }
       },
       "backtest_logloss_target": 0.8185
+    },
+    {
+      "date": "2026-06-22",
+      "generated": "2026-06-22 06:53 UTC",
+      "graded_group_matches": 40,
+      "result_hits": 24,
+      "result_pct": 0.6,
+      "exact_score_hits": 2,
+      "moneyline": {
+        "blend": {
+          "brier": 0.5456,
+          "logloss": 0.902
+        },
+        "model": {
+          "brier": 0.5612,
+          "logloss": 0.9299
+        },
+        "market": {
+          "brier": 0.5214,
+          "logloss": 0.8653
+        },
+        "market_priced_matches": 34
+      },
+      "totals_ou25_locked": {
+        "graded": 34,
+        "model": {
+          "hit": 20,
+          "of": 34,
+          "logloss": 0.6653
+        },
+        "market": {
+          "hit": 17,
+          "of": 34,
+          "logloss": 0.6718
+        },
+        "blend": {
+          "hit": 20,
+          "of": 34,
+          "logloss": 0.6636
+        }
+      },
+      "backtest_logloss_target": 0.8185
     }
   ]
 }

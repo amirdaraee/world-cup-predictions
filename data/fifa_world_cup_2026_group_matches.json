@@ -468,8 +468,8 @@
       "away": "Cape Verde",
       "venue": "Hard Rock Stadium",
       "city": "Miami",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "2-2"
     },
     {
       "match_id": 1489396,
@@ -480,8 +480,8 @@
       "away": "Egypt",
       "venue": "BC Place",
       "city": "Vancouver",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-3"
     },
     {
       "match_id": 1489399,
