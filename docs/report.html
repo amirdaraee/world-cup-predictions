@@ -51,7 +51,7 @@ try {
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=202606220700">
+<link rel="stylesheet" href="style.css?v=202606222148">
 <script>
 (function() {
   var t = localStorage.getItem("theme");
@@ -86,25 +86,25 @@ log-loss against the market, not on how often its single likeliest pick lands.
 Raw "results called" sinks whenever draws cluster — a draw is rarely any one
 match's most-likely score — so the headline below leads with the model's
 log-loss and how it sits versus the market.</p>
-<dl class="stats"><div><dt>Matches graded</dt><dd>40</dd></div><div><dt>Model log-loss</dt><dd>0.9299</dd></div><div><dt>vs the market</dt><dd>behind by 0.065</dd></div><div><dt>Results called</dt><dd>24 (60%)</dd></div></dl>
+<dl class="stats"><div><dt>Matches graded</dt><dd>41</dd></div><div><dt>Model log-loss</dt><dd>0.9187</dd></div><div><dt>vs the market</dt><dd>behind by 0.064</dd></div><div><dt>Results called</dt><dd>25 (61%)</dd></div></dl>
 <h2>Who forecasts best so far</h2>
 <table class="ko"><thead><tr><th>Source</th>
 <th class="num" data-tip="mean squared error - guessing equally scores 0.667">Brier</th>
 <th class="num" data-tip="penalises confident errors - guessing equally scores 1.099">Log-loss</th></tr></thead>
-<tbody><tr><td>Blend</td><td class="num">0.5456</td><td class="num">0.902</td></tr><tr><td>Model</td><td class="num">0.5612</td><td class="num">0.9299</td></tr><tr><td>Market</td><td class="num">0.5214</td><td class="num">0.8653</td></tr></tbody></table>
-<p class="fineprint">Market graded on its 34 priced
+<tbody><tr><td>Blend</td><td class="num">0.5378</td><td class="num">0.8918</td></tr><tr><td>Model</td><td class="num">0.5528</td><td class="num">0.9187</td></tr><tr><td>Market</td><td class="num">0.5134</td><td class="num">0.8551</td></tr></tbody></table>
+<p class="fineprint">Market graded on its 35 priced
 matches. Lower is better; the gap between these rows is this whole project's thesis
 being settled in public. The market is the benchmark that matters — when the
 model is level with or below the market's log-loss, it is forecasting well even
 if the raw "results called" number looks poor, because the same matches that
 beat the model (an unusually draw-heavy run) beat the market too.</p>
-<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 300" style="max-width:660px;width:100%"><rect width="660" height="300" fill="var(--paper, #f6f1e6)"/><polyline points="56.0,230.5 73.9,191.1 91.8,101.1 109.6,86.6 127.5,84.0 145.4,98.6 163.3,121.6 181.2,104.6 199.0,88.7 216.9,80.9 234.8,74.9 252.7,71.0 270.5,64.2 288.4,67.4 306.3,73.0 324.2,81.0 342.1,84.3 359.9,79.9 377.8,84.2 395.7,80.6 413.6,84.7 431.5,81.7 449.3,90.1 467.2,88.9 485.1,93.9 503.0,100.7 520.8,99.6 538.7,103.5 556.6,103.9 574.5,99.8 592.4,102.5 610.2,107.3 628.1,104.0 646.0,103.1" fill="none" stroke="var(--green, #14633f)" stroke-width="2"/><text x="648" y="107.06828895747283" font-size="10" fill="var(--green, #14633f)" font-family="ui-monospace,Menlo,monospace">model</text><polyline points="56.0,260.7 73.9,208.7 91.8,64.6 109.6,36.0 127.5,75.2 145.4,38.2 163.3,82.9 181.2,69.6 199.0,59.3 216.9,69.9 234.8,59.0 252.7,46.5 270.5,42.5 288.4,57.2 306.3,73.7 324.2,85.4 342.1,96.8 359.9,82.2 377.8,88.3 395.7,90.9 413.6,99.0 431.5,94.3 449.3,102.5 467.2,106.3 485.1,108.4 503.0,117.4 520.8,112.3 538.7,116.0 556.6,119.9 574.5,107.6 592.4,110.6 610.2,117.5 628.1,110.5 646.0,112.9" fill="none" stroke="var(--red, #a72a1e)" stroke-width="2"/><text x="648" y="116.90277085956723" font-size="10" fill="var(--red, #a72a1e)" font-family="ui-monospace,Menlo,monospace">market</text><polyline points="56.0,241.8 73.9,197.6 91.8,90.8 109.6,72.5 127.5,86.3 145.4,85.9 163.3,117.6 181.2,101.5 199.0,86.6 216.9,85.1 234.8,76.9 252.7,69.7 270.5,63.4 288.4,70.8 306.3,80.9 324.2,89.8 342.1,96.3 359.9,88.3 377.8,92.9 395.7,91.4 413.6,96.8 431.5,92.9 449.3,101.0 467.2,101.5 485.1,105.3 503.0,113.0 520.8,110.3 538.7,113.9 556.6,115.5 574.5,108.6 592.4,111.2 610.2,116.8 628.1,112.6 646.0,112.8" fill="none" stroke="var(--amber, #9a7b2d)" stroke-width="2"/><text x="648" y="116.81869409827702" font-size="10" fill="var(--amber, #9a7b2d)" font-family="ui-monospace,Menlo,monospace">blend</text><text x="56" y="16" font-size="12" fill="var(--ink, #211d16)" font-family="ui-monospace,Menlo,monospace">running log-loss after 34 graded matches (lower = better forecaster)</text><text x="56" y="290" font-size="10" fill="var(--ink-soft, #6b6353)" font-family="ui-monospace,Menlo,monospace">2026-06-11 → 2026-06-22</text></svg><figcaption>The whole experiment in one line: whichever curve is lowest is winning the forecasting contest.</figcaption></figure>
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 300" style="max-width:660px;width:100%"><rect width="660" height="300" fill="var(--paper, #f6f1e6)"/><polyline points="56.0,230.5 73.4,191.1 90.7,101.1 108.1,86.6 125.4,84.0 142.8,98.6 160.1,121.6 177.5,104.6 194.8,88.7 212.2,80.9 229.5,74.9 246.9,71.0 264.2,64.2 281.6,67.4 298.9,73.0 316.3,81.0 333.6,84.3 351.0,79.9 368.4,84.2 385.7,80.6 403.1,84.7 420.4,81.7 437.8,90.1 455.1,88.9 472.5,93.9 489.8,100.7 507.2,99.6 524.5,103.5 541.9,103.9 559.2,99.8 576.6,102.5 593.9,107.3 611.3,104.0 628.6,103.1 646.0,106.7" fill="none" stroke="var(--green, #14633f)" stroke-width="2"/><text x="648" y="110.7102439370885" font-size="10" fill="var(--green, #14633f)" font-family="ui-monospace,Menlo,monospace">model</text><polyline points="56.0,260.7 73.4,208.7 90.7,64.6 108.1,36.0 125.4,75.2 142.8,38.2 160.1,82.9 177.5,69.6 194.8,59.3 212.2,69.9 229.5,59.0 246.9,46.5 264.2,42.5 281.6,57.2 298.9,73.7 316.3,85.4 333.6,96.8 351.0,82.2 368.4,88.3 385.7,90.9 403.1,99.0 420.4,94.3 437.8,102.5 455.1,106.3 472.5,108.4 489.8,117.4 507.2,112.3 524.5,116.0 541.9,119.9 559.2,107.6 576.6,110.6 593.9,117.5 611.3,110.5 628.6,112.9 646.0,115.9" fill="none" stroke="var(--red, #a72a1e)" stroke-width="2"/><text x="648" y="119.91785537185449" font-size="10" fill="var(--red, #a72a1e)" font-family="ui-monospace,Menlo,monospace">market</text><polyline points="56.0,241.8 73.4,197.6 90.7,90.8 108.1,72.5 125.4,86.3 142.8,85.9 160.1,117.6 177.5,101.5 194.8,86.6 212.2,85.1 229.5,76.9 246.9,69.7 264.2,63.4 281.6,70.8 298.9,80.9 316.3,89.8 333.6,96.3 351.0,88.3 368.4,92.9 385.7,91.4 403.1,96.8 420.4,92.9 437.8,101.0 455.1,101.5 472.5,105.3 489.8,113.0 507.2,110.3 524.5,113.9 541.9,115.5 559.2,108.6 576.6,111.2 593.9,116.8 611.3,112.6 628.6,112.8 646.0,116.1" fill="none" stroke="var(--amber, #9a7b2d)" stroke-width="2"/><text x="648" y="120.07246422958077" font-size="10" fill="var(--amber, #9a7b2d)" font-family="ui-monospace,Menlo,monospace">blend</text><text x="56" y="16" font-size="12" fill="var(--ink, #211d16)" font-family="ui-monospace,Menlo,monospace">running log-loss after 35 graded matches (lower = better forecaster)</text><text x="56" y="290" font-size="10" fill="var(--ink-soft, #6b6353)" font-family="ui-monospace,Menlo,monospace">2026-06-11 → 2026-06-22</text></svg><figcaption>The whole experiment in one line: whichever curve is lowest is winning the forecasting contest.</figcaption></figure>
 <h2>Matchday by matchday</h2>
 <table class="ko"><thead><tr><th>Stage</th><th class="num">Played</th>
 <th class="num">Results called</th><th class="num">Exact scores</th>
-<th class="num">Log-loss (blend)</th></tr></thead><tbody><tr><td>Matchday 1</td><td class="num">24</td><td class="num">13/24</td><td class="num">0</td><td class="num">0.980</td></tr><tr><td>Matchday 2</td><td class="num">16</td><td class="num">11/16</td><td class="num">2</td><td class="num">0.785</td></tr></tbody></table>
+<th class="num">Log-loss (blend)</th></tr></thead><tbody><tr><td>Matchday 1</td><td class="num">24</td><td class="num">13/24</td><td class="num">0</td><td class="num">0.980</td></tr><tr><td>Matchday 2</td><td class="num">17</td><td class="num">12/17</td><td class="num">2</td><td class="num">0.767</td></tr></tbody></table>
 <h2>Goals</h2>
-<dl class="stats"><div><dt>Goals/game actual</dt><dd>3.02</dd></div><div><dt>Goals/game predicted</dt><dd>1.55</dd></div><div><dt>Avg total error</dt><dd>1.93</dd></div><div><dt>Exact total</dt><dd>6/40</dd></div><div><dt>O/U 2.5 direction</dt><dd>19/40 (48%)</dd></div></dl>
+<dl class="stats"><div><dt>Goals/game actual</dt><dd>3.00</dd></div><div><dt>Goals/game predicted</dt><dd>1.54</dd></div><div><dt>Avg total error</dt><dd>1.90</dd></div><div><dt>Exact total</dt><dd>6/41</dd></div><div><dt>O/U 2.5 direction</dt><dd>20/41 (49%)</dd></div></dl>
 <p class="fineprint">"Predicted" is the total of each match's locked most-likely
 scoreline - a deliberately conservative point estimate, since the single most-likely
 scoreline sits below the average total, so expect this to trail the actual rate.
@@ -116,7 +116,7 @@ paper-trading log.</p><h2>Totals (Over/Under 2.5)</h2>
 <th class="num" data-tip="times the Over/Under call was right">Direction</th>
 <th class="num" data-tip="mean squared error on P(over) - guessing 0.5 scores 0.25">Brier</th>
 <th class="num" data-tip="penalises confident errors">Log-loss</th></tr></thead>
-<tbody><tr><td>Model</td><td class="num">20/34</td><td class="num">0.2378</td><td class="num">0.6653</td></tr><tr><td>Market</td><td class="num">17/34</td><td class="num">0.2404</td><td class="num">0.6718</td></tr><tr><td>Blend</td><td class="num">20/34</td><td class="num">0.2367</td><td class="num">0.6636</td></tr></tbody></table>
+<tbody><tr><td>Model</td><td class="num">21/35</td><td class="num">0.2362</td><td class="num">0.6622</td></tr><tr><td>Market</td><td class="num">18/35</td><td class="num">0.24</td><td class="num">0.671</td></tr><tr><td>Blend</td><td class="num">21/35</td><td class="num">0.2355</td><td class="num">0.6614</td></tr></tbody></table>
 <p class="fineprint">A <em>calibrated</em> totals grade, unlike the modal-scoreline
 read above: the model's actual Over 2.5 probability scored against reality. These
 lines were locked <b>pre-kickoff from 2026-06-14 00:49 UTC</b>
@@ -135,13 +135,13 @@ kicked off after that — no look-ahead. Lower Brier/log-loss is better.</p>
 <h2>Calibration so far</h2>
 <table class="ko"><thead><tr><th>Claimed probability</th><th class="num">Claims</th>
 <th class="num">Average claim</th><th class="num">Actually happened</th></tr></thead>
-<tbody><tr><td>0-20%</td><td class="num">23</td><td class="num">15%</td><td class="num">9%</td></tr><tr><td>20-40%</td><td class="num">66</td><td class="num">29%</td><td class="num">27%</td></tr><tr><td>40-60%</td><td class="num">21</td><td class="num">50%</td><td class="num">67%</td></tr><tr><td>60-80%</td><td class="num">10</td><td class="num">68%</td><td class="num">60%</td></tr></tbody></table>
+<tbody><tr><td>0-20%</td><td class="num">24</td><td class="num">15%</td><td class="num">8%</td></tr><tr><td>20-40%</td><td class="num">67</td><td class="num">29%</td><td class="num">27%</td></tr><tr><td>40-60%</td><td class="num">21</td><td class="num">50%</td><td class="num">67%</td></tr><tr><td>60-80%</td><td class="num">11</td><td class="num">68%</td><td class="num">64%</td></tr></tbody></table>
 <p class="fineprint">A calibrated forecaster's last two columns match. Early-tournament
 samples are small - judge after a full group stage.</p>
 </main>
 <footer>
   <p>Form chips read most-recent first. Stats computed over each team's last 10 completed internationals.</p>
-  <p>Model run: 2026-06-22 06:52 UTC · Polymarket snapshot: 2026-06-22 06:52 UTC · every run archived in runs/</p>
+  <p>Model run: 2026-06-22 21:48 UTC · Polymarket snapshot: 2026-06-22 21:48 UTC · every run archived in runs/</p>
   <p>Data: API-Football · FIFA rankings 2026 · <a href="method.html">how this works</a> ·
   <a href="archive.html">previous versions</a> ·
   <a href="https://github.com/amirdaraee/world-cup-predictions">code on GitHub</a> ·

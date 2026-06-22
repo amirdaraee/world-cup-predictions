@@ -492,8 +492,8 @@
       "away": "Austria",
       "venue": "AT&T Stadium",
       "city": "Dallas",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "2-0"
     },
     {
       "match_id": 1539017,
@@ -504,7 +504,7 @@
       "away": "Iraq",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia",
-      "status": "Not Started",
+      "status": "First Half",
       "score": null
     },
     {

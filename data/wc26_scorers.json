@@ -30,6 +30,7 @@
     1489396,
     1489397,
     1489398,
+    1489399,
     1538999,
     1539000,
     1539001,
@@ -44,7 +45,7 @@
   "scorers": {
     "L. Messi": {
       "team": "Argentina",
-      "goals": 3,
+      "goals": 5,
       "assists_from": []
     },
     "Jonathan David": {
