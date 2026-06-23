@@ -31,6 +31,8 @@
     1489397,
     1489398,
     1489399,
+    1489400,
+    1489401,
     1538999,
     1539000,
     1539001,
@@ -40,7 +42,8 @@
     1539005,
     1539006,
     1539007,
-    1539016
+    1539016,
+    1539017
   ],
   "scorers": {
     "L. Messi": {
@@ -130,6 +133,21 @@
     },
     "Maximiliano Araújo": {
       "team": "Uruguay",
+      "goals": 2,
+      "assists_from": []
+    },
+    "Kylian Mbappé": {
+      "team": "France",
+      "goals": 2,
+      "assists_from": []
+    },
+    "E. Haaland": {
+      "team": "Norway",
+      "goals": 2,
+      "assists_from": []
+    },
+    "I. Sarr": {
+      "team": "Senegal",
       "goals": 2,
       "assists_from": []
     },
@@ -505,6 +523,31 @@
     },
     "Trezeguet": {
       "team": "Egypt",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Ousmane Dembélé": {
+      "team": "France",
+      "goals": 1,
+      "assists_from": []
+    },
+    "M. Pedersen": {
+      "team": "Norway",
+      "goals": 1,
+      "assists_from": []
+    },
+    "N. Al Rashdan": {
+      "team": "Jordan",
+      "goals": 1,
+      "assists_from": []
+    },
+    "N. Benbouali": {
+      "team": "Algeria",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Gouiri": {
+      "team": "Algeria",
       "goals": 1,
       "assists_from": []
     }

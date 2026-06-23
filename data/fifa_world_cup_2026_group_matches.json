@@ -504,8 +504,8 @@
       "away": "Iraq",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia",
-      "status": "First Half",
-      "score": null
+      "status": "Match Finished",
+      "score": "3-0"
     },
     {
       "match_id": 1489401,
@@ -516,8 +516,8 @@
       "away": "Senegal",
       "venue": "MetLife Stadium",
       "city": "New York New Jersey",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "3-2"
     },
     {
       "match_id": 1489400,
@@ -528,8 +528,8 @@
       "away": "Algeria",
       "venue": "Levi's Stadium",
       "city": "San Francisco Bay Area",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-2"
     },
     {
       "match_id": 1489404,
