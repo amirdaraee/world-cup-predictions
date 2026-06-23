@@ -540,8 +540,8 @@
       "away": "Uzbekistan",
       "venue": "NRG Stadium",
       "city": "Houston",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "5-0"
     },
     {
       "match_id": 1489402,
@@ -552,7 +552,7 @@
       "away": "Ghana",
       "venue": "Gillette Stadium",
       "city": "Boston",
-      "status": "Not Started",
+      "status": "Second Half",
       "score": null
     },
     {

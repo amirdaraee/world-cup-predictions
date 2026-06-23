@@ -33,6 +33,7 @@
     1489399,
     1489400,
     1489401,
+    1489404,
     1538999,
     1539000,
     1539001,
@@ -148,6 +149,11 @@
     },
     "I. Sarr": {
       "team": "Senegal",
+      "goals": 2,
+      "assists_from": []
+    },
+    "C. Ronaldo": {
+      "team": "Portugal",
       "goals": 2,
       "assists_from": []
     },
@@ -548,6 +554,16 @@
     },
     "A. Gouiri": {
       "team": "Algeria",
+      "goals": 1,
+      "assists_from": []
+    },
+    "N. Mendes": {
+      "team": "Portugal",
+      "goals": 1,
+      "assists_from": []
+    },
+    "R. Leao": {
+      "team": "Portugal",
       "goals": 1,
       "assists_from": []
     }
