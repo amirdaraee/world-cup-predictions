@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Groups · WC26 Form Book</title>
+<meta name="description" content="Live World Cup 2026 group standings and match-by-match win probabilities from an open Dixon-Coles model, blended with Polymarket betting-market prices.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Groups · WC26 Form Book">
+<meta property="og:description" content="Live World Cup 2026 group standings and match-by-match win probabilities from an open Dixon-Coles model, blended with Polymarket betting-market prices.">
+<meta property="og:site_name" content="WC26 Form Book">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://wcformbook.com/img/og.png">
+<meta property="og:url" content="https://wcformbook.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Groups · WC26 Form Book">
+<meta name="twitter:description" content="Live World Cup 2026 group standings and match-by-match win probabilities from an open Dixon-Coles model, blended with Polymarket betting-market prices.">
+<meta name="twitter:image" content="https://wcformbook.com/img/og.png">
+<link rel="canonical" href="https://wcformbook.com/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="mask-icon" href="favicon.svg" color="#211d16">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#211d16">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "WC26 Form Book", "url": "https://wcformbook.com/", "description": "World Cup 2026 probabilities from an open statistical model: match fair prices vs the betting market, tournament odds, and a locked bracket graded in public.", "inLanguage": "en"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script>
+// Google Consent Mode v2 — analytics stays OFF until the visitor opts in.
+// gtag.js is not even loaded until consent is granted (this run or a prior
+// visit), so no GA cookie or request fires beforehand.
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied', ad_user_data: 'denied',
+  ad_personalization: 'denied', analytics_storage: 'denied'
+});
+function wcfbLoadGA() {
+  gtag('consent', 'update', { analytics_storage: 'granted' });
+  if (window.wcfbGALoaded) return;
+  window.wcfbGALoaded = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-EG56KHB1SX';
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'G-EG56KHB1SX');
+}
+try {
+  if (localStorage.getItem('wcfb_consent') === 'granted') wcfbLoadGA();
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=202606240635">
+<script>
+(function() {
+  var t = localStorage.getItem("theme");
+  if (t) document.documentElement.dataset.theme = t;
+})();
+function toggleTheme() {
+  var el = document.documentElement;
+  var dark = el.dataset.theme === "dark" ||
+    (!el.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+  el.dataset.theme = dark ? "light" : "dark";
+  localStorage.setItem("theme", el.dataset.theme);
+}
+</script>
+</head>
+<body>
+<div class="snapnote">Snapshot of 2026-06-24 - predictions as they stood then. <a href="../../index.html">Back to the latest →</a></div>
+<header class="masthead">
+  <a class="skip" href="#main">skip to content</a>
+  <button class="themebtn" onclick="toggleTheme()" title="light / dark" aria-label="toggle light or dark theme">◐</button>
+  
+  <div class="kicker">The Form Book - research edition</div>
+  <a class="wordmark" href="index.html">World&nbsp;Cup&nbsp;26</a>
+  <nav><a href="index.html">Groups</a><span>·</span><a href="matches.html">Matches</a><span>·</span><a href="futures.html">Futures</a><span>·</span><a href="awards.html">Awards</a><span>·</span><a href="bracket.html">Bracket</a><span>·</span><a href="report.html">Report</a><span>·</span><a href="glossary.html">Glossary</a><span>·</span><a href="method.html">Method</a></nav>
+</header>
+
+<main id="main">
+<h1>The twelve groups</h1>
+<section class="todaybox">
+<h2>Today</h2>
+<table><thead><tr><th>Fixture</th><th>Grp</th>
+<th data-tip="the model's most likely outcome and its probability">Model call</th>
+<th class="num" data-tip="kick-off, or final score with the model's verdict">Status</th></tr></thead>
+<tbody><tr><td class="fixture"><a href="matches/colombia-vs-dr-congo.html">Colombia <em>v</em> DR Congo</a></td><td><b class="gchip">K</b></td><td>Colombia 58%</td><td class="num"><b class="score">1-0</b> <i class="f W">✓</i></td></tr><tr><td class="fixture"><a href="matches/switzerland-vs-canada.html">Switzerland <em>v</em> Canada</a></td><td><b class="gchip">B</b></td><td>Canada 43%</td><td class="num">19:00 UTC</td></tr><tr><td class="fixture"><a href="matches/bosnia-and-herzegovina-vs-qatar.html">Bosnia and Herzegovina <em>v</em> Qatar</a></td><td><b class="gchip">B</b></td><td>Bosnia and Herzegovina 43%</td><td class="num">19:00 UTC</td></tr><tr><td class="fixture"><a href="matches/morocco-vs-haiti.html">Morocco <em>v</em> Haiti</a></td><td><b class="gchip">C</b></td><td>Morocco 77%</td><td class="num">22:00 UTC</td></tr><tr><td class="fixture"><a href="matches/scotland-vs-brazil.html">Scotland <em>v</em> Brazil</a></td><td><b class="gchip">C</b></td><td>Brazil 79%</td><td class="num">22:00 UTC</td></tr></tbody></table>
+</section>
+<p class="standfirst">48 teams, seeded here by FIFA ranking. Click any team for its full dossier.</p>
+<p class="fineprint">Form = results of the last five internationals, <b>most recent first</b>
+(W win, D draw - penalty shoot-outs count as draws, L loss); the team page shows all ten with
+opponents and competitions. Friendlies are included here but weigh less in the model.
+The FIFA column is the official 1 April 2026 ranking, shown for orientation only -
+the simulation rates teams purely from match results and disagrees in places (France is FIFA #1
+but mid-pack by title odds; the model prefers recent goals to reputation). The <sup class="host">host</sup>
+marker matters beyond ceremony: hosts get a fitted home-crowd boost (~+30% scoring) whenever they
+play in their own country, which is most of their matches.</p>
+<div class="groups"><section class="group" id="group-a">
+<h2><span>Group</span> A</h2>
+<table>
+<thead><tr><th scope="col" aria-label="flag"></th><th scope="col">Team</th><th scope="col" class="num" data-tip="matches played">P</th><th scope="col" class="num" data-tip="goal difference">GD</th><th scope="col" class="num" data-tip="points - top two advance, the eight best thirds join them">Pts</th><th scope="col" data-tip="last 5 internationals, most recent first">Form</th></tr></thead>
+<tbody><tr class="q1"><td class="flagcell">🇲🇽</td><td><a class="tlink" href="teams/mexico.html">Mexico</a> <sup class="host">host</sup></td><td class="num">2</td><td class="num">+3</td><td class="num"><b>6</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f D">D</i><i class="f D">D</i></span></td></tr><tr class="q1"><td class="flagcell">🇰🇷</td><td><a class="tlink" href="teams/south-korea.html">South Korea</a></td><td class="num">2</td><td class="num">+0</td><td class="num"><b>3</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i><i class="f W">W</i></span></td></tr><tr class="q3"><td class="flagcell">🇨🇿</td><td><a class="tlink" href="teams/czech-republic.html">Czech Republic</a></td><td class="num">2</td><td class="num">-1</td><td class="num"><b>1</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i></span></td></tr><tr class=""><td class="flagcell">🇿🇦</td><td><a class="tlink" href="teams/south-africa.html">South Africa</a></td><td class="num">2</td><td class="num">-2</td><td class="num"><b>1</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f D">D</i><i class="f L">L</i><i class="f D">D</i><i class="f L">L</i></span></td></tr></tbody>
+</table>
+</section><section class="group" id="group-b">
+<h2><span>Group</span> B</h2>
+<table>
+<thead><tr><th scope="col" aria-label="flag"></th><th scope="col">Team</th><th scope="col" class="num" data-tip="matches played">P</th><th scope="col" class="num" data-tip="goal difference">GD</th><th scope="col" class="num" data-tip="points - top two advance, the eight best thirds join them">Pts</th><th scope="col" data-tip="last 5 internationals, most recent first">Form</th></tr></thead>
+<tbody><tr class="q1"><td class="flagcell">🇨🇦</td><td><a class="tlink" href="teams/canada.html">Canada</a> <sup class="host">host</sup></td><td class="num">2</td><td class="num">+6</td><td class="num"><b>4</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f W">W</i><i class="f D">D</i><i class="f D">D</i><i class="f W">W</i></span></td></tr><tr class="q1"><td class="flagcell">🇨🇭</td><td><a class="tlink" href="teams/switzerland.html">Switzerland</a></td><td class="num">2</td><td class="num">+3</td><td class="num"><b>4</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f W">W</i><i class="f D">D</i><i class="f L">L</i><i class="f D">D</i></span></td></tr><tr class="q3"><td class="flagcell">🇧🇦</td><td><a class="tlink" href="teams/bosnia-and-herzegovina.html">Bosnia and Herzegovina</a></td><td class="num">2</td><td class="num">-3</td><td class="num"><b>1</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f D">D</i><i class="f W">W</i><i class="f W">W</i><i class="f D">D</i></span></td></tr><tr class=""><td class="flagcell">🇶🇦</td><td><a class="tlink" href="teams/qatar.html">Qatar</a></td><td class="num">2</td><td class="num">-6</td><td class="num"><b>1</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f L">L</i><i class="f L">L</i><i class="f D">D</i><i class="f L">L</i></span></td></tr></tbody>
+</table>
+</section><section class="group" id="group-c">
+<h2><span>Group</span> C</h2>
+<table>
+<thead><tr><th scope="col" aria-label="flag"></th><th scope="col">Team</th><th scope="col" class="num" data-tip="matches played">P</th><th scope="col" class="num" data-tip="goal difference">GD</th><th scope="col" class="num" data-tip="points - top two advance, the eight best thirds join them">Pts</th><th scope="col" data-tip="last 5 internationals, most recent first">Form</th></tr></thead>
+<tbody><tr class="q1"><td class="flagcell">🇧🇷</td><td><a class="tlink" href="teams/brazil.html">Brazil</a></td><td class="num">2</td><td class="num">+3</td><td class="num"><b>4</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i><i class="f D">D</i></span></td></tr><tr class="q1"><td class="flagcell">🇲🇦</td><td><a class="tlink" href="teams/morocco.html">Morocco</a></td><td class="num">2</td><td class="num">+1</td><td class="num"><b>4</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f D">D</i></span></td></tr><tr class="q3"><td class="flagcell">🏴󠁧󠁢󠁳󠁣󠁴󠁿</td><td><a class="tlink" href="teams/scotland.html">Scotland</a></td><td class="num">2</td><td class="num">+0</td><td class="num"><b>3</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i><i class="f W">W</i></span></td></tr><tr class=""><td class="flagcell">🇭🇹</td><td><a class="tlink" href="teams/haiti.html">Haiti</a></td><td class="num">2</td><td class="num">-4</td><td class="num"><b>0</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f L">L</i><i class="f W">W</i><i class="f D">D</i><i class="f L">L</i><i class="f W">W</i></span></td></tr></tbody>
+</table>
+</section><section class="group" id="group-d">
+<h2><span>Group</span> D</h2>
+<table>
+<thead><tr><th scope="col" aria-label="flag"></th><th scope="col">Team</th><th scope="col" class="num" data-tip="matches played">P</th><th scope="col" class="num" data-tip="goal difference">GD</th><th scope="col" class="num" data-tip="points - top two advance, the eight best thirds join them">Pts</th><th scope="col" data-tip="last 5 internationals, most recent first">Form</th></tr></thead>
+<tbody><tr class="q1"><td class="flagcell">🇺🇸</td><td><a class="tlink" href="teams/united-states.html">United States</a> <sup class="host">host</sup></td><td class="num">2</td><td class="num">+5</td><td class="num"><b>6</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f L">L</i><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i><i class="f W">W</i></span></td></tr><tr class="q1"><td class="flagcell">🇦🇺</td><td><a class="tlink" href="teams/australia.html">Australia</a></td><td class="num">2</td><td class="num">+0</td><td class="num"><b>3</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f L">L</i><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i></span></td></tr><tr class="q3"><td class="flagcell">🇵🇾</td><td><a class="tlink" href="teams/paraguay.html">Paraguay</a></td><td class="num">2</td><td class="num">-2</td><td class="num"><b>3</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f L">L</i><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i></span></td></tr><tr class=""><td class="flagcell">🇹🇷</td><td><a class="tlink" href="teams/turkey.html">Turkey</a></td><td class="num">2</td><td class="num">-3</td><td class="num"><b>0</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f D">D</i></span></td></tr></tbody>
+</table>
+</section><section class="group" id="group-e">
+<h2><span>Group</span> E</h2>
+<table>
+<thead><tr><th scope="col" aria-label="flag"></th><th scope="col">Team</th><th scope="col" class="num" data-tip="matches played">P</th><th scope="col" class="num" data-tip="goal difference">GD</th><th scope="col" class="num" data-tip="points - top two advance, the eight best thirds join them">Pts</th><th scope="col" data-tip="last 5 internationals, most recent first">Form</th></tr></thead>
+<tbody><tr class="q1"><td class="flagcell">🇩🇪</td><td><a class="tlink" href="teams/germany.html">Germany</a></td><td class="num">2</td><td class="num">+7</td><td class="num"><b>6</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i></span></td></tr><tr class="q1"><td class="flagcell">🇨🇮</td><td><a class="tlink" href="teams/ivory-coast.html">Ivory Coast</a></td><td class="num">2</td><td class="num">+0</td><td class="num"><b>3</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i></span></td></tr><tr class="q3"><td class="flagcell">🇪🇨</td><td><a class="tlink" href="teams/ecuador.html">Ecuador</a></td><td class="num">2</td><td class="num">-1</td><td class="num"><b>1</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f D">D</i><i class="f D">D</i><i class="f W">W</i></span></td></tr><tr class=""><td class="flagcell">🇨🇼</td><td><a class="tlink" href="teams/curacao.html">Curaçao</a></td><td class="num">2</td><td class="num">-6</td><td class="num"><b>1</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i><i class="f L">L</i><i class="f D">D</i></span></td></tr></tbody>
+</table>
+</section><section class="group" id="group-f">
+<h2><span>Group</span> F</h2>
+<table>
+<thead><tr><th scope="col" aria-label="flag"></th><th scope="col">Team</th><th scope="col" class="num" data-tip="matches played">P</th><th scope="col" class="num" data-tip="goal difference">GD</th><th scope="col" class="num" data-tip="points - top two advance, the eight best thirds join them">Pts</th><th scope="col" data-tip="last 5 internationals, most recent first">Form</th></tr></thead>
+<tbody><tr class="q1"><td class="flagcell">🇳🇱</td><td><a class="tlink" href="teams/netherlands.html">Netherlands</a></td><td class="num">2</td><td class="num">+4</td><td class="num"><b>4</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f L">L</i><i class="f D">D</i><i class="f W">W</i><i class="f W">W</i></span></td></tr><tr class="q1"><td class="flagcell">🇯🇵</td><td><a class="tlink" href="teams/japan.html">Japan</a></td><td class="num">2</td><td class="num">+4</td><td class="num"><b>4</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i></span></td></tr><tr class="q3"><td class="flagcell">🇸🇪</td><td><a class="tlink" href="teams/sweden.html">Sweden</a></td><td class="num">2</td><td class="num">+0</td><td class="num"><b>3</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f L">L</i><i class="f W">W</i><i class="f W">W</i><i class="f D">D</i></span></td></tr><tr class=""><td class="flagcell">🇹🇳</td><td><a class="tlink" href="teams/tunisia.html">Tunisia</a></td><td class="num">2</td><td class="num">-8</td><td class="num"><b>0</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f L">L</i><i class="f L">L</i><i class="f D">D</i><i class="f W">W</i><i class="f L">L</i></span></td></tr></tbody>
+</table>
+</section><section class="group" id="group-g">
+<h2><span>Group</span> G</h2>
+<table>
+<thead><tr><th scope="col" aria-label="flag"></th><th scope="col">Team</th><th scope="col" class="num" data-tip="matches played">P</th><th scope="col" class="num" data-tip="goal difference">GD</th><th scope="col" class="num" data-tip="points - top two advance, the eight best thirds join them">Pts</th><th scope="col" data-tip="last 5 internationals, most recent first">Form</th></tr></thead>
+<tbody><tr class="q1"><td class="flagcell">🇪🇬</td><td><a class="tlink" href="teams/egypt.html">Egypt</a></td><td class="num">2</td><td class="num">+2</td><td class="num"><b>4</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f L">L</i><i class="f W">W</i><i class="f D">D</i><i class="f W">W</i><i class="f L">L</i></span></td></tr><tr class="q1"><td class="flagcell">🇮🇷</td><td><a class="tlink" href="teams/iran.html">Iran</a></td><td class="num">2</td><td class="num">+0</td><td class="num"><b>2</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i></span></td></tr><tr class="q3"><td class="flagcell">🇧🇪</td><td><a class="tlink" href="teams/belgium.html">Belgium</a></td><td class="num">2</td><td class="num">+0</td><td class="num"><b>2</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f D">D</i><i class="f W">W</i><i class="f W">W</i></span></td></tr><tr class=""><td class="flagcell">🇳🇿</td><td><a class="tlink" href="teams/new-zealand.html">New Zealand</a></td><td class="num">2</td><td class="num">-2</td><td class="num"><b>1</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f L">L</i><i class="f L">L</i><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i></span></td></tr></tbody>
+</table>
+</section><section class="group" id="group-h">
+<h2><span>Group</span> H</h2>
+<table>
+<thead><tr><th scope="col" aria-label="flag"></th><th scope="col">Team</th><th scope="col" class="num" data-tip="matches played">P</th><th scope="col" class="num" data-tip="goal difference">GD</th><th scope="col" class="num" data-tip="points - top two advance, the eight best thirds join them">Pts</th><th scope="col" data-tip="last 5 internationals, most recent first">Form</th></tr></thead>
+<tbody><tr class="q1"><td class="flagcell">🇪🇸</td><td><a class="tlink" href="teams/spain.html">Spain</a></td><td class="num">2</td><td class="num">+4</td><td class="num"><b>4</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f D">D</i><i class="f D">D</i><i class="f W">W</i><i class="f D">D</i></span></td></tr><tr class="q1"><td class="flagcell">🇺🇾</td><td><a class="tlink" href="teams/uruguay.html">Uruguay</a></td><td class="num">2</td><td class="num">+0</td><td class="num"><b>2</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f D">D</i><i class="f L">L</i><i class="f D">D</i><i class="f W">W</i></span></td></tr><tr class="q3"><td class="flagcell">🇨🇻</td><td><a class="tlink" href="teams/cape-verde.html">Cape Verde</a></td><td class="num">2</td><td class="num">+0</td><td class="num"><b>2</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i></span></td></tr><tr class=""><td class="flagcell">🇸🇦</td><td><a class="tlink" href="teams/saudi-arabia.html">Saudi Arabia</a></td><td class="num">2</td><td class="num">-4</td><td class="num"><b>1</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i><i class="f L">L</i><i class="f L">L</i></span></td></tr></tbody>
+</table>
+</section><section class="group" id="group-i">
+<h2><span>Group</span> I</h2>
+<table>
+<thead><tr><th scope="col" aria-label="flag"></th><th scope="col">Team</th><th scope="col" class="num" data-tip="matches played">P</th><th scope="col" class="num" data-tip="goal difference">GD</th><th scope="col" class="num" data-tip="points - top two advance, the eight best thirds join them">Pts</th><th scope="col" data-tip="last 5 internationals, most recent first">Form</th></tr></thead>
+<tbody><tr class="q1"><td class="flagcell">🇫🇷</td><td><a class="tlink" href="teams/france.html">France</a></td><td class="num">2</td><td class="num">+5</td><td class="num"><b>6</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f L">L</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i></span></td></tr><tr class="q1"><td class="flagcell">🇳🇴</td><td><a class="tlink" href="teams/norway.html">Norway</a></td><td class="num">2</td><td class="num">+4</td><td class="num"><b>6</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f W">W</i><i class="f D">D</i><i class="f L">L</i><i class="f W">W</i></span></td></tr><tr class="q3"><td class="flagcell">🇸🇳</td><td><a class="tlink" href="teams/senegal.html">Senegal</a></td><td class="num">2</td><td class="num">-3</td><td class="num"><b>0</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f L">L</i><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i><i class="f W">W</i></span></td></tr><tr class=""><td class="flagcell">🇮🇶</td><td><a class="tlink" href="teams/iraq.html">Iraq</a></td><td class="num">2</td><td class="num">-6</td><td class="num"><b>0</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i></span></td></tr></tbody>
+</table>
+</section><section class="group" id="group-j">
+<h2><span>Group</span> J</h2>
+<table>
+<thead><tr><th scope="col" aria-label="flag"></th><th scope="col">Team</th><th scope="col" class="num" data-tip="matches played">P</th><th scope="col" class="num" data-tip="goal difference">GD</th><th scope="col" class="num" data-tip="points - top two advance, the eight best thirds join them">Pts</th><th scope="col" data-tip="last 5 internationals, most recent first">Form</th></tr></thead>
+<tbody><tr class="q1"><td class="flagcell">🇦🇷</td><td><a class="tlink" href="teams/argentina.html">Argentina</a></td><td class="num">2</td><td class="num">+5</td><td class="num"><b>6</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i></span></td></tr><tr class="q1"><td class="flagcell">🇦🇹</td><td><a class="tlink" href="teams/austria.html">Austria</a></td><td class="num">2</td><td class="num">+0</td><td class="num"><b>3</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f D">D</i><i class="f W">W</i></span></td></tr><tr class="q3"><td class="flagcell">🇩🇿</td><td><a class="tlink" href="teams/algeria.html">Algeria</a></td><td class="num">2</td><td class="num">-2</td><td class="num"><b>3</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f D">D</i><i class="f W">W</i><i class="f L">L</i><i class="f W">W</i></span></td></tr><tr class=""><td class="flagcell">🇯🇴</td><td><a class="tlink" href="teams/jordan.html">Jordan</a></td><td class="num">2</td><td class="num">-3</td><td class="num"><b>0</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f L">L</i><i class="f L">L</i><i class="f D">D</i><i class="f D">D</i><i class="f L">L</i></span></td></tr></tbody>
+</table>
+</section><section class="group" id="group-k">
+<h2><span>Group</span> K</h2>
+<table>
+<thead><tr><th scope="col" aria-label="flag"></th><th scope="col">Team</th><th scope="col" class="num" data-tip="matches played">P</th><th scope="col" class="num" data-tip="goal difference">GD</th><th scope="col" class="num" data-tip="points - top two advance, the eight best thirds join them">Pts</th><th scope="col" data-tip="last 5 internationals, most recent first">Form</th></tr></thead>
+<tbody><tr class="q1"><td class="flagcell">🇨🇴</td><td><a class="tlink" href="teams/colombia.html">Colombia</a></td><td class="num">2</td><td class="num">+3</td><td class="num"><b>6</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i><i class="f W">W</i></span></td></tr><tr class="q1"><td class="flagcell">🇵🇹</td><td><a class="tlink" href="teams/portugal.html">Portugal</a></td><td class="num">2</td><td class="num">+5</td><td class="num"><b>4</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f D">D</i><i class="f W">W</i><i class="f L">L</i></span></td></tr><tr class="q3"><td class="flagcell">🇨🇩</td><td><a class="tlink" href="teams/dr-congo.html">DR Congo</a></td><td class="num">2</td><td class="num">-1</td><td class="num"><b>1</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i><i class="f W">W</i></span></td></tr><tr class=""><td class="flagcell">🇺🇿</td><td><a class="tlink" href="teams/uzbekistan.html">Uzbekistan</a></td><td class="num">2</td><td class="num">-7</td><td class="num"><b>0</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f L">L</i><i class="f L">L</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i></span></td></tr></tbody>
+</table>
+</section><section class="group" id="group-l">
+<h2><span>Group</span> L</h2>
+<table>
+<thead><tr><th scope="col" aria-label="flag"></th><th scope="col">Team</th><th scope="col" class="num" data-tip="matches played">P</th><th scope="col" class="num" data-tip="goal difference">GD</th><th scope="col" class="num" data-tip="points - top two advance, the eight best thirds join them">Pts</th><th scope="col" data-tip="last 5 internationals, most recent first">Form</th></tr></thead>
+<tbody><tr class="q1"><td class="flagcell">🏴󠁧󠁢󠁥󠁮󠁧󠁿</td><td><a class="tlink" href="teams/england.html">England</a></td><td class="num">2</td><td class="num">+2</td><td class="num"><b>4</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f L">L</i><i class="f D">D</i><i class="f W">W</i><i class="f W">W</i></span></td></tr><tr class="q1"><td class="flagcell">🇬🇭</td><td><a class="tlink" href="teams/ghana.html">Ghana</a></td><td class="num">2</td><td class="num">+1</td><td class="num"><b>4</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f L">L</i><i class="f L">L</i><i class="f L">L</i><i class="f L">L</i></span></td></tr><tr class="q3"><td class="flagcell">🇭🇷</td><td><a class="tlink" href="teams/croatia.html">Croatia</a></td><td class="num">2</td><td class="num">-1</td><td class="num"><b>3</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i><i class="f W">W</i><i class="f W">W</i></span></td></tr><tr class=""><td class="flagcell">🇵🇦</td><td><a class="tlink" href="teams/panama.html">Panama</a></td><td class="num">2</td><td class="num">-2</td><td class="num"><b>0</b></td><td><span class="form" data-tip="last 5 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f W">W</i><i class="f L">L</i><i class="f W">W</i><i class="f D">D</i></span></td></tr></tbody>
+</table>
+</section></div>
+</main>
+<footer>
+  <p>Form chips read most-recent first. Stats computed over each team's last 10 completed internationals.</p>
+  <p>Model run: 2026-06-24 06:25 UTC · Polymarket snapshot: 2026-06-24 06:25 UTC · every run archived in runs/</p>
+  <p>Data: API-Football · FIFA rankings 2026 · <a href="method.html">how this works</a> ·
+  <a href="archive.html">previous versions</a> ·
+  <a href="https://github.com/amirdaraee/world-cup-predictions">code on GitHub</a> ·
+  personal research, verify before staking. ·
+  <a href="#" onclick="wcfbCookies();return false;">cookie choices</a></p>
+</footer>
+<div id="cookie-consent" role="dialog" aria-label="Cookie consent" hidden>
+  <p>We use cookies to analyse traffic and understand how the site is
+  used. You can accept or decline — your choice is remembered.</p>
+  <div class="cc-btns">
+    <button id="cc-reject" class="cc-no">Decline</button>
+    <button id="cc-accept" class="cc-yes">Accept</button>
+  </div>
+</div>
+<script>
+(function() {
+  var box = document.getElementById('cookie-consent');
+  if (!box) return;
+  function stored() { try { return localStorage.getItem('wcfb_consent'); }
+                       catch (e) { return null; } }
+  function decide(v) {
+    try { localStorage.setItem('wcfb_consent', v); } catch (e) {}
+    box.hidden = true;
+    if (v === 'granted' && window.wcfbLoadGA) wcfbLoadGA();
+  }
+  if (!stored()) box.hidden = false;   // first visit: ask
+  document.getElementById('cc-accept').onclick = function() { decide('granted'); };
+  document.getElementById('cc-reject').onclick = function() { decide('denied'); };
+  // let anyone reopen the choice from the footer (easy to withdraw consent)
+  window.wcfbCookies = function() { box.hidden = false; };
+})();
+</script>
+</body>
+</html>

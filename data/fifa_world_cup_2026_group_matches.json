@@ -552,8 +552,8 @@
       "away": "Ghana",
       "venue": "Gillette Stadium",
       "city": "Boston",
-      "status": "Second Half",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-0"
     },
     {
       "match_id": 1489403,
@@ -564,8 +564,8 @@
       "away": "Croatia",
       "venue": "BMO Field",
       "city": "Toronto",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-1"
     },
     {
       "match_id": 1539008,
@@ -576,8 +576,8 @@
       "away": "DR Congo",
       "venue": "Estadio Akron",
       "city": "Guadalajara",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-0"
     },
     {
       "match_id": 1489408,
