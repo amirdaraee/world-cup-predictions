@@ -588,8 +588,8 @@
       "away": "Canada",
       "venue": "BC Place",
       "city": "Vancouver",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "2-1"
     },
     {
       "match_id": 1539009,
@@ -600,8 +600,8 @@
       "away": "Qatar",
       "venue": "Lumen Field",
       "city": "Seattle",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "3-1"
     },
     {
       "match_id": 1489405,

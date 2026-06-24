@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report · WC26 Form Book</title>
+<meta name="description" content="How accurate are the predictions? Live World Cup 2026 model accuracy — log-loss versus the market, calibration and hit rate, updated each matchday.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Report · WC26 Form Book">
+<meta property="og:description" content="How accurate are the predictions? Live World Cup 2026 model accuracy — log-loss versus the market, calibration and hit rate, updated each matchday.">
+<meta property="og:site_name" content="WC26 Form Book">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://wcformbook.com/img/og.png">
+<meta property="og:url" content="https://wcformbook.com/report.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Report · WC26 Form Book">
+<meta name="twitter:description" content="How accurate are the predictions? Live World Cup 2026 model accuracy — log-loss versus the market, calibration and hit rate, updated each matchday.">
+<meta name="twitter:image" content="https://wcformbook.com/img/og.png">
+<link rel="canonical" href="https://wcformbook.com/report.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="mask-icon" href="favicon.svg" color="#211d16">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#211d16">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "WC26 Form Book", "url": "https://wcformbook.com/", "description": "World Cup 2026 probabilities from an open statistical model: match fair prices vs the betting market, tournament odds, and a locked bracket graded in public.", "inLanguage": "en"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script>
+// Google Consent Mode v2 — analytics stays OFF until the visitor opts in.
+// gtag.js is not even loaded until consent is granted (this run or a prior
+// visit), so no GA cookie or request fires beforehand.
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied', ad_user_data: 'denied',
+  ad_personalization: 'denied', analytics_storage: 'denied'
+});
+function wcfbLoadGA() {
+  gtag('consent', 'update', { analytics_storage: 'granted' });
+  if (window.wcfbGALoaded) return;
+  window.wcfbGALoaded = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-EG56KHB1SX';
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'G-EG56KHB1SX');
+}
+try {
+  if (localStorage.getItem('wcfb_consent') === 'granted') wcfbLoadGA();
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=202606242138">
+<script>
+(function() {
+  var t = localStorage.getItem("theme");
+  if (t) document.documentElement.dataset.theme = t;
+})();
+function toggleTheme() {
+  var el = document.documentElement;
+  var dark = el.dataset.theme === "dark" ||
+    (!el.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+  el.dataset.theme = dark ? "light" : "dark";
+  localStorage.setItem("theme", el.dataset.theme);
+}
+</script>
+</head>
+<body>
+<div class="snapnote">Snapshot of 2026-06-24-2 - predictions as they stood then. <a href="../../index.html">Back to the latest →</a></div>
+<header class="masthead">
+  <a class="skip" href="#main">skip to content</a>
+  <button class="themebtn" onclick="toggleTheme()" title="light / dark" aria-label="toggle light or dark theme">◐</button>
+  
+  <div class="kicker">The Form Book - research edition</div>
+  <a class="wordmark" href="index.html">World&nbsp;Cup&nbsp;26</a>
+  <nav><a href="index.html">Groups</a><span>·</span><a href="matches.html">Matches</a><span>·</span><a href="futures.html">Futures</a><span>·</span><a href="awards.html">Awards</a><span>·</span><a href="bracket.html">Bracket</a><span>·</span><a href="report.html">Report</a><span>·</span><a href="glossary.html">Glossary</a><span>·</span><a href="method.html">Method</a></nav>
+</header>
+
+<main id="main">
+<h1>The report card</h1>
+<p class="standfirst">Locked predictions, graded after every matchday. Re-generated
+automatically by the nightly run; previous editions live in the
+<a href="archive.html">versions archive</a>.</p>
+<p class="fineprint">How to read this: a probability model lives or dies on its
+log-loss against the market, not on how often its single likeliest pick lands.
+Raw "results called" sinks whenever draws cluster — a draw is rarely any one
+match's most-likely score — so the headline below leads with the model's
+log-loss and how it sits versus the market.</p>
+<dl class="stats"><div><dt>Matches graded</dt><dd>50</dd></div><div><dt>Model log-loss</dt><dd>0.9207</dd></div><div><dt>vs the market</dt><dd>behind by 0.106</dd></div><div><dt>Results called</dt><dd>31 (62%)</dd></div></dl>
+<h2>Who forecasts best so far</h2>
+<table class="ko"><thead><tr><th>Source</th>
+<th class="num" data-tip="mean squared error - guessing equally scores 0.667">Brier</th>
+<th class="num" data-tip="penalises confident errors - guessing equally scores 1.099">Log-loss</th></tr></thead>
+<tbody><tr><td>Blend</td><td class="num">0.5292</td><td class="num">0.8815</td></tr><tr><td>Model</td><td class="num">0.554</td><td class="num">0.9207</td></tr><tr><td>Market</td><td class="num">0.484</td><td class="num">0.815</td></tr></tbody></table>
+<p class="fineprint">Market graded on its 43 priced
+matches. Lower is better; the gap between these rows is this whole project's thesis
+being settled in public. The market is the benchmark that matters — when the
+model is level with or below the market's log-loss, it is forecasting well even
+if the raw "results called" number looks poor, because the same matches that
+beat the model (an unusually draw-heavy run) beat the market too.</p>
+<figure><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 300" style="max-width:660px;width:100%"><rect width="660" height="300" fill="var(--paper, #f6f1e6)"/><polyline points="56.0,230.5 70.0,191.1 84.1,101.1 98.1,86.6 112.2,84.0 126.2,98.6 140.3,121.6 154.3,104.6 168.4,88.7 182.4,80.9 196.5,74.9 210.5,71.0 224.6,64.2 238.6,67.4 252.7,73.0 266.7,81.0 280.8,84.3 294.8,79.9 308.9,84.2 322.9,80.6 337.0,84.7 351.0,81.7 365.0,90.1 379.1,88.9 393.1,93.9 407.2,100.7 421.2,99.6 435.3,103.5 449.3,103.9 463.4,99.8 477.4,102.5 491.5,107.3 505.5,104.0 519.6,103.1 533.6,106.7 547.7,109.4 561.7,107.3 575.8,109.5 589.8,111.0 603.9,106.5 617.9,107.9 632.0,109.7 646.0,106.6" fill="none" stroke="var(--green, #14633f)" stroke-width="2"/><text x="648" y="110.56307854595222" font-size="10" fill="var(--green, #14633f)" font-family="ui-monospace,Menlo,monospace">model</text><polyline points="56.0,260.7 70.0,208.7 84.1,64.6 98.1,36.0 112.2,75.2 126.2,38.2 140.3,82.9 154.3,69.6 168.4,59.3 182.4,69.9 196.5,59.0 210.5,46.5 224.6,42.5 238.6,57.2 252.7,73.7 266.7,85.4 280.8,96.8 294.8,82.2 308.9,88.3 322.9,90.9 337.0,99.0 351.0,94.3 365.0,102.5 379.1,106.3 393.1,108.4 407.2,117.4 421.2,112.3 435.3,116.0 449.3,119.9 463.4,107.6 477.4,110.6 491.5,117.5 505.5,110.5 519.6,112.9 533.6,115.9 547.7,121.8 561.7,122.1 575.8,125.3 589.8,129.7 603.9,122.3 617.9,125.0 632.0,127.9 646.0,127.9" fill="none" stroke="var(--red, #a72a1e)" stroke-width="2"/><text x="648" y="131.86411247005447" font-size="10" fill="var(--red, #a72a1e)" font-family="ui-monospace,Menlo,monospace">market</text><polyline points="56.0,241.8 70.0,197.6 84.1,90.8 98.1,72.5 112.2,86.3 126.2,85.9 140.3,117.6 154.3,101.5 168.4,86.6 182.4,85.1 196.5,76.9 210.5,69.7 224.6,63.4 238.6,70.8 252.7,80.9 266.7,89.8 280.8,96.3 294.8,88.3 308.9,92.9 322.9,91.4 337.0,96.8 351.0,92.9 365.0,101.0 379.1,101.5 393.1,105.3 407.2,113.0 421.2,110.3 435.3,113.9 449.3,115.5 463.4,108.6 477.4,111.2 491.5,116.8 505.5,112.6 519.6,112.8 533.6,116.1 547.7,120.2 561.7,118.8 575.8,121.3 589.8,123.9 603.9,118.3 617.9,120.0 632.0,122.2 646.0,120.1" fill="none" stroke="var(--amber, #9a7b2d)" stroke-width="2"/><text x="648" y="124.11702235392985" font-size="10" fill="var(--amber, #9a7b2d)" font-family="ui-monospace,Menlo,monospace">blend</text><text x="56" y="16" font-size="12" fill="var(--ink, #211d16)" font-family="ui-monospace,Menlo,monospace">running log-loss after 43 graded matches (lower = better forecaster)</text><text x="56" y="290" font-size="10" fill="var(--ink-soft, #6b6353)" font-family="ui-monospace,Menlo,monospace">2026-06-11 → 2026-06-24</text></svg><figcaption>The whole experiment in one line: whichever curve is lowest is winning the forecasting contest.</figcaption></figure>
+<h2>Matchday by matchday</h2>
+<table class="ko"><thead><tr><th>Stage</th><th class="num">Played</th>
+<th class="num">Results called</th><th class="num">Exact scores</th>
+<th class="num">Log-loss (blend)</th></tr></thead><tbody><tr><td>Matchday 1</td><td class="num">24</td><td class="num">13/24</td><td class="num">0</td><td class="num">0.980</td></tr><tr><td>Matchday 2</td><td class="num">24</td><td class="num">18/24</td><td class="num">3</td><td class="num">0.757</td></tr><tr><td>Matchday 3</td><td class="num">2</td><td class="num">0/2</td><td class="num">0</td><td class="num">1.194</td></tr></tbody></table>
+<h2>Goals</h2>
+<dl class="stats"><div><dt>Goals/game actual</dt><dd>2.96</dd></div><div><dt>Goals/game predicted</dt><dd>1.54</dd></div><div><dt>Avg total error</dt><dd>1.86</dd></div><div><dt>Exact total</dt><dd>7/50</dd></div><div><dt>O/U 2.5 direction</dt><dd>23/50 (46%)</dd></div></dl>
+<p class="fineprint">"Predicted" is the total of each match's locked most-likely
+scoreline - a deliberately conservative point estimate, since the single most-likely
+scoreline sits below the average total, so expect this to trail the actual rate.
+It grades whether the model reads a match as high- or low-scoring, not a calibrated
+totals line. The full over/under probabilities are on each match page; their betting
+accuracy (hit rate and closing-line value) is tracked privately in the betting
+paper-trading log.</p><h2>Totals (Over/Under 2.5)</h2>
+<table class="ko"><thead><tr><th>Source</th>
+<th class="num" data-tip="times the Over/Under call was right">Direction</th>
+<th class="num" data-tip="mean squared error on P(over) - guessing 0.5 scores 0.25">Brier</th>
+<th class="num" data-tip="penalises confident errors">Log-loss</th></tr></thead>
+<tbody><tr><td>Model</td><td class="num">25/44</td><td class="num">0.2388</td><td class="num">0.6677</td></tr><tr><td>Market</td><td class="num">22/44</td><td class="num">0.2386</td><td class="num">0.6684</td></tr><tr><td>Blend</td><td class="num">24/44</td><td class="num">0.2367</td><td class="num">0.6641</td></tr></tbody></table>
+<p class="fineprint">A <em>calibrated</em> totals grade, unlike the modal-scoreline
+read above: the model's actual Over 2.5 probability scored against reality. These
+lines were locked <b>pre-kickoff from 2026-06-14 00:49 UTC</b>
+(the pre-tournament bracket didn't store totals), so they grade only matches that
+kicked off after that — no look-ahead. Lower Brier/log-loss is better.</p>
+<h2>Sharpest calls (model saw it, market didn't)</h2>
+<table class="ko"><thead><tr><th>Match</th><th>Outcome</th>
+<th class="num">Model gave it</th><th class="num">Market gave it</th>
+<th class="num">Edge realised</th></tr></thead>
+<tbody><tr><td>Australia v Turkey <b class="score">2-0</b></td><td>Australia</td><td class="num">51%</td><td class="num">18%</td><td class="num">+34pp</td></tr><tr><td>Ecuador v Curaçao <b class="score">0-0</b></td><td>Draw</td><td class="num">27%</td><td class="num">13%</td><td class="num">+15pp</td></tr><tr><td>Portugal v DR Congo <b class="score">1-1</b></td><td>Draw</td><td class="num">29%</td><td class="num">16%</td><td class="num">+13pp</td></tr><tr><td>Saudi Arabia v Uruguay <b class="score">1-1</b></td><td>Draw</td><td class="num">32%</td><td class="num">21%</td><td class="num">+10pp</td></tr><tr><td>Scotland v Morocco <b class="score">0-1</b></td><td>Morocco</td><td class="num">59%</td><td class="num">49%</td><td class="num">+10pp</td></tr></tbody></table>
+<h2>Roughest calls (market saw it, model didn't)</h2>
+<table class="ko"><thead><tr><th>Match</th><th>Outcome</th>
+<th class="num">Model gave it</th><th class="num">Market gave it</th>
+<th class="num">Edge realised</th></tr></thead>
+<tbody><tr><td>Iraq v Norway <b class="score">1-4</b></td><td>Norway</td><td class="num">48%</td><td class="num">80%</td><td class="num">-32pp</td></tr><tr><td>France v Iraq <b class="score">3-0</b></td><td>France</td><td class="num">57%</td><td class="num">87%</td><td class="num">-30pp</td></tr><tr><td>Austria v Jordan <b class="score">3-1</b></td><td>Austria</td><td class="num">46%</td><td class="num">74%</td><td class="num">-28pp</td></tr><tr><td>Portugal v Uzbekistan <b class="score">5-0</b></td><td>Portugal</td><td class="num">51%</td><td class="num">78%</td><td class="num">-28pp</td></tr><tr><td>Haiti v Scotland <b class="score">0-1</b></td><td>Scotland</td><td class="num">37%</td><td class="num">63%</td><td class="num">-26pp</td></tr></tbody></table>
+<h2>Calibration so far</h2>
+<table class="ko"><thead><tr><th>Claimed probability</th><th class="num">Claims</th>
+<th class="num">Average claim</th><th class="num">Actually happened</th></tr></thead>
+<tbody><tr><td>0-20%</td><td class="num">27</td><td class="num">15%</td><td class="num">7%</td></tr><tr><td>20-40%</td><td class="num">83</td><td class="num">29%</td><td class="num">27%</td></tr><tr><td>40-60%</td><td class="num">28</td><td class="num">50%</td><td class="num">68%</td></tr><tr><td>60-80%</td><td class="num">12</td><td class="num">68%</td><td class="num">58%</td></tr></tbody></table>
+<p class="fineprint">A calibrated forecaster's last two columns match. Early-tournament
+samples are small - judge after a full group stage.</p>
+</main>
+<footer>
+  <p>Form chips read most-recent first. Stats computed over each team's last 10 completed internationals.</p>
+  <p>Model run: 2026-06-24 21:37 UTC · Polymarket snapshot: 2026-06-24 21:37 UTC · every run archived in runs/</p>
+  <p>Data: API-Football · FIFA rankings 2026 · <a href="method.html">how this works</a> ·
+  <a href="archive.html">previous versions</a> ·
+  <a href="https://github.com/amirdaraee/world-cup-predictions">code on GitHub</a> ·
+  personal research, verify before staking. ·
+  <a href="#" onclick="wcfbCookies();return false;">cookie choices</a></p>
+</footer>
+<div id="cookie-consent" role="dialog" aria-label="Cookie consent" hidden>
+  <p>We use cookies to analyse traffic and understand how the site is
+  used. You can accept or decline — your choice is remembered.</p>
+  <div class="cc-btns">
+    <button id="cc-reject" class="cc-no">Decline</button>
+    <button id="cc-accept" class="cc-yes">Accept</button>
+  </div>
+</div>
+<script>
+(function() {
+  var box = document.getElementById('cookie-consent');
+  if (!box) return;
+  function stored() { try { return localStorage.getItem('wcfb_consent'); }
+                       catch (e) { return null; } }
+  function decide(v) {
+    try { localStorage.setItem('wcfb_consent', v); } catch (e) {}
+    box.hidden = true;
+    if (v === 'granted' && window.wcfbLoadGA) wcfbLoadGA();
+  }
+  if (!stored()) box.hidden = false;   // first visit: ask
+  document.getElementById('cc-accept').onclick = function() { decide('granted'); };
+  document.getElementById('cc-reject').onclick = function() { decide('denied'); };
+  // let anyone reopen the choice from the footer (easy to withdraw consent)
+  window.wcfbCookies = function() { box.hidden = false; };
+})();
+</script>
+</body>
+</html>
