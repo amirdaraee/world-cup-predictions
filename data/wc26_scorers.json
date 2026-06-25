@@ -36,6 +36,9 @@
     1489402,
     1489403,
     1489404,
+    1489405,
+    1489406,
+    1489407,
     1489408,
     1538999,
     1539000,
@@ -48,6 +51,7 @@
     1539007,
     1539008,
     1539009,
+    1539010,
     1539016,
     1539017
   ],
@@ -179,7 +183,17 @@
     },
     "J. Quinones": {
       "team": "Mexico",
-      "goals": 1,
+      "goals": 2,
+      "assists_from": []
+    },
+    "Ismael Saibari": {
+      "team": "Morocco",
+      "goals": 2,
+      "assists_from": []
+    },
+    "Vinícius Júnior": {
+      "team": "Brazil",
+      "goals": 2,
       "assists_from": []
     },
     "R. Jimenez": {
@@ -462,11 +476,6 @@
       "goals": 1,
       "assists_from": []
     },
-    "Ismael Saibari": {
-      "team": "Morocco",
-      "goals": 1,
-      "assists_from": []
-    },
     "M. Galarza": {
       "team": "Paraguay",
       "goals": 1,
@@ -589,6 +598,46 @@
     },
     "H. Al Haydos": {
       "team": "Qatar",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Achraf Hakimi": {
+      "team": "Morocco",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Wilson Isidor": {
+      "team": "Haiti",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Soufiane Rahimi": {
+      "team": "Morocco",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Gessime Yassine": {
+      "team": "Morocco",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Matheus Cunha": {
+      "team": "Brazil",
+      "goals": 1,
+      "assists_from": []
+    },
+    "M. Chavez Garcia": {
+      "team": "Mexico",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Fidalgo": {
+      "team": "Mexico",
+      "goals": 1,
+      "assists_from": []
+    },
+    "T. Maseko": {
+      "team": "South Africa",
       "goals": 1,
       "assists_from": []
     }

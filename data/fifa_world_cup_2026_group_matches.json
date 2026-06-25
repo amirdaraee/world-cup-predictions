@@ -612,8 +612,8 @@
       "away": "Haiti",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "4-2"
     },
     {
       "match_id": 1489406,
@@ -624,8 +624,8 @@
       "away": "Brazil",
       "venue": "Hard Rock Stadium",
       "city": "Miami",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-3"
     },
     {
       "match_id": 1539010,
@@ -636,8 +636,8 @@
       "away": "Mexico",
       "venue": "Estadio Azteca",
       "city": "Mexico City",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-3"
     },
     {
       "match_id": 1489407,
@@ -648,8 +648,8 @@
       "away": "South Korea",
       "venue": "Estadio BBVA",
       "city": "Monterrey",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-0"
     },
     {
       "match_id": 1489410,
