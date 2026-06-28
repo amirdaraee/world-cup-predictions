@@ -52,6 +52,7 @@ jobs:
           python3 pipeline/wc26_tournament.py       # 100k tournament sims (lock untouched)
           python3 pipeline/wc26_awards.py           # boot/awards odds
           python3 pipeline/wc26_accuracy_track.py   # append matchday accuracy snapshot (no-op until graded count grows)
+          python3 pipeline/wc26_follow_tool.py      # refresh public follow-the-model ROI report (predictions.json only, no personal data)
 
       # Once a day (the 05:00 run) and on manual dispatch: regenerate the
       # forward-looking AI analyst sections for fixtures within 2 days so

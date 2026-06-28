@@ -316,7 +316,7 @@ function toggleTheme() {{
   {switcher}
   <div class="kicker">The Form Book - research edition</div>
   <a class="wordmark" href="{pre}index.html">World&nbsp;Cup&nbsp;26</a>
-  <nav><a href="{pre}index.html">Groups</a><span>·</span><a href="{pre}matches.html">Matches</a><span>·</span><a href="{pre}futures.html">Futures</a><span>·</span><a href="{pre}awards.html">Awards</a><span>·</span><a href="{pre}bracket.html">Bracket</a><span>·</span><a href="{pre}report.html">Report</a><span>·</span><a href="{pre}glossary.html">Glossary</a><span>·</span><a href="{pre}method.html">Method</a></nav>
+  <nav><a href="{pre}index.html">Knockouts</a><span>·</span><a href="{pre}groups.html">Groups</a><span>·</span><a href="{pre}matches.html">Matches</a><span>·</span><a href="{pre}futures.html">Futures</a><span>·</span><a href="{pre}awards.html">Awards</a><span>·</span><a href="{pre}bracket.html">Bracket</a><span>·</span><a href="{pre}report.html">Report</a><span>·</span><a href="{pre}follow-the-model.html">Betting ROI</a><span>·</span><a href="{pre}glossary.html">Glossary</a><span>·</span><a href="{pre}method.html">Method</a></nav>
 </header>
 {f'<div class="crumb">{crumb}</div>' if crumb else ''}
 <main id="main">
@@ -461,8 +461,8 @@ but mid-pack by title odds; the model prefers recent goals to reputation). The <
 marker matters beyond ceremony: hosts get a fitted home-crowd boost (~+30% scoring) whenever they
 play in their own country, which is most of their matches.</p>
 <div class="groups">{''.join(cards)}</div>"""
-    (OUT / "index.html").write_text(page(
-        "Groups", body, canon="",
+    (OUT / "groups.html").write_text(page(
+        "Groups", body, canon="groups.html",
         desc="Live World Cup 2026 group standings and match-by-match win "
              "probabilities from an open Dixon-Coles model, blended with "
              "Polymarket betting-market prices."))
@@ -487,14 +487,26 @@ def build_matches_list():
         rows = []
         for m in sorted(by_day[day], key=lambda x: x["date_utc"]):
             _, time_ = fmt_date(m["date_utc"])
+            home_t, away_t, fav = escape(m["home"]), escape(m["away"]), None
             if m.get("score"):
                 res = f'<b class="score">{m["score"]}</b>'
             else:
-                res = '<span class="dim">-</span>'
+                sim = SIMS.get(str(m["match_id"]))
+                ml = sim.get("moneyline") if sim else None
+                if ml:
+                    fav = "home" if ml["home"] >= ml["away"] else "away"
+                    res = (f'<span class="dim" data-tip="model win probability">'
+                           f'{ml[fav] * 100:.0f}%</span>')
+                    if fav == "home":
+                        home_t = f"<b>{home_t}</b>"
+                    else:
+                        away_t = f"<b>{away_t}</b>"
+                else:
+                    res = '<span class="dim">-</span>'
             rows.append(f"""<tr>
 <td class="num">{time_}</td>
-<td>{('<b class="gchip">' + ROUND_SHORT.get(m["round"], "KO") + '</b>') if m.get("round") else ('<a class="gchip" href="index.html#group-' + m['group'].lower() + '">' + m['group'] + '</a>')}</td>
-<td class="fixture"><a href="matches/{match_slug(m)}.html">{escape(m['home'])} <em>v</em> {escape(m['away'])}</a></td>
+<td>{('<b class="gchip">' + ROUND_SHORT.get(m["round"], "KO") + '</b>') if m.get("round") else ('<a class="gchip" href="groups.html#group-' + m['group'].lower() + '">' + m['group'] + '</a>')}</td>
+<td class="fixture"><a href="matches/{match_slug(m)}.html">{home_t} <em>v</em> {away_t}</a></td>
 <td class="num">{res}</td>
 <td class="venue">{venue_str(m)}</td>
 </tr>""")
@@ -614,7 +626,7 @@ def build_team_pages():
 {crest}
 <h1>{escape(name)}</h1>
 <p class="meta">
-<a class="chip" href="../index.html#group-{g.lower()}">Group {g}</a>
+<a class="chip" href="../groups.html#group-{g.lower()}">Group {g}</a>
 <span class="chip">FIFA #{t['fifa_ranking']}</span>
 <span class="chip">{t['confederation']}</span>
 {host}
@@ -638,7 +650,7 @@ and how the model scores them.</p>
 <tbody>{''.join(fx_rows)}</tbody>
 </table>
 {llm_section(LLM["teams"].get(name), "The analyst's notes")}"""
-        crumb = f'<a href="../index.html">Groups</a> / Group {g} / {escape(name)}'
+        crumb = f'<a href="../groups.html">Groups</a> / Group {g} / {escape(name)}'
         (OUT / "teams" / f"{slug(name)}.html").write_text(
             page(name, body, depth=1, crumb=crumb))
 
@@ -983,7 +995,7 @@ def build_futures():
             cells += '<td class="num dim">-</td><td class="num dim">-</td>'
         g = team_group.get(name, "?")
         rows.append(f'<tr><td>{team_link(name)}</td>'
-                    f'<td><a class="gchip" href="index.html#group-{g.lower()}">{g}</a></td>{cells}</tr>')
+                    f'<td><a class="gchip" href="groups.html#group-{g.lower()}">{g}</a></td>{cells}</tr>')
     body = f"""<h1>Tournament futures</h1>
 <p class="standfirst">100,000 Monte Carlo tournaments on a 200-model bootstrap ensemble,
 using the official FIFA bracket.</p>
@@ -1607,8 +1619,11 @@ beat the model (an unusually draw-heavy run) beat the market too.</p>"""
 <table class="ko"><thead><tr><th>Claimed probability</th><th class="num">Claims</th>
 <th class="num">Average claim</th><th class="num">Actually happened</th></tr></thead>
 <tbody>{cal_rows}</tbody></table>
-<p class="fineprint">A calibrated forecaster's last two columns match. Early-tournament
-samples are small - judge after a full group stage.</p>"""
+<p class="fineprint">A calibrated forecaster's last two columns match. The full
+group stage (72 matches) is now graded, so these buckets carry real signal —
+read them as the model's honest track record, not a small-sample teaser. The
+knockout rounds add fewer matches, so expect the later buckets to settle
+slowly.</p>"""
 
     goals_html = goals_section(graded) + totals_section(graded)
 
@@ -1620,7 +1635,9 @@ automatically by the nightly run; previous editions live in the
 log-loss against the market, not on how often its single likeliest pick lands.
 Raw "results called" sinks whenever draws cluster — a draw is rarely any one
 match's most-likely score — so the headline below leads with the model's
-log-loss and how it sits versus the market.</p>
+log-loss and how it sits versus the market. For a money view, see what
+flat-staking the model's market edges would have returned:
+<a href="follow-the-model.html">if you'd followed the model →</a></p>
 {head}
 {comp}
 {trend_chart()}
@@ -2580,9 +2597,63 @@ sup.host { color: var(--red); font-size: .62rem; letter-spacing: .08em; }
 
 /* matchday sections */
 .matchday h2 { font-size: 1.1rem; }
+/* each matchday is its own table; fix the columns so kickoff, group, fixture,
+   result and venue line up vertically down the whole page (not per-section) */
+.matchday table { table-layout: fixed; width: 100%; }
+.matchday td:nth-child(1) { width: 3.8rem; }   /* kickoff time */
+.matchday td:nth-child(2) { width: 2.8rem; }   /* group / KO chip */
+.matchday td:nth-child(4) { width: 3.8rem; }   /* result */
+.matchday td:nth-child(5) { width: 34%; }      /* venue */
 .fixture a { color: var(--ink); font-weight: 600; }
 .fixture a:hover { color: var(--green); }
 .fixture em { font-style: italic; color: var(--ink-soft); font-weight: 400; }
+/* knockout board (homepage) */
+.kohead { font-size: 1.1rem; margin: 1.4rem 0 .8rem; }
+.kochamps h2 { font-size: 1rem; margin: 0 0 .6rem; }
+.kochamprow { display: flex; flex-wrap: wrap; gap: .5rem; }
+.kochamp { display: flex; gap: .45rem; align-items: baseline; border: 1px solid var(--rule);
+  padding: .3rem .7rem; border-radius: 999px; font-size: .85rem; }
+.kochamp a { color: var(--ink); text-decoration: none; }
+.kochamp b { color: var(--green); font-variant-numeric: tabular-nums; }
+/* left/right knockout bracket */
+/* fills the column width so there's no horizontal scroll on normal screens;
+   only narrow phones (< the 700px min) fall back to scrolling */
+.brackwrap { overflow-x: auto; padding-bottom: .5rem; margin-top: 1rem; }
+.bracket { display: flex; align-items: stretch; gap: 7px; min-width: 700px; }
+.bcol { display: flex; flex-direction: column; justify-content: space-around;
+  flex: 1 1 0; min-width: 0; gap: 6px; }
+.bfinal { justify-content: center; flex: 0 0 auto; min-width: 92px; }
+.bnode { display: flex; flex-direction: column; border: 1px solid var(--rule);
+  border-radius: 6px; background: var(--paper-2); font-size: .74rem;
+  text-decoration: none; color: inherit; overflow: hidden; }
+.bnode.r32:hover { border-color: var(--green); }
+.bnode.slot { background: transparent; border-style: dashed; }
+.bnode.final { border-color: var(--green); }
+.btbd .bt { color: var(--ink-soft); font-size: .68rem; letter-spacing: .02em; }
+td.twin { color: var(--green); } td.tloss { color: var(--ink-soft); }
+.brow { display: flex; justify-content: space-between; gap: .35rem; padding: .22rem .4rem; }
+.brow + .brow { border-top: 1px solid var(--rule); }
+.bt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bp { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.bwin .bt { font-weight: 600; color: var(--ink); }
+.bwin .bp { color: var(--ink); }
+.bsc { text-align: center; font-size: .68rem; color: var(--ink-soft);
+  border-top: 1px solid var(--rule); padding: .12rem; }
+.bchamp { text-align: center; margin-top: .6rem; font-size: .82rem; }
+.bchamp a { color: var(--ink); text-decoration: none; font-weight: 600; }
+.bchamp b { color: var(--green); margin-left: .35rem; }
+.bchamp span { display: block; font-size: .68rem; color: var(--ink-soft); margin-top: .1rem; }
+/* mobile: round-by-round list instead of the sideways tree */
+.kolist { display: none; }
+.koround { margin-top: 1.3rem; }
+.koround h3 { font-size: .95rem; margin: 0 0 .55rem; border-bottom: 1px solid var(--rule);
+  padding-bottom: .25rem; }
+.kogrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.kolist .bnode { font-size: .82rem; }
+@media (max-width: 760px) {
+  .brackwrap { display: none; }
+  .kolist { display: block; }
+}
 .gchip { font-size: .72rem; border: 1px solid var(--ink); padding: 0 .35em; border-radius: 2px; }
 
 /* team page */
@@ -3008,11 +3079,246 @@ remember, none of this is betting advice.</p>"""
              "maths assumed."))
 
 
+def build_follow_tool():
+    """Public-data ROI report: how a flat stake on every moneyline signal the
+    model flagged (edge >= threshold over the lock-time market) would have done,
+    graded on actual results. Reads wc26_follow_tool.json; no personal data."""
+    try:
+        d = json.load(open(DATA / "wc26_follow_tool.json"))
+    except FileNotFoundError:
+        return
+    s = d.get("summary") or {}
+    if not s.get("n_bets"):
+        return
+    profit, roi = s["profit"], s["roi"]
+    item = lambda k, v: f"<div><dt>{k}</dt><dd>{v}</dd></div>"
+    stats = (item("Signals", s["n_bets"])
+             + item("Win rate", f"{s['win_rate'] * 100:.0f}%")
+             + item("Staked", f"${s['staked']:.0f}")
+             + item("Returned", f"${s['returned']:.2f}")
+             + item("Profit", f"${profit:+.2f}")
+             + item("ROI", f"{roi * 100:+.1f}%"))
+    rows = "".join(
+        f'<tr><td>{escape(b["match"])} — {escape(b["side"])}</td>'
+        f'<td class="num">{b["model"] * 100:.0f}%</td>'
+        f'<td class="num">{b["market"] * 100:.0f}%</td>'
+        f'<td class="num">+{b["edge"] * 100:.0f}c</td>'
+        f'<td class="{"twin" if b["won"] else "tloss"}">{"won" if b["won"] else "lost"}</td>'
+        f'<td class="num">{b["profit"]:+.2f}</td></tr>' for b in d["bets"])
+    verb = "made" if profit >= 0 else "lost"
+    body = f"""<h1>If you'd followed the model</h1>
+<p class="standfirst">A hypothetical: a flat ${s['stake_unit']:.0f} on every moneyline
+signal the model flagged — where its own probability beat the Polymarket price by at
+least {s['threshold'] * 100:.0f}c — staked at the pre-match price and graded on the
+actual result. Public data only: no personal bets, no look-ahead. Not betting advice.</p>
+<dl class="stats">{stats}</dl>
+<p class="fineprint">Over the group stage the model's moneyline edges {verb} money. The
+flagged bets were mostly underdogs the model rated higher than the market — and they
+mostly didn't land. Closing-line value and a longer sample are the real test; one group
+stage is thin, and one or two big-priced winners swing the total. This grades the public
+model's signals, not any real wagering. See the <a href="report.html">accuracy
+report</a>.</p>
+<table class="ko"><thead><tr><th>Signal</th>
+<th class="num" title="the model's win probability">Model</th>
+<th class="num" title="the Polymarket price at lock time">Market</th>
+<th class="num" title="model probability minus market price">Edge</th>
+<th>Result</th><th class="num">P&amp;L&nbsp;($)</th></tr></thead>
+<tbody>{rows}</tbody></table>"""
+    (OUT / "follow-the-model.html").write_text(page(
+        "Following the model", body, canon="follow-the-model.html",
+        desc="A hypothetical flat-stake backtest of the model's World Cup 2026 moneyline "
+             "signals versus the market, graded on actual results. Public data; not "
+             "betting advice."))
+
+
 FAVICON_SVG = (
     '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">'
     '<rect width="32" height="32" rx="6" fill="#211d16"/>'
     '<path d="M16 6.5l7.1 5.16-2.71 8.34H11.6L8.9 11.66z" fill="#f6f1e6"/>'
     '</svg>\n')
+
+
+def _advance_probs(sim):
+    """Per-side chance of going through a knockout tie: the 90-minute win
+    probability plus half the draw mass (a level tie is a ~coin-flip on pens)."""
+    ml = sim["moneyline"]
+    d = ml["draw"]
+    return ml["home"] + d / 2, ml["away"] + d / 2
+
+
+# official 2026 bracket (Wikipedia / wc26_tournament.py). slot1 of each R32 tie
+# is always a group winner/runner-up, which pins each real fixture to a match
+# number; the feeder maps give the flow R32 -> R16 -> QF -> SF -> final.
+KO_R32_SLOT1 = {73: ("R", "A"), 74: ("W", "E"), 75: ("W", "F"), 76: ("W", "C"),
+                77: ("W", "I"), 78: ("R", "E"), 79: ("W", "A"), 80: ("W", "L"),
+                81: ("W", "D"), 82: ("W", "G"), 83: ("R", "K"), 84: ("W", "H"),
+                85: ("W", "B"), 86: ("W", "J"), 87: ("W", "K"), 88: ("R", "D")}
+KO_FEED = {89: (74, 77), 90: (73, 75), 91: (76, 78), 92: (79, 80),
+           93: (83, 84), 94: (81, 82), 95: (86, 88), 96: (85, 87),
+           97: (89, 90), 98: (93, 94), 99: (91, 92), 100: (95, 96),
+           101: (97, 98), 102: (99, 100), 104: (101, 102)}
+# columns top->bottom per side, outer (R32) to inner (SF); final in the centre
+KO_LEFT = [[74, 77, 73, 75, 83, 84, 81, 82], [89, 90, 93, 94], [97, 98], [101]]
+KO_RIGHT = [[76, 78, 79, 80, 86, 88, 85, 87], [91, 92, 95, 96], [99, 100], [102]]
+KO_STAGE_KEY = {"r16": "qf", "qf": "sf", "sf": "final", "final": "champion"}
+
+
+def _actual_standings():
+    """Group winner/runner-up from the real results (pts, then GD, GF)."""
+    from collections import defaultdict
+    tab = defaultdict(lambda: defaultdict(lambda: [0, 0, 0]))
+    for m in MATCHES:
+        if not str(m.get("status", "")).startswith("Match Finished") \
+                or not m.get("score"):
+            continue
+        hs, as_ = (int(x) for x in m["score"].split("-"))
+        for t, gf, ga in ((m["home"], hs, as_), (m["away"], as_, hs)):
+            r = tab[m["group"]][t]
+            r[0] += 3 if gf > ga else 1 if gf == ga else 0
+            r[1] += gf - ga
+            r[2] += gf
+    rank = {}
+    for g, teams in tab.items():
+        order = sorted(teams, key=lambda t: (-teams[t][0], -teams[t][1],
+                                             -teams[t][2]))
+        if len(order) >= 2:
+            rank[("W", g)], rank[("R", g)] = order[0], order[1]
+    return rank
+
+
+def build_knockouts():
+    """The homepage: the real knockout bracket — informational, not a forecast.
+    Round-of-32 ties carry the model's go-through odds while unplayed; later
+    rounds show which tie feeds each slot and fill with the ACTUAL winner as
+    matches are played. No projected winners, no predicted champion."""
+    rank = _actual_standings()
+    fx_by_no, team_fx = {}, {}
+    for m in KOS:
+        if m.get("round") == "Round of 32":
+            team_fx[m["home"]] = m
+            team_fx[m["away"]] = m
+    for no, slot in KO_R32_SLOT1.items():
+        fx = team_fx.get(rank.get(slot))
+        if fx:
+            fx_by_no[no] = fx
+    if len(fx_by_no) != 16:
+        body = ("<h1>The knockouts</h1><p class=\"standfirst\">The Round of 32 "
+                "is still resolving — the bracket appears once the group stage "
+                "is complete.</p>")
+        (OUT / "index.html").write_text(page("Knockouts", body, canon=""))
+        return
+
+    round_of = {**{n: "r32" for n in range(73, 89)},
+                **{n: "r16" for n in range(89, 97)},
+                **{n: "qf" for n in range(97, 101)},
+                101: "sf", 102: "sf", 104: "final"}
+
+    def played(m):
+        return str(m.get("status", "")).startswith("Match Finished") and m.get("score")
+
+    def score_winner(m):
+        hs, as_ = (int(x) for x in m["score"].split("-"))
+        if hs != as_:
+            return m["home"] if hs > as_ else m["away"]
+        pens = m.get("penalties")
+        if isinstance(pens, str) and "-" in pens:
+            ph, pa = (int(x) for x in pens.split("-"))
+            return m["home"] if ph > pa else m["away"]
+        return None
+
+    def finished_between(t1, t2):
+        for m in KOS:
+            if {m["home"], m["away"]} == {t1, t2} and played(m):
+                return m
+        return None
+
+    def actual_winner(no):
+        """The real team that has won through to fill this slot, else None."""
+        if round_of[no] == "r32":
+            m = fx_by_no[no]
+            return score_winner(m) if played(m) else None
+        f1, f2 = KO_FEED[no]
+        t1, t2 = actual_winner(f1), actual_winner(f2)
+        if t1 and t2:
+            m = finished_between(t1, t2)
+            if m:
+                return score_winner(m)
+        return None
+
+    def abbr(name):
+        return "".join(c for c in name if c.isalpha())[:3].upper()
+
+    def slot_row(feeder_no):
+        """One row of an inner node: the actual winner once known, otherwise a
+        muted placeholder naming the tie that decides it."""
+        w = actual_winner(feeder_no)
+        if w:
+            return f'<span class="brow bwin"><span class="bt">{escape(w)}</span></span>'
+        if round_of[feeder_no] == "r32":
+            m = fx_by_no[feeder_no]
+            tag = f'{abbr(m["home"])} / {abbr(m["away"])}'
+        else:
+            tag = "—"
+        return f'<span class="brow btbd"><span class="bt">{tag}</span></span>'
+
+    def node_html(no):
+        if round_of[no] == "r32":
+            m = fx_by_no[no]
+            sim = SIMS.get(str(m["match_id"]))
+            ph, pa = _advance_probs(sim) if sim else (None, None)
+            done = played(m)
+            w = score_winner(m) if done else None
+            rows = ""
+            for team, p in ((m["home"], ph), (m["away"], pa)):
+                cell = (f'<span class="bp">{p * 100:.0f}</span>'
+                        if (p is not None and not done) else "")
+                rows += (f'<span class="brow{" bwin" if team == w else ""}">'
+                         f'<span class="bt">{escape(team)}</span>{cell}</span>')
+            sc = f'<span class="bsc">{escape(m["score"])}</span>' if done else ""
+            return (f'<a class="bnode r32" href="matches/{match_slug(m)}.html">'
+                    f'{rows}{sc}</a>')
+        f1, f2 = KO_FEED[no]
+        return f'<div class="bnode slot">{slot_row(f1)}{slot_row(f2)}</div>'
+
+    def side_html(cols):
+        return "".join('<div class="bcol">'
+                       + "".join(node_html(no) for no in col) + "</div>"
+                       for col in cols)
+
+    final_col = (f'<div class="bcol bfinal">'
+                 f'<div class="bnode final">{slot_row(101)}{slot_row(102)}</div>'
+                 f'<div class="bchamp"><span>Final</span></div></div>')
+    bracket = (f'<div class="bracket">{side_html(KO_LEFT)}{final_col}'
+               f'{side_html(list(reversed(KO_RIGHT)))}</div>')
+
+    # mobile: the same nodes as a round-by-round vertical list (no sideways
+    # tree, no horizontal scroll on a phone)
+    rounds = [("Round of 32", list(range(73, 89))),
+              ("Round of 16", list(range(89, 97))),
+              ("Quarter-finals", [97, 98, 99, 100]),
+              ("Semi-finals", [101, 102]), ("Final", [104])]
+    mobile = "".join(
+        f'<section class="koround"><h3>{label}</h3><div class="kogrid">'
+        + "".join(node_html(no) for no in nos) + "</div></section>"
+        for label, nos in rounds)
+
+    body = f"""<h1>The knockouts</h1>
+<p class="standfirst">Thirty-two teams, single elimination to the title. This is the
+real draw: the outer columns are the Round-of-32 ties, and the number on each side is
+the model's chance of it going through (a level tie settled on penalties). The inner
+rounds name the tie that feeds each slot and fill in with the actual winner as matches
+are played — it tracks the tournament, it doesn't pick it.</p>
+<div class="brackwrap">{bracket}</div>
+<div class="kolist">{mobile}</div>
+<p class="fineprint">Outer ties link to the full match page and are graded as they are
+played; inner slots show the actual winner once decided. Go-through odds come from the
+same Dixon-Coles model as the rest of the site. Not betting advice. See the
+<a href="groups.html">group stage</a> or the model's <a href="bracket.html">graded
+bracket</a> and <a href="futures.html">title odds</a>.</p>"""
+    (OUT / "index.html").write_text(page(
+        "Knockouts", body, canon="",
+        desc="The World Cup 2026 knockout bracket: the real Round-of-32 draw with model "
+             "go-through odds, filling in with actual winners as the tournament is played."))
 
 
 def emit_seo_assets():
@@ -3059,7 +3365,8 @@ def build_all(snapshot=False):
             shutil.copy(f, OUT / "img" / f.name)
     (OUT / "style.css").write_text(CSS)
     (OUT / "CNAME").write_text(DOMAIN + "\n")   # Pages custom domain
-    build_index()
+    build_index()       # -> groups.html
+    build_knockouts()   # -> index.html (the homepage)
     build_matches_list()
     build_team_pages()
     build_match_pages()
@@ -3068,6 +3375,7 @@ def build_all(snapshot=False):
     build_awards()
     build_player_pages()
     build_report()
+    build_follow_tool()
     build_glossary()
     build_method()
     build_method_fa()

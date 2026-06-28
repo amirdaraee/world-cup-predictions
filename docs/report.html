@@ -51,7 +51,7 @@ try {
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=202606280719">
+<link rel="stylesheet" href="style.css?v=202606281204">
 <script>
 (function() {
   var t = localStorage.getItem("theme");
@@ -73,7 +73,7 @@ function toggleTheme() {
   
   <div class="kicker">The Form Book - research edition</div>
   <a class="wordmark" href="index.html">World&nbsp;Cup&nbsp;26</a>
-  <nav><a href="index.html">Groups</a><span>·</span><a href="matches.html">Matches</a><span>·</span><a href="futures.html">Futures</a><span>·</span><a href="awards.html">Awards</a><span>·</span><a href="bracket.html">Bracket</a><span>·</span><a href="report.html">Report</a><span>·</span><a href="glossary.html">Glossary</a><span>·</span><a href="method.html">Method</a></nav>
+  <nav><a href="index.html">Knockouts</a><span>·</span><a href="groups.html">Groups</a><span>·</span><a href="matches.html">Matches</a><span>·</span><a href="futures.html">Futures</a><span>·</span><a href="awards.html">Awards</a><span>·</span><a href="bracket.html">Bracket</a><span>·</span><a href="report.html">Report</a><span>·</span><a href="follow-the-model.html">Betting ROI</a><span>·</span><a href="glossary.html">Glossary</a><span>·</span><a href="method.html">Method</a></nav>
 </header>
 
 <main id="main">
@@ -85,7 +85,9 @@ automatically by the nightly run; previous editions live in the
 log-loss against the market, not on how often its single likeliest pick lands.
 Raw "results called" sinks whenever draws cluster — a draw is rarely any one
 match's most-likely score — so the headline below leads with the model's
-log-loss and how it sits versus the market.</p>
+log-loss and how it sits versus the market. For a money view, see what
+flat-staking the model's market edges would have returned:
+<a href="follow-the-model.html">if you'd followed the model →</a></p>
 <dl class="stats"><div><dt>Matches graded</dt><dd>72</dd></div><div><dt>Model log-loss</dt><dd>0.9144</dd></div><div><dt>vs the market</dt><dd>behind by 0.116</dd></div><div><dt>Results called</dt><dd>43 (60%)</dd></div></dl>
 <h2>Who forecasts best so far</h2>
 <table class="ko"><thead><tr><th>Source</th>
@@ -136,12 +138,15 @@ kicked off after that — no look-ahead. Lower Brier/log-loss is better.</p>
 <table class="ko"><thead><tr><th>Claimed probability</th><th class="num">Claims</th>
 <th class="num">Average claim</th><th class="num">Actually happened</th></tr></thead>
 <tbody><tr><td>0-20%</td><td class="num">36</td><td class="num">14%</td><td class="num">6%</td></tr><tr><td>20-40%</td><td class="num">122</td><td class="num">29%</td><td class="num">26%</td></tr><tr><td>40-60%</td><td class="num">40</td><td class="num">50%</td><td class="num">65%</td></tr><tr><td>60-80%</td><td class="num">18</td><td class="num">67%</td><td class="num">67%</td></tr></tbody></table>
-<p class="fineprint">A calibrated forecaster's last two columns match. Early-tournament
-samples are small - judge after a full group stage.</p>
+<p class="fineprint">A calibrated forecaster's last two columns match. The full
+group stage (72 matches) is now graded, so these buckets carry real signal —
+read them as the model's honest track record, not a small-sample teaser. The
+knockout rounds add fewer matches, so expect the later buckets to settle
+slowly.</p>
 </main>
 <footer>
   <p>Form chips read most-recent first. Stats computed over each team's last 10 completed internationals.</p>
-  <p>Model run: 2026-06-28 07:09 UTC · Polymarket snapshot: 2026-06-28 07:09 UTC · every run archived in runs/</p>
+  <p>Model run: 2026-06-28 10:18 UTC · Polymarket snapshot: 2026-06-28 07:09 UTC · every run archived in runs/</p>
   <p>Data: API-Football · FIFA rankings 2026 · <a href="method.html">how this works</a> ·
   <a href="archive.html">previous versions</a> ·
   <a href="https://github.com/amirdaraee/world-cup-predictions">code on GitHub</a> ·

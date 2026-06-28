@@ -3,7 +3,7 @@
     "half_life": 1000,
     "friendly_w": 0.8,
     "shrink": 4.0,
-    "rho": -0.05,
+    "rho": -0.1,
     "margin_cap": 99,
     "min2_boost": 1.0,
     "half_split": 0.447
@@ -12,5 +12,6 @@
   "tuned_on": "4 rolling windows 2022-2026, 4228 matches",
   "tuned_at": "2026-06-11 20:18 UTC",
   "min2_boost_note": "fit on 3117 matches 2022-2025, exact-score ll 2.87449 -> 2.87449",
-  "half_split_note": "share of goals before HT, fit on 2360 goals across 6 international tournaments"
+  "half_split_note": "share of goals before HT, fit on 2360 goals across 6 international tournaments",
+  "rho_note": "rho -0.05 -> -0.10 applied 2026-06-28: helps the full graded group stage (72 matches, -0.0037 log-loss) and is neutral on the 4188-match rolling CV (0.88165 vs 0.88163). The DC textbook value; flipped once the round-1 draw cluster regressed (38%->28%)."
 }
