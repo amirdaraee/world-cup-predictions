@@ -316,7 +316,7 @@ function toggleTheme() {{
   {switcher}
   <div class="kicker">The Form Book - research edition</div>
   <a class="wordmark" href="{pre}index.html">World&nbsp;Cup&nbsp;26</a>
-  <nav><a href="{pre}index.html">Knockouts</a><span>·</span><a href="{pre}groups.html">Groups</a><span>·</span><a href="{pre}matches.html">Matches</a><span>·</span><a href="{pre}futures.html">Futures</a><span>·</span><a href="{pre}awards.html">Awards</a><span>·</span><a href="{pre}bracket.html">Bracket</a><span>·</span><a href="{pre}report.html">Report</a><span>·</span><a href="{pre}follow-the-model.html">Betting ROI</a><span>·</span><a href="{pre}glossary.html">Glossary</a><span>·</span><a href="{pre}method.html">Method</a></nav>
+  <nav><a href="{pre}index.html">Knockouts</a><span>·</span><a href="{pre}groups.html">Groups</a><span>·</span><a href="{pre}matches.html">Matches</a><span>·</span><a href="{pre}futures.html">Futures</a><span>·</span><a href="{pre}awards.html">Awards</a><span>·</span><a href="{pre}report.html">Report</a><span>·</span><a href="{pre}follow-the-model.html">Betting ROI</a><span>·</span><a href="{pre}glossary.html">Glossary</a><span>·</span><a href="{pre}method.html">Method</a></nav>
 </header>
 {f'<div class="crumb">{crumb}</div>' if crumb else ''}
 <main id="main">
@@ -1209,27 +1209,12 @@ def accuracy_headline(acc):
 
 
 # ---------- bracket / predictions page ----------
-def build_bracket():
-    if not PRED:
-        return
-    acc = PRED.get("accuracy")
-    if acc and acc.get("graded_group_matches"):
-        acc_html = f'<dl class="stats">{accuracy_headline(acc)}</dl>'
-        if acc.get("compare"):
-            comp_rows = "".join(
-                f'<tr><td>{src.title()}</td>'
-                f'<td class="num">{v["brier"]}</td>'
-                f'<td class="num">{v["logloss"]}</td></tr>'
-                for src, v in acc["compare"].items())
-            acc_html += f"""<table class="ko">
-<thead><tr><th>Probability source</th><th class="num" title="mean squared error of the probabilities - lower is better; guessing equally scores 0.667">Brier</th><th class="num" title="penalises confident wrong calls hardest - lower is better; guessing equally scores 1.099">Log-loss</th></tr></thead>
-<tbody>{comp_rows}</tbody></table>
-<p class="meta center">Lower is better - this settles whether the model, the market,
-or the blend prices matches best (market graded on {acc['market_priced_matches']} priced matches).</p>"""
-    else:
-        acc_html = ('<p class="standfirst">No matches graded yet - run '
-                    '<code>wc26_update_results.py</code> then rebuild once games finish.</p>')
-
+def locked_tournament_html():
+    """The locked pre-tournament bracket, predicted standings and group-stage
+    pick tracker — folded into the Report page (was the standalone Bracket
+    page). Returns '' when there are no locked predictions."""
+    if not PRED or not PRED.get("knockout"):
+        return ""
     rounds = {}
     for k in PRED["knockout"]:
         rounds.setdefault(k["round"], []).append(k)
@@ -1279,37 +1264,21 @@ or the blend prices matches best (market graded on {acc['market_priced_matches']
 <th title="the model's 1X2 call — THE prediction that gets graded">Result pick</th><th class="num" title="probability of the result pick (market-blended)">Conf.</th><th class="num" title="single most likely exact scoreline — typically a 10-15% shot among ~170 possible scores. A low draw is often the modal score even when one side is clearly favoured to WIN; this column is colour, not the call">Modal score</th><th class="num" title="filled in by wc26_update_results.py as games finish">Actual</th><th></th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table>"""
 
-    body = f"""<h1>The predicted tournament</h1>
-<p class="standfirst">Every match called in advance - locked {PRED['locked_at']},
-graded against reality as results land. Picks are modal outcomes from the mean model;
-the official FIFA bracket decides who meets whom.</p>
+    return f"""<h2 id="locked-bracket">The predicted tournament (locked)</h2>
+<p class="standfirst">Every match was called in advance — locked {PRED['locked_at']}, and
+graded against reality as results land. Picks are modal outcomes from the mean model; the
+official FIFA bracket decides who meets whom.</p>
 <div class="champ">Predicted champion: <b>{team_link(PRED['champion'])}</b></div>
-<p class="fineprint">Two pick columns, two different questions - don't conflate them. <b>Result
+<p class="fineprint">Two pick columns, two different questions — don't conflate them. <b>Result
 pick</b> is the call: who wins (or a draw), with the model's probability beside it. <b>Modal
-score</b> is the single most likely exact scoreline, typically a 10-15% shot - and because goals
-are rare, a low draw like 1-1 is often the modal score even when one team is clearly favoured to
-win. Betting the modal score as if it were the result call is a misread (South Korea v Czechia,
-matchday 1: modal score 1-1, result pick South Korea at 47% - Korea won 2-1).</p>
-<p class="fineprint">A locked bracket never updates - when reality diverges, the picks stay frozen,
-because a prediction you can revise isn't a prediction. The Conf column is the model's own
-probability for its pick: a 50% pick is a coin flip it was forced to call, so judge the model by
-the scorecard's probability metrics, not the ✓/✗ column. Brier and log-loss score the
-probabilities themselves (lower is better; guessing ⅓-⅓-⅓ scores 0.667 Brier, 1.099 log-loss) -
-and the model/market/blend comparison is the real experiment here: it settles which forecaster
-deserves your trust with actual match results.</p>
-<h2>Scorecard</h2>
-{acc_html}
-<p class="fineprint">The full accuracy analysis - trends, calibration, sharpest and
-roughest calls, matchday breakdowns - lives on the <a href="report.html">Report</a> page.</p>
+score</b> is the single most likely exact scoreline, typically a 10-15% shot — because goals
+are rare, a low draw like 1-1 is often the modal score even when one team is clearly favoured
+to win, so judge the model by its probability metrics above, not the ✓/✗ column.</p>
 {ko_html}
-<h2>Predicted group tables</h2>
+<h2>Predicted group tables (locked)</h2>
 <div class="groups">{gt_html}</div>
-<h2>Group-stage match tracker</h2>
+<h2>Group-stage pick tracker</h2>
 {track_html}"""
-    (OUT / "bracket.html").write_text(page(
-        "Bracket", body, canon="bracket.html",
-        desc="Our locked pre-tournament World Cup 2026 bracket prediction, "
-             "graded match-by-match in public against the real results."))
 
 
 # ---------- awards page ----------
@@ -1508,15 +1477,15 @@ def build_report():
     acc = (PRED or {}).get("accuracy") or {}
 
     if not graded:
-        body = """<h1>The report card</h1>
+        body = f"""<h1>The report card</h1>
 <p class="standfirst">Every prediction on this site was locked before the tournament;
-this page grades them against reality after every matchday. Nothing here yet -
+this page grades them against reality after every matchday. Nothing graded yet -
 the first results arrive tonight, and the first report follows the first grading run.</p>
 <p class="fineprint">What will appear: result hit rate and proper scores (Brier,
 log-loss) for the model, the market and the blend; the running trend of who is
 forecasting best; calibration buckets; the sharpest and roughest calls; and a
-matchday-by-matchday breakdown. The locked picks themselves are on the
-<a href="bracket.html">Bracket</a> page.</p>"""
+matchday-by-matchday breakdown. The locked picks themselves are <a href="#locked-bracket">below</a>.</p>
+{locked_tournament_html()}"""
         (OUT / "report.html").write_text(page(
         "Report", body, canon="report.html",
         desc="How accurate are the predictions? Live World Cup 2026 model "
@@ -1644,7 +1613,8 @@ flat-staking the model's market edges would have returned:
 {md_html}
 {goals_html}
 {calls}
-{cal}"""
+{cal}
+{locked_tournament_html()}"""
     (OUT / "report.html").write_text(page(
         "Report", body, canon="report.html",
         desc="How accurate are the predictions? Live World Cup 2026 model "
@@ -1898,7 +1868,7 @@ Both lost on held-out matches - the tune log is in the repo.</p>
 <p>For group-match picks, model probabilities are blended with live Polymarket prices
 (a log-opinion pool, 35% weight on the market) - the market knows about lineups and injuries
 hours before any goals data can. The raw model is kept separate for edge-finding, and the
-<a href="bracket.html">scorecard</a> grades <b>model, market, and blend independently</b> as
+<a href="report.html#locked-bracket">scorecard</a> grades <b>model, market, and blend independently</b> as
 results arrive, so the tournament itself decides which forecaster deserves trust.</p>
 
 <h2>The tournament simulation</h2>
@@ -2202,7 +2172,7 @@ API عمومی پالی‌مارکت دریافت می‌شوند.</p>
 نیز جداگانه نگه داشته می‌شود تا بتوان اختلاف آن با بازار را بررسی کرد و فرصت‌های
 ارزش‌گذاری را پیدا کرد.</p>
 <p>عملکرد مدل، بازار و نسخهٔ ترکیبی نیز به‌صورت جداگانه و با نتایج واقعی در
-<a href="bracket.html">کارنامه</a> سنجیده می‌شود.</p>
+<a href="report.html#locked-bracket">کارنامه</a> سنجیده می‌شود.</p>
 
 <h2>شبیه‌سازی تورنمنت</h2>
 <p>در هر اجرا، ۱۰۰٬۰۰۰ تورنمنت کامل ــ معادل حدود ۱۰ میلیون مسابقهٔ شبیه‌سازی‌شده ــ روی
@@ -2301,7 +2271,7 @@ API عمومی پالی‌مارکت دریافت می‌شوند.</p>
 <h2>پاسخ‌گویی</h2>
 <p>براکت کامل ــ شامل هر ۷۲ مسابقهٔ مرحلهٔ گروهی و تمام مراحل حذفی تا تعیین قهرمان ــ پیش
 از آغاز تورنمنت قفل می‌شود و با ثبت نتایج واقعی به‌صورت عمومی در
-<a href="bracket.html">کارنامه</a> ارزیابی می‌شود.</p>
+<a href="report.html#locked-bracket">کارنامه</a> ارزیابی می‌شود.</p>
 <p>هر اجرای محاسبات با مهر زمانی آرشیو می‌شود و نسخه‌های روزانهٔ سایت در بخش
 <a href="archive.html">نسخه‌های قبلی</a> منجمد باقی می‌مانند.</p>
 <p>پیش‌بینی‌ای که بتوان آن را بعداً تغییر داد، پیش‌بینی نیست.</p>
@@ -3313,7 +3283,7 @@ are played — it tracks the tournament, it doesn't pick it.</p>
 <p class="fineprint">Outer ties link to the full match page and are graded as they are
 played; inner slots show the actual winner once decided. Go-through odds come from the
 same Dixon-Coles model as the rest of the site. Not betting advice. See the
-<a href="groups.html">group stage</a> or the model's <a href="bracket.html">graded
+<a href="groups.html">group stage</a> or the model's <a href="report.html#locked-bracket">graded
 bracket</a> and <a href="futures.html">title odds</a>.</p>"""
     (OUT / "index.html").write_text(page(
         "Knockouts", body, canon="",
@@ -3371,7 +3341,6 @@ def build_all(snapshot=False):
     build_team_pages()
     build_match_pages()
     build_futures()
-    build_bracket()
     build_awards()
     build_player_pages()
     build_report()

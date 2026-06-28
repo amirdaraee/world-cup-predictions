@@ -292,9 +292,12 @@ class TestBuiltSite(unittest.TestCase):
                          len(b.MATCHES) + len(b.KOS))
         self.assertGreaterEqual(
             len(list((self.docs / "players").glob("*.html"))), 30)
-        for p in ("index", "matches", "futures", "awards", "bracket",
-                  "report", "method", "method-fa", "archive"):
+        for p in ("index", "groups", "matches", "futures", "awards",
+                  "report", "follow-the-model", "method", "method-fa",
+                  "archive"):
             self.assertTrue((self.docs / f"{p}.html").exists(), p)
+        # the Bracket page was folded into the Report (#locked-bracket)
+        self.assertFalse((self.docs / "bracket.html").exists())
 
     def test_no_template_leaks(self):
         leak = re.compile(r"\{(?:inline_svg|grid_inline|escape\(|m\[|pride|wrap_)")
