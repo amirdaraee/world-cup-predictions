@@ -660,8 +660,8 @@
       "away": "Germany",
       "venue": "MetLife Stadium",
       "city": "New York New Jersey",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "2-1"
     },
     {
       "match_id": 1489409,
@@ -672,8 +672,8 @@
       "away": "Ivory Coast",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-2"
     },
     {
       "match_id": 1539011,
@@ -684,8 +684,8 @@
       "away": "Sweden",
       "venue": "AT&T Stadium",
       "city": "Dallas",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-1"
     },
     {
       "match_id": 1489412,
@@ -696,8 +696,8 @@
       "away": "Netherlands",
       "venue": "Arrowhead Stadium",
       "city": "Kansas City",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-3"
     },
     {
       "match_id": 1539012,
@@ -708,8 +708,8 @@
       "away": "United States",
       "venue": "SoFi Stadium",
       "city": "Los Angeles",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "3-2"
     },
     {
       "match_id": 1489411,
@@ -720,8 +720,8 @@
       "away": "Australia",
       "venue": "Levi's Stadium",
       "city": "San Francisco Bay Area",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-0"
     },
     {
       "match_id": 1539074,
@@ -732,8 +732,8 @@
       "away": "Iraq",
       "venue": "BMO Field",
       "city": "Toronto",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "5-0"
     },
     {
       "match_id": 1489416,
@@ -744,8 +744,8 @@
       "away": "France",
       "venue": "Gillette Stadium",
       "city": "Boston",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-4"
     },
     {
       "match_id": 1489417,
@@ -756,8 +756,8 @@
       "away": "Spain",
       "venue": "Estadio Akron",
       "city": "Guadalajara",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-1"
     },
     {
       "match_id": 1489413,
@@ -768,8 +768,8 @@
       "away": "Saudi Arabia",
       "venue": "NRG Stadium",
       "city": "Houston",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-0"
     },
     {
       "match_id": 1489414,
@@ -780,8 +780,8 @@
       "away": "Iran",
       "venue": "Lumen Field",
       "city": "Seattle",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-1"
     },
     {
       "match_id": 1489415,
@@ -792,8 +792,8 @@
       "away": "Belgium",
       "venue": "BC Place",
       "city": "Vancouver",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-5"
     },
     {
       "match_id": 1489420,
@@ -804,8 +804,8 @@
       "away": "Ghana",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "2-1"
     },
     {
       "match_id": 1489422,
@@ -816,8 +816,8 @@
       "away": "England",
       "venue": "MetLife Stadium",
       "city": "New York New Jersey",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-2"
     },
     {
       "match_id": 1489419,
@@ -828,8 +828,8 @@
       "away": "Portugal",
       "venue": "Hard Rock Stadium",
       "city": "Miami",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "0-0"
     },
     {
       "match_id": 1539013,
@@ -840,8 +840,8 @@
       "away": "Uzbekistan",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "3-1"
     },
     {
       "match_id": 1489418,
@@ -852,8 +852,8 @@
       "away": "Austria",
       "venue": "Arrowhead Stadium",
       "city": "Kansas City",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "3-3"
     },
     {
       "match_id": 1489421,
@@ -864,8 +864,8 @@
       "away": "Argentina",
       "venue": "AT&T Stadium",
       "city": "Dallas",
-      "status": "Not Started",
-      "score": null
+      "status": "Match Finished",
+      "score": "1-3"
     }
   ]
 }

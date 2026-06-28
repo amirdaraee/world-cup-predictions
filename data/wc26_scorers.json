@@ -40,6 +40,20 @@
     1489406,
     1489407,
     1489408,
+    1489409,
+    1489410,
+    1489411,
+    1489412,
+    1489413,
+    1489414,
+    1489415,
+    1489416,
+    1489417,
+    1489418,
+    1489419,
+    1489420,
+    1489421,
+    1489422,
     1538999,
     1539000,
     1539001,
@@ -52,13 +66,17 @@
     1539008,
     1539009,
     1539010,
+    1539011,
+    1539012,
+    1539013,
     1539016,
-    1539017
+    1539017,
+    1539074
   ],
   "scorers": {
     "L. Messi": {
       "team": "Argentina",
-      "goals": 5,
+      "goals": 6,
       "assists_from": []
     },
     "Jonathan David": {
@@ -68,6 +86,36 @@
     },
     "J. Manzambi": {
       "team": "Switzerland",
+      "goals": 3,
+      "assists_from": []
+    },
+    "E. Just": {
+      "team": "New Zealand",
+      "goals": 3,
+      "assists_from": []
+    },
+    "Harry Kane": {
+      "team": "England",
+      "goals": 3,
+      "assists_from": []
+    },
+    "B. Brobbey": {
+      "team": "Netherlands",
+      "goals": 3,
+      "assists_from": []
+    },
+    "I. Sarr": {
+      "team": "Senegal",
+      "goals": 3,
+      "assists_from": []
+    },
+    "Y. Wissa": {
+      "team": "DR Congo",
+      "goals": 3,
+      "assists_from": []
+    },
+    "O. Dembele": {
+      "team": "France",
       "goals": 3,
       "assists_from": []
     },
@@ -86,11 +134,6 @@
       "goals": 2,
       "assists_from": []
     },
-    "E. Just": {
-      "team": "New Zealand",
-      "goals": 2,
-      "assists_from": []
-    },
     "K. Mbappe": {
       "team": "France",
       "goals": 2,
@@ -101,11 +144,6 @@
       "goals": 2,
       "assists_from": []
     },
-    "Harry Kane": {
-      "team": "England",
-      "goals": 2,
-      "assists_from": []
-    },
     "Vinicius Junior": {
       "team": "Brazil",
       "goals": 2,
@@ -113,11 +151,6 @@
     },
     "M. Cunha": {
       "team": "Brazil",
-      "goals": 2,
-      "assists_from": []
-    },
-    "B. Brobbey": {
-      "team": "Netherlands",
       "goals": 2,
       "assists_from": []
     },
@@ -156,11 +189,6 @@
       "goals": 2,
       "assists_from": []
     },
-    "I. Sarr": {
-      "team": "Senegal",
-      "goals": 2,
-      "assists_from": []
-    },
     "C. Ronaldo": {
       "team": "Portugal",
       "goals": 2,
@@ -193,6 +221,46 @@
     },
     "Vinícius Júnior": {
       "team": "Brazil",
+      "goals": 2,
+      "assists_from": []
+    },
+    "R. Rezaeian": {
+      "team": "Iran",
+      "goals": 2,
+      "assists_from": []
+    },
+    "M. Arnautovic": {
+      "team": "Austria",
+      "goals": 2,
+      "assists_from": []
+    },
+    "Jude Bellingham": {
+      "team": "England",
+      "goals": 2,
+      "assists_from": []
+    },
+    "A. Elanga": {
+      "team": "Sweden",
+      "goals": 2,
+      "assists_from": []
+    },
+    "N. Pepe": {
+      "team": "Ivory Coast",
+      "goals": 2,
+      "assists_from": []
+    },
+    "P. Gueye": {
+      "team": "Senegal",
+      "goals": 2,
+      "assists_from": []
+    },
+    "L. Trossard": {
+      "team": "Belgium",
+      "goals": 2,
+      "assists_from": []
+    },
+    "R. Mahrez": {
+      "team": "Algeria",
       "goals": 2,
       "assists_from": []
     },
@@ -346,11 +414,6 @@
       "goals": 1,
       "assists_from": []
     },
-    "R. Rezaeian": {
-      "team": "Iran",
-      "goals": 1,
-      "assists_from": []
-    },
     "M. Mohebi": {
       "team": "Iran",
       "goals": 1,
@@ -386,18 +449,8 @@
       "goals": 1,
       "assists_from": []
     },
-    "M. Arnautovic": {
-      "team": "Austria",
-      "goals": 1,
-      "assists_from": []
-    },
     "J. Neves": {
       "team": "Portugal",
-      "goals": 1,
-      "assists_from": []
-    },
-    "Y. Wissa": {
-      "team": "DR Congo",
       "goals": 1,
       "assists_from": []
     },
@@ -408,11 +461,6 @@
     },
     "Petar Musa": {
       "team": "Croatia",
-      "goals": 1,
-      "assists_from": []
-    },
-    "Jude Bellingham": {
-      "team": "England",
       "goals": 1,
       "assists_from": []
     },
@@ -478,11 +526,6 @@
     },
     "M. Galarza": {
       "team": "Paraguay",
-      "goals": 1,
-      "assists_from": []
-    },
-    "A. Elanga": {
-      "team": "Sweden",
       "goals": 1,
       "assists_from": []
     },
@@ -638,6 +681,161 @@
     },
     "T. Maseko": {
       "team": "South Africa",
+      "goals": 1,
+      "assists_from": []
+    },
+    "L. Sane": {
+      "team": "Germany",
+      "goals": 1,
+      "assists_from": []
+    },
+    "N. Angulo": {
+      "team": "Ecuador",
+      "goals": 1,
+      "assists_from": []
+    },
+    "G. Plata": {
+      "team": "Ecuador",
+      "goals": 1,
+      "assists_from": []
+    },
+    "D. Maeda": {
+      "team": "Japan",
+      "goals": 1,
+      "assists_from": []
+    },
+    "H. Mastouri": {
+      "team": "Tunisia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "J. P. van Hecke": {
+      "team": "Netherlands",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Trusty": {
+      "team": "United States",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Guler": {
+      "team": "Turkey",
+      "goals": 1,
+      "assists_from": []
+    },
+    "B. Yilmaz": {
+      "team": "Turkey",
+      "goals": 1,
+      "assists_from": []
+    },
+    "S. Berhalter": {
+      "team": "United States",
+      "goals": 1,
+      "assists_from": []
+    },
+    "K. Ayhan": {
+      "team": "Turkey",
+      "goals": 1,
+      "assists_from": []
+    },
+    "H. Diarra": {
+      "team": "Senegal",
+      "goals": 1,
+      "assists_from": []
+    },
+    "I. Ndiaye": {
+      "team": "Senegal",
+      "goals": 1,
+      "assists_from": []
+    },
+    "T. Aasgaard": {
+      "team": "Norway",
+      "goals": 1,
+      "assists_from": []
+    },
+    "D. Doue": {
+      "team": "France",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Baena": {
+      "team": "Spain",
+      "goals": 1,
+      "assists_from": []
+    },
+    "M. Saber": {
+      "team": "Egypt",
+      "goals": 1,
+      "assists_from": []
+    },
+    "K. De Bruyne": {
+      "team": "Belgium",
+      "goals": 1,
+      "assists_from": []
+    },
+    "R. Lukaku": {
+      "team": "Belgium",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Saelemaekers": {
+      "team": "Belgium",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Petar Sučić": {
+      "team": "Croatia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Derrick Luckassen": {
+      "team": "Ghana",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Nikola Vlašić": {
+      "team": "Croatia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "E. Shomurodov": {
+      "team": "Uzbekistan",
+      "goals": 1,
+      "assists_from": []
+    },
+    "F. Mayele": {
+      "team": "DR Congo",
+      "goals": 1,
+      "assists_from": []
+    },
+    "R. Belghali": {
+      "team": "Algeria",
+      "goals": 1,
+      "assists_from": []
+    },
+    "M. Sabitzer": {
+      "team": "Austria",
+      "goals": 1,
+      "assists_from": []
+    },
+    "S. Kalajdzic": {
+      "team": "Austria",
+      "goals": 1,
+      "assists_from": []
+    },
+    "G. Lo Celso": {
+      "team": "Argentina",
+      "goals": 1,
+      "assists_from": []
+    },
+    "L. Martinez": {
+      "team": "Argentina",
+      "goals": 1,
+      "assists_from": []
+    },
+    "M. Tamari": {
+      "team": "Jordan",
       "goals": 1,
       "assists_from": []
     }
