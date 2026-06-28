@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28 11:40 UTC",
+  "updated": "2026-06-28 22:07 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -8,9 +8,9 @@
       "home": "South Africa",
       "away": "Canada",
       "venue": "SoFi Stadium",
-      "city": null,
-      "status": "Not Started",
-      "score": null,
+      "city": "Inglewood",
+      "status": "Match Finished",
+      "score": "0-1",
       "penalties": null
     },
     {

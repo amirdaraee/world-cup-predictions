@@ -71,7 +71,8 @@
     1539013,
     1539016,
     1539017,
-    1539074
+    1539074,
+    1561329
   ],
   "scorers": {
     "L. Messi": {
@@ -836,6 +837,11 @@
     },
     "M. Tamari": {
       "team": "Jordan",
+      "goals": 1,
+      "assists_from": []
+    },
+    "S. Eustaquio": {
+      "team": "Canada",
       "goals": 1,
       "assists_from": []
     }
