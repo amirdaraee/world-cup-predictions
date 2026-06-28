@@ -5,6 +5,8 @@
   "min_edge_match": 0.08,
   "min_edge_award": 0.03,
   "min_edge_score": 0.08,
+  "min_model_prob": 0.1,
+  "one_moneyline_per_match": true,
   "min_liquidity_usdc": 1000,
   "max_book_spread": 0.06,
   "include": {

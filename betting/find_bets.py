@@ -465,9 +465,29 @@ def build_plan(cands, cfg):
     Award bets that qualify always make the plan; per-match bets
     (moneyline/exact score) fill the remaining max_bets slots by edge.
     Returns (sized candidates, total stake)."""
-    cands = sorted(cands, key=lambda c: -c["edge"])
-    max_bets = cfg.get("max_bets", 12)
     award_cats = ("golden_boot", "top_scorer_nation")
+    # longshot floor: skip any outcome the model itself rates below
+    # min_model_prob. Against a near-zero market price, a tiny model error
+    # fabricates a fat "edge" — the thin-book futures (Senegal win-group at
+    # ~2%) that bled. Awards are legitimately low-probability, so exempt them.
+    floor = cfg.get("min_model_prob", 0.0)
+    if floor:
+        cands = [c for c in cands if c["category"] in award_cats
+                 or c["model_p"] >= floor]
+    cands = sorted(cands, key=lambda c: -c["edge"])
+    # one moneyline bet per match: home/draw/away are mutually exclusive, so
+    # betting two of them (the draw AND the underdog) is a correlated double-
+    # stake. Keep only the best-edge side per fixture (cands is edge-sorted).
+    if cfg.get("one_moneyline_per_match", True):
+        seen, deduped = set(), []
+        for c in cands:
+            if c["category"] == "moneyline":
+                if c.get("match_id") in seen:
+                    continue
+                seen.add(c.get("match_id"))
+            deduped.append(c)
+        cands = deduped
+    max_bets = cfg.get("max_bets", 12)
     awards = [c for c in cands if c["category"] in award_cats]
     mlines = [c for c in cands if c["category"] not in award_cats]
     cands = awards + mlines[:max(max_bets - len(awards), 0)]

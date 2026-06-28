@@ -14,7 +14,13 @@ from betting.place_bets import plan_age_minutes, exec_price_ok, select_todo
 from wc26_polymarket import parse_score_question
 
 
-def cand(category, edge, model_p=None, market_p=0.30, match_id="m1"):
+_MID = [0]
+
+
+def cand(category, edge, model_p=None, market_p=0.30, match_id=None):
+    if match_id is None:                 # each candidate is its own fixture
+        _MID[0] += 1                     # unless a shared id is passed in
+        match_id = f"m{_MID[0]}"
     return {"category": category, "bet": f"{category}@{edge}",
             "question": "?", "token_id": "t", "match_id": match_id,
             "model_p": model_p if model_p is not None else market_p + edge,
@@ -73,6 +79,36 @@ class TestBuildPlan(unittest.TestCase):
         plan, total = build_plan(cands, cfg)
         self.assertLessEqual(total, 20.0 + 0.05)
         self.assertEqual(len(plan), 20)
+
+    def test_one_moneyline_per_match(self):
+        """Draw + underdog on the same fixture are mutually exclusive — keep
+        only the best-edge side, not both."""
+        cands = [cand("moneyline", 0.20, match_id="x"),   # underdog
+                 cand("moneyline", 0.12, match_id="x"),   # draw, same match
+                 cand("moneyline", 0.15, match_id="y")]   # a different match
+        plan, _ = build_plan(cands, dict(self.CFG, max_bets=10))
+        mids = [(c["match_id"], c["edge"]) for c in plan]
+        self.assertEqual(sorted(mids), [("x", 0.20), ("y", 0.15)])
+
+    def test_one_moneyline_per_match_off(self):
+        cands = [cand("moneyline", 0.20, match_id="x"),
+                 cand("moneyline", 0.12, match_id="x")]
+        plan, _ = build_plan(cands, dict(self.CFG, max_bets=10,
+                                         one_moneyline_per_match=False))
+        self.assertEqual(len(plan), 2)
+
+    def test_min_model_prob_floor_drops_longshots(self):
+        """An outcome the model rates below the floor is skipped (a fat 'edge'
+        over a ~0 market price is a thin-book artefact) — but awards, which are
+        legitimately low-probability, are exempt."""
+        cfg = dict(self.CFG, min_model_prob=0.10, max_bets=10)
+        cands = [cand("futures", 0.30, model_p=0.04, market_p=0.01),  # 4% longshot
+                 cand("moneyline", 0.20, model_p=0.50),               # solid
+                 cand("golden_boot", 0.04, model_p=0.06)]             # award, exempt
+        cats = [c["category"] for c in build_plan(cands, cfg)[0]]
+        self.assertNotIn("futures", cats)
+        self.assertIn("moneyline", cats)
+        self.assertIn("golden_boot", cats)
 
     def test_empty_plan(self):
         plan, total = build_plan([], self.CFG)

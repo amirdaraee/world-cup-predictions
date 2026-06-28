@@ -63,16 +63,18 @@ class TestLedgerInvariants(unittest.TestCase):
                                  b["bet"])
 
     @unittest.skipUnless(os.path.exists(LEDGER), "no local ledger")
-    def test_no_duplicate_positions(self):
-        led = json.load(open(self.LEDGER))["placed"]
-        tokens = [b["token_id"] for b in led]
-        self.assertEqual(len(tokens), len(set(tokens)))
-
-    @unittest.skipUnless(os.path.exists(LEDGER), "no local ledger")
     def test_no_market_held_both_sides(self):
+        """The invariant that matters: never hold two DIFFERENT tokens for the
+        same market (both sides locks in a loss). Repeat entries on the SAME
+        token are legitimate top-ups (place_bets --allow-topup), so duplicate
+        tokens/questions are fine as long as each market keeps to one side."""
         led = json.load(open(self.LEDGER))["placed"]
-        questions = [b["question"] for b in led if b.get("question")]
-        self.assertEqual(len(questions), len(set(questions)))
+        by_q = {}
+        for b in led:
+            if b.get("question"):
+                by_q.setdefault(b["question"], set()).add(b["token_id"])
+        both = {q: t for q, t in by_q.items() if len(t) > 1}
+        self.assertEqual(both, {}, f"markets held on both sides: {both}")
 
 
 if __name__ == "__main__":

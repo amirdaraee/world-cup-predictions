@@ -86,10 +86,12 @@ def exec_price_ok(ask, plan_p, max_slip, max_drop):
     return True, ""
 
 
-def select_todo(bets, ledger, cfg, times):
+def select_todo(bets, ledger, cfg, times, allow_topup=False):
     """Filter the plan down to what is actually safe to place (pure
     selection: no network). Enforces ledger dedup, in-batch dedup,
-    kickoff, per-bet cap and the total cap."""
+    kickoff, per-bet cap and the total cap. allow_topup intentionally
+    relaxes the LEDGER dedup so an existing position can be added to (the
+    in-batch dedup, kickoff and caps still apply)."""
     spent = sum(b["stake_usdc"] for b in ledger["placed"])
     done_tokens = {b["token_id"] for b in ledger["placed"]}
     # market-level dedup: never touch a market we already hold a side of —
@@ -97,11 +99,12 @@ def select_todo(bets, ledger, cfg, times):
     done_markets = {b["question"] for b in ledger["placed"] if b.get("question")}
     todo, batch_tokens, batch_markets = [], set(), set()
     for b in bets:
-        if b["token_id"] in done_tokens or b["token_id"] in batch_tokens:
+        if b["token_id"] in batch_tokens or \
+                (b["token_id"] in done_tokens and not allow_topup):
             print(f"skip (already placed): {b['bet']}")
             continue
         q = b.get("question")
-        if q and (q in done_markets or q in batch_markets):
+        if q and (q in batch_markets or (q in done_markets and not allow_topup)):
             print(f"skip (market already held, other side?): {b['bet']}")
             continue
         if started(str(b.get("match_id") or ""), times):
@@ -158,6 +161,9 @@ def main():
                     help="place at most N orders from the top of the plan")
     ap.add_argument("--ignore-plan-age", action="store_true",
                     help="execute a plan older than max_plan_age_min anyway")
+    ap.add_argument("--allow-topup", action="store_true",
+                    help="intentionally add to positions already in the ledger "
+                         "(relaxes the ledger dedup; caps/kickoff still apply)")
     args = ap.parse_args()
 
     plan = json.load(open(f"{HERE}/state/plan.json"))
@@ -171,7 +177,8 @@ def main():
 
     ledger = load_ledger()
     spent = sum(b["stake_usdc"] for b in ledger["placed"])
-    todo = select_todo(plan["bets"], ledger, CFG, kickoff_times())
+    todo = select_todo(plan["bets"], ledger, CFG, kickoff_times(),
+                       allow_topup=args.allow_topup)
     if args.limit:
         todo = todo[:args.limit]
     batch = sum(b["stake_usdc"] for b in todo)
