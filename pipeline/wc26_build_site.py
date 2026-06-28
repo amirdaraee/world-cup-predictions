@@ -469,6 +469,13 @@ play in their own country, which is most of their matches.</p>
 
 
 # ---------- matches list ----------
+def venue_str(m):
+    """Escaped 'Venue, City', skipping parts that are missing — knockout
+    fixtures can carry a null venue/city until one is assigned, and
+    escape(None) raises (this crashed the nightly build, 2026-06-25)."""
+    return ", ".join(escape(x) for x in (m.get("venue"), m.get("city")) if x)
+
+
 def build_matches_list():
     by_day = {}
     for m in MATCHES + KOS:
@@ -489,7 +496,7 @@ def build_matches_list():
 <td>{('<b class="gchip">' + ROUND_SHORT.get(m["round"], "KO") + '</b>') if m.get("round") else ('<a class="gchip" href="index.html#group-' + m['group'].lower() + '">' + m['group'] + '</a>')}</td>
 <td class="fixture"><a href="matches/{match_slug(m)}.html">{escape(m['home'])} <em>v</em> {escape(m['away'])}</a></td>
 <td class="num">{res}</td>
-<td class="venue">{escape(m['venue'])}, {escape(m['city'])}</td>
+<td class="venue">{venue_str(m)}</td>
 </tr>""")
         sections.append(f"""<section class="matchday">
 <h2>{date_label}</h2>
@@ -596,7 +603,7 @@ def build_team_pages():
             fx_rows.append(
                 f'<tr><td class="num">{date_label} {time_}</td><td class="num">{ha}</td>'
                 f'<td><a href="../matches/{match_slug(m)}.html">{escape(opp)}</a></td>'
-                f'<td class="venue">{escape(m["venue"])}, {escape(m["city"])}</td></tr>'
+                f'<td class="venue">{venue_str(m)}</td></tr>'
             )
         host = '<span class="chip">Host nation</span>' if t.get("host") else ""
         crest = (f'<img class="headshot crest" '
@@ -929,7 +936,7 @@ football only. <a href="https://www.espn.com/soccer/story/_/id/47264840/egypt-ir
         ext = '<p class="meta center extlinks">' + " · ".join(links) + "</p>"
         body = f"""{pride_html}{wrap_open}<div class="card">
 <p class="meta center">{(escape(m["round"]) if m.get("round") else f"Group {m['group']} · Matchday {m['matchday']}")} · {date_label}, {time_} UTC<br>
-{escape(m['venue'])}, {escape(m['city'])}</p>
+{venue_str(m)}</p>
 {ext}
 <div class="versus">
 <h1>{team_link(m['home'], 1)}</h1>
