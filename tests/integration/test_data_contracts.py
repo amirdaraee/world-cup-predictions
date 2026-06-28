@@ -13,6 +13,21 @@ def load(name):
     return json.load(open(os.path.join(DATA, name)))
 
 
+def known_fixture_ids():
+    """All real fixtures the pipeline may price: the 72 group matches plus
+    any knockout ties whose teams are confirmed. Sims/snapshot/corners
+    legitimately cover knockouts once the bracket fills, so contracts check
+    against this union, not the group file alone."""
+    ids = {str(m["match_id"]) for m in
+           load("fifa_world_cup_2026_group_matches.json")["matches"]}
+    try:
+        ids |= {str(m["match_id"]) for m in
+                load("wc26_knockout_matches.json")["matches"]}
+    except FileNotFoundError:
+        pass
+    return ids
+
+
 class TestFixturesSimsAlignment(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -26,12 +41,17 @@ class TestFixturesSimsAlignment(unittest.TestCase):
         self.assertEqual(len(set(ids)), 72)
 
     def test_every_fixture_is_simulated(self):
-        fids = {str(m["match_id"]) for m in self.fixtures}
-        self.assertEqual(set(self.sims), fids)
+        group = {str(m["match_id"]) for m in self.fixtures}
+        known = known_fixture_ids()
+        # every group fixture must have a sim ...
+        self.assertTrue(group <= set(self.sims),
+                        group - set(self.sims))
+        # ... and sims may only cover real fixtures (group + knockout)
+        self.assertTrue(set(self.sims) <= known, set(self.sims) - known)
 
     def test_snapshot_only_covers_known_fixtures(self):
-        fids = {str(m["match_id"]) for m in self.fixtures}
-        self.assertTrue(set(self.snap) <= fids)
+        fids = known_fixture_ids()
+        self.assertTrue(set(self.snap) <= fids, set(self.snap) - fids)
         for mid, rec in self.snap.items():
             self.assertIn("slug", rec, mid)
 
@@ -76,8 +96,7 @@ class TestTournamentContract(unittest.TestCase):
 
 class TestCornersContract(unittest.TestCase):
     def test_corner_lines_monotone_and_bounded(self):
-        fids = {str(m["match_id"]) for m in
-                load("fifa_world_cup_2026_group_matches.json")["matches"]}
+        fids = known_fixture_ids()
         for mid, m in load("wc26_corners.json")["matches"].items():
             self.assertIn(mid, fids)
             lines = sorted((k for k in m if k.startswith("over_")),
