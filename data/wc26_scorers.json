@@ -72,7 +72,8 @@
     1539016,
     1539017,
     1539074,
-    1561329
+    1561329,
+    1562344
   ],
   "scorers": {
     "L. Messi": {
@@ -842,6 +843,21 @@
     },
     "S. Eustaquio": {
       "team": "Canada",
+      "goals": 1,
+      "assists_from": []
+    },
+    "K. Sano": {
+      "team": "Japan",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Casemiro": {
+      "team": "Brazil",
+      "goals": 1,
+      "assists_from": []
+    },
+    "G. Martinelli": {
+      "team": "Brazil",
       "goals": 1,
       "assists_from": []
     }

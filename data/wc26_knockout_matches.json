@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29 09:26 UTC",
+  "updated": "2026-06-29 22:15 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -20,9 +20,9 @@
       "home": "Brazil",
       "away": "Japan",
       "venue": "NRG Stadium",
-      "city": null,
-      "status": "Not Started",
-      "score": null,
+      "city": "Houston",
+      "status": "Match Finished",
+      "score": "2-1",
       "penalties": null
     },
     {
@@ -32,8 +32,8 @@
       "home": "Germany",
       "away": "Paraguay",
       "venue": "Gillette Stadium",
-      "city": null,
-      "status": "Not Started",
+      "city": "Boston",
+      "status": "Second Half",
       "score": null,
       "penalties": null
     },
@@ -55,8 +55,8 @@
       "date_utc": "2026-06-30T17:00:00+00:00",
       "home": "Ivory Coast",
       "away": "Norway",
-      "venue": null,
-      "city": null,
+      "venue": "AT&T Stadium",
+      "city": "Dallas",
       "status": "Not Started",
       "score": null,
       "penalties": null
@@ -68,7 +68,7 @@
       "home": "France",
       "away": "Sweden",
       "venue": "MetLife Stadium",
-      "city": null,
+      "city": "New-York",
       "status": "Not Started",
       "score": null,
       "penalties": null
@@ -79,7 +79,7 @@
       "date_utc": "2026-07-01T01:00:00+00:00",
       "home": "Mexico",
       "away": "Ecuador",
-      "venue": "Estadio Banorte",
+      "venue": "Estadio Azteca",
       "city": "Mexico City",
       "status": "Not Started",
       "score": null,
@@ -92,7 +92,7 @@
       "home": "England",
       "away": "DR Congo",
       "venue": "Mercedes-Benz Stadium",
-      "city": null,
+      "city": "Atlanta",
       "status": "Not Started",
       "score": null,
       "penalties": null
@@ -104,7 +104,7 @@
       "home": "Belgium",
       "away": "Senegal",
       "venue": "Lumen Field",
-      "city": null,
+      "city": "Seattle",
       "status": "Not Started",
       "score": null,
       "penalties": null
@@ -115,8 +115,8 @@
       "date_utc": "2026-07-02T00:00:00+00:00",
       "home": "United States",
       "away": "Bosnia and Herzegovina",
-      "venue": null,
-      "city": null,
+      "venue": "Levi's Stadium",
+      "city": "San-Francisco",
       "status": "Not Started",
       "score": null,
       "penalties": null
@@ -128,7 +128,7 @@
       "home": "Spain",
       "away": "Austria",
       "venue": "SoFi Stadium",
-      "city": null,
+      "city": "Los Angeles",
       "status": "Not Started",
       "score": null,
       "penalties": null
@@ -140,7 +140,7 @@
       "home": "Portugal",
       "away": "Croatia",
       "venue": "BMO Field",
-      "city": null,
+      "city": "Toronto",
       "status": "Not Started",
       "score": null,
       "penalties": null
@@ -152,7 +152,7 @@
       "home": "Switzerland",
       "away": "Algeria",
       "venue": "BC Place",
-      "city": null,
+      "city": "Vancouver",
       "status": "Not Started",
       "score": null,
       "penalties": null
@@ -163,8 +163,8 @@
       "date_utc": "2026-07-03T18:00:00+00:00",
       "home": "Australia",
       "away": "Egypt",
-      "venue": null,
-      "city": null,
+      "venue": "AT&T Stadium",
+      "city": "Dallas",
       "status": "Not Started",
       "score": null,
       "penalties": null
@@ -176,7 +176,7 @@
       "home": "Argentina",
       "away": "Cape Verde",
       "venue": "Hard Rock Stadium",
-      "city": null,
+      "city": "Miami",
       "status": "Not Started",
       "score": null,
       "penalties": null
@@ -188,7 +188,7 @@
       "home": "Colombia",
       "away": "Ghana",
       "venue": "Arrowhead Stadium",
-      "city": null,
+      "city": "Kansas City",
       "status": "Not Started",
       "score": null,
       "penalties": null
