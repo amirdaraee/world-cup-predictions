@@ -73,7 +73,9 @@
     1539017,
     1539074,
     1561329,
-    1562344
+    1562344,
+    1562345,
+    1565176
   ],
   "scorers": {
     "L. Messi": {
@@ -121,13 +123,18 @@
       "goals": 3,
       "assists_from": []
     },
-    "F. Balogun": {
-      "team": "United States",
-      "goals": 2,
-      "assists_from": []
-    },
     "K. Havertz": {
       "team": "Germany",
+      "goals": 3,
+      "assists_from": []
+    },
+    "C. Gakpo": {
+      "team": "Netherlands",
+      "goals": 3,
+      "assists_from": []
+    },
+    "F. Balogun": {
+      "team": "United States",
       "goals": 2,
       "assists_from": []
     },
@@ -153,11 +160,6 @@
     },
     "M. Cunha": {
       "team": "Brazil",
-      "goals": 2,
-      "assists_from": []
-    },
-    "C. Gakpo": {
-      "team": "Netherlands",
       "goals": 2,
       "assists_from": []
     },
@@ -858,6 +860,16 @@
     },
     "G. Martinelli": {
       "team": "Brazil",
+      "goals": 1,
+      "assists_from": []
+    },
+    "J. Enciso": {
+      "team": "Paraguay",
+      "goals": 1,
+      "assists_from": []
+    },
+    "I. Diop": {
+      "team": "Morocco",
       "goals": 1,
       "assists_from": []
     }
