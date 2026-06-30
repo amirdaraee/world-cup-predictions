@@ -75,6 +75,7 @@
     1561329,
     1562344,
     1562345,
+    1564789,
     1565176
   ],
   "scorers": {
@@ -133,6 +134,11 @@
       "goals": 3,
       "assists_from": []
     },
+    "E. Haaland": {
+      "team": "Norway",
+      "goals": 3,
+      "assists_from": []
+    },
     "F. Balogun": {
       "team": "United States",
       "goals": 2,
@@ -185,11 +191,6 @@
     },
     "Kylian Mbappé": {
       "team": "France",
-      "goals": 2,
-      "assists_from": []
-    },
-    "E. Haaland": {
-      "team": "Norway",
       "goals": 2,
       "assists_from": []
     },
@@ -265,6 +266,11 @@
     },
     "R. Mahrez": {
       "team": "Algeria",
+      "goals": 2,
+      "assists_from": []
+    },
+    "A. Diallo": {
+      "team": "Ivory Coast",
       "goals": 2,
       "assists_from": []
     },
@@ -380,11 +386,6 @@
     },
     "Daichi Kamada": {
       "team": "Japan",
-      "goals": 1,
-      "assists_from": []
-    },
-    "A. Diallo": {
-      "team": "Ivory Coast",
       "goals": 1,
       "assists_from": []
     },
@@ -870,6 +871,11 @@
     },
     "I. Diop": {
       "team": "Morocco",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Nusa": {
+      "team": "Norway",
       "goals": 1,
       "assists_from": []
     }
