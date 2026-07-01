@@ -361,6 +361,50 @@ function toggleTheme() {{
 </html>"""
 
 
+def today_strip():
+    """Today's fixtures — or the next matchday if none today — with the model's
+    call and, once played, its verdict. Shown on the knockout homepage. Empty
+    once the tournament is over."""
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    allm = MATCHES + KOS
+    days = sorted({m["date_utc"][:10] for m in allm if m["date_utc"][:10] >= today})
+    if not days:
+        return ""
+    day = days[0]
+    label = "Today" if day == today else f"Next: {fmt_date(day + 'T00:00:00')[0]}"
+    rows = []
+    for m in sorted((x for x in allm if x["date_utc"][:10] == day),
+                    key=lambda x: x["date_utc"]):
+        sim = SIMS.get(str(m["match_id"]))
+        _, time_ = fmt_date(m["date_utc"])
+        if sim:
+            ml = sim["moneyline"]
+            pick = max(ml, key=ml.get)
+            pick_label = {"home": m["home"], "away": m["away"], "draw": "Draw"}[pick]
+            call = f'{escape(pick_label)} {ml[pick] * 100:.0f}%'
+        else:
+            call = "-"
+        if m.get("score"):
+            hit = sim and max(sim["moneyline"], key=sim["moneyline"].get) \
+                == actual_result(m["score"])
+            verdict = (f'<b class="score">{m["score"]}</b> '
+                       + ('<i class="f W">✓</i>' if hit else '<i class="f L">✗</i>'))
+        else:
+            verdict = f'{time_} UTC'
+        rows.append(
+            f'<tr><td class="fixture"><a href="matches/{match_slug(m)}.html">'
+            f'{escape(m["home"])} <em>v</em> {escape(m["away"])}</a></td>'
+            f'<td><b class="gchip">{m["group"] if not m.get("round") else ROUND_SHORT.get(m["round"], "KO")}</b></td>'
+            f'<td>{call}</td><td class="num">{verdict}</td></tr>')
+    return f"""<section class="todaybox">
+<h2>{label}</h2>
+<table><thead><tr><th>Fixture</th><th>Grp</th>
+<th title="the model's most likely outcome and its probability">Model call</th>
+<th class="num" title="kick-off, or final score with the model's verdict">Status</th></tr></thead>
+<tbody>{''.join(rows)}</tbody></table>
+</section>"""
+
+
 # ---------- index: group tables ----------
 def build_index():
     groups = {}
@@ -409,48 +453,7 @@ def build_index():
 </table>
 </section>""")
 
-    # --- today / next matchday strip ---
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    allm = MATCHES + KOS
-    days = sorted({m["date_utc"][:10] for m in allm if m["date_utc"][:10] >= today})
-    strip = ""
-    if days:
-        day = days[0]
-        label = "Today" if day == today else f"Next: {fmt_date(day + 'T00:00:00')[0]}"
-        rows = []
-        for m in sorted((x for x in allm if x["date_utc"][:10] == day),
-                        key=lambda x: x["date_utc"]):
-            sim = SIMS.get(str(m["match_id"]))
-            _, time_ = fmt_date(m["date_utc"])
-            if sim:
-                ml = sim["moneyline"]
-                pick = max(ml, key=ml.get)
-                pick_label = {"home": m["home"], "away": m["away"], "draw": "Draw"}[pick]
-                call = f'{escape(pick_label)} {ml[pick]*100:.0f}%'
-            else:
-                call = "-"
-            if m.get("score"):
-                hit = sim and max(sim["moneyline"], key=sim["moneyline"].get) \
-                    == actual_result(m["score"])
-                verdict = (f'<b class="score">{m["score"]}</b> '
-                           + ('<i class="f W">✓</i>' if hit else '<i class="f L">✗</i>'))
-            else:
-                verdict = f'{time_} UTC'
-            rows.append(
-                f'<tr><td class="fixture"><a href="matches/{match_slug(m)}.html">'
-                f'{escape(m["home"])} <em>v</em> {escape(m["away"])}</a></td>'
-                f'<td><b class="gchip">{m["group"] if not m.get("round") else ROUND_SHORT.get(m["round"], "KO")}</b></td>'
-                f'<td>{call}</td><td class="num">{verdict}</td></tr>')
-        strip = f"""<section class="todaybox">
-<h2>{label}</h2>
-<table><thead><tr><th>Fixture</th><th>Grp</th>
-<th title="the model's most likely outcome and its probability">Model call</th>
-<th class="num" title="kick-off, or final score with the model's verdict">Status</th></tr></thead>
-<tbody>{''.join(rows)}</tbody></table>
-</section>"""
-
     body = f"""<h1>The twelve groups</h1>
-{strip}
 <p class="standfirst">48 teams, seeded here by FIFA ranking. Click any team for its full dossier.</p>
 <p class="fineprint">Form = results of the last five internationals, <b>most recent first</b>
 (W win, D draw - penalty shoot-outs count as draws, L loss); the team page shows all ten with
@@ -3345,6 +3348,7 @@ real draw: the outer columns are the Round-of-32 ties, and the number on each si
 the model's chance of it going through (a level tie settled on penalties). The inner
 rounds name the tie that feeds each slot and fill in with the actual winner as matches
 are played — it tracks the tournament, it doesn't pick it.</p>
+{today_strip()}
 <div class="brackwrap">{bracket}</div>
 <div class="kolist">{mobile}</div>
 <p class="fineprint">Outer ties link to the full match page and are graded as they are
