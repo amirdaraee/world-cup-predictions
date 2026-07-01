@@ -78,7 +78,8 @@
     1564789,
     1565176,
     1565177,
-    1567306
+    1567306,
+    1567307
   ],
   "scorers": {
     "L. Messi": {
@@ -278,6 +279,11 @@
     },
     "R. Jimenez": {
       "team": "Mexico",
+      "goals": 2,
+      "assists_from": []
+    },
+    "H. Kane": {
+      "team": "England",
       "goals": 2,
       "assists_from": []
     },
@@ -883,6 +889,11 @@
     },
     "Bradley Barcola": {
       "team": "France",
+      "goals": 1,
+      "assists_from": []
+    },
+    "B. Cipenga": {
+      "team": "DR Congo",
       "goals": 1,
       "assists_from": []
     }

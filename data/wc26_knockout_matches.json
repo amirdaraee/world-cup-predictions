@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01 08:49 UTC",
+  "updated": "2026-07-01 21:11 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -93,8 +93,8 @@
       "away": "DR Congo",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta",
-      "status": "Not Started",
-      "score": null,
+      "status": "Match Finished",
+      "score": "2-1",
       "penalties": null
     },
     {
@@ -105,7 +105,7 @@
       "away": "Senegal",
       "venue": "Lumen Field",
       "city": "Seattle",
-      "status": "Not Started",
+      "status": "Second Half",
       "score": null,
       "penalties": null
     },
