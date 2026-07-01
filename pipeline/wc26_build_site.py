@@ -1469,6 +1469,72 @@ def boot_race_table():
 
 
 
+def _ko_winner(m):
+    """The team that actually went through, from the score (penalties break a
+    level tie), or None if not decided."""
+    hs, as_ = (int(x) for x in m["score"].split("-"))
+    if hs != as_:
+        return m["home"] if hs > as_ else m["away"]
+    pens = m.get("penalties")
+    if isinstance(pens, str) and "-" in pens:
+        ph, pa = (int(x) for x in pens.split("-"))
+        return m["home"] if ph > pa else m["away"]
+    return None
+
+
+def knockout_scorecard():
+    """Grade the LIVE model's read on each ACTUAL knockout tie as it finishes:
+    who goes through (win + half the draw, a level tie ~coin-flipped on pens)
+    vs the result. The locked pre-tournament bracket predicted different
+    matchups, so this is the live forward call — it keeps the report moving
+    through the knockout rounds. Empty until the first tie is decided."""
+    import math
+    finished = [m for m in KOS
+                if str(m.get("status", "")).startswith("Match Finished")
+                and m.get("score")]
+    graded = []
+    for m in sorted(finished, key=lambda x: x["date_utc"]):
+        sim = SIMS.get(str(m["match_id"]))
+        w = _ko_winner(m)
+        if not sim or not w:
+            continue
+        ph, pa = _advance_probs(sim)
+        pick = m["home"] if ph >= pa else m["away"]
+        p_w = ph if w == m["home"] else pa
+        graded.append({"m": m, "pick": pick, "conf": max(ph, pa), "winner": w,
+                       "hit": pick == w, "ll": -math.log(max(p_w, 1e-9))})
+    if not graded:
+        return ""
+    n = len(graded)
+    hits = sum(g["hit"] for g in graded)
+    mll = sum(g["ll"] for g in graded) / n
+    rows = ""
+    for g in graded:
+        m = g["m"]
+        mark = '<i class="f W">✓</i>' if g["hit"] else '<i class="f L">✗</i>'
+        pens = "-" in str(m.get("penalties") or "")
+        rows += (f'<tr><td>{ROUND_SHORT.get(m["round"], m["round"])}</td>'
+                 f'<td>{escape(m["home"])} <em>v</em> {escape(m["away"])}</td>'
+                 f'<td><b>{escape(g["pick"])}</b></td>'
+                 f'<td class="num">{g["conf"] * 100:.0f}%</td>'
+                 f'<td class="num score">{escape(m["score"])}{" (p)" if pens else ""}</td>'
+                 f'<td>{mark}</td></tr>')
+    stats = (f'<div><dt>Ties graded</dt><dd>{n}</dd></div>'
+             f'<div><dt>Advancer called</dt><dd>{hits} ({hits / n * 100:.0f}%)</dd></div>'
+             f'<div><dt>Model log-loss</dt><dd>{mll:.3f}</dd></div>')
+    return f"""<h2>Knockout stage — the live model, graded as ties finish</h2>
+<p class="fineprint">The group-stage card above is complete and frozen. This grades
+the model's read on each <em>actual</em> knockout tie — who goes through, a level tie
+settled on penalties — against the result, and grows with every round. (The locked
+pre-tournament bracket predicted different matchups, so it can't be graded here; this is
+the live forward call.)</p>
+<dl class="stats">{stats}</dl>
+<table class="ko"><thead><tr><th>R</th><th>Tie</th><th>Model pick</th>
+<th class="num" title="the model's go-through probability for its pick">Conf.</th>
+<th class="num">Result</th><th></th></tr></thead>
+<tbody>{rows}</tbody></table>"""
+
+
 # ---------- accuracy report page ----------
 def build_report():
     md_of = {m["match_id"]: m["matchday"] for m in MATCHES}
@@ -1609,6 +1675,7 @@ flat-staking the model's market edges would have returned:
 <a href="follow-the-model.html">if you'd followed the model →</a></p>
 {head}
 {comp}
+{knockout_scorecard()}
 {trend_chart()}
 {md_html}
 {goals_html}
