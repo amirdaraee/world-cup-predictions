@@ -1,5 +1,5 @@
 {
-  "note": "Hypothetical flat-stake backtest of the model's moneyline signals (raw-model edge >= min_edge_match over the lock-time market), graded on actual results. Public data only — no personal betting records. Not betting advice.",
+  "note": "Hypothetical flat-stake backtest of the model's moneyline signals (raw-model edge >= min_edge_match over the pre-match market), graded on actual results. Group stage prices come from the pre-tournament lock; knockout prices from the last committed pre-kickoff snapshot in runs/ (ties without a clean one are skipped), graded on the 90-minute result. Public data only — no personal betting records. Not betting advice.",
   "summary": {
     "threshold": 0.08,
     "n_bets": 57,
@@ -640,5 +640,48 @@
       "payout": 0.0,
       "profit": -1.0
     }
-  ]
+  ],
+  "knockout": {
+    "summary": {
+      "threshold": 0.08,
+      "n_bets": 2,
+      "wins": 0,
+      "win_rate": 0.0,
+      "staked": 2.0,
+      "returned": 0.0,
+      "profit": -2.0,
+      "roi": -1.0,
+      "avg_edge": 0.096,
+      "stake_unit": 1.0
+    },
+    "bets": [
+      {
+        "match": "Mexico v Ecuador",
+        "round": "Round of 32",
+        "side": "Ecuador",
+        "model": 0.323,
+        "market": 0.225,
+        "edge": 0.098,
+        "won": false,
+        "stake": 1.0,
+        "payout": 0.0,
+        "profit": -1.0,
+        "priced_at": "2026-06-30 22:21 UTC"
+      },
+      {
+        "match": "Netherlands v Morocco",
+        "round": "Round of 32",
+        "side": "Morocco",
+        "model": 0.378,
+        "market": 0.285,
+        "edge": 0.093,
+        "won": false,
+        "stake": 1.0,
+        "payout": 0.0,
+        "profit": -1.0,
+        "priced_at": "2026-06-29 22:17 UTC"
+      }
+    ],
+    "skipped_no_snapshot": 0
+  }
 }

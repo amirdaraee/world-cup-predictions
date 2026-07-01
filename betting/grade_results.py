@@ -27,9 +27,11 @@ def load(p):
     return json.load(open(p))
 
 
-def results():
-    """Index of finished fixtures by (home, away) and by match_id, plus group
-    winners and the set of teams that reached the Round of 32."""
+def load_truth():
+    """Truth index from the repo's own data files: finished fixtures keyed by
+    (home, away) pair and by match_id, plus the group winners and the set of
+    teams that reached the Round of 32. Importable (with resolve_bet) so
+    report.py can settle Gamma-delisted markets with the same logic."""
     gm = load(f"{DATA}/fifa_world_cup_2026_group_matches.json")["matches"]
     try:
         ko = load(f"{DATA}/wc26_knockout_matches.json")["matches"]
@@ -62,10 +64,8 @@ def results():
             winners[order[0]] = g
     r32_teams = {t for m in ko if m.get("round") == "Round of 32"
                  for t in (m["home"], m["away"])}
-    return by_pair, by_id, set(winners), r32_teams
-
-
-PAIR, BYID, GROUP_WINNERS, R32_TEAMS = (None,) * 4
+    return {"pair": by_pair, "byid": by_id,
+            "group_winners": set(winners), "r32_teams": r32_teams}
 
 
 def goals(rec):
@@ -73,24 +73,29 @@ def goals(rec):
     return h, a
 
 
-def fixture_for(bet, match_id):
-    if match_id and str(match_id) in BYID:
-        return BYID[str(match_id)]
+def fixture_for(bet, match_id, truth):
+    if match_id and str(match_id) in truth["byid"]:
+        return truth["byid"][str(match_id)]
     m = re.match(r"(.+?) v (.+?):", bet)
     if m:
-        return PAIR.get(frozenset((m.group(1).strip(), m.group(2).strip())))
+        return truth["pair"].get(frozenset((m.group(1).strip(),
+                                            m.group(2).strip())))
     return None
 
 
-def resolve(b):
+def resolve_bet(b, truth):
     """Return True (won), False (lost), or None (pending/ungradable)."""
     cat, bet = b.get("category"), b.get("bet", "")
-    fx = fixture_for(bet, b.get("match_id"))
+    fx = fixture_for(bet, b.get("match_id"), truth)
 
     if cat == "moneyline":
         if not fx or not fx["finished"]:
             return None
         h, a = goals(fx)
+        # Polymarket moneylines settle on the 90-MINUTE result — a pens-decided
+        # KO tie resolves 'Draw' (verified empirically: both 1-1 R32 ties
+        # settled draw=1.0 in the price snapshot). Pens decide who ADVANCES,
+        # which is a different market; never credit a win bet from a shoot-out.
         winner = fx["home"] if h > a else fx["away"] if a > h else "Draw"
         pick = bet.split(": ", 1)[1].replace(" (YES)", "").strip()
         return pick == winner
@@ -122,17 +127,16 @@ def resolve(b):
         team = bet.split(" win_group")[0].split(" r32")[0].split(" r16")[0].strip()
         yes = bet.strip().endswith("YES")
         if "win_group" in bet:
-            return (team in GROUP_WINNERS) == yes
+            return (team in truth["group_winners"]) == yes
         if " r32 " in bet:
-            return (team in R32_TEAMS) == yes
+            return (team in truth["r32_teams"]) == yes
         return None                              # r16+ not decided
 
     return None                                  # awards / 1st-to-score / 2nd-half
 
 
 def main():
-    global PAIR, BYID, GROUP_WINNERS, R32_TEAMS
-    PAIR, BYID, GROUP_WINNERS, R32_TEAMS = results()
+    truth = load_truth()
     led = load(f"{HERE}/state/ledger.json")["placed"]
 
     agg = {"deployed": 0.0, "won": 0, "lost": 0, "pnl": 0.0,
@@ -147,7 +151,7 @@ def main():
         c = cats[b.get("category", "?")]
         c["n"] += 1
         c["stake"] += stake
-        r = resolve(b)
+        r = resolve_bet(b, truth)
         if r is None:
             agg["pending_n"] += 1
             agg["pending_stake"] += stake

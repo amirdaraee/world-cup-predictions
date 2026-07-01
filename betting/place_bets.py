@@ -97,6 +97,17 @@ def select_todo(bets, ledger, cfg, times, allow_topup=False):
     # market-level dedup: never touch a market we already hold a side of —
     # buying the complementary token of an earlier bet locks in a loss
     done_markets = {b["question"] for b in ledger["placed"] if b.get("question")}
+    # per-match exposure cap enforced at EXECUTION, not just planning:
+    # hand-built plans and top-ups must not stack past it either. Combined
+    # ledger + batch, keyed by match_id; entries without one (awards and
+    # futures share "") are exempt — they are not one fixture.
+    match_cap = cfg.get("max_per_match_usdc")
+    match_spent = {}
+    if match_cap:
+        for b in ledger["placed"]:
+            if b.get("match_id"):
+                match_spent[b["match_id"]] = \
+                    match_spent.get(b["match_id"], 0.0) + b["stake_usdc"]
     todo, batch_tokens, batch_markets = [], set(), set()
     for b in bets:
         if b["token_id"] in batch_tokens or \
@@ -115,10 +126,20 @@ def select_todo(bets, ledger, cfg, times, allow_topup=False):
         if b["stake_usdc"] > cfg["max_per_bet_usdc"]:
             print(f"REFUSE (> per-bet cap): {b['bet']} ${b['stake_usdc']}")
             continue
+        mid = b.get("match_id")
+        if match_cap and mid:
+            room = match_cap - match_spent.get(mid, 0.0)
+            if room < 1:
+                print(f"skip (per-match cap ${match_cap} reached): {b['bet']}")
+                continue
+            if b["stake_usdc"] > room:
+                b["stake_usdc"] = round(room, 2)
         if spent + sum(t["stake_usdc"] for t in todo) + b["stake_usdc"] \
                 > cfg["max_total_stake_usdc"]:
             print(f"REFUSE (would exceed total cap): {b['bet']}")
             continue
+        if match_cap and mid:
+            match_spent[mid] = match_spent.get(mid, 0.0) + b["stake_usdc"]
         todo.append(b)
         batch_tokens.add(b["token_id"])
         if q:

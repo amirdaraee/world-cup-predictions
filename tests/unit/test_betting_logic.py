@@ -97,6 +97,25 @@ class TestBuildPlan(unittest.TestCase):
                                          one_moneyline_per_match=False))
         self.assertEqual(len(plan), 2)
 
+    def test_one_goal_market_per_match(self):
+        """A match-total and a team-total on the same fixture are one goal
+        opinion staked twice — keep only the best-edge one across BOTH
+        categories."""
+        cands = [cand("totals", 0.20, match_id="x"),
+                 cand("team_totals", 0.15, match_id="x"),   # same opinion
+                 cand("totals", 0.12, match_id="x"),        # same opinion
+                 cand("team_totals", 0.10, match_id="y")]   # other fixture
+        plan, _ = build_plan(cands, dict(self.CFG, max_bets=10))
+        kept = [(c["match_id"], c["edge"]) for c in plan]
+        self.assertEqual(sorted(kept), [("x", 0.20), ("y", 0.10)])
+
+    def test_one_goal_market_per_match_off(self):
+        cands = [cand("totals", 0.20, match_id="x"),
+                 cand("team_totals", 0.15, match_id="x")]
+        plan, _ = build_plan(cands, dict(self.CFG, max_bets=10,
+                                         one_goal_market_per_match=False))
+        self.assertEqual(len(plan), 2)
+
     def test_min_model_prob_floor_drops_longshots(self):
         """An outcome the model rates below the floor is skipped (a fat 'edge'
         over a ~0 market price is a thin-book artefact) — but awards, which are
@@ -131,6 +150,48 @@ class TestBuildPlan(unittest.TestCase):
         self.assertIn("fix2", per_match)   # other fixtures unaffected
         kept_edges = [c["edge"] for c in plan if c["match_id"] == "fix1"]
         self.assertEqual(kept_edges, sorted(kept_edges, reverse=True))
+
+class TestKoDrawCaution(unittest.TestCase):
+    """Knockout moneylines with a high model draw probability are partly a
+    penalties coin-flip a 90-minute 1X2 never collects on — reduce-only."""
+    CFG = {"max_total_stake_usdc": 100.0, "max_per_bet_usdc": 10.0,
+           "kelly_fraction": 0.4, "min_stake_usdc": 1.0, "max_bets": 10}
+
+    @staticmethod
+    def ko_cand(edge, p_draw, ko=True, **kw):
+        c = cand("moneyline", edge, **kw)
+        c["ko"], c["p_draw"] = ko, p_draw
+        return c
+
+    def test_high_draw_knockout_stake_halved(self):
+        cands = [self.ko_cand(0.20, 0.32, match_id="k1"),            # trimmed
+                 self.ko_cand(0.20, 0.20, match_id="k2"),            # low draw
+                 self.ko_cand(0.20, 0.32, ko=False, match_id="g1")]  # group
+        plan, _ = build_plan(cands, self.CFG)
+        by = {c["match_id"]: c["stake_usdc"] for c in plan}
+        self.assertAlmostEqual(by["k1"], round(by["k2"] * 0.5, 2), places=2)
+        self.assertEqual(by["g1"], by["k2"])   # non-KO untouched
+
+    def test_scaled_below_min_stake_drops(self):
+        cands = [self.ko_cand(0.005, 0.35, market_p=0.50, match_id="k1")]
+        plan, _ = build_plan(cands, self.CFG)   # min-stake $1 halved -> $0.50
+        self.assertEqual(plan, [])
+
+    def test_gate_off_leaves_stakes(self):
+        cands = [self.ko_cand(0.20, 0.40, match_id="k1"),
+                 self.ko_cand(0.20, 0.10, match_id="k2")]
+        plan, _ = build_plan(cands, dict(self.CFG, ko_draw_caution=False))
+        by = {c["match_id"]: c["stake_usdc"] for c in plan}
+        self.assertEqual(by["k1"], by["k2"])
+
+    def test_non_moneyline_ko_untouched(self):
+        c = cand("totals", 0.20, match_id="k1")
+        c["ko"], c["p_draw"] = True, 0.35
+        halved = self.ko_cand(0.20, 0.35, match_id="k2")
+        plan, _ = build_plan([c, halved], self.CFG)
+        by = {b["match_id"]: b["stake_usdc"] for b in plan}
+        self.assertEqual(by["k1"], 2 * by["k2"])
+
 
 class TestExactScoreScanner(unittest.TestCase):
     def test_parse_home_first(self):
@@ -255,12 +316,13 @@ class TestSelectTodo(unittest.TestCase):
         return {"token_id": token, "question": q, "match_id": mid,
                 "stake_usdc": stake, "bet": f"{token}/{q}"}
 
-    def pick(self, bets, ledger=None, cfg=None):
+    def pick(self, bets, ledger=None, cfg=None, allow_topup=False):
         import io
         from contextlib import redirect_stdout
         with redirect_stdout(io.StringIO()):
             return select_todo(bets, ledger or {"placed": []},
-                               cfg or self.CFG, self.TIMES)
+                               cfg or self.CFG, self.TIMES,
+                               allow_topup=allow_topup)
 
     def test_ledger_token_dedup(self):
         led = {"placed": [{"token_id": "t1", "question": "other",
@@ -295,6 +357,44 @@ class TestSelectTodo(unittest.TestCase):
         bets = [self.bet(stake=11.0),                       # > per-bet cap
                 self.bet(token="t2", q="q2", stake=6.0)]    # > total cap
         self.assertEqual(self.pick(bets, led), [])
+
+    def test_per_match_cap_combined_ledger_and_batch(self):
+        """Hand-built plans must not stack a fixture past the cap: exposure
+        is ledger + batch combined, trimmed to the remaining room."""
+        cfg = dict(self.CFG, max_per_match_usdc=8.0)
+        led = {"placed": [{"token_id": "x", "question": "qx",
+                           "match_id": "future", "stake_usdc": 5.0}]}
+        bets = [self.bet(token="t2", q="q2", stake=2.0),   # fits (room 3)
+                self.bet(token="t3", q="q3", stake=4.0),   # trimmed to 1
+                self.bet(token="t4", q="q4", stake=3.0)]   # room 0: skipped
+        todo = self.pick(bets, led, cfg)
+        self.assertEqual([(b["token_id"], b["stake_usdc"]) for b in todo],
+                         [("t2", 2.0), ("t3", 1.0)])
+
+    def test_per_match_cap_applies_to_topups(self):
+        """allow_topup relaxes the dedup, never the exposure cap."""
+        cfg = dict(self.CFG, max_per_match_usdc=8.0)
+        led = {"placed": [{"token_id": "t1", "question": "q1",
+                           "match_id": "future", "stake_usdc": 6.0}]}
+        todo = self.pick([self.bet(stake=5.0)], led, cfg, allow_topup=True)
+        self.assertEqual([b["stake_usdc"] for b in todo], [2.0])
+
+    def test_per_match_cap_ignores_empty_match_id(self):
+        """Awards and futures share match_id '' — they are not one fixture
+        and must never be pooled under the per-match cap."""
+        cfg = dict(self.CFG, max_per_match_usdc=8.0)
+        led = {"placed": [{"token_id": "x", "question": "qx",
+                           "match_id": "", "stake_usdc": 7.0}]}
+        bets = [self.bet(token="a1", q="qa", mid="", stake=5.0),
+                self.bet(token="a2", q="qb", mid="", stake=5.0)]
+        todo = self.pick(bets, led, cfg)
+        self.assertEqual([b["stake_usdc"] for b in todo], [5.0, 5.0])
+
+    def test_no_per_match_cap_key_skips_enforcement(self):
+        led = {"placed": [{"token_id": "x", "question": "qx",
+                           "match_id": "future", "stake_usdc": 50.0}]}
+        todo = self.pick([self.bet(stake=5.0, token="t9", q="q9")], led)
+        self.assertEqual(len(todo), 1)   # only the total cap applies
 
 
 if __name__ == "__main__":

@@ -133,6 +133,10 @@ def match_candidates():
                     "model_p": round(q, 4), "market_p": price,
                     "neg_risk": bool(mk.get("negRisk")),
                     "edge": round(q - price, 4),
+                    # for the knockout draw caution in build_plan: a
+                    # 90-minute moneyline never gets paid for extra time
+                    "ko": bool(sim.get("round")),
+                    "p_draw": round(sim["moneyline"]["draw"], 4),
                 })
         time.sleep(0.12)
     return out
@@ -487,6 +491,18 @@ def build_plan(cands, cfg):
                 seen.add(c.get("match_id"))
             deduped.append(c)
         cands = deduped
+    # one goal-count bet per match: a match-total AND a team-total on the
+    # same fixture are the same opinion staked twice — one scoreline settles
+    # both. Keep only the best-edge expression per fixture (edge-sorted).
+    if cfg.get("one_goal_market_per_match", True):
+        seen, deduped = set(), []
+        for c in cands:
+            if c["category"] in ("totals", "team_totals"):
+                if c.get("match_id") in seen:
+                    continue
+                seen.add(c.get("match_id"))
+            deduped.append(c)
+        cands = deduped
     max_bets = cfg.get("max_bets", 12)
     awards = [c for c in cands if c["category"] in award_cats]
     mlines = [c for c in cands if c["category"] not in award_cats]
@@ -500,6 +516,22 @@ def build_plan(cands, cfg):
                     cfg["max_per_bet_usdc"])
         # floor qualifying bets at min_stake for breadth across categories
         c["stake_usdc"] = round(max(stake, cfg.get("min_stake_usdc", 1)), 2)
+    # knockout draw caution (reduce-only, like apply_elo_caution): ~30% of
+    # ties end level after 90, and a 90-minute moneyline is never paid for
+    # "advances on penalties" — when the model itself rates the draw high,
+    # much of the apparent edge is a coin-flip we can't collect on.
+    if cfg.get("ko_draw_caution", True):
+        thr = cfg.get("ko_draw_pp", 28) / 100.0
+        factor = cfg.get("ko_draw_factor", 0.5)
+        kept = []
+        for c in cands:
+            if c["category"] == "moneyline" and c.get("ko") and \
+                    c.get("p_draw", 0) >= thr:
+                c["stake_usdc"] = round(c["stake_usdc"] * factor, 2)
+                if c["stake_usdc"] < cfg.get("min_stake_usdc", 1):
+                    continue
+            kept.append(c)
+        cands = kept
     # per-fixture exposure cap: many markets, one opinion — five
     # correlated bets on the same match are one big bet in disguise
     cap = cfg.get("max_per_match_usdc")

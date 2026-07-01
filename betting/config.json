@@ -7,6 +7,10 @@
   "min_edge_score": 0.08,
   "min_model_prob": 0.1,
   "one_moneyline_per_match": true,
+  "one_goal_market_per_match": true,
+  "ko_draw_caution": true,
+  "ko_draw_pp": 28,
+  "ko_draw_factor": 0.5,
   "min_liquidity_usdc": 1000,
   "max_book_spread": 0.06,
   "include": {

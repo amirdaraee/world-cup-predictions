@@ -3146,6 +3146,46 @@ def build_follow_tool():
         f'<td class="{"twin" if b["won"] else "tloss"}">{"won" if b["won"] else "lost"}</td>'
         f'<td class="num">{b["profit"]:+.2f}</td></tr>' for b in d["bets"])
     verb = "made" if profit >= 0 else "lost"
+
+    ko = d.get("knockout") or {}
+    ks, kbets = ko.get("summary") or {}, ko.get("bets") or []
+    skipped = ko.get("skipped_no_snapshot", 0)
+    ko_html = ""
+    if ks.get("n_bets") or skipped:
+        ko_stats = (item("Signals", ks.get("n_bets", 0))
+                    + item("Win rate", f"{ks.get('win_rate', 0) * 100:.0f}%")
+                    + item("Staked", f"${ks.get('staked', 0):.0f}")
+                    + item("Returned", f"${ks.get('returned', 0):.2f}")
+                    + item("Profit", f"${ks.get('profit', 0):+.2f}")
+                    + item("ROI", f"{ks.get('roi', 0) * 100:+.1f}%"))
+        ko_rows = "".join(
+            f'<tr><td>{escape(b["match"])} — {escape(b["side"])}</td>'
+            f'<td class="num">{b["model"] * 100:.0f}%</td>'
+            f'<td class="num">{b["market"] * 100:.0f}%</td>'
+            f'<td class="num">+{b["edge"] * 100:.0f}c</td>'
+            f'<td class="{"twin" if b["won"] else "tloss"}">{"won" if b["won"] else "lost"}</td>'
+            f'<td class="num">{b["profit"]:+.2f}</td></tr>' for b in kbets)
+        ko_table = (f"""<table class="ko"><thead><tr><th>Signal</th>
+<th class="num" title="the model's win probability">Model</th>
+<th class="num" title="the last Polymarket price snapped before kickoff">Market</th>
+<th class="num" title="model probability minus market price">Edge</th>
+<th>Result</th><th class="num">P&amp;L&nbsp;($)</th></tr></thead>
+<tbody>{ko_rows}</tbody></table>""" if kbets else
+            "<p>No knockout ties have thrown a moneyline signal yet.</p>")
+        skip_note = (f" {skipped} finished "
+                     f"{'tie had' if skipped == 1 else 'ties had'} no clean "
+                     "pre-kickoff snapshot and " +
+                     ("was" if skipped == 1 else "were") + " skipped, not "
+                     "guessed." if skipped else "")
+        ko_html = f"""<h2>Knockout stage</h2>
+<dl class="stats">{ko_stats}</dl>
+{ko_table}
+<p class="fineprint">Knockout prices aren't part of the pre-tournament lock, so each
+tie is priced from the last committed price snapshot fetched before kickoff — the
+canonical price file is refreshed after matches and would leak the result. The model
+side is frozen at its pre-tournament training cutoff either way.{skip_note} Signals
+grade on the 90-minute result: a level tie counts as Draw no matter what the
+penalties said.</p>"""
     body = f"""<h1>If you'd followed the model</h1>
 <p class="standfirst">A hypothetical: a flat ${s['stake_unit']:.0f} on every moneyline
 signal the model flagged — where its own probability beat the Polymarket price by at
@@ -3163,7 +3203,8 @@ report</a>.</p>
 <th class="num" title="the Polymarket price at lock time">Market</th>
 <th class="num" title="model probability minus market price">Edge</th>
 <th>Result</th><th class="num">P&amp;L&nbsp;($)</th></tr></thead>
-<tbody>{rows}</tbody></table>"""
+<tbody>{rows}</tbody></table>
+{ko_html}"""
     (OUT / "follow-the-model.html").write_text(page(
         "Following the model", body, canon="follow-the-model.html",
         desc="A hypothetical flat-stake backtest of the model's World Cup 2026 moneyline "

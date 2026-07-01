@@ -39,10 +39,29 @@ def entry_price(b):
     return b.get("price_at_exec") or b.get("price_seen") or b.get("market_p")
 
 
+def results_truth():
+    """Fallback grader: settled Polymarket markets get delisted from Gamma, so
+    finished bets would sit at 'no live price' forever. grade_results settles
+    them against the repo's own match data instead. Returns (module, truth) or
+    None when the module/data files are unavailable — the report then degrades
+    to today's behavior (position stays 'open', unpriced)."""
+    try:
+        import sys
+        if HERE not in sys.path:
+            sys.path.insert(0, HERE)
+        import grade_results
+        return grade_results, grade_results.load_truth()
+    except Exception:
+        return None
+
+
 def grade(ledger, markets):
-    """Pure: ledger positions + live market lookup -> per-position rows and
-    aggregates. markets maps token_id -> (gamma_market, outcome_index)."""
-    rows = []
+    """Ledger positions + live market lookup -> per-position rows.
+    markets maps token_id -> (gamma_market, outcome_index). Positions Gamma
+    can't price (delisted after settlement) fall back to results-based
+    settlement via grade_results; truth is loaded lazily, once, only if a
+    position actually needs it."""
+    rows, fallback = [], []
     for b in ledger.get("placed", []):
         ep = entry_price(b)
         stake = b.get("stake_usdc", 0.0)
@@ -70,6 +89,17 @@ def grade(ledger, markets):
             else:
                 row["value"] = shares * cur           # mark to market
                 row["pnl"] = row["value"] - stake     # unrealized
+        elif cur is None:                             # Gamma can't price it
+            if not fallback:
+                fallback.append(results_truth())
+            if fallback[0]:
+                gr, truth = fallback[0]
+                res = gr.resolve_bet(b, truth)
+                if res is not None:                   # None -> leave as today
+                    row["status"] = "won" if res else "lost"
+                    row["pnl"] = (shares - stake) if res else -stake
+                    row["value"] = shares if res else 0.0
+                    row["settled_by"] = "results"     # cur stays None
         rows.append(row)
     return rows
 
