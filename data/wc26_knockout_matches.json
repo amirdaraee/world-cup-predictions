@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30 22:18 UTC",
+  "updated": "2026-07-01 05:54 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -69,8 +69,8 @@
       "away": "Sweden",
       "venue": "MetLife Stadium",
       "city": "New-York",
-      "status": "Second Half",
-      "score": null,
+      "status": "Match Finished",
+      "score": "3-0",
       "penalties": null
     },
     {
@@ -81,8 +81,8 @@
       "away": "Ecuador",
       "venue": "Estadio Banorte",
       "city": "Mexico City",
-      "status": "Not Started",
-      "score": null,
+      "status": "Match Finished",
+      "score": "2-0",
       "penalties": null
     },
     {
@@ -201,6 +201,18 @@
       "away": "Morocco",
       "venue": "NRG Stadium",
       "city": "Houston",
+      "status": "Not Started",
+      "score": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1569870,
+      "round": "Round of 16",
+      "date_utc": "2026-07-04T21:00:00+00:00",
+      "home": "Paraguay",
+      "away": "France",
+      "venue": "Lincoln Financial Field",
+      "city": "Philadelphia",
       "status": "Not Started",
       "score": null,
       "penalties": null

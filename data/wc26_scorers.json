@@ -76,12 +76,19 @@
     1562344,
     1562345,
     1564789,
-    1565176
+    1565176,
+    1565177,
+    1567306
   ],
   "scorers": {
     "L. Messi": {
       "team": "Argentina",
       "goals": 6,
+      "assists_from": []
+    },
+    "Kylian Mbappé": {
+      "team": "France",
+      "goals": 4,
       "assists_from": []
     },
     "Jonathan David": {
@@ -139,6 +146,11 @@
       "goals": 3,
       "assists_from": []
     },
+    "J. Quinones": {
+      "team": "Mexico",
+      "goals": 3,
+      "assists_from": []
+    },
     "F. Balogun": {
       "team": "United States",
       "goals": 2,
@@ -189,11 +201,6 @@
       "goals": 2,
       "assists_from": []
     },
-    "Kylian Mbappé": {
-      "team": "France",
-      "goals": 2,
-      "assists_from": []
-    },
     "C. Ronaldo": {
       "team": "Portugal",
       "goals": 2,
@@ -211,11 +218,6 @@
     },
     "E. Mahmic": {
       "team": "Bosnia and Herzegovina",
-      "goals": 2,
-      "assists_from": []
-    },
-    "J. Quinones": {
-      "team": "Mexico",
       "goals": 2,
       "assists_from": []
     },
@@ -276,7 +278,7 @@
     },
     "R. Jimenez": {
       "team": "Mexico",
-      "goals": 1,
+      "goals": 2,
       "assists_from": []
     },
     "L. Krejci": {
@@ -876,6 +878,11 @@
     },
     "A. Nusa": {
       "team": "Norway",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Bradley Barcola": {
+      "team": "France",
       "goals": 1,
       "assists_from": []
     }
