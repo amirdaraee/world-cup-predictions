@@ -1977,6 +1977,16 @@ tournament form shock (injuries, chemistry - σ=0.06 on scoring rates), knockout
 (10% chance per tie of lasting damage), and a fatigue penalty after 120-minute matches.
 None of it favours anyone on average; all of it favours outsiders, because variance always
 taxes the favourite.</p>
+<p><b>Since the knockouts began, the simulations condition on the tournament so far</b> (2 July).
+Before that, every run re-simulated the whole tournament from scratch — which was nearly
+harmless during the group stage but plainly wrong after it: eliminated sides kept carrying
+2–3% title odds. Now the group stage is fixed to its real results, decided knockout ties
+advance their actual winner (penalty shoot-outs included), and only the remaining bracket is
+simulated. That switch is why the futures moved sharply on 2 July — France 8% → 13%
+(alive, with a favourable path), Argentina 18% → 24%, Germany and the Netherlands to zero —
+<em>without any change to team strength</em>: ratings stay frozen at the pre-tournament
+cutoff so the locked picks stay honestly gradeable. The conditioning fixes <em>who is still
+in and where</em>, not form.</p>
 <p class="fineprint">Monte Carlo noise at this scale: a 16.6% championship estimate carries a
 standard error of about ±0.12 percentage points. Verified empirically - two independent
 100,000-tournament runs agreed on every favourite within 0.0–0.2pp. More simulations would not
@@ -2169,6 +2179,12 @@ the same 1,071 held-out matches: Dixon-Coles 0.819, Elo 0.858, and their 50/50 b
 <em>worse than DC alone</em>, so the blend was rejected and Elo never feeds the published
 numbers. It ships as a display-only second opinion on every match page; the two models'
 disagreement (they differ by ~8pp on a typical fixture) is used only as a tripwire.</li>
+<li><b>2 July</b> — futures conditioned on reality: with the group stage complete, the
+simulations stopped re-playing what has already happened. Group results are fixed, decided
+knockout ties advance their real winner, eliminated teams sit at zero. The visible jump in
+the title odds that day (France 8% → 13%, Argentina 18% → 24%) came from pinning the
+bracket to reality, not from any change to team ratings — those stay frozen so the locked
+picks remain honestly gradeable.</li>
 <li><b>Ongoing</b> — every night the real results come in, the locked bracket is regraded in
 public, the model refits on the newest matches, and the day's site is frozen into an
 immutable snapshot.</li>
@@ -2283,6 +2299,14 @@ API عمومی پالی‌مارکت دریافت می‌شوند.</p>
 <p>هیچ‌کدام از این عوامل در میانگین به نفع تیم خاصی نیستند؛ اما در عمل معمولاً کمی به سود
 تیم‌های کوچک‌تر تمام می‌شوند، چون اتفاقات غیرمنتظره معمولاً بخشی از برتری مدعیان را از
 بین می‌برند.</p>
+<p><b>از آغاز مرحلهٔ حذفی، شبیه‌سازی‌ها بر واقعیت مسابقات تا این لحظه شرطی شده‌اند</b>
+(۲ ژوئیه). پیش از آن هر اجرا کل تورنمنت را از صفر شبیه‌سازی می‌کرد ــ که در مرحلهٔ گروهی
+تقریباً بی‌ضرر بود، اما پس از آن آشکارا غلط: تیم‌های حذف‌شده هنوز ۲ تا ۳ درصد شانس قهرمانی
+داشتند. اکنون نتایج مرحلهٔ گروهی ثابت‌اند، برندهٔ واقعی هر بازی حذفیِ انجام‌شده صعود می‌کند
+(شامل ضربات پنالتی) و فقط ادامهٔ براکت شبیه‌سازی می‌شود. جهش محسوس احتمال‌ها در ۲ ژوئیه
+(فرانسه ۸٪ ← ۱۳٪، آرژانتین ۱۸٪ ← ۲۴٪، آلمان و هلند به صفر) از همین تغییر است، نه از تغییری
+در قدرت تیم‌ها ــ ریتینگ‌ها همچنان در نقطهٔ پیش از تورنمنت منجمدند تا پیش‌بینی‌های قفل‌شده
+صادقانه قابل نمره‌دهی بمانند.</p>
 
 <h2>کمی علم: مفاهیم و اصطلاح‌ها</h2>
 
