@@ -81,7 +81,8 @@
     1565177,
     1567306,
     1567307,
-    1567308
+    1567308,
+    1567311
   ],
   "scorers": {
     "L. Messi": {
@@ -91,6 +92,11 @@
     },
     "Kylian Mbappé": {
       "team": "France",
+      "goals": 4,
+      "assists_from": []
+    },
+    "M. Oyarzabal": {
+      "team": "Spain",
       "goals": 4,
       "assists_from": []
     },
@@ -191,11 +197,6 @@
     },
     "A. Ueda": {
       "team": "Japan",
-      "goals": 2,
-      "assists_from": []
-    },
-    "M. Oyarzabal": {
-      "team": "Spain",
       "goals": 2,
       "assists_from": []
     },
@@ -921,6 +922,11 @@
     },
     "M. Tillman": {
       "team": "United States",
+      "goals": 1,
+      "assists_from": []
+    },
+    "P. Porro": {
+      "team": "Spain",
       "goals": 1,
       "assists_from": []
     }

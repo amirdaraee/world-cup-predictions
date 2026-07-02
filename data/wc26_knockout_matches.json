@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02 08:11 UTC",
+  "updated": "2026-07-02 22:13 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -128,9 +128,9 @@
       "home": "Spain",
       "away": "Austria",
       "venue": "SoFi Stadium",
-      "city": "Los Angeles",
-      "status": "Not Started",
-      "score": null,
+      "city": "Inglewood",
+      "status": "Match Finished",
+      "score": "3-0",
       "penalties": null
     },
     {
