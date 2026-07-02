@@ -1223,12 +1223,73 @@ def accuracy_headline(acc):
 
 
 # ---------- bracket / predictions page ----------
+def _rank_of(round_name):
+    """Knockout depth from a round label (locked file and API-Football use
+    slightly different names). '5t'/'5f' split the two rank-5 matches."""
+    n = round_name.lower()
+    if "32" in n:
+        return 1
+    if "16" in n:
+        return 2
+    if "quarter" in n:
+        return 3
+    if "semi" in n:
+        return 4
+    if "3rd" in n or "third" in n:
+        return "5t"
+    return "5f"
+
+
 def locked_tournament_html():
     """The locked pre-tournament bracket, predicted standings and group-stage
     pick tracker — folded into the Report page (was the standalone Bracket
     page). Returns '' when there are no locked predictions."""
     if not PRED or not PRED.get("knockout"):
         return ""
+    # grade knockout picks like the group tracker grades match picks: each
+    # pick is the claim "this team wins that round" — ✓ once they actually
+    # have (even against a different opponent than predicted: reality re-drew
+    # the bracket), ✗ once they no longer can, pending until then
+    r32_actual, played_at, lost_ranks = set(), {}, {}
+    for m in KOS:
+        if m.get("round") == "Round of 32":
+            r32_actual |= {m["home"], m["away"]}
+        if not (str(m.get("status", "")).startswith("Match Finished")
+                and m.get("score")):
+            continue
+        w = _ko_winner(m)
+        if not w:
+            continue
+        loser = m["away"] if w == m["home"] else m["home"]
+        rk = _rank_of(m["round"])
+        for t, opp in ((w, loser), (loser, w)):
+            played_at[(t, rk)] = (m, opp, t == w)
+        lost_ranks.setdefault(loser, set()).add(rk)
+
+    def pick_cells(team, rname):
+        rk = _rank_of(rname)
+        if not r32_actual:                       # knockouts not drawn yet
+            return '<td class="num dim">-</td><td class="dim">-</td>'
+        hit = played_at.get((team, rk))
+        if hit:
+            m, opp, won = hit
+            pens = " (p)" if m.get("penalties") else ""
+            mark = '<i class="f W">✓</i>' if won else '<i class="f L">✗</i>'
+            return (f'<td class="num score">{escape(m["score"])}{pens} '
+                    f'v {escape(opp)}</td><td>{mark}</td>')
+        # can the pick still win this round?
+        if team not in r32_actual:
+            return ('<td class="num dim">out in groups</td>'
+                    f'<td><i class="f L">✗</i></td>')
+        needed = {1, 2, 3} if rk == "5t" else \
+            {1, 2, 3, 4} if rk == "5f" else set(range(1, rk))
+        if lost_ranks.get(team, set()) & needed:
+            out_rk = min(lost_ranks[team] & needed)
+            return (f'<td class="num dim">out in '
+                    f'{ {1: "R32", 2: "R16", 3: "QF", 4: "SF"}[out_rk] }</td>'
+                    f'<td><i class="f L">✗</i></td>')
+        return '<td class="num dim">-</td><td class="dim">-</td>'
+
     rounds = {}
     for k in PRED["knockout"]:
         rounds.setdefault(k["round"], []).append(k)
@@ -1241,10 +1302,11 @@ def locked_tournament_html():
             f'<tr><td class="num">{k["match"]}</td>'
             f'<td>{team_link(k["team1"])} <em>v</em> {team_link(k["team2"])}</td>'
             f'<td class="pick">{escape(k["pick"])}</td>'
-            f'<td class="num">{k["p_pick"] * 100:.0f}%</td></tr>'
+            f'<td class="num">{k["p_pick"] * 100:.0f}%</td>'
+            + pick_cells(k["pick"], rname) + '</tr>'
             for k in rounds[rname])
         ko_html += f"""<section><h2>{rname}</h2>
-<table class="ko"><thead><tr><th class="num" title="official FIFA match number">#</th><th>Tie (predicted)</th><th>Pick</th><th class="num" title="the model's own probability for its pick - 50% means a forced coin-flip call">Conf.</th></tr></thead>
+<table class="ko"><thead><tr><th class="num" title="official FIFA match number">#</th><th>Tie (predicted)</th><th>Pick</th><th class="num" title="the model's own probability for its pick - 50% means a forced coin-flip call">Conf.</th><th class="num" title="the pick's ACTUAL tie at this round — reality re-drew the bracket, so the opponent usually differs from the predicted one. ✓ = the pick won this round anyway; 'out' = it can no longer">Actual</th><th></th></tr></thead>
 <tbody>{lines}</tbody></table></section>"""
 
     gt_html = ""
