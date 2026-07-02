@@ -56,9 +56,11 @@ try:
 except FileNotFoundError:
     TOTALS_LOCKED = {"matches": {}}
 try:
-    TOURNEY = json.load(open(DATA / "wc26_tournament.json"))["teams"]
+    _tourney_doc = json.load(open(DATA / "wc26_tournament.json"))
+    TOURNEY = _tourney_doc["teams"]
+    TOURNEY_META = {k: v for k, v in _tourney_doc.items() if k != "teams"}
 except FileNotFoundError:
-    TOURNEY = {}
+    TOURNEY, TOURNEY_META = {}, {}
 try:
     PRED = json.load(open(DATA / "wc26_predictions.json"))
 except FileNotFoundError:
@@ -999,9 +1001,17 @@ def build_futures():
         g = team_group.get(name, "?")
         rows.append(f'<tr><td>{team_link(name)}</td>'
                     f'<td><a class="gchip" href="groups.html#group-{g.lower()}">{g}</a></td>{cells}</tr>')
+    cond = ""
+    if TOURNEY_META.get("conditioned_on_results"):
+        n_dec = TOURNEY_META.get("ko_ties_decided", 0)
+        cond = (f" Odds condition on the tournament so far: the group stage is "
+                f"fixed to its real results and {n_dec} decided knockout "
+                f"tie{'s' if n_dec != 1 else ''} advance their actual winner — "
+                f"eliminated teams sit at zero. Team strength stays frozen at "
+                f"the pre-tournament ratings, so grading stays honest.")
     body = f"""<h1>Tournament futures</h1>
 <p class="standfirst">100,000 Monte Carlo tournaments on a 200-model bootstrap ensemble,
-using the official FIFA bracket.</p>
+using the official FIFA bracket.{cond}</p>
 <p class="fineprint">Reach R32 is not the same as win group - eight third-placed teams advance
 too, which is why mid-tier teams clear 70% there. Columns nest (champion ⊂ final ⊂ SF…), and
 each column sums across all 48 teams to the slots available: 12 group wins, 2 finalists, 1 champion.

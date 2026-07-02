@@ -214,6 +214,84 @@ FIX_AI = np.array([T_IDX[m["away"]] for m in FIXTURES])
 # tweak shifts draw rates ~1% and is kept for match-card pricing only).
 
 
+# ---------------- condition on reality ----------------
+def load_actual_state():
+    """Pin the simulation to what has actually happened: once the group stage
+    is complete and the real R32 draw is known, group outcomes stop being
+    re-simulated and decided knockout ties advance their real winner —
+    without this, eliminated teams keep carrying title odds. Ratings stay
+    frozen at the pre-tournament cutoff: this fixes WHO IS STILL IN and
+    where, not form. Returns None whenever the state can't be pinned
+    (pre-knockouts, missing data), which keeps the original full simulation."""
+    if any(not (str(m.get("status", "")).startswith("Match Finished")
+                and m.get("score")) for m in FIXTURES):
+        return None
+    try:
+        ko = json.load(open(f"{DATA}/wc26_knockout_matches.json"))["matches"]
+    except FileNotFoundError:
+        return None
+    r32_fx = [m for m in ko if m.get("round") == "Round of 32"]
+    if len(r32_fx) != 16:
+        return None
+    # actual standings -> group winner / runner-up (pts, gd, gf), and the
+    # goals every team has already scored (they seed the Boot tallies)
+    pts, gd, gf, goals_played = {}, {}, {}, {}
+    for m in FIXTURES:
+        hs, as_ = (int(x) for x in m["score"].split("-"))
+        for t, sf_, sa in ((m["home"], hs, as_), (m["away"], as_, hs)):
+            pts[t] = pts.get(t, 0) + (3 if sf_ > sa else 1 if sf_ == sa else 0)
+            gd[t] = gd.get(t, 0) + sf_ - sa
+            gf[t] = gf.get(t, 0) + sf_
+            goals_played[t] = goals_played.get(t, 0) + sf_
+    win, run = {}, {}
+    for g in GROUPS:
+        order = sorted(GROUP_TEAMS[g],
+                       key=lambda t: (pts[t], gd[t], gf[t]), reverse=True)
+        win[g], run[g] = order[0], order[1]
+    # pin each real R32 fixture to its FIFA match number: side1 of every
+    # template tie is a specific group's winner/runner-up, which identifies
+    # the fixture uniquely (side2 resolves the third-place draw for free)
+    team_fx = {}
+    for m in r32_fx:
+        team_fx[m["home"]] = m
+        team_fx[m["away"]] = m
+    teams_in = {}
+    for no, (k1, v1), _s2 in R32:
+        t1 = win[v1] if k1 == "W" else run[v1]
+        fx = team_fx.get(t1)
+        if not fx:
+            return None
+        teams_in[no] = (fx["home"], fx["away"])
+    if len({frozenset(p) for p in teams_in.values()}) != 16:
+        return None
+    # decided knockout ties (any round): real winner by team pair; a level
+    # 90' score is settled by the shoot-out and flags the 120-minute leg
+    decided = {}
+    for m in ko:
+        if not (str(m.get("status", "")).startswith("Match Finished")
+                and m.get("score")):
+            continue
+        hs, as_ = (int(x) for x in m["score"].split("-"))
+        w = m["home"] if hs > as_ else m["away"] if as_ > hs else None
+        pens = m.get("penalties")
+        if w is None and isinstance(pens, str) and "-" in pens:
+            ph, pa = (int(x) for x in pens.split("-"))
+            w = m["home"] if ph > pa else m["away"]
+        if not w:
+            continue
+        decided[frozenset((m["home"], m["away"]))] = (w, hs == as_)
+        goals_played[m["home"]] = goals_played.get(m["home"], 0) + hs
+        goals_played[m["away"]] = goals_played.get(m["away"], 0) + as_
+    return {"win": win, "teams_in": teams_in, "decided": decided,
+            "goals_played": goals_played}
+
+
+ACTUAL = load_actual_state()
+if ACTUAL:
+    print(f"conditioning on reality: group stage fixed, "
+          f"{len(ACTUAL['decided'])} knockout tie(s) decided", flush=True)
+
+
 def allocate_thirds(thirds, slots=THIRD_SLOTS):
     """Backtracking: assign 8 (team, group) thirds to slots w/ group constraints."""
     assign = {}
@@ -237,42 +315,46 @@ def sim_tournament(b):
     """One full tournament with bootstrap model b.
     Returns (group winners, reached stages, tournament goals per team)."""
     model = BOOT[b]
-    pts = {}
-    gd = {}
-    gf = {}
     goals = {}
     # per-tournament form shock: injuries, chemistry, camp chaos (zero-mean)
     shock = rng.normal(0.0, FORM_SD, len(ALL_TEAMS))
-    tilt = np.exp(shock[FIX_HI] - shock[FIX_AI])
-    hg_s = rng.poisson(L1G[b] * tilt)
-    ag_s = rng.poisson(L2G[b] / tilt)
-    for f, (home, away, grp) in enumerate(FIX_INFO):
-        i, j = int(hg_s[f]), int(ag_s[f])
-        for t, sf_, sa in ((home, i, j), (away, j, i)):
-            pts[t] = pts.get(t, 0) + (3 if sf_ > sa else 1 if sf_ == sa else 0)
-            gd[t] = gd.get(t, 0) + sf_ - sa
-            gf[t] = gf.get(t, 0) + sf_
-            goals[t] = goals.get(t, 0) + sf_
-    win, run, thirds = {}, {}, []
-    for g in GROUPS:
-        order = sorted(GROUP_TEAMS[g],
-                       key=lambda t: (pts[t], gd[t], gf[t], random.random()),
-                       reverse=True)
-        win[g], run[g] = order[0], order[1]
-        thirds.append((order[2], g))
-    thirds.sort(key=lambda tg: (pts[tg[0]], gd[tg[0]], gf[tg[0]], random.random()),
-                reverse=True)
-    best8 = thirds[:8]
-    alloc = allocate_thirds(best8)
-    if alloc is None:                      # rare: constraints unsatisfiable
-        alloc = {no: best8[i][0] for i, (no, _) in enumerate(THIRD_SLOTS)}
+    if ACTUAL:
+        # group stage happened: fixed outcomes, real R32 draw, actual goals
+        win = ACTUAL["win"]
+        teams_in = ACTUAL["teams_in"]
+        goals.update(ACTUAL["goals_played"])
+    else:
+        pts, gd, gf = {}, {}, {}
+        tilt = np.exp(shock[FIX_HI] - shock[FIX_AI])
+        hg_s = rng.poisson(L1G[b] * tilt)
+        ag_s = rng.poisson(L2G[b] / tilt)
+        for f, (home, away, grp) in enumerate(FIX_INFO):
+            i, j = int(hg_s[f]), int(ag_s[f])
+            for t, sf_, sa in ((home, i, j), (away, j, i)):
+                pts[t] = pts.get(t, 0) + (3 if sf_ > sa else 1 if sf_ == sa else 0)
+                gd[t] = gd.get(t, 0) + sf_ - sa
+                gf[t] = gf.get(t, 0) + sf_
+                goals[t] = goals.get(t, 0) + sf_
+        win, run, thirds = {}, {}, []
+        for g in GROUPS:
+            order = sorted(GROUP_TEAMS[g],
+                           key=lambda t: (pts[t], gd[t], gf[t], random.random()),
+                           reverse=True)
+            win[g], run[g] = order[0], order[1]
+            thirds.append((order[2], g))
+        thirds.sort(key=lambda tg: (pts[tg[0]], gd[tg[0]], gf[tg[0]],
+                                    random.random()), reverse=True)
+        best8 = thirds[:8]
+        alloc = allocate_thirds(best8)
+        if alloc is None:                  # rare: constraints unsatisfiable
+            alloc = {no: best8[i][0] for i, (no, _) in enumerate(THIRD_SLOTS)}
 
-    teams_in = {}                          # match_no -> (a, b)
-    for no, s1, s2 in R32:
-        def side(s, no=no):
-            k, v = s
-            return win[v] if k == "W" else run[v] if k == "R" else alloc[no]
-        teams_in[no] = (side(s1), side(s2))
+        teams_in = {}                      # match_no -> (a, b)
+        for no, s1, s2 in R32:
+            def side(s, no=no):
+                k, v = s
+                return win[v] if k == "W" else run[v] if k == "R" else alloc[no]
+            teams_in[no] = (side(s1), side(s2))
 
     handicap = {}   # accumulated attrition + fatigue per team (log-attack)
 
@@ -299,21 +381,37 @@ def sim_tournament(b):
             return bb
         return a if random.random() < l1 / (l1 + l2) else bb
 
+    def advance(a, bb, rnd):
+        """Real winner when the tie has been played; simulate otherwise.
+        Played ties still feed the anomaly carryover — knocks and a
+        120-minute leg burden the FUTURE matches we do simulate."""
+        if ACTUAL:
+            hit = ACTUAL["decided"].get(frozenset((a, bb)))
+            if hit:
+                w, went_distance = hit
+                for t in (a, bb):
+                    if random.random() < ATTRITION_P:
+                        handicap[t] = handicap.get(t, 0.0) + ATTRITION_HIT
+                    if went_distance:
+                        handicap[t] = handicap.get(t, 0.0) + ET_FATIGUE
+                return w
+        return play_ko(a, bb, rnd)
+
     winners = {}
     reached = {"r32": set(), "r16": set(), "qf": set(), "sf": set(),
                "final": set(), "champion": set()}
     for no, (a, bb) in teams_in.items():
         reached["r32"] |= {a, bb}
-        winners[no] = play_ko(a, bb, 1)
+        winners[no] = advance(a, bb, 1)
     for rnd, stage, pairs in ((2, "r16", R16), (3, "qf", QF), (4, "sf", SF)):
         for no, m1, m2 in pairs:
             a, bb = winners[m1], winners[m2]
             reached[stage] |= {a, bb}
-            winners[no] = play_ko(a, bb, rnd)
+            winners[no] = advance(a, bb, rnd)
     no, m1, m2 = FINAL
     a, bb = winners[m1], winners[m2]
     reached["final"] |= {a, bb}
-    champ = play_ko(a, bb, 5)
+    champ = advance(a, bb, 5)
     reached["champion"] = {champ}
     return win, reached, goals
 
@@ -345,7 +443,12 @@ def run_futures():
                   f"bootstrap ensemble (Dixon-Coles, params {P}); official "
                   "FIFA bracket incl. third-place slot constraints; anomaly "
                   f"model: form shock sd={FORM_SD}, KO attrition "
-                  f"p={ATTRITION_P} hit={ATTRITION_HIT}, ET fatigue {ET_FATIGUE}",
+                  f"p={ATTRITION_P} hit={ATTRITION_HIT}, ET fatigue {ET_FATIGUE}"
+                  + (f"; conditioned on actual results (group stage fixed, "
+                     f"{len(ACTUAL['decided'])} knockout ties decided)"
+                     if ACTUAL else ""),
+        "conditioned_on_results": bool(ACTUAL),
+        "ko_ties_decided": len(ACTUAL["decided"]) if ACTUAL else 0,
         "generated": now_utc(),
         "teams": {t: {s: round(count[t][s] / N_SIMS, 4) for s in stages}
                   for t in teams},
