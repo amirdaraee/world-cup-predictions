@@ -1087,6 +1087,7 @@ EVO_MILESTONES = {   # run-stamp prefix -> label shown on the chart
     "20260610-0023": "anomaly variance",
     "20260610-1526": "squad-value prior",
     "20260611-2333": "nightly auto-runs",
+    "20260702-0554": "conditioned on results",
 }
 
 
