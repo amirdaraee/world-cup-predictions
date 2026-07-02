@@ -75,11 +75,13 @@
     1561329,
     1562344,
     1562345,
+    1562586,
     1564789,
     1565176,
     1565177,
     1567306,
-    1567307
+    1567307,
+    1567308
   ],
   "scorers": {
     "L. Messi": {
@@ -154,7 +156,7 @@
     },
     "F. Balogun": {
       "team": "United States",
-      "goals": 2,
+      "goals": 3,
       "assists_from": []
     },
     "Y. Ayari": {
@@ -284,6 +286,11 @@
     },
     "H. Kane": {
       "team": "England",
+      "goals": 2,
+      "assists_from": []
+    },
+    "Youri Tielemans": {
+      "team": "Belgium",
       "goals": 2,
       "assists_from": []
     },
@@ -894,6 +901,26 @@
     },
     "B. Cipenga": {
       "team": "DR Congo",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Habib Diarra": {
+      "team": "Senegal",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Ismaïla Sarr": {
+      "team": "Senegal",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Romelu Lukaku": {
+      "team": "Belgium",
+      "goals": 1,
+      "assists_from": []
+    },
+    "M. Tillman": {
+      "team": "United States",
       "goals": 1,
       "assists_from": []
     }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01 22:32 UTC",
+  "updated": "2026-07-02 05:45 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -105,8 +105,8 @@
       "away": "Senegal",
       "venue": "Lumen Field",
       "city": "Seattle",
-      "status": "Extra Time",
-      "score": null,
+      "status": "Match Finished",
+      "score": "3-2",
       "penalties": null
     },
     {
@@ -117,8 +117,8 @@
       "away": "Bosnia and Herzegovina",
       "venue": "Levi's Stadium",
       "city": "San-Francisco",
-      "status": "Not Started",
-      "score": null,
+      "status": "Match Finished",
+      "score": "2-0",
       "penalties": null
     },
     {
@@ -223,7 +223,31 @@
       "date_utc": "2026-07-05T20:00:00+00:00",
       "home": "Brazil",
       "away": "Norway",
-      "venue": null,
+      "venue": "MetLife Stadium",
+      "city": null,
+      "status": "Not Started",
+      "score": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1570714,
+      "round": "Round of 16",
+      "date_utc": "2026-07-06T00:00:00+00:00",
+      "home": "Mexico",
+      "away": "England",
+      "venue": "Estadio Banorte",
+      "city": "Mexico City",
+      "status": "Not Started",
+      "score": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1570715,
+      "round": "Round of 16",
+      "date_utc": "2026-07-07T00:00:00+00:00",
+      "home": "United States",
+      "away": "Belgium",
+      "venue": "Lumen Field",
       "city": null,
       "status": "Not Started",
       "score": null,
