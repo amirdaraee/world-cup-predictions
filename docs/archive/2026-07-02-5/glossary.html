@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary · WC26 Form Book</title>
+<meta name="description" content="Plain-English glossary of football prediction and betting-market terms — probability, log-loss, closing-line value and more, no maths assumed.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Glossary · WC26 Form Book">
+<meta property="og:description" content="Plain-English glossary of football prediction and betting-market terms — probability, log-loss, closing-line value and more, no maths assumed.">
+<meta property="og:site_name" content="WC26 Form Book">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://wcformbook.com/img/og.png">
+<meta property="og:url" content="https://wcformbook.com/glossary.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Glossary · WC26 Form Book">
+<meta name="twitter:description" content="Plain-English glossary of football prediction and betting-market terms — probability, log-loss, closing-line value and more, no maths assumed.">
+<meta name="twitter:image" content="https://wcformbook.com/img/og.png">
+<link rel="canonical" href="https://wcformbook.com/glossary.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="mask-icon" href="favicon.svg" color="#211d16">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#211d16">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "WC26 Form Book", "url": "https://wcformbook.com/", "description": "World Cup 2026 probabilities from an open statistical model: match fair prices vs the betting market, tournament odds, and a locked bracket graded in public.", "inLanguage": "en"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script>
+// Google Consent Mode v2 — analytics stays OFF until the visitor opts in.
+// gtag.js is not even loaded until consent is granted (this run or a prior
+// visit), so no GA cookie or request fires beforehand.
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied', ad_user_data: 'denied',
+  ad_personalization: 'denied', analytics_storage: 'denied'
+});
+function wcfbLoadGA() {
+  gtag('consent', 'update', { analytics_storage: 'granted' });
+  if (window.wcfbGALoaded) return;
+  window.wcfbGALoaded = true;
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-EG56KHB1SX';
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'G-EG56KHB1SX');
+}
+try {
+  if (localStorage.getItem('wcfb_consent') === 'granted') wcfbLoadGA();
+} catch (e) {}
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=202607020734">
+<script>
+(function() {
+  var t = localStorage.getItem("theme");
+  if (t) document.documentElement.dataset.theme = t;
+})();
+function toggleTheme() {
+  var el = document.documentElement;
+  var dark = el.dataset.theme === "dark" ||
+    (!el.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+  el.dataset.theme = dark ? "light" : "dark";
+  localStorage.setItem("theme", el.dataset.theme);
+}
+</script>
+</head>
+<body>
+<div class="snapnote">Snapshot of 2026-07-02-5 - predictions as they stood then. <a href="../../index.html">Back to the latest →</a></div>
+<header class="masthead">
+  <a class="skip" href="#main">skip to content</a>
+  <button class="themebtn" onclick="toggleTheme()" title="light / dark" aria-label="toggle light or dark theme">◐</button>
+  
+  <div class="kicker">The Form Book - research edition</div>
+  <a class="wordmark" href="index.html">World&nbsp;Cup&nbsp;26</a>
+  <nav><a href="index.html">Knockouts</a><span>·</span><a href="groups.html">Groups</a><span>·</span><a href="matches.html">Matches</a><span>·</span><a href="futures.html">Futures</a><span>·</span><a href="awards.html">Awards</a><span>·</span><a href="bracket.html">Picks</a><span>·</span><a href="report.html">Report</a><span>·</span><a href="follow-the-model.html">Betting ROI</a><span>·</span><a href="glossary.html">Glossary</a><span>·</span><a href="method.html">Method</a></nav>
+</header>
+
+<main id="main">
+<h1>Plain-language glossary</h1>
+<p class="standfirst">New to predictions, probabilities or betting markets? This
+page explains every term on the site — and the field around it — in plain
+English, no maths assumed. Skim it, or jump to a section.</p>
+<p class="fineprint"><a href="#start-here-the-big-picture">Start here — the big picture</a> · <a href="#reading-the-odds">Reading the odds</a> · <a href="#the-markets-what-can-be-predicted">The markets — what can be predicted</a> · <a href="#how-the-model-makes-the-numbers">How the model makes the numbers</a> · <a href="#the-market-side">The market side</a> · <a href="#edge-value-and-staking">Edge, value and staking</a> · <a href="#grading-the-forecasts">Grading the forecasts</a> · <a href="#honest-limits">Honest limits</a></p>
+<h2 id="start-here-the-big-picture">Start here — the big picture</h2><dl class="glossary"><dt>What this site is</dt><dd>A computer model that estimates the chance of every World Cup result, written out as probabilities. It then puts its numbers next to the betting market's prices and grades itself in public after every match. Nothing here is a tip or a certainty — it is one informed opinion, shown with its workings and its track record so you can judge it.</dd><dt>Probability</dt><dd>How likely something is, from 0% (never) to 100% (certain). "Brazil 62% to win" means that if this exact match were played many times, the model expects Brazil to win about 62 of every 100. A 62% favourite still loses fairly often — that is not the model being wrong, it is what 62% means.</dd><dt>Favourite and underdog</dt><dd>The favourite is the side more likely to win; the underdog is the less likely. Upsets are normal — over a whole tournament, a good chunk of underdogs win.</dd></dl><h2 id="reading-the-odds">Reading the odds</h2><dl class="glossary"><dt>Odds</dt><dd>Another way of writing a probability, usually as a payout. "3.0 (decimal) odds" means a winning $1 bet returns $3 (your $1 back plus $2 profit) — which implies about a 33% chance.</dd><dt>Implied probability</dt><dd>The probability hidden inside a price. A price of 50¢ on a yes/no market implies a 50% chance. We turn every market price into an implied probability so the model and the market can be compared on the same scale.</dd><dt>Fair price</dt><dd>The model's probability written as a price in cents — a 56% chance is a 56¢ fair price. Buy below it and you profit on average <em>if the model is right</em>; pay above it and you are overpaying by the model's lights.</dd></dl><h2 id="the-markets-what-can-be-predicted">The markets — what can be predicted</h2><dl class="glossary"><dt>1X2 / moneyline</dt><dd>The basic question: home win, draw, or away win (the "1", "X" and "2"). "Moneyline" is the same thing in betting language — just who wins, draw included.</dd><dt>Over / Under (totals)</dt><dd>A bet on the <em>number of goals</em> in a match rather than who wins. "Over 2.5" wins if there are 3 or more goals; "Under 2.5" wins with 2 or fewer. The half-goal avoids a tie.</dd><dt>The line</dt><dd>The number a total or handicap is set at — 2.5 goals, 9.5 corners. The half stops the bet from landing exactly on the number.</dd><dt>Both teams to score (BTTS)</dt><dd>Yes if each side scores at least one goal, No otherwise — independent of who wins.</dd><dt>Exact score / correct score</dt><dd>Predicting the precise final score (2–1, 0–0). Hard to hit — even the single likeliest score usually sits well under a 1-in-6 chance — so the payouts are large.</dd><dt>Spread / handicap</dt><dd>Giving the favourite a goal start to make a lopsided match a coin-flip. "England −1.5" wins only if England win by 2 or more clear goals.</dd><dt>First to score</dt><dd>Which team scores the opening goal — or neither, if it finishes 0–0.</dd><dt>Halves</dt><dd>The same result/goal questions applied to just the first or second half of a match.</dd><dt>Corners</dt><dd>Bets on the number of corner kicks, usually an over/under total. Driven more by playing style than by who is winning.</dd><dt>Futures</dt><dd>Bets settled later in the tournament rather than on one match: to win the World Cup, to reach the final, to win the group. Long shots pay big and tie up your stake for weeks.</dd></dl><h2 id="how-the-model-makes-the-numbers">How the model makes the numbers</h2><dl class="glossary"><dt>Statistical model</dt><dd>A set of equations fitted to past results that outputs a probability. It has no opinions, no nerves and no eye for the game — only the maths of what has happened before.</dd><dt>Poisson</dt><dd>The standard maths for counting goals: it turns a team's average scoring rate into the chance of 0, 1, 2, 3… goals. Plain Poisson slightly misprices draws, which is why we use a refinement.</dd><dt>Dixon–Coles</dt><dd>The refinement: weighted Poisson that corrects the low-scoring scorelines plain Poisson gets wrong and leans on recent matches more than old ones. The engine behind this whole site.</dd><dt>Attack and defence ratings</dt><dd>Each team gets two numbers — how many goals it tends to score, and to concede. A match's goal estimate comes from one side's attack against the other's defence.</dd><dt>Expected goals (xG)</dt><dd>Here, the number of goals the model expects a team to score in a match, from those ratings. Note: this is <em>not</em> the shot-by-shot xG on TV broadcasts — same name, different thing.</dd><dt>Home advantage</dt><dd>The measured edge a team gets playing at home (or, at a World Cup, as a host). Removed at neutral venues.</dd><dt>Recency weighting</dt><dd>Newer matches count for more than old ones, because squads and form change. A result from last month says more than one from three years ago.</dd><dt>Shrinkage / regression to the mean</dt><dd>Pulling extreme estimates back toward average, so a team that happens to win 6–0 once is not treated as six-goal-good forever. Guards against reading too much into small samples.</dd><dt>Score grid</dt><dd>A table of the probability of every scoreline (0–0, 1–0, 2–1…). Every market on the site — winner, totals, both-teams, exact score — is read off this one grid.</dd><dt>Monte Carlo simulation</dt><dd>Playing the whole tournament out at random tens of thousands of times, then counting how often each team wins. How the futures (champion, reach-the-final) are estimated.</dd><dt>Ensemble</dt><dd>Running many slightly different versions of the model and averaging them, so the answer carries its own uncertainty instead of pretending to one exact number.</dd><dt>Elo</dt><dd>A simpler rating system (famous from chess) that updates after every match. We run it as a structurally different <em>second opinion</em>; where it and the main model disagree sharply, that is a flag to trust the match less.</dd><dt>The blend</dt><dd>Mixing the model's probability with the market's price to get a combined view, on the logic that the market sees things the model can't (injuries, lineups). The site keeps the raw model separate so each can be graded on its own.</dd></dl><h2 id="the-market-side">The market side</h2><dl class="glossary"><dt>Prediction market</dt><dd>A marketplace where people buy and sell shares in an outcome; the price floats to reflect the crowd's collective estimate of its probability. Polymarket is the one used here.</dd><dt>Liquidity</dt><dd>How much money is actively trading a market. Thin (illiquid) markets have unreliable prices — a single small bet can move them — so the site ignores them.</dd><dt>Overround / vig</dt><dd>The bookmaker's built-in margin: add up the implied probabilities of all outcomes and they total more than 100%. That extra is the house edge, which you have to beat to profit.</dd><dt>Closing line</dt><dd>The final price just before a match starts, after all the smart money is in. It is the market's best guess, and a hard benchmark to beat.</dd></dl><h2 id="edge-value-and-staking">Edge, value and staking</h2><dl class="glossary"><dt>Edge</dt><dd>The gap between the model's probability and the market's price. Model 60%, market 52¢ → an 8-cent edge, the model's claim that the market is too cheap. The whole point — and the thing most often an illusion.</dd><dt>Value</dt><dd>A bet where your estimated probability beats the price. Value betting means backing edges, win or lose on the day, and trusting the maths over many bets.</dd><dt>Kelly criterion</dt><dd>A formula for how much to stake given your edge and bankroll — bet more on bigger edges, less on thin ones. We use a <em>fraction</em> of it, because the edge is never as certain as it looks.</dd><dt>Bankroll</dt><dd>The total pot set aside for betting. Stakes are sized as a slice of it so no single bet can do real damage.</dd><dt>Closing-line value (CLV)</dt><dd>Did the price move toward your bet after you made it? Consistently positive CLV is the early sign you are finding real edge — long before wins and losses prove anything.</dd><dt>Paper trading</dt><dd>Recording bets without staking money, to test whether an edge is real before risking anything on it.</dd></dl><h2 id="grading-the-forecasts">Grading the forecasts</h2><dl class="glossary"><dt>Hit rate / accuracy</dt><dd>How often the predicted result actually happened. Useful but crude — it ignores how <em>confident</em> the call was.</dd><dt>Brier score</dt><dd>A sharper grade: the squared error of a probability against what happened. Lower is better; a forecaster who just guesses 'anything could happen' scores middling, and confident wrong calls are punished hard.</dd><dt>Log-loss</dt><dd>Like the Brier score but harsher still on confident mistakes — saying 95% and being wrong costs a lot. The main yardstick for comparing the model, the market and the blend.</dd><dt>Calibration</dt><dd>Whether the probabilities mean what they say: of all the things called 70%, do about 70% happen? A calibrated forecaster's claims match reality over the long run.</dd><dt>Baseline</dt><dd>The score to beat — what you'd get by guessing with no skill (e.g. always the base rates). A model is only worth anything if it beats the baseline.</dd><dt>Backtest / out-of-sample</dt><dd>Testing the model on matches it was <em>not</em> trained on, to see if it really predicts rather than just memorises. The honest test.</dd><dt>Look-ahead</dt><dd>The cardinal sin: letting the model peek at information it wouldn't have had at the time (like results that came later). It flatters the numbers and makes a backtest a lie; avoiding it is most of the work.</dd><dt>Locked predictions</dt><dd>Picks frozen before the tournament and graded in public as results come in, so the scorecard can't be quietly rewritten after the fact.</dd></dl><h2 id="honest-limits">Honest limits</h2><dl class="glossary"><dt>Variance / luck</dt><dd>Football is high-variance: the better side loses all the time over 90 minutes. A model can be right about the odds and still look wrong on the day — judge it over many matches, not one.</dd><dt>Sample size</dt><dd>How much data a number rests on. Early-tournament grades are built on a handful of matches and will swing around; wait for a full group stage before trusting any of them.</dd><dt>What the model can&#x27;t see</dt><dd>It knows results, not injuries, suspensions, lineups, weather or motivation. That is its biggest blind spot, and why its confident disagreements with the market deserve suspicion, not blind backing.</dd></dl>
+<p class="fineprint">Missing a term, or one that still reads like jargon? The
+whole site is open on
+<a href="https://github.com/amirdaraee/world-cup-predictions">GitHub</a> — and
+remember, none of this is betting advice.</p>
+</main>
+<footer>
+  <p>Form chips read most-recent first. Stats computed over each team's last 10 completed internationals.</p>
+  <p>Model run: 2026-07-02 07:34 UTC · Polymarket snapshot: 2026-07-02 07:33 UTC · every run archived in runs/</p>
+  <p>Data: API-Football · FIFA rankings 2026 · <a href="method.html">how this works</a> ·
+  <a href="archive.html">previous versions</a> ·
+  <a href="https://github.com/amirdaraee/world-cup-predictions">code on GitHub</a> ·
+  personal research, verify before staking. ·
+  <a href="#" onclick="wcfbCookies();return false;">cookie choices</a></p>
+</footer>
+<div id="cookie-consent" role="dialog" aria-label="Cookie consent" hidden>
+  <p>We use cookies to analyse traffic and understand how the site is
+  used. You can accept or decline — your choice is remembered.</p>
+  <div class="cc-btns">
+    <button id="cc-reject" class="cc-no">Decline</button>
+    <button id="cc-accept" class="cc-yes">Accept</button>
+  </div>
+</div>
+<script>
+(function() {
+  var box = document.getElementById('cookie-consent');
+  if (!box) return;
+  function stored() { try { return localStorage.getItem('wcfb_consent'); }
+                       catch (e) { return null; } }
+  function decide(v) {
+    try { localStorage.setItem('wcfb_consent', v); } catch (e) {}
+    box.hidden = true;
+    if (v === 'granted' && window.wcfbLoadGA) wcfbLoadGA();
+  }
+  if (!stored()) box.hidden = false;   // first visit: ask
+  document.getElementById('cc-accept').onclick = function() { decide('granted'); };
+  document.getElementById('cc-reject').onclick = function() { decide('denied'); };
+  // let anyone reopen the choice from the footer (easy to withdraw consent)
+  window.wcfbCookies = function() { box.hidden = false; };
+})();
+</script>
+</body>
+</html>
