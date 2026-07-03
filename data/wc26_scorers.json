@@ -79,6 +79,7 @@
     1564789,
     1565176,
     1565177,
+    1565178,
     1567306,
     1567307,
     1567308,
@@ -302,6 +303,11 @@
       "goals": 2,
       "assists_from": []
     },
+    "E. Ashour": {
+      "team": "Egypt",
+      "goals": 2,
+      "assists_from": []
+    },
     "L. Krejci": {
       "team": "Czech Republic",
       "goals": 1,
@@ -424,11 +430,6 @@
     },
     "M. Svanberg": {
       "team": "Sweden",
-      "goals": 1,
-      "assists_from": []
-    },
-    "E. Ashour": {
-      "team": "Egypt",
       "goals": 1,
       "assists_from": []
     },
