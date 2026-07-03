@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02 22:13 UTC",
+  "updated": "2026-07-03 08:09 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -141,8 +141,8 @@
       "away": "Croatia",
       "venue": "BMO Field",
       "city": "Toronto",
-      "status": "Not Started",
-      "score": null,
+      "status": "Match Finished",
+      "score": "2-1",
       "penalties": null
     },
     {
@@ -153,8 +153,8 @@
       "away": "Algeria",
       "venue": "BC Place",
       "city": "Vancouver",
-      "status": "Not Started",
-      "score": null,
+      "status": "Match Finished",
+      "score": "2-0",
       "penalties": null
     },
     {
@@ -237,6 +237,18 @@
       "away": "England",
       "venue": "Estadio Banorte",
       "city": "Mexico City",
+      "status": "Not Started",
+      "score": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1576756,
+      "round": "Round of 16",
+      "date_utc": "2026-07-06T19:00:00+00:00",
+      "home": "Portugal",
+      "away": "Spain",
+      "venue": null,
+      "city": null,
       "status": "Not Started",
       "score": null,
       "penalties": null

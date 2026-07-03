@@ -644,17 +644,30 @@
   "knockout": {
     "summary": {
       "threshold": 0.08,
-      "n_bets": 2,
+      "n_bets": 3,
       "wins": 0,
       "win_rate": 0.0,
-      "staked": 2.0,
+      "staked": 3.0,
       "returned": 0.0,
-      "profit": -2.0,
+      "profit": -3.0,
       "roi": -1.0,
-      "avg_edge": 0.096,
+      "avg_edge": 0.117,
       "stake_unit": 1.0
     },
     "bets": [
+      {
+        "match": "Switzerland v Algeria",
+        "round": "Round of 32",
+        "side": "Algeria",
+        "model": 0.377,
+        "market": 0.216,
+        "edge": 0.161,
+        "won": false,
+        "stake": 1.0,
+        "payout": 0.0,
+        "profit": -1.0,
+        "priced_at": "2026-07-02 22:15 UTC"
+      },
       {
         "match": "Mexico v Ecuador",
         "round": "Round of 32",

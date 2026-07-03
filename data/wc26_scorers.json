@@ -82,7 +82,9 @@
     1567306,
     1567307,
     1567308,
-    1567311
+    1567309,
+    1567311,
+    1567312
   ],
   "scorers": {
     "L. Messi": {
@@ -165,6 +167,11 @@
       "goals": 3,
       "assists_from": []
     },
+    "C. Ronaldo": {
+      "team": "Portugal",
+      "goals": 3,
+      "assists_from": []
+    },
     "Y. Ayari": {
       "team": "Sweden",
       "goals": 2,
@@ -202,11 +209,6 @@
     },
     "Maximiliano Araújo": {
       "team": "Uruguay",
-      "goals": 2,
-      "assists_from": []
-    },
-    "C. Ronaldo": {
-      "team": "Portugal",
       "goals": 2,
       "assists_from": []
     },
@@ -295,6 +297,11 @@
       "goals": 2,
       "assists_from": []
     },
+    "B. Embolo": {
+      "team": "Switzerland",
+      "goals": 2,
+      "assists_from": []
+    },
     "L. Krejci": {
       "team": "Czech Republic",
       "goals": 1,
@@ -327,11 +334,6 @@
     },
     "G. Reyna": {
       "team": "United States",
-      "goals": 1,
-      "assists_from": []
-    },
-    "B. Embolo": {
-      "team": "Switzerland",
       "goals": 1,
       "assists_from": []
     },
@@ -927,6 +929,21 @@
     },
     "P. Porro": {
       "team": "Spain",
+      "goals": 1,
+      "assists_from": []
+    },
+    "I. Perisic": {
+      "team": "Croatia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "G. Ramos": {
+      "team": "Portugal",
+      "goals": 1,
+      "assists_from": []
+    },
+    "D. Ndoye": {
+      "team": "Switzerland",
       "goals": 1,
       "assists_from": []
     }
