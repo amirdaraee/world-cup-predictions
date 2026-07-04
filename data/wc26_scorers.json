@@ -87,7 +87,8 @@
     1567309,
     1567310,
     1567311,
-    1567312
+    1567312,
+    1567824
   ],
   "scorers": {
     "L. Messi": {
@@ -307,6 +308,11 @@
     },
     "E. Ashour": {
       "team": "Egypt",
+      "goals": 2,
+      "assists_from": []
+    },
+    "A. Ounahi": {
+      "team": "Morocco",
       "goals": 2,
       "assists_from": []
     },
@@ -972,6 +978,11 @@
     },
     "J. Arias": {
       "team": "Colombia",
+      "goals": 1,
+      "assists_from": []
+    },
+    "S. Rahimi": {
+      "team": "Morocco",
       "goals": 1,
       "assists_from": []
     }

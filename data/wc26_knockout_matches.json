@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04 10:09 UTC",
+  "updated": "2026-07-04 19:26 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -217,9 +217,9 @@
       "away": "Morocco",
       "venue": "NRG Stadium",
       "city": "Houston",
-      "status": "Not Started",
-      "score": null,
-      "score_90": null,
+      "status": "Match Finished",
+      "score": "0-3",
+      "score_90": "0-3",
       "penalties": null
     },
     {
