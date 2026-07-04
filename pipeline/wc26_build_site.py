@@ -1702,32 +1702,16 @@ def knockout_scorecard():
     n = len(graded)
     hits = sum(g["hit"] for g in graded)
     mll = sum(g["ll"] for g in graded) / n
-    rows = ""
-    for g in graded:
-        m = g["m"]
-        mark = '<i class="f W">✓</i>' if g["hit"] else '<i class="f L">✗</i>'
-        pens = "-" in str(m.get("penalties") or "")
-        rows += (f'<tr><td>{ROUND_SHORT.get(m["round"], m["round"])}</td>'
-                 f'<td>{escape(m["home"])} <em>v</em> {escape(m["away"])}</td>'
-                 f'<td><b>{escape(g["pick"])}</b></td>'
-                 f'<td class="num">{g["conf"] * 100:.0f}%</td>'
-                 f'<td class="num score">{escape(m["score"])}{" (p)" if pens else ""}</td>'
-                 f'<td>{mark}</td></tr>')
     stats = (f'<div><dt>Ties graded</dt><dd>{n}</dd></div>'
              f'<div><dt>Advancer called</dt><dd>{hits} ({hits / n * 100:.0f}%)</dd></div>'
              f'<div><dt>Model log-loss</dt><dd>{mll:.3f}</dd></div>')
-    return f"""<h2>Knockout stage — the live model, graded as ties finish</h2>
-<p class="fineprint">This is the part that still moves: the model's read on each
-<em>actual</em> knockout tie — who goes through, a level tie settled on penalties —
-graded against the result, growing with every round through the final. (The locked
-pre-tournament bracket predicted different matchups, so it can't be graded here; this is
-the live forward call. Between rounds nothing new grades — the next rows appear when
-the next tie finishes.)</p>
+    return f"""<h2>Knockout ties — who goes through</h2>
 <dl class="stats">{stats}</dl>
-<table class="ko"><thead><tr><th>R</th><th>Tie</th><th>Model pick</th>
-<th class="num" title="the model's go-through probability for its pick">Conf.</th>
-<th class="num">Result</th><th></th></tr></thead>
-<tbody>{rows}</tbody></table>"""
+<p class="fineprint">The 1X2 numbers above grade the 90-minute result, but a
+knockout tie asks a second question — who advances, with a level tie settled on
+penalties — and this strip grades the model's answer (win plus half the draw
+probability, a shoot-out treated as a coin flip). It grows with every round
+through the final.</p>"""
 
 
 # ---------- accuracy report page ----------
@@ -1817,31 +1801,6 @@ our advance pick then won the shoot-out (that call is graded in the knockout
 section above). "Results called" is honest and therefore harsh on draw-heavy
 rounds; the log-loss column is the fair judge.</p>"""
 
-    # the full results list — every graded match of the tournament
-    all_rows = ""
-    for p in sorted(graded, key=lambda r: r["date_utc"], reverse=True):
-        stage = (p["stage"] if p.get("ko")
-                 else f"MD{md_of.get(p['match_id'], '?')}")
-        pick_lbl = {"H": p["home"], "D": "Draw",
-                    "A": p["away"]}[p["pred_result"]]
-        mark = ('<i class="f W">✓</i>' if p.get("hit")
-                else '<i class="f L">✗</i>')
-        pens = " (p)" if p.get("pens") else ""
-        all_rows += (f'<tr><td>{escape(str(stage))}</td>'
-                     f'<td>{escape(p["home"])} <em>v</em> {escape(p["away"])}</td>'
-                     f'<td><b>{escape(pick_lbl)}</b></td>'
-                     f'<td class="num">{p["p"][p["pred_result"]] * 100:.0f}%</td>'
-                     f'<td class="num score">{escape(p["actual_score"])}{pens}</td>'
-                     f'<td>{mark}</td></tr>')
-    full_html = f"""<h2>Every match, graded</h2>
-<p class="fineprint">The complete results list — all {len(graded)} graded matches
-of the tournament, newest first. The pick is the blend's most-likely 1X2 outcome;
-knockout scores are the 90-minute result, and <b>(p)</b> marks a tie decided on
-penalties, which grades as a Draw here (the advance call is graded in the
-knockout section above).</p>
-<table class="ko"><thead><tr><th>Stage</th><th>Match</th><th>Pick</th>
-<th class="num" title="the blend's probability on its pick">Conf.</th>
-<th class="num">Result</th><th></th></tr></thead><tbody>{all_rows}</tbody></table>"""
 
     # sharpest / roughest calls vs the market
     scored = []
@@ -1929,7 +1888,6 @@ book. Who goes <em>through</em> each tie is a separate call, graded next.</p>
 {comp}
 {trend_chart(graded)}
 {md_html}
-{full_html}
 {goals_html}
 {calls}
 {cal}
