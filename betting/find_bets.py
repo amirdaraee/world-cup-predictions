@@ -537,7 +537,9 @@ def build_plan(cands, cfg):
     # correlated bets on the same match are one big bet in disguise
     cap = cfg.get("max_per_match_usdc")
     if cap:
-        spent, kept = {}, []
+        # seed with what the LEDGER already holds per match — otherwise the
+        # plan sizes bets that place_bets is guaranteed to skip at the cap
+        spent, kept = dict(cfg.get("ledger_match_spent") or {}), []
         for c in cands:   # edge-descending: best expression of the
             mid = c.get("match_id") or c["bet"]   # opinion keeps its size
             room = cap - spent.get(mid, 0.0)
@@ -564,7 +566,7 @@ def build_plan(cands, cfg):
     # is reached we say so out loud instead of pretending.
     if cfg.get("deploy_full_budget") and cands:
         per_bet = cfg["max_per_bet_usdc"]
-        spent_m = {}
+        spent_m = dict(cfg.get("ledger_match_spent") or {})
         for c in cands:
             mid = c.get("match_id") or c["bet"]
             spent_m[mid] = spent_m.get(mid, 0.0) + c["stake_usdc"]
@@ -689,9 +691,16 @@ def main():
     # a plan that mostly can't execute
     try:
         ledger = json.load(open(f"{HERE}/state/ledger.json"))
-        spent = sum(b["stake_usdc"] for b in ledger["placed"])
     except FileNotFoundError:
-        spent = 0.0
+        ledger = {"placed": []}
+    spent = sum(b["stake_usdc"] for b in ledger["placed"])
+    # per-match exposure already held — build_plan must size around it,
+    # not plan bets that place_bets will refuse at the cap
+    ledger_match_spent = {}
+    for b in ledger["placed"]:
+        if b.get("match_id"):
+            ledger_match_spent[b["match_id"]] = \
+                ledger_match_spent.get(b["match_id"], 0.0) + b["stake_usdc"]
     remaining = max(CFG["max_total_stake_usdc"] - spent, 0.0)
     if spent:
         print(f"\nledger holds ${spent:.2f} of the "
@@ -702,7 +711,8 @@ def main():
               "max_total_stake_usdc in config.local.json to bet more")
         cands = []
     cands, total = build_plan(cands, {**CFG,
-                                      "max_total_stake_usdc": remaining})
+                                      "max_total_stake_usdc": remaining,
+                                      "ledger_match_spent": ledger_match_spent})
     try:
         elo = json.load(open(f"{DATA}/wc26_elo.json"))["matches"]
     except FileNotFoundError:

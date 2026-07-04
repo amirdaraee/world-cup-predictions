@@ -236,6 +236,18 @@ class TestFullBudget(unittest.TestCase):
                               dict(self.CFG, deploy_full_budget=False))
         self.assertLess(total, 10.0)              # pure Kelly, no fill
 
+    def test_ledger_exposure_counts_against_the_match_cap(self):
+        """A match the ledger already holds $8 on gets NO new plan stake —
+        and the budget flows to positions that can actually place."""
+        cands = [cand("btts", 0.20, match_id="held"),
+                 cand("golden_boot", 0.05)]
+        cfg = dict(self.CFG, max_per_match_usdc=8.0,
+                   ledger_match_spent={"held": 8.0})
+        plan, total = build_plan(cands, cfg)
+        self.assertEqual([c["match_id"] for c in plan
+                          if c["category"] == "btts"], [])
+        self.assertAlmostEqual(total, 10.0, delta=0.01)  # award took the fill
+
 
 class TestExactScoreScanner(unittest.TestCase):
     def test_parse_home_first(self):

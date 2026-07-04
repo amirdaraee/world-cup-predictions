@@ -295,8 +295,9 @@ def main():
                 # price — the edge was already re-verified against the live
                 # ask above, only depth is short. Halve and retry down to
                 # min_stake instead of walking away with nothing.
-                if "fully filled" in str(e) and stake / 2 >= min_stake:
-                    stake = round(stake / 2, 2)
+                next_stake = max(min_stake, round(stake / 2, 2))
+                if "fully filled" in str(e) and next_stake < stake:
+                    stake = next_stake
                     print(f"  book too thin for full size — "
                           f"retrying at ${stake:.2f}")
                     time.sleep(1)
