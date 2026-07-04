@@ -19,6 +19,8 @@ on:
 
 permissions:
   contents: write          # push the rebuilt docs + data to main
+  actions: write           # rerun the managed Pages deploy when it flakes
+  pages: write             # fallback: request a fresh Pages build via the API
 
 concurrency:
   group: matchday
@@ -84,3 +86,39 @@ jobs:
           else
             echo "no changes to publish"
           fi
+
+      # The managed "pages build and deployment" workflow that our push
+      # triggers has been flaking server-side ("Deployment failed, try again
+      # later" during syncing_files — 3 of 4 deploys on 2/3 July) and a plain
+      # rerun always fixed it. Watch the deploy for HEAD and rerun it up to
+      # twice; also covers the no-push case (HEAD is the previous publish —
+      # if ITS deploy flaked, this heals the stale site). Fails the run only
+      # if the site is genuinely undeployable, so we notice.
+      - name: pages deploy self-heal (rerun GitHub-side sync flakes)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          sha=$(git rev-parse HEAD)
+          api="repos/${GITHUB_REPOSITORY}/actions/runs"
+          reruns=0
+          for i in $(seq 1 90); do          # ~15 min ceiling
+            run=$(gh api "$api?head_sha=$sha&per_page=20" --jq \
+              '[.workflow_runs[] | select(.name == "pages build and deployment")] | first // empty')
+            if [ -z "$run" ]; then
+              if [ "$i" -ge 12 ]; then echo "no Pages run for $sha — nothing to heal"; exit 0; fi
+              sleep 10; continue
+            fi
+            status=$(jq -r .status <<<"$run")
+            if [ "$status" != "completed" ]; then sleep 10; continue; fi
+            conclusion=$(jq -r .conclusion <<<"$run")
+            if [ "$conclusion" = "success" ]; then echo "Pages deploy OK ($sha)"; exit 0; fi
+            if [ "$reruns" -ge 2 ]; then
+              echo "::error::Pages deploy still $conclusion after $reruns reruns"; exit 1
+            fi
+            reruns=$((reruns+1))
+            echo "Pages deploy $conclusion — rerun attempt $reruns"
+            gh api -X POST "$api/$(jq -r .id <<<"$run")/rerun-failed-jobs" \
+              || gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds"
+            sleep 20
+          done
+          echo "::error::timed out waiting for the Pages deploy"; exit 1
