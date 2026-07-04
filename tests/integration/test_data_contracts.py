@@ -131,8 +131,7 @@ class TestTotalsLockedContract(unittest.TestCase):
         "totals not locked yet")
     def test_forward_locked_totals_are_pre_kickoff_and_coherent(self):
         store = load("wc26_totals_locked.json")
-        fids = {str(m["match_id"]) for m in
-                load("fifa_world_cup_2026_group_matches.json")["matches"]}
+        fids = known_fixture_ids()   # locks cover group + confirmed knockout
         for mid, rec in store["matches"].items():
             self.assertIn(mid, fids, mid)
             self.assertTrue(0 < rec["over_model"] < 1, mid)

@@ -178,6 +178,11 @@ def main():
             "status": f["fixture"]["status"]["long"],
             "score": (f"{f['goals']['home']}-{f['goals']['away']}"
                       if played else None),
+            # 'goals' includes extra time; markets (O/U, moneyline) settle on
+            # the 90-minute score, which the API keeps in score.fulltime
+            "score_90": (f"{f['score']['fulltime']['home']}-{f['score']['fulltime']['away']}"
+                         if played and f["score"]["fulltime"]["home"] is not None
+                         else None),
             "penalties": (f"{f['score']['penalty']['home']}-{f['score']['penalty']['away']}"
                           if played and f["score"]["penalty"]["home"] is not None
                           else None),

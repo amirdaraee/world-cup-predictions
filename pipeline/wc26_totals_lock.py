@@ -1,8 +1,10 @@
-"""Forward-lock model over/under (totals) probabilities for UNPLAYED group
-matches, so the report card can grade CALIBRATED totals this tournament —
+"""Forward-lock model over/under (totals) probabilities for UNPLAYED
+fixtures — group matches and, once their teams are confirmed, knockout
+ties — so the report card can grade CALIBRATED totals this tournament;
 the pre-tournament bracket was locked without them. Write-once per match,
 and only while the match is still in the future, so every entry is a
 genuine pre-kickoff prediction graded going forward as results land.
+(Knockout totals grade on the 90-minute score, matching market settlement.)
 
   python3 pipeline/wc26_totals_lock.py     # lock any newly-lockable fixtures
 
@@ -46,11 +48,16 @@ def lock(now=None):
     fixtures = json.load(
         open(f"{DATA}/fifa_world_cup_2026_group_matches.json"))["matches"]
     try:
+        fixtures = fixtures + json.load(
+            open(f"{DATA}/wc26_knockout_matches.json"))["matches"]
+    except FileNotFoundError:
+        pass                       # bracket not known yet — group only
+    try:
         store = json.load(open(OUT))
     except FileNotFoundError:
         store = {"locked_from": now_utc(), "line": LINE,
                  "note": "model over/under locked pre-kickoff for unplayed "
-                         "group matches; graded going forward",
+                         "fixtures (group + knockout); graded going forward",
                  "matches": {}}
     now = now or datetime.now(timezone.utc)
     added = 0

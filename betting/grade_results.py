@@ -40,9 +40,11 @@ def load_truth():
     by_pair, by_id = {}, {}
     for m in gm + ko:
         fin = str(m.get("status", "")).startswith("Match Finished") and m.get("score")
+        # markets settle on the 90-minute score; KO 'score' includes extra
+        # time, so prefer score_90 when the results updater has recorded it
         rec = {"home": m["home"], "away": m["away"],
-               "score": m.get("score"), "finished": bool(fin),
-               "pens": m.get("penalties")}
+               "score": m.get("score_90") or m.get("score"),
+               "finished": bool(fin), "pens": m.get("penalties")}
         by_pair[frozenset((m["home"], m["away"]))] = rec
         if m.get("match_id"):
             by_id[str(m["match_id"])] = rec

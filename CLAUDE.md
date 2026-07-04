@@ -73,7 +73,8 @@ python3 -m http.server 8742 --directory docs  # browse
   total-corners NegBin (intercept-only: the xG slope failed LOTO validation)
 - `wc26_tournament.json` — per-team futures probabilities (win group → champion)
 - `wc26_totals_locked.json` — forward-locked O/U 2.5 (model/market/blend)
-  for UNPLAYED group matches, write-once + pre-kickoff only (no look-ahead);
+  for UNPLAYED fixtures (group + confirmed knockout ties; KO graded on the
+  90-minute `score_90`), write-once + pre-kickoff only (no look-ahead);
   the report card's calibrated Totals scorecard grades these going forward.
   Kept separate from the locked bracket on purpose (totals weren't in the
   pre-tournament lock). `pipeline/wc26_totals_lock.py` writes it nightly;
