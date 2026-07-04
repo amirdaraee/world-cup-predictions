@@ -80,10 +80,12 @@
     1565176,
     1565177,
     1565178,
+    1565179,
     1567306,
     1567307,
     1567308,
     1567309,
+    1567310,
     1567311,
     1567312
   ],
@@ -945,6 +947,31 @@
     },
     "D. Ndoye": {
       "team": "Switzerland",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Lionel Messi": {
+      "team": "Argentina",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Deroy Duarte": {
+      "team": "Cape Verde",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Lisandro Martínez": {
+      "team": "Argentina",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Sidny Lopes Cabral": {
+      "team": "Cape Verde",
+      "goals": 1,
+      "assists_from": []
+    },
+    "J. Arias": {
+      "team": "Colombia",
       "goals": 1,
       "assists_from": []
     }

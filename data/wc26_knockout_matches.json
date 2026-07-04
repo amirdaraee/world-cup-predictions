@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03 22:10 UTC",
+  "updated": "2026-07-04 07:46 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -177,8 +177,8 @@
       "away": "Cape Verde",
       "venue": "Hard Rock Stadium",
       "city": "Miami",
-      "status": "First Half",
-      "score": null,
+      "status": "Match Finished",
+      "score": "3-2",
       "penalties": null
     },
     {
@@ -189,8 +189,8 @@
       "away": "Ghana",
       "venue": "Arrowhead Stadium",
       "city": "Kansas City",
-      "status": "Not Started",
-      "score": null,
+      "status": "Match Finished",
+      "score": "1-0",
       "penalties": null
     },
     {
@@ -260,6 +260,30 @@
       "home": "United States",
       "away": "Belgium",
       "venue": "Lumen Field",
+      "city": null,
+      "status": "Not Started",
+      "score": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1576804,
+      "round": "Round of 16",
+      "date_utc": "2026-07-07T16:00:00+00:00",
+      "home": "Argentina",
+      "away": "Egypt",
+      "venue": null,
+      "city": null,
+      "status": "Not Started",
+      "score": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1576805,
+      "round": "Round of 16",
+      "date_utc": "2026-07-07T20:00:00+00:00",
+      "home": "Switzerland",
+      "away": "Colombia",
+      "venue": null,
       "city": null,
       "status": "Not Started",
       "score": null,
