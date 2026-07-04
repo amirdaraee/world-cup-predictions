@@ -44,7 +44,7 @@ class TestGoalsGrade(unittest.TestCase):
 
     def test_section_renders_and_caveats(self):
         html = b.goals_section(self.PICKS)
-        self.assertIn("<h2>Goals</h2>", html)
+        self.assertIn("<h2>Goals — group stage, final</h2>", html)
         self.assertIn("Goals/game actual", html)
         self.assertIn("most-likely", html)   # the honesty caveat is present
         self.assertEqual(b.goals_section([]), "")
@@ -91,7 +91,8 @@ class TestTotalsGrade(unittest.TestCase):
             html = b.totals_section([{"match_id": 1, "actual_score": "3-1"}])
             self.assertIn("Totals (Over/Under 2.5)", html)
             self.assertIn("Model", html)
-            self.assertIn("pre-kickoff from 2026-06-14", html)
+            self.assertIn("pre-kickoff", html)
+            self.assertIn("2026-06-14", html)   # the group lock start date
         finally:
             b.TOTALS_LOCKED = saved
 
@@ -271,7 +272,8 @@ class TestBuiltSite(unittest.TestCase):
             b.build_report()
             html = (Path(b.OUT) / "report.html").read_text()
             for needle in ("Who forecasts best", "Matchday by matchday",
-                           "Sharpest calls", "Calibration so far"):
+                           "Sharpest calls", "Calibration",
+                           "Group matches graded"):
                 self.assertIn(needle, html)
             # reframed headline leads with model log-loss vs the market,
             # not raw hit-rate (model 0.92 vs market 0.89 -> behind by 0.030)

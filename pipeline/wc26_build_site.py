@@ -1078,7 +1078,8 @@ def trend_chart():
     s += (f'<text x="{L}" y="{H_-10}" font-size="10" fill="var(--ink-soft, #6b6353)" {font}>'
           f'{graded[0]["date_utc"][:10]} → {graded[-1]["date_utc"][:10]}</text>')
     return f'<figure>{s}</svg><figcaption>The whole experiment in one line: ' \
-           f'whichever curve is lowest is winning the forecasting contest.</figcaption></figure>'
+           f'whichever curve is lowest won the group-stage forecasting contest ' \
+           f'(final — the knockout scorecard above carries the story on).</figcaption></figure>'
 
 
 # ---------- method-page evolution chart ----------
@@ -1202,7 +1203,9 @@ def accuracy_headline(acc):
     stretches (a draw is rarely any single match's likeliest result) even
     when the probabilities are sound. The honest benchmark is the market —
     if we're level with or ahead of it, the model is doing its job whatever
-    the hit-rate reads. Returns the inner HTML of <dl class="stats">."""
+    the hit-rate reads. Scope is the LOCKED pre-tournament picks, i.e. the
+    72 group fixtures only — knockout ties are graded separately (live).
+    Returns the inner HTML of <dl class="stats">."""
     cmp = acc.get("compare") or {}
     model_ll = (cmp.get("model") or {}).get("logloss")
     market_ll = (cmp.get("market") or {}).get("logloss")
@@ -1213,8 +1216,11 @@ def accuracy_headline(acc):
     else:
         vs = "—"
     pct = (acc.get("result_pct") or 0) * 100
+    n, total = acc.get("graded_group_matches", 0), len(MATCHES)
+    graded_lbl = (f"{n}/{total} — complete" if total and n >= total
+                  else f"{n}/{total}" if total else n)
     items = (
-        ("Matches graded", acc.get("graded_group_matches", 0)),
+        ("Group matches graded", graded_lbl),
         ("Model log-loss", model_ll if model_ll is not None else "—"),
         ("vs the market", vs),
         ("Results called", f"{acc.get('result_hits', 0)} ({pct:.0f}%)"),
@@ -1614,11 +1620,12 @@ def knockout_scorecard():
              f'<div><dt>Advancer called</dt><dd>{hits} ({hits / n * 100:.0f}%)</dd></div>'
              f'<div><dt>Model log-loss</dt><dd>{mll:.3f}</dd></div>')
     return f"""<h2>Knockout stage — the live model, graded as ties finish</h2>
-<p class="fineprint">The group-stage card above is complete and frozen. This grades
-the model's read on each <em>actual</em> knockout tie — who goes through, a level tie
-settled on penalties — against the result, and grows with every round. (The locked
+<p class="fineprint">This is the part that still moves: the model's read on each
+<em>actual</em> knockout tie — who goes through, a level tie settled on penalties —
+graded against the result, growing with every round through the final. (The locked
 pre-tournament bracket predicted different matchups, so it can't be graded here; this is
-the live forward call.)</p>
+the live forward call. Between rounds nothing new grades — the next rows appear when
+the next tie finishes.)</p>
 <dl class="stats">{stats}</dl>
 <table class="ko"><thead><tr><th>R</th><th>Tie</th><th>Model pick</th>
 <th class="num" title="the model's go-through probability for its pick">Conf.</th>
@@ -1659,14 +1666,14 @@ matchday-by-matchday breakdown. The locked picks themselves are on the
             f'<tr><td>{srcn.title()}</td><td class="num">{v["brier"]}</td>'
             f'<td class="num">{v["logloss"]}</td></tr>'
             for srcn, v in acc["compare"].items())
-        comp = f"""<h2>Who forecasts best so far</h2>
+        comp = f"""<h2>Who forecasts best — the group stage, final</h2>
 <table class="ko"><thead><tr><th>Source</th>
 <th class="num" title="mean squared error - guessing equally scores 0.667">Brier</th>
 <th class="num" title="penalises confident errors - guessing equally scores 1.099">Log-loss</th></tr></thead>
 <tbody>{rows}</tbody></table>
 <p class="fineprint">Market graded on its {acc.get("market_priced_matches", 0)} priced
-matches. Lower is better; the gap between these rows is this whole project's thesis
-being settled in public. The market is the benchmark that matters — when the
+matches. Lower is better; the gap between these rows is this whole project's thesis,
+settled in public. The market is the benchmark that matters — when the
 model is level with or below the market's log-loss, it is forecasting well even
 if the raw "results called" number looks poor, because the same matches that
 beat the model (an unusually draw-heavy run) beat the market too.</p>"""
@@ -1686,7 +1693,7 @@ beat the model (an unusually draw-heavy run) beat the market too.</p>"""
         md_rows += (f'<tr><td>Matchday {md}</td><td class="num">{len(ps)}</td>'
                     f'<td class="num">{hits}/{len(ps)}</td>'
                     f'<td class="num">{ex}</td><td class="num">{ll:.3f}</td></tr>')
-    md_html = f"""<h2>Matchday by matchday</h2>
+    md_html = f"""<h2>Matchday by matchday — group stage, final</h2>
 <table class="ko"><thead><tr><th>Stage</th><th class="num">Played</th>
 <th class="num">Results called</th><th class="num">Exact scores</th>
 <th class="num">Log-loss (blend)</th></tr></thead><tbody>{md_rows}</tbody></table>"""
@@ -1715,12 +1722,12 @@ beat the model (an unusually draw-heavy run) beat the market too.</p>"""
 
     calls = ""
     if scored:
-        calls = f"""<h2>Sharpest calls (model saw it, market didn't)</h2>
+        calls = f"""<h2>Sharpest calls of the group stage (model saw it, market didn't)</h2>
 <table class="ko"><thead><tr><th>Match</th><th>Outcome</th>
 <th class="num">Model gave it</th><th class="num">Market gave it</th>
 <th class="num">Edge realised</th></tr></thead>
 <tbody>{call_rows(scored[:5])}</tbody></table>
-<h2>Roughest calls (market saw it, model didn't)</h2>
+<h2>Roughest calls of the group stage (market saw it, model didn't)</h2>
 <table class="ko"><thead><tr><th>Match</th><th>Outcome</th>
 <th class="num">Model gave it</th><th class="num">Market gave it</th>
 <th class="num">Edge realised</th></tr></thead>
@@ -1741,21 +1748,22 @@ beat the model (an unusually draw-heavy run) beat the market too.</p>"""
                      f'<td class="num">{len(qs)}</td>'
                      f'<td class="num">{sum(q for q, _ in qs) / len(qs) * 100:.0f}%</td>'
                      f'<td class="num">{sum(h for _, h in qs) / len(qs) * 100:.0f}%</td></tr>')
-    cal = f"""<h2>Calibration so far</h2>
+    cal = f"""<h2>Calibration — the locked group-stage picks, final</h2>
 <table class="ko"><thead><tr><th>Claimed probability</th><th class="num">Claims</th>
 <th class="num">Average claim</th><th class="num">Actually happened</th></tr></thead>
 <tbody>{cal_rows}</tbody></table>
-<p class="fineprint">A calibrated forecaster's last two columns match. The full
-group stage (72 matches) is now graded, so these buckets carry real signal —
-read them as the model's honest track record, not a small-sample teaser. The
-knockout rounds add fewer matches, so expect the later buckets to settle
-slowly.</p>"""
+<p class="fineprint">A calibrated forecaster's last two columns match. All 72
+group matches are graded, so these buckets carry real signal — read them as the
+locked model's honest track record, now final. Knockout ties grade a different
+claim (who advances) and live in the knockout section above; they are not pooled
+here.</p>"""
 
     goals_html = goals_section(graded) + totals_section(graded)
 
     body = f"""<h1>The report card</h1>
-<p class="standfirst">Locked predictions, graded after every matchday. Re-generated
-automatically by the nightly run; previous editions live in the
+<p class="standfirst">The locked predictions, graded in public. The group-stage
+card is complete and frozen; the knockout scorecard grows as ties finish.
+Re-generated automatically by the nightly run; previous editions live in the
 <a href="archive.html">versions archive</a>.</p>
 <p class="fineprint">How to read this: a probability model lives or dies on its
 log-loss against the market, not on how often its single likeliest pick lands.
@@ -1765,8 +1773,12 @@ log-loss and how it sits versus the market. For a money view, see what
 flat-staking the model's market edges would have returned:
 <a href="follow-the-model.html">if you'd followed the model →</a></p>
 {head}
-{comp}
+<p class="fineprint">This headline grades the <b>locked pre-tournament picks</b>,
+which only ever covered the 72 group fixtures — knockout pairings weren't knowable
+when the bracket was locked, so 72 is this card's final size, not a stale count.
+The knockout rounds are graded live, just below.</p>
 {knockout_scorecard()}
+{comp}
 {trend_chart()}
 {md_html}
 {goals_html}
@@ -1862,6 +1874,17 @@ def totals_section(graded):
             actual[str(p["match_id"])] = int(h) + int(a)
         except (KeyError, ValueError):
             continue
+    # knockout actuals — O/U settles on the 90-minute score, so prefer
+    # score_90 (KO 'score' includes extra time)
+    for m in KOS:
+        if not (str(m.get("status", "")).startswith("Match Finished")
+                and m.get("score")):
+            continue
+        try:
+            h, a = (m.get("score_90") or m["score"]).split("-")
+            actual[str(m["match_id"])] = int(h) + int(a)
+        except ValueError:
+            continue
     g = totals_grade(locked, actual)
     if not g:
         return ""
@@ -1880,10 +1903,13 @@ def totals_section(graded):
 <th class="num" title="penalises confident errors">Log-loss</th></tr></thead>
 <tbody>{rows}</tbody></table>
 <p class="fineprint">A <em>calibrated</em> totals grade, unlike the modal-scoreline
-read above: the model's actual Over 2.5 probability scored against reality. These
-lines were locked <b>pre-kickoff from {escape(TOTALS_LOCKED.get("locked_from", "?"))}</b>
-(the pre-tournament bracket didn't store totals), so they grade only matches that
-kicked off after that — no look-ahead. Lower Brier/log-loss is better.</p>"""
+read above: the model's actual Over 2.5 probability scored against reality. Every
+line is locked <b>pre-kickoff</b> (group matches from
+{escape(TOTALS_LOCKED.get("locked_from", "?"))}, and now each knockout tie once its
+teams are known — the pre-tournament bracket didn't store totals), so only genuine
+forward predictions are graded, no look-ahead. Knockout matches grade on the
+90-minute score, the same basis the market settles on. This card keeps growing
+through the final. Lower Brier/log-loss is better.</p>"""
 
 
 def goals_section(graded):
@@ -1899,7 +1925,7 @@ def goals_section(graded):
             ("O/U 2.5 direction", f"{g['ou_hit']}/{g['ou_n']} "
              f"({g['ou_hit'] / g['ou_n'] * 100:.0f}%)"),
         ))
-    return f"""<h2>Goals</h2>
+    return f"""<h2>Goals — group stage, final</h2>
 <dl class="stats">{st}</dl>
 <p class="fineprint">"Predicted" is the total of each match's locked most-likely
 scoreline - a deliberately conservative point estimate, since the single most-likely
