@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04 08:04 UTC",
+  "updated": "2026-07-04 10:09 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -11,6 +11,7 @@
       "city": "Inglewood",
       "status": "Match Finished",
       "score": "0-1",
+      "score_90": "0-1",
       "penalties": null
     },
     {
@@ -23,6 +24,7 @@
       "city": "Houston",
       "status": "Match Finished",
       "score": "2-1",
+      "score_90": "2-1",
       "penalties": null
     },
     {
@@ -35,6 +37,7 @@
       "city": "Boston",
       "status": "Match Finished",
       "score": "1-1",
+      "score_90": "1-1",
       "penalties": "3-4"
     },
     {
@@ -47,6 +50,7 @@
       "city": "Monterrey",
       "status": "Match Finished",
       "score": "1-1",
+      "score_90": "1-1",
       "penalties": "2-3"
     },
     {
@@ -59,6 +63,7 @@
       "city": "Dallas",
       "status": "Match Finished",
       "score": "1-2",
+      "score_90": "1-2",
       "penalties": null
     },
     {
@@ -71,6 +76,7 @@
       "city": "New-York",
       "status": "Match Finished",
       "score": "3-0",
+      "score_90": "3-0",
       "penalties": null
     },
     {
@@ -83,6 +89,7 @@
       "city": "Mexico City",
       "status": "Match Finished",
       "score": "2-0",
+      "score_90": "2-0",
       "penalties": null
     },
     {
@@ -95,6 +102,7 @@
       "city": "Atlanta",
       "status": "Match Finished",
       "score": "2-1",
+      "score_90": "2-1",
       "penalties": null
     },
     {
@@ -107,6 +115,7 @@
       "city": "Seattle",
       "status": "Match Finished",
       "score": "3-2",
+      "score_90": "2-2",
       "penalties": null
     },
     {
@@ -119,6 +128,7 @@
       "city": "San-Francisco",
       "status": "Match Finished",
       "score": "2-0",
+      "score_90": "2-0",
       "penalties": null
     },
     {
@@ -131,6 +141,7 @@
       "city": "Inglewood",
       "status": "Match Finished",
       "score": "3-0",
+      "score_90": "3-0",
       "penalties": null
     },
     {
@@ -143,6 +154,7 @@
       "city": "Toronto",
       "status": "Match Finished",
       "score": "2-1",
+      "score_90": "2-1",
       "penalties": null
     },
     {
@@ -155,6 +167,7 @@
       "city": "Vancouver",
       "status": "Match Finished",
       "score": "2-0",
+      "score_90": "2-0",
       "penalties": null
     },
     {
@@ -167,6 +180,7 @@
       "city": "Dallas",
       "status": "Match Finished",
       "score": "1-1",
+      "score_90": "1-1",
       "penalties": "2-4"
     },
     {
@@ -179,6 +193,7 @@
       "city": "Miami",
       "status": "Match Finished",
       "score": "3-2",
+      "score_90": "1-1",
       "penalties": null
     },
     {
@@ -191,6 +206,7 @@
       "city": "Kansas City",
       "status": "Match Finished",
       "score": "1-0",
+      "score_90": "1-0",
       "penalties": null
     },
     {
@@ -203,6 +219,7 @@
       "city": "Houston",
       "status": "Not Started",
       "score": null,
+      "score_90": null,
       "penalties": null
     },
     {
@@ -215,6 +232,7 @@
       "city": "Philadelphia",
       "status": "Not Started",
       "score": null,
+      "score_90": null,
       "penalties": null
     },
     {
@@ -227,6 +245,7 @@
       "city": null,
       "status": "Not Started",
       "score": null,
+      "score_90": null,
       "penalties": null
     },
     {
@@ -239,6 +258,7 @@
       "city": "Mexico City",
       "status": "Not Started",
       "score": null,
+      "score_90": null,
       "penalties": null
     },
     {
@@ -251,6 +271,7 @@
       "city": null,
       "status": "Not Started",
       "score": null,
+      "score_90": null,
       "penalties": null
     },
     {
@@ -263,6 +284,7 @@
       "city": null,
       "status": "Not Started",
       "score": null,
+      "score_90": null,
       "penalties": null
     },
     {
@@ -275,6 +297,7 @@
       "city": null,
       "status": "Not Started",
       "score": null,
+      "score_90": null,
       "penalties": null
     },
     {
@@ -287,6 +310,7 @@
       "city": null,
       "status": "Not Started",
       "score": null,
+      "score_90": null,
       "penalties": null
     }
   ]
