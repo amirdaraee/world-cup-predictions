@@ -1239,7 +1239,6 @@ def accuracy_headline(graded):
     n = len(graded)
     if not n:
         return ""
-    ko_n = sum(1 for p in graded if p.get("ko"))
     model_ll = sum(-math.log(max(p["p_model"][p["actual_result"]], 1e-9))
                    for p in graded) / n
     pool = pooled_scores(graded)
@@ -1250,10 +1249,8 @@ def accuracy_headline(graded):
     else:
         vs = "—"
     hits = sum(1 for p in graded if p.get("hit"))
-    graded_lbl = (f"{n} — {n - ko_n} group + {ko_n} knockout"
-                  if ko_n else f"{n}")
     items = (
-        ("Matches graded", graded_lbl),
+        ("Matches graded", n),
         ("Model log-loss", f"{model_ll:.4f}"),
         ("vs the market", vs),
         ("Results called", f"{hits} ({hits / n * 100:.0f}%)"),
@@ -1676,12 +1673,12 @@ def ko_graded_1x2():
     return out
 
 
-def knockout_scorecard():
+def ko_advance_graded():
     """Grade the LIVE model's read on each ACTUAL knockout tie as it finishes:
     who goes through (win + half the draw, a level tie ~coin-flipped on pens)
     vs the result. The locked pre-tournament bracket predicted different
-    matchups, so this is the live forward call — it keeps the report moving
-    through the knockout rounds. Empty until the first tie is decided."""
+    matchups, so this is the live forward call. Empty until the first tie
+    is decided."""
     import math
     finished = [m for m in KOS
                 if str(m.get("status", "")).startswith("Match Finished")
@@ -1697,6 +1694,12 @@ def knockout_scorecard():
         p_w = ph if w == m["home"] else pa
         graded.append({"m": m, "pick": pick, "conf": max(ph, pa), "winner": w,
                        "hit": pick == w, "ll": -math.log(max(p_w, 1e-9))})
+    return graded
+
+
+def knockout_scorecard():
+    """The advance-call scorecard strip (see ko_advance_graded)."""
+    graded = ko_advance_graded()
     if not graded:
         return ""
     n = len(graded)
@@ -1747,6 +1750,30 @@ matchday-by-matchday breakdown. The locked picks themselves are on the
 
     comp = ""
     pool = pooled_scores(graded)
+
+    # tl;dr — the whole card in one breath, computed from the same pool so
+    # it can never drift from the numbers below it
+    hits = sum(1 for p in graded if p.get("hit"))
+    bits = [f"the model has called {hits} of {len(graded)} results "
+            f"({hits / len(graded) * 100:.0f}%)"]
+    adv = ko_advance_graded()
+    if adv:
+        a_hits = sum(g["hit"] for g in adv)
+        bits.append(f"picked {a_hits} of {len(adv)} knockout advancers")
+    if pool:
+        d = pool["market"]["logloss"] - pool["model"]["logloss"]
+        if d > 0.0005:
+            bits.append(f"and is beating the betting market on forecast "
+                        f"quality (log-loss {pool['model']['logloss']:.2f} "
+                        f"vs {pool['market']['logloss']:.2f})")
+        elif d < -0.0005:
+            bits.append(f"and the betting market is still the sharper "
+                        f"forecaster (log-loss {pool['market']['logloss']:.2f} "
+                        f"vs the model's {pool['model']['logloss']:.2f})")
+        else:
+            bits.append("and is dead level with the betting market")
+    tldr = (f'<p class="tldr"><b>TL;DR</b> — {len(graded)} matches graded: '
+            f'{", ".join(bits)}.</p>')
     if pool:
         rows = "".join(
             f'<tr><td>{srcn.title()}</td>'
@@ -1865,6 +1892,7 @@ track record, still growing through the final.</p>"""
     goals_html = goals_section(graded) + totals_section(graded)
 
     body = f"""<h1>The report card</h1>
+{tldr}
 <p class="standfirst">Every prediction graded in public — the whole tournament in
 one pool, updated as each match finishes. Re-generated automatically by the
 nightly run; previous editions live in the
@@ -2848,6 +2876,8 @@ table.markets tr.subhead td {
 .masthead nav span { color: var(--rule); margin: 0 10px; }
 .crumb { max-width: 1080px; margin: 10px auto 0; padding: 0 24px; font-size: .78rem; color: var(--ink-soft); }
 .standfirst { color: var(--ink-soft); margin-top: 0; }
+.tldr { border: 1.5px solid var(--ink); border-left-width: 6px;
+        padding: .65em .9em; margin: .8em 0; }
 
 /* tables */
 table { width: 100%; border-collapse: collapse; font-size: .85rem; }
