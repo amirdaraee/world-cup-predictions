@@ -51,7 +51,7 @@ try {
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=202607042206">
+<link rel="stylesheet" href="style.css?v=202607042223">
 <script>
 (function() {
   var t = localStorage.getItem("theme");
@@ -78,6 +78,7 @@ function toggleTheme() {
 
 <main id="main">
 <h1>The report card</h1>
+<p class="tldr"><b>TL;DR</b> — 89 matches graded: the model has called 56 of 89 results (63%), picked 13 of 17 knockout advancers, and the betting market is still the sharper forecaster (log-loss 0.80 vs the model's 0.88).</p>
 <p class="standfirst">Every prediction graded in public — the whole tournament in
 one pool, updated as each match finishes. Re-generated automatically by the
 nightly run; previous editions live in the
@@ -89,7 +90,7 @@ match's most-likely score — so the headline below leads with the model's
 log-loss and how it sits versus the market. For a money view, see what
 flat-staking the model's market edges would have returned:
 <a href="follow-the-model.html">if you'd followed the model →</a></p>
-<dl class="stats"><div><dt>Matches graded</dt><dd>89 — 72 group + 17 knockout</dd></div><div><dt>Model log-loss</dt><dd>0.9017</dd></div><div><dt>vs the market</dt><dd>behind by 0.081</dd></div><div><dt>Results called</dt><dd>56 (63%)</dd></div></dl>
+<dl class="stats"><div><dt>Matches graded</dt><dd>89</dd></div><div><dt>Model log-loss</dt><dd>0.9017</dd></div><div><dt>vs the market</dt><dd>behind by 0.081</dd></div><div><dt>Results called</dt><dd>56 (63%)</dd></div></dl>
 <p class="fineprint">One pool, one basis: the 72 group matches grade the locked
 pre-tournament picks, and each finished knockout tie joins on the same 1X2 call —
 the 90-minute result, level after ninety counting as a Draw. Knockout model
@@ -174,7 +175,7 @@ predicted group tables and every match pick — live on the
 </main>
 <footer>
   <p>Form chips read most-recent first. Stats computed over each team's last 10 completed internationals.</p>
-  <p>Model run: 2026-07-04 22:06 UTC · Polymarket snapshot: 2026-07-04 22:05 UTC · every run archived in runs/</p>
+  <p>Model run: 2026-07-04 22:23 UTC · Polymarket snapshot: 2026-07-04 22:23 UTC · every run archived in runs/</p>
   <p>Data: API-Football · FIFA rankings 2026 · <a href="method.html">how this works</a> ·
   <a href="archive.html">previous versions</a> ·
   <a href="https://github.com/amirdaraee/world-cup-predictions">code on GitHub</a> ·

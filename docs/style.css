@@ -94,6 +94,8 @@ table.markets tr.subhead td {
 .masthead nav span { color: var(--rule); margin: 0 10px; }
 .crumb { max-width: 1080px; margin: 10px auto 0; padding: 0 24px; font-size: .78rem; color: var(--ink-soft); }
 .standfirst { color: var(--ink-soft); margin-top: 0; }
+.tldr { border: 1.5px solid var(--ink); border-left-width: 6px;
+        padding: .65em .9em; margin: .8em 0; }
 
 /* tables */
 table { width: 100%; border-collapse: collapse; font-size: .85rem; }

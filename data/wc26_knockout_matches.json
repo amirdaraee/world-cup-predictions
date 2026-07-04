@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04 22:04 UTC",
+  "updated": "2026-07-04 22:21 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -230,7 +230,7 @@
       "away": "France",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia",
-      "status": "Halftime",
+      "status": "Second Half",
       "score": null,
       "score_90": null,
       "penalties": null
