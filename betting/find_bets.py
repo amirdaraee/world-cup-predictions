@@ -604,6 +604,35 @@ def build_plan(cands, cfg):
                 moved += add
             if moved < 0.01:
                 break
+        # a residual too small to split makes sub-minimum stakes that
+        # place_bets refuses — pull them back and CONCENTRATE the pot into
+        # the best edges instead (a revived bet must clear min_stake whole)
+        min_s = cfg.get("min_stake_usdc", 1)
+        if any(c["stake_usdc"] < min_s for c in cands):
+            pot = 0.0
+            for c in cands:
+                if c["stake_usdc"] < min_s:
+                    mid = c.get("match_id") or c["bet"]
+                    spent_m[mid] = spent_m.get(mid, 0.0) - c["stake_usdc"]
+                    pot += c["stake_usdc"]
+                    c["stake_usdc"] = 0.0
+            for c in cands:                     # edge-sorted: best first
+                if pot < 0.01:
+                    break
+                if c.get("ko_draw_flagged"):
+                    continue
+                room = per_bet - c["stake_usdc"]
+                if cap and c["category"] not in award_cats \
+                        and c.get("match_id"):
+                    room = min(room, cap - spent_m.get(c["match_id"], 0.0))
+                add = round(min(room, pot), 2)
+                if add < 0.01 or (c["stake_usdc"] == 0 and add < min_s):
+                    continue
+                c["stake_usdc"] = round(c["stake_usdc"] + add, 2)
+                mid = c.get("match_id") or c["bet"]
+                spent_m[mid] = spent_m.get(mid, 0.0) + add
+                pot = round(pot - add, 2)
+            cands = [c for c in cands if c["stake_usdc"] >= min_s]
         planned = sum(c["stake_usdc"] for c in cands)
         if planned < bankroll - 0.01:
             print(f"full-budget: caps bind at ${planned:.2f} of the "

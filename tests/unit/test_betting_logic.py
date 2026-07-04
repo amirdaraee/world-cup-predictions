@@ -236,6 +236,16 @@ class TestFullBudget(unittest.TestCase):
                               dict(self.CFG, deploy_full_budget=False))
         self.assertLess(total, 10.0)              # pure Kelly, no fill
 
+    def test_small_residual_concentrates_not_sprays(self):
+        """$6 across two candidates would make two sub-minimum stakes —
+        it must land as ONE $6 bet on the best edge instead."""
+        cfg = dict(self.CFG, max_total_stake_usdc=6.0, min_stake_usdc=5.0)
+        plan, total = build_plan([cand("golden_boot", 0.16),
+                                  cand("golden_boot", 0.05)], cfg)
+        self.assertEqual(len(plan), 1)
+        self.assertAlmostEqual(plan[0]["edge"], 0.16)   # best edge won
+        self.assertAlmostEqual(total, 6.0, delta=0.01)
+
     def test_ledger_exposure_counts_against_the_match_cap(self):
         """A match the ledger already holds $8 on gets NO new plan stake —
         and the budget flows to positions that can actually place."""
