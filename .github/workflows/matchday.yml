@@ -82,6 +82,7 @@ jobs:
             git add -A -- ':!experiments'
             git commit -q -m "Matchday update $(date -u +%Y-%m-%d)"
             git push
+            echo "PUSH_TS=$(date -u +%s)" >> "$GITHUB_ENV"
             echo "published matchday update"
           else
             echo "no changes to publish"
@@ -90,35 +91,46 @@ jobs:
       # The managed "pages build and deployment" workflow that our push
       # triggers has been flaking server-side ("Deployment failed, try again
       # later" during syncing_files — 3 of 4 deploys on 2/3 July) and a plain
-      # rerun always fixed it. Watch the deploy for HEAD and rerun it up to
-      # twice; also covers the no-push case (HEAD is the previous publish —
-      # if ITS deploy flaked, this heals the stale site). Fails the run only
-      # if the site is genuinely undeployable, so we notice.
+      # rerun always fixed it. Watch the LATEST Pages run and rerun it up to
+      # twice on failure. We deliberately do NOT match by head_sha: the
+      # managed workflow records a stale sha for bot pushes (verified
+      # 2026-07-04 — it deployed our new commit while reporting the previous
+      # one). PUSH_TS (set only when we pushed) keeps us waiting for the run
+      # our push spawns instead of grading an older deploy; the no-push case
+      # grades the newest run as-is, healing a stale site left by an earlier
+      # flake. Fails the job only if the site is genuinely undeployable.
       - name: pages deploy self-heal (rerun GitHub-side sync flakes)
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          sha=$(git rev-parse HEAD)
-          api="repos/${GITHUB_REPOSITORY}/actions/runs"
+          api="repos/${GITHUB_REPOSITORY}"
           reruns=0
+          requested=
           for i in $(seq 1 90); do          # ~15 min ceiling
-            run=$(gh api "$api?head_sha=$sha&per_page=20" --jq \
+            run=$(gh api "$api/actions/runs?per_page=10" --jq \
               '[.workflow_runs[] | select(.name == "pages build and deployment")] | first // empty')
-            if [ -z "$run" ]; then
-              if [ "$i" -ge 12 ]; then echo "no Pages run for $sha — nothing to heal"; exit 0; fi
+            if [ -z "$run" ]; then sleep 10; continue; fi
+            created=$(date -ud "$(jq -r .created_at <<<"$run")" +%s)
+            if [ -n "${PUSH_TS:-}" ] && [ "$created" -lt $((PUSH_TS - 60)) ]; then
+              # the run our push should spawn is not visible yet
+              if [ "$i" -ge 18 ] && [ -z "$requested" ]; then
+                echo "no Pages run appeared for the push — requesting a build"
+                gh api -X POST "$api/pages/builds" >/dev/null || true
+                requested=1
+              fi
               sleep 10; continue
             fi
-            status=$(jq -r .status <<<"$run")
-            if [ "$status" != "completed" ]; then sleep 10; continue; fi
-            conclusion=$(jq -r .conclusion <<<"$run")
-            if [ "$conclusion" = "success" ]; then echo "Pages deploy OK ($sha)"; exit 0; fi
+            if [ "$(jq -r .status <<<"$run")" != "completed" ]; then sleep 10; continue; fi
+            if [ "$(jq -r .conclusion <<<"$run")" = "success" ]; then
+              echo "Pages deploy OK"; exit 0
+            fi
             if [ "$reruns" -ge 2 ]; then
-              echo "::error::Pages deploy still $conclusion after $reruns reruns"; exit 1
+              echo "::error::Pages deploy still failing after $reruns reruns"; exit 1
             fi
             reruns=$((reruns+1))
-            echo "Pages deploy $conclusion — rerun attempt $reruns"
-            gh api -X POST "$api/$(jq -r .id <<<"$run")/rerun-failed-jobs" \
-              || gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds"
+            echo "Pages deploy failed — rerun attempt $reruns"
+            gh api -X POST "$api/actions/runs/$(jq -r .id <<<"$run")/rerun-failed-jobs" >/dev/null \
+              || gh api -X POST "$api/pages/builds" >/dev/null || true
             sleep 20
           done
           echo "::error::timed out waiting for the Pages deploy"; exit 1
