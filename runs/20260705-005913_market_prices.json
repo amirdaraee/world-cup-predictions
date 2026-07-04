@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-07-04 23:13 UTC",
+  "fetched_at": "2026-07-04 22:59 UTC",
   "source": "Polymarket Gamma API",
   "prices": {
     "1489369": {
@@ -7973,63 +7973,63 @@
     },
     "1569870": {
       "moneyline": {
-        "home": 0.0005,
-        "draw": 0.0005,
-        "away": 0.9995
+        "home": 0.0015,
+        "draw": 0.055,
+        "away": 0.945
       },
       "slug": "fifwc-par-fra-2026-07-04",
-      "volume": 23178014,
-      "liquidity": 9688003,
+      "volume": 21067110,
+      "liquidity": 1357498,
       "exact_score_slug": "fifwc-par-fra-2026-07-04-exact-score",
       "exact_score": {
         "0-0": 0.0005,
-        "0-1": 0.9995,
+        "0-1": 0.66,
         "1-0": 0.0005,
-        "0-2": 0.0005,
-        "1-1": 0.0005,
+        "0-2": 0.24,
+        "1-1": 0.063,
         "2-0": 0.0005,
-        "0-3": 0.0005,
-        "1-2": 0.0005,
-        "2-1": 0.0005,
+        "0-3": 0.0155,
+        "1-2": 0.016,
+        "2-1": 0.0025,
         "3-0": 0.0005,
-        "1-3": 0.0005,
-        "2-2": 0.0005,
+        "1-3": 0.002,
+        "2-2": 0.001,
         "3-1": 0.0005,
         "2-3": 0.0005,
         "3-2": 0.0005,
         "3-3": 0.0005,
-        "other": 0.0005
+        "other": 0.0015
       },
       "more_markets_slug": "fifwc-par-fra-2026-07-04-more-markets",
       "totals": {
         "over_0.5": 0.9995,
-        "over_1.5": 0.0005,
-        "over_2.5": 0.0005,
-        "over_3.5": 0.0005,
-        "over_4.5": 0.0005,
+        "over_1.5": 0.325,
+        "over_2.5": 0.034,
+        "over_3.5": 0.0075,
+        "over_4.5": 0.002,
         "over_5.5": 0.0005,
         "over_6.5": 0.0005,
         "over_7.5": 0.0005,
         "over_8.5": 0.0005
       },
       "team_totals": {
-        "home_over_0.5": 0.0005,
-        "home_over_1.5": 0.0005,
+        "home_over_0.5": 0.065,
+        "home_over_1.5": 0.0055,
         "home_over_2.5": 0.0005,
         "away_over_0.5": 0.9995,
-        "away_over_1.5": 0.0005,
-        "away_over_2.5": 0.0005
+        "away_over_1.5": 0.29,
+        "away_over_2.5": 0.0245
       },
-      "btts": 0.0005,
+      "btts": 0.065,
       "spread": {
         "home_-1.5": 0.0005,
-        "away_-1.5": 0.0005,
+        "away_-1.5": 0.275,
         "home_-2.5": 0.0005,
-        "away_-2.5": 0.0005,
+        "away_-2.5": 0.025,
         "home_-3.5": 0.0005,
-        "away_-3.5": 0.0005,
+        "away_-3.5": 0.005,
         "home_-4.5": 0.0005,
-        "away_-4.5": 0.0005,
+        "away_-4.5": 0.0055,
         "home_-5.5": 0.0005,
         "away_-5.5": 0.0005
       },
@@ -8041,9 +8041,9 @@
       },
       "second_half_slug": "fifwc-par-fra-2026-07-04-second-half-result",
       "second_half": {
-        "home": 0.0005,
-        "draw": 0.0005,
-        "away": 0.9995
+        "home": 0.018,
+        "draw": 0.045,
+        "away": 0.955
       },
       "first_to_score_slug": "fifwc-par-fra-2026-07-04-first-to-score",
       "first_to_score": {
@@ -8056,9 +8056,9 @@
         "over_6.5": 0.9995,
         "over_7.5": 0.9995,
         "over_8.5": 0.9995,
-        "over_11.5": 0.9995,
+        "over_11.5": 0.573,
         "over_10.5": 0.9995,
-        "over_12.5": 0.9995,
+        "over_12.5": 0.25,
         "over_9.5": 0.9995
       }
     },
@@ -8069,8 +8069,8 @@
         "away": 0.205
       },
       "slug": "fifwc-bra-nor-2026-07-05",
-      "volume": 1676989,
-      "liquidity": 5398513,
+      "volume": 1664675,
+      "liquidity": 5520851,
       "exact_score_slug": "fifwc-bra-nor-2026-07-05-exact-score",
       "exact_score": {
         "0-0": 0.055,
@@ -8078,28 +8078,28 @@
         "1-0": 0.1,
         "0-2": 0.0285,
         "1-1": 0.125,
-        "2-0": 0.085,
-        "0-3": 0.0115,
-        "1-2": 0.06,
+        "2-0": 0.095,
+        "0-3": 0.012,
+        "1-2": 0.055,
         "2-1": 0.115,
         "3-0": 0.045,
         "1-3": 0.02,
         "2-2": 0.065,
         "3-1": 0.065,
         "2-3": 0.022,
-        "3-2": 0.038,
-        "3-3": 0.018,
+        "3-2": 0.039,
+        "3-3": 0.0155,
         "other": 0.105
       },
       "more_markets_slug": "fifwc-bra-nor-2026-07-05-more-markets",
       "totals": {
         "over_0.5": 0.945,
-        "over_1.5": 0.795,
+        "over_1.5": 0.785,
         "over_2.5": 0.545,
         "over_3.5": 0.325,
-        "over_4.5": 0.155,
+        "over_4.5": 0.165,
         "over_5.5": 0.075,
-        "over_6.5": 0.025,
+        "over_6.5": 0.0255,
         "over_7.5": 0.008,
         "over_8.5": 0.0035
       },
@@ -8111,16 +8111,16 @@
         "away_over_1.5": 0.295,
         "away_over_2.5": 0.085
       },
-      "btts": 0.595,
+      "btts": 0.585,
       "spread": {
         "home_-1.5": 0.285,
         "away_-1.5": 0.075,
         "home_-2.5": 0.125,
-        "away_-2.5": 0.0205,
+        "away_-2.5": 0.021,
         "home_-3.5": 0.045,
         "away_-3.5": 0.005,
         "home_-4.5": 0.0155,
-        "away_-4.5": 0.002,
+        "away_-4.5": 0.0015,
         "home_-5.5": 0.0035,
         "away_-5.5": 0.0015
       },
@@ -8145,10 +8145,10 @@
       "corners_slug": "fifwc-bra-nor-2026-07-05-total-corners",
       "corners": {
         "over_12.5": 0.145,
-        "over_8.5": 0.54,
+        "over_8.5": 0.525,
         "over_10.5": 0.305,
-        "over_11.5": 0.21,
-        "over_6.5": 0.79,
+        "over_11.5": 0.205,
+        "over_6.5": 0.76,
         "over_7.5": 0.665,
         "over_9.5": 0.405
       }
@@ -8160,8 +8160,8 @@
         "away": 0.395
       },
       "slug": "fifwc-mex-eng-2026-07-05",
-      "volume": 2573377,
-      "liquidity": 4680938,
+      "volume": 2557555,
+      "liquidity": 4859386,
       "exact_score_slug": "fifwc-mex-eng-2026-07-05-exact-score",
       "exact_score": {
         "0-0": 0.105,
@@ -8174,8 +8174,8 @@
         "1-2": 0.085,
         "2-1": 0.075,
         "3-0": 0.0175,
-        "1-3": 0.0365,
-        "2-2": 0.0455,
+        "1-3": 0.036,
+        "2-2": 0.0475,
         "3-1": 0.0265,
         "2-3": 0.0195,
         "3-2": 0.013,
@@ -8187,7 +8187,7 @@
         "over_0.5": 0.895,
         "over_1.5": 0.665,
         "over_2.5": 0.395,
-        "over_3.5": 0.195,
+        "over_3.5": 0.205,
         "over_4.5": 0.085,
         "over_5.5": 0.0325,
         "over_6.5": 0.0105,
@@ -8196,7 +8196,7 @@
       },
       "team_totals": {
         "home_over_0.5": 0.66,
-        "home_over_1.5": 0.29,
+        "home_over_1.5": 0.285,
         "home_over_2.5": 0.095,
         "away_over_0.5": 0.72,
         "away_over_1.5": 0.35,
@@ -8224,7 +8224,7 @@
       "second_half_slug": "fifwc-mex-eng-2026-07-05-second-half-result",
       "second_half": {
         "home": 0.285,
-        "draw": 0.375,
+        "draw": 0.38,
         "away": 0.305
       },
       "first_to_score_slug": "fifwc-mex-eng-2026-07-05-first-to-score",
@@ -8251,8 +8251,8 @@
         "away": 0.515
       },
       "slug": "fifwc-prt-esp-2026-07-06",
-      "volume": 537795,
-      "liquidity": 2786571,
+      "volume": 536032,
+      "liquidity": 2810691,
       "exact_score_slug": "fifwc-prt-esp-2026-07-06-exact-score",
       "exact_score": {
         "0-0": 0.065,
@@ -8316,7 +8316,7 @@
       "second_half": {
         "home": 0.21,
         "draw": 0.345,
-        "away": 0.385
+        "away": 0.395
       },
       "first_to_score_slug": "fifwc-prt-esp-2026-07-06-first-to-score",
       "first_to_score": {
@@ -8329,8 +8329,8 @@
         "over_8.5": 0.565,
         "over_10.5": 0.34,
         "over_11.5": 0.255,
-        "over_12.5": 0.18,
-        "over_6.5": 0.775,
+        "over_12.5": 0.17,
+        "over_6.5": 0.78,
         "over_7.5": 0.685,
         "over_9.5": 0.44
       }
@@ -8342,8 +8342,8 @@
         "away": 0.375
       },
       "slug": "fifwc-usa-bel-2026-07-06",
-      "volume": 1431906,
-      "liquidity": 2794973,
+      "volume": 1431106,
+      "liquidity": 2814754,
       "exact_score_slug": "fifwc-usa-bel-2026-07-06-exact-score",
       "exact_score": {
         "0-0": 0.065,
@@ -8405,7 +8405,7 @@
       },
       "second_half_slug": "fifwc-usa-bel-2026-07-06-second-half-result",
       "second_half": {
-        "home": 0.325,
+        "home": 0.32,
         "draw": 0.34,
         "away": 0.3
       },
@@ -8433,8 +8433,8 @@
         "away": 0.095
       },
       "slug": "fifwc-arg-egy-2026-07-07",
-      "volume": 125758,
-      "liquidity": 1001816,
+      "volume": 124933,
+      "liquidity": 1050894,
       "exact_score_slug": "fifwc-arg-egy-2026-07-07-exact-score",
       "exact_score": {
         "0-0": 0.07,
@@ -8458,9 +8458,9 @@
       "more_markets_slug": "fifwc-arg-egy-2026-07-07-more-markets",
       "totals": {
         "over_0.5": 0.925,
-        "over_1.5": 0.725,
+        "over_1.5": 0.73,
         "over_2.5": 0.475,
-        "over_3.5": 0.25,
+        "over_3.5": 0.255,
         "over_4.5": 0.115,
         "over_5.5": 0.045,
         "over_6.5": 0.0155,
@@ -8470,7 +8470,7 @@
       "team_totals": {
         "home_over_0.5": 0.875,
         "home_over_1.5": 0.59,
-        "home_over_2.5": 0.32,
+        "home_over_2.5": 0.305,
         "away_over_0.5": 0.44,
         "away_over_1.5": 0.135,
         "away_over_2.5": 0.027
@@ -8483,7 +8483,7 @@
         "away_-2.5": 0.005,
         "home_-3.5": 0.085,
         "away_-3.5": 0.005,
-        "home_-4.5": 0.045,
+        "home_-4.5": 0.05,
         "away_-4.5": 0.0025,
         "home_-5.5": 0.0105,
         "away_-5.5": 0.0025
@@ -8496,14 +8496,14 @@
       },
       "second_half_slug": "fifwc-arg-egy-2026-07-07-second-half-result",
       "second_half": {
-        "home": 0.56,
+        "home": 0.55,
         "draw": 0.325,
-        "away": 0.105
+        "away": 0.1
       },
       "first_to_score_slug": "fifwc-arg-egy-2026-07-07-first-to-score",
       "first_to_score": {
         "home": 0.735,
-        "away": 0.2,
+        "away": 0.195,
         "neither": 0.055
       },
       "corners_slug": "fifwc-arg-egy-2026-07-07-total-corners",
@@ -8511,7 +8511,7 @@
         "over_6.5": 0.7,
         "over_7.5": 0.565,
         "over_11.5": 0.165,
-        "over_10.5": 0.245,
+        "over_10.5": 0.24,
         "over_12.5": 0.48,
         "over_8.5": 0.45,
         "over_9.5": 0.34
@@ -8524,8 +8524,8 @@
         "away": 0.435
       },
       "slug": "fifwc-che-col-2026-07-07",
-      "volume": 198764,
-      "liquidity": 1189393,
+      "volume": 198691,
+      "liquidity": 1183120,
       "exact_score_slug": "fifwc-che-col-2026-07-07-exact-score",
       "exact_score": {
         "0-0": 0.105,
@@ -8574,10 +8574,10 @@
         "away_-2.5": 0.065,
         "home_-3.5": 0.007,
         "away_-3.5": 0.0235,
-        "home_-4.5": 0.03,
+        "home_-4.5": 0.04,
         "away_-4.5": 0.0135,
-        "home_-5.5": 0.03,
-        "away_-5.5": 0.03
+        "home_-5.5": 0.04,
+        "away_-5.5": 0.04
       },
       "halftime_slug": "fifwc-che-col-2026-07-07-halftime-result",
       "halftime": {
@@ -8587,9 +8587,9 @@
       },
       "second_half_slug": "fifwc-che-col-2026-07-07-second-half-result",
       "second_half": {
-        "home": 0.24,
-        "draw": 0.39,
-        "away": 0.33
+        "home": 0.25,
+        "draw": 0.385,
+        "away": 0.335
       },
       "first_to_score_slug": "fifwc-che-col-2026-07-07-first-to-score",
       "first_to_score": {
@@ -8613,7 +8613,7 @@
     "champion": {
       "Spain": 0.1245,
       "England": 0.0685,
-      "France": 0.3555,
+      "France": 0.3565,
       "Brazil": 0.0645,
       "Argentina": 0.1615,
       "Germany": 0.0,
@@ -8661,7 +8661,7 @@
       "Turkey": 0.0
     },
     "final": {
-      "Mexico": 0.1055,
+      "Mexico": 0.1035,
       "South Korea": 0.0,
       "South Africa": 0.0,
       "Czech Republic": 0.0,
@@ -8670,10 +8670,10 @@
       "Qatar": 0.0,
       "Bosnia and Herzegovina": 0.0,
       "Brazil": 0.185,
-      "Morocco": 0.0905,
+      "Morocco": 0.094,
       "Scotland": 0.0,
       "Haiti": 0.0,
-      "United States": 0.051,
+      "United States": 0.0525,
       "Australia": 0.0,
       "Paraguay": 0.0005,
       "Turkey": 0.0,
@@ -8685,15 +8685,15 @@
       "Japan": 0.0,
       "Tunisia": 0.0,
       "Sweden": 0.0,
-      "Belgium": 0.034,
+      "Belgium": 0.035,
       "Iran": 0.0,
-      "Egypt": 0.0085,
+      "Egypt": 0.009,
       "New Zealand": 0.0,
       "Spain": 0.225,
       "Uruguay": 0.0,
       "Saudi Arabia": 0.0,
       "Cape Verde": 0.0,
-      "France": 0.56,
+      "France": 0.565,
       "Senegal": 0.0,
       "Norway": 0.051,
       "Iraq": 0.0,
@@ -8701,7 +8701,7 @@
       "Austria": 0.0,
       "Algeria": 0.0,
       "Jordan": 0.0,
-      "Portugal": 0.135,
+      "Portugal": 0.145,
       "Colombia": 0.1155,
       "Uzbekistan": 0.0,
       "DR Congo": 0.0,
@@ -8716,16 +8716,16 @@
       "South Africa": 0.0,
       "Czech Republic": 0.0,
       "Canada": 0.0,
-      "Switzerland": 0.1205,
+      "Switzerland": 0.122,
       "Qatar": 0.0,
       "Bosnia and Herzegovina": 0.0,
       "Brazil": 0.355,
-      "Morocco": 0.191,
+      "Morocco": 0.186,
       "Scotland": 0.0,
       "Haiti": 0.0,
-      "United States": 0.165,
+      "United States": 0.17,
       "Australia": 0.0,
-      "Paraguay": 0.0005,
+      "Paraguay": 0.0055,
       "Turkey": 0.0,
       "Germany": 0.0,
       "Ecuador": 0.0,
@@ -8739,20 +8739,20 @@
       "Iran": 0.0,
       "Egypt": 0.0405,
       "New Zealand": 0.0,
-      "Spain": 0.505,
+      "Spain": 0.525,
       "Uruguay": 0.0,
       "Saudi Arabia": 0.0,
       "Cape Verde": 0.0,
-      "France": 0.805,
+      "France": 0.795,
       "Senegal": 0.0,
       "Norway": 0.155,
       "Iraq": 0.0,
-      "Argentina": 0.645,
+      "Argentina": 0.62,
       "Austria": 0.0,
       "Algeria": 0.0,
       "Jordan": 0.0,
-      "Portugal": 0.215,
-      "Colombia": 0.24,
+      "Portugal": 0.225,
+      "Colombia": 0.245,
       "Uzbekistan": 0.0,
       "DR Congo": 0.0,
       "England": 0.305,
@@ -8769,13 +8769,13 @@
       "Switzerland": 0.405,
       "Qatar": 0.0,
       "Bosnia and Herzegovina": 0.0,
-      "Brazil": 0.675,
+      "Brazil": 0.665,
       "Morocco": 1.0,
       "Scotland": 0.0,
       "Haiti": 0.0,
       "United States": 0.495,
       "Australia": 0.0,
-      "Paraguay": 0.0005,
+      "Paraguay": 0.0105,
       "Turkey": 0.0,
       "Germany": 0.0,
       "Ecuador": 0.0,
@@ -8785,7 +8785,7 @@
       "Japan": 0.0,
       "Tunisia": 0.0,
       "Sweden": 0.0,
-      "Belgium": 0.4995,
+      "Belgium": 0.5025,
       "Iran": 0.0,
       "Egypt": 0.145,
       "New Zealand": 0.0,
@@ -8793,11 +8793,11 @@
       "Uruguay": 0.0,
       "Saudi Arabia": 0.0,
       "Cape Verde": 0.0,
-      "France": 0.9995,
+      "France": 0.989,
       "Senegal": 0.0,
-      "Norway": 0.325,
+      "Norway": 0.33,
       "Iraq": 0.0,
-      "Argentina": 0.845,
+      "Argentina": 0.835,
       "Austria": 0.0,
       "Algeria": 0.0,
       "Jordan": 0.0,
