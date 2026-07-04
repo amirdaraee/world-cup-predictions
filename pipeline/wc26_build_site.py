@@ -1034,11 +1034,11 @@ favours outsiders, because chaos always does.</p>
              "the market."))
 
 
-def trend_chart():
-    """Cumulative log-loss of model vs market vs blend as matches grade."""
+def trend_chart(graded_all):
+    """Cumulative log-loss of model vs market vs blend as matches grade —
+    every graded match with a market price, group and knockout alike."""
     import math
-    graded = sorted((p for p in (PRED or {}).get("group_matches", [])
-                     if "actual_score" in p and p.get("p_market")),
+    graded = sorted((p for p in graded_all if p.get("p_market")),
                     key=lambda p: p["date_utc"])
     if len(graded) < 3:
         return ('<p class="fineprint">The model-vs-market trend chart draws '
@@ -1078,8 +1078,8 @@ def trend_chart():
     s += (f'<text x="{L}" y="{H_-10}" font-size="10" fill="var(--ink-soft, #6b6353)" {font}>'
           f'{graded[0]["date_utc"][:10]} → {graded[-1]["date_utc"][:10]}</text>')
     return f'<figure>{s}</svg><figcaption>The whole experiment in one line: ' \
-           f'whichever curve is lowest won the group-stage forecasting contest ' \
-           f'(final — the knockout scorecard above carries the story on).</figcaption></figure>'
+           f'whichever curve is lowest is winning the forecasting contest — ' \
+           f'group stage plus every knockout tie with a pre-kickoff price.</figcaption></figure>'
 
 
 # ---------- method-page evolution chart ----------
@@ -1196,34 +1196,67 @@ def evolution_section(lang="en"):
 
 
 # ---------- shared accuracy headline ----------
-def accuracy_headline(acc):
-    """The scorecard's headline strip. Leads with the proper-score
-    comparison vs the market, not raw hit-rate: a probabilistic model is
-    judged on calibration, and raw "results called" collapses in draw-heavy
+def pooled_scores(graded):
+    """Brier + log-loss per source over the market-priced subset of graded
+    picks — group and knockout pooled on the same 1X2 basis. Market probs
+    are stored raw (they can sum to ~1.05), so normalise before scoring."""
+    import math
+    priced = [p for p in graded if p.get("p_market")]
+    if not priced:
+        return None
+
+    def probs_of(p, src):
+        raw = p[src] if src != "p" else p["p"]
+        s = sum(raw.values())
+        return {k: v / s for k, v in raw.items()}
+
+    out = {"n": len(priced)}
+    for name, src in (("model", "p_model"), ("market", "p_market"),
+                      ("blend", "p")):
+        br = ll = 0.0
+        for p in priced:
+            probs = probs_of(p, src)
+            res = p["actual_result"]
+            br += sum((probs[k] - (1 if k == res else 0)) ** 2
+                      for k in ("H", "D", "A"))
+            ll -= math.log(max(probs[res], 1e-9))
+        out[name] = {"brier": round(br / len(priced), 4),
+                     "logloss": round(ll / len(priced), 4)}
+    return out
+
+
+def accuracy_headline(graded):
+    """The scorecard's headline strip, pooled over EVERY graded match —
+    the 72 locked group picks plus each finished knockout tie on the same
+    1X2 / 90-minute basis. Leads with the proper-score comparison vs the
+    market, not raw hit-rate: a probabilistic model is judged on
+    calibration, and raw "results called" collapses in draw-heavy
     stretches (a draw is rarely any single match's likeliest result) even
     when the probabilities are sound. The honest benchmark is the market —
     if we're level with or ahead of it, the model is doing its job whatever
-    the hit-rate reads. Scope is the LOCKED pre-tournament picks, i.e. the
-    72 group fixtures only — knockout ties are graded separately (live).
-    Returns the inner HTML of <dl class="stats">."""
-    cmp = acc.get("compare") or {}
-    model_ll = (cmp.get("model") or {}).get("logloss")
-    market_ll = (cmp.get("market") or {}).get("logloss")
-    if model_ll is not None and market_ll is not None:
-        d = market_ll - model_ll          # +ve = model ahead of the market
+    the hit-rate reads. Returns the inner HTML of <dl class="stats">."""
+    import math
+    n = len(graded)
+    if not n:
+        return ""
+    ko_n = sum(1 for p in graded if p.get("ko"))
+    model_ll = sum(-math.log(max(p["p_model"][p["actual_result"]], 1e-9))
+                   for p in graded) / n
+    pool = pooled_scores(graded)
+    if pool:
+        d = pool["market"]["logloss"] - pool["model"]["logloss"]
         vs = (f"ahead by {d:.3f}" if d > 0.0005
               else f"behind by {-d:.3f}" if d < -0.0005 else "level")
     else:
         vs = "—"
-    pct = (acc.get("result_pct") or 0) * 100
-    n, total = acc.get("graded_group_matches", 0), len(MATCHES)
-    graded_lbl = (f"{n}/{total} — complete" if total and n >= total
-                  else f"{n}/{total}" if total else n)
+    hits = sum(1 for p in graded if p.get("hit"))
+    graded_lbl = (f"{n} — {n - ko_n} group + {ko_n} knockout"
+                  if ko_n else f"{n}")
     items = (
-        ("Group matches graded", graded_lbl),
-        ("Model log-loss", model_ll if model_ll is not None else "—"),
+        ("Matches graded", graded_lbl),
+        ("Model log-loss", f"{model_ll:.4f}"),
         ("vs the market", vs),
-        ("Results called", f"{acc.get('result_hits', 0)} ({pct:.0f}%)"),
+        ("Results called", f"{hits} ({hits / n * 100:.0f}%)"),
     )
     return "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in items)
 
@@ -1579,6 +1612,69 @@ def _ko_winner(m):
     return None
 
 
+def ko_graded_1x2():
+    """Finished knockout ties reshaped into group-style graded picks, so the
+    report's accuracy pools the WHOLE tournament on one basis: 1X2 on the
+    90-minute result (level after ninety = Draw, whoever takes the
+    shoot-out). Model probs come from the live sims — WC-blind by
+    construction, so tonight's refit reproduces the pre-match numbers.
+    Market probs come from the last committed pre-kickoff runs/ snapshot
+    (the canonical price file is overwritten with settled books — using it
+    would be look-ahead); ties without a sane snapshot carry p_market=None
+    and simply drop out of the market comparison. The blend mirrors the
+    group picks' log-opinion pool."""
+    try:
+        from wc26_follow_tool import _price_snapshots, _pre_kickoff_moneyline
+        snaps = _price_snapshots()
+    except ImportError:
+        snaps = []
+    from wc26_simulate import blend
+    out = []
+    for m in KOS:
+        if not (str(m.get("status", "")).startswith("Match Finished")
+                and m.get("score") and m.get("date_utc")):
+            continue
+        sim = SIMS.get(str(m["match_id"]))
+        if not sim:
+            continue
+        sc = m.get("score_90") or m["score"]     # markets settle on 90'
+        try:
+            h, a = (int(x) for x in sc.split("-"))
+        except ValueError:
+            continue
+        res = "H" if h > a else "A" if a > h else "D"
+        ml = sim["moneyline"]
+        p_model = {"H": ml["home"], "D": ml["draw"], "A": ml["away"]}
+        p_market = None
+        if snaps:
+            try:
+                kick = datetime.fromisoformat(m["date_utc"])
+                found = _pre_kickoff_moneyline(m["match_id"], kick, snaps)
+            except ValueError:
+                found = None
+            if found:
+                mk = found[0]
+                p_market = {"H": mk["home"], "D": mk["draw"],
+                            "A": mk["away"]}
+        if p_market:
+            msum = sum(p_market.values())
+            p = blend(p_model, {k: v / msum for k, v in p_market.items()})
+        else:
+            p = dict(p_model)
+        pick = max(p, key=p.get)
+        top = (sim.get("top_scores") or [{}])[0].get("score")
+        out.append({
+            "match_id": m["match_id"], "date_utc": m["date_utc"],
+            "home": m["home"], "away": m["away"], "ko": True,
+            "stage": ROUND_SHORT.get(m["round"], m["round"]),
+            "pred_score": top, "pred_result": pick,
+            "actual_score": sc, "actual_result": res, "hit": pick == res,
+            "p": p, "p_model": p_model, "p_market": p_market,
+        })
+    out.sort(key=lambda r: r["date_utc"])
+    return out
+
+
 def knockout_scorecard():
     """Grade the LIVE model's read on each ACTUAL knockout tie as it finishes:
     who goes through (win + half the draw, a level tie ~coin-flipped on pens)
@@ -1636,9 +1732,13 @@ the next tie finishes.)</p>
 # ---------- accuracy report page ----------
 def build_report():
     md_of = {m["match_id"]: m["matchday"] for m in MATCHES}
-    graded = sorted((p for p in (PRED or {}).get("group_matches", [])
-                     if "actual_score" in p), key=lambda p: p["date_utc"])
-    acc = (PRED or {}).get("accuracy") or {}
+    group_graded = sorted((p for p in (PRED or {}).get("group_matches", [])
+                           if "actual_score" in p),
+                          key=lambda p: p["date_utc"])
+    # one pool, whole tournament: locked group picks + finished knockout
+    # ties on the same 1X2 / 90-minute basis (see ko_graded_1x2)
+    graded = sorted(group_graded + ko_graded_1x2(),
+                    key=lambda p: p["date_utc"])
 
     if not graded:
         body = f"""<h1>The report card</h1>
@@ -1658,45 +1758,63 @@ matchday-by-matchday breakdown. The locked picks themselves are on the
         return
 
     # headline strip — leads with log-loss vs the market (see accuracy_headline)
-    head = f'<dl class="stats">{accuracy_headline(acc)}</dl>'
+    head = f'<dl class="stats">{accuracy_headline(graded)}</dl>'
 
     comp = ""
-    if acc.get("compare"):
+    pool = pooled_scores(graded)
+    if pool:
         rows = "".join(
-            f'<tr><td>{srcn.title()}</td><td class="num">{v["brier"]}</td>'
-            f'<td class="num">{v["logloss"]}</td></tr>'
-            for srcn, v in acc["compare"].items())
-        comp = f"""<h2>Who forecasts best — the group stage, final</h2>
+            f'<tr><td>{srcn.title()}</td>'
+            f'<td class="num">{pool[srcn]["brier"]}</td>'
+            f'<td class="num">{pool[srcn]["logloss"]}</td></tr>'
+            for srcn in ("model", "market", "blend"))
+        comp = f"""<h2>Who forecasts best so far</h2>
 <table class="ko"><thead><tr><th>Source</th>
 <th class="num" title="mean squared error - guessing equally scores 0.667">Brier</th>
 <th class="num" title="penalises confident errors - guessing equally scores 1.099">Log-loss</th></tr></thead>
 <tbody>{rows}</tbody></table>
-<p class="fineprint">Market graded on its {acc.get("market_priced_matches", 0)} priced
-matches. Lower is better; the gap between these rows is this whole project's thesis,
-settled in public. The market is the benchmark that matters — when the
-model is level with or below the market's log-loss, it is forecasting well even
-if the raw "results called" number looks poor, because the same matches that
-beat the model (an unusually draw-heavy run) beat the market too.</p>"""
+<p class="fineprint">All three sources pooled over the {pool["n"]} matches the
+market priced — the whole group stage plus every knockout tie with a committed
+pre-kickoff price snapshot. Lower is better; the gap between these rows is this
+whole project's thesis, settled in public. The market is the benchmark that
+matters — when the model is level with or below the market's log-loss, it is
+forecasting well even if the raw "results called" number looks poor, because
+the same matches that beat the model (an unusually draw-heavy run) beat the
+market too.</p>"""
 
-    # matchday breakdown
-    by_md = {}
+    # stage breakdown — group matchdays first, then knockout rounds in
+    # tournament order (Round of 32 -> Final via ROUND_SHORT values)
+    ko_order = list(ROUND_SHORT.values())
+    by_stage = {}
     for p in graded:
-        by_md.setdefault(md_of.get(p["match_id"], "?"), []).append(p)
+        key = (p["stage"] if p.get("ko")
+               else f"Matchday {md_of.get(p['match_id'], '?')}")
+        by_stage.setdefault(key, []).append(p)
+
+    def stage_key(name):
+        return ((1, ko_order.index(name)) if name in ko_order
+                else (0, name))
+
     md_rows = ""
-    for md in sorted(by_md):
-        ps = by_md[md]
+    for stage in sorted(by_stage, key=stage_key):
+        ps = by_stage[stage]
         hits = sum(1 for p in ps if p.get("hit"))
         ex = sum(1 for p in ps if p["pred_score"] == p.get("actual_score"))
         import math as _m
         ll = -sum(_m.log(max(p["p"][p["actual_result"]], 1e-9))
                   for p in ps) / len(ps)
-        md_rows += (f'<tr><td>Matchday {md}</td><td class="num">{len(ps)}</td>'
+        md_rows += (f'<tr><td>{escape(stage)}</td><td class="num">{len(ps)}</td>'
                     f'<td class="num">{hits}/{len(ps)}</td>'
                     f'<td class="num">{ex}</td><td class="num">{ll:.3f}</td></tr>')
-    md_html = f"""<h2>Matchday by matchday — group stage, final</h2>
+    md_html = f"""<h2>Matchday by matchday, then round by round</h2>
 <table class="ko"><thead><tr><th>Stage</th><th class="num">Played</th>
 <th class="num">Results called</th><th class="num">Exact scores</th>
-<th class="num">Log-loss (blend)</th></tr></thead><tbody>{md_rows}</tbody></table>"""
+<th class="num">Log-loss (blend)</th></tr></thead><tbody>{md_rows}</tbody></table>
+<p class="fineprint">Knockout rows grade the same 1X2 call as the group rows, on
+the 90-minute result — a tie that finishes level counts as a Draw here even if
+our advance pick then won the shoot-out (that call is graded in the knockout
+section above). "Results called" is honest and therefore harsh on draw-heavy
+rounds; the log-loss column is the fair judge.</p>"""
 
     # sharpest / roughest calls vs the market
     scored = []
@@ -1722,12 +1840,12 @@ beat the model (an unusually draw-heavy run) beat the market too.</p>"""
 
     calls = ""
     if scored:
-        calls = f"""<h2>Sharpest calls of the group stage (model saw it, market didn't)</h2>
+        calls = f"""<h2>Sharpest calls (model saw it, market didn't)</h2>
 <table class="ko"><thead><tr><th>Match</th><th>Outcome</th>
 <th class="num">Model gave it</th><th class="num">Market gave it</th>
 <th class="num">Edge realised</th></tr></thead>
 <tbody>{call_rows(scored[:5])}</tbody></table>
-<h2>Roughest calls of the group stage (market saw it, model didn't)</h2>
+<h2>Roughest calls (market saw it, model didn't)</h2>
 <table class="ko"><thead><tr><th>Match</th><th>Outcome</th>
 <th class="num">Model gave it</th><th class="num">Market gave it</th>
 <th class="num">Edge realised</th></tr></thead>
@@ -1748,22 +1866,22 @@ beat the model (an unusually draw-heavy run) beat the market too.</p>"""
                      f'<td class="num">{len(qs)}</td>'
                      f'<td class="num">{sum(q for q, _ in qs) / len(qs) * 100:.0f}%</td>'
                      f'<td class="num">{sum(h for _, h in qs) / len(qs) * 100:.0f}%</td></tr>')
-    cal = f"""<h2>Calibration — the locked group-stage picks, final</h2>
+    cal = f"""<h2>Calibration so far</h2>
 <table class="ko"><thead><tr><th>Claimed probability</th><th class="num">Claims</th>
 <th class="num">Average claim</th><th class="num">Actually happened</th></tr></thead>
 <tbody>{cal_rows}</tbody></table>
-<p class="fineprint">A calibrated forecaster's last two columns match. All 72
-group matches are graded, so these buckets carry real signal — read them as the
-locked model's honest track record, now final. Knockout ties grade a different
-claim (who advances) and live in the knockout section above; they are not pooled
-here.</p>"""
+<p class="fineprint">A calibrated forecaster's last two columns match. Every
+graded match feeds these buckets — all 72 group matches plus each finished
+knockout tie, three probability claims per match (home/draw/away on the
+90-minute result) — so they carry real signal: read them as the model's honest
+track record, still growing through the final.</p>"""
 
     goals_html = goals_section(graded) + totals_section(graded)
 
     body = f"""<h1>The report card</h1>
-<p class="standfirst">The locked predictions, graded in public. The group-stage
-card is complete and frozen; the knockout scorecard grows as ties finish.
-Re-generated automatically by the nightly run; previous editions live in the
+<p class="standfirst">Every prediction graded in public — the whole tournament in
+one pool, updated as each match finishes. Re-generated automatically by the
+nightly run; previous editions live in the
 <a href="archive.html">versions archive</a>.</p>
 <p class="fineprint">How to read this: a probability model lives or dies on its
 log-loss against the market, not on how often its single likeliest pick lands.
@@ -1773,13 +1891,16 @@ log-loss and how it sits versus the market. For a money view, see what
 flat-staking the model's market edges would have returned:
 <a href="follow-the-model.html">if you'd followed the model →</a></p>
 {head}
-<p class="fineprint">This headline grades the <b>locked pre-tournament picks</b>,
-which only ever covered the 72 group fixtures — knockout pairings weren't knowable
-when the bracket was locked, so 72 is this card's final size, not a stale count.
-The knockout rounds are graded live, just below.</p>
+<p class="fineprint">One pool, one basis: the 72 group matches grade the locked
+pre-tournament picks, and each finished knockout tie joins on the same 1X2 call —
+the 90-minute result, level after ninety counting as a Draw. Knockout model
+probabilities come from the same WC-blind model (it never trains on this
+tournament, so tonight's refit reproduces the pre-match numbers); market
+comparisons use the last committed pre-kickoff price snapshot, never the settled
+book. Who goes <em>through</em> each tie is a separate call, graded next.</p>
 {knockout_scorecard()}
 {comp}
-{trend_chart()}
+{trend_chart(graded)}
 {md_html}
 {goals_html}
 {calls}
@@ -1925,7 +2046,7 @@ def goals_section(graded):
             ("O/U 2.5 direction", f"{g['ou_hit']}/{g['ou_n']} "
              f"({g['ou_hit'] / g['ou_n'] * 100:.0f}%)"),
         ))
-    return f"""<h2>Goals — group stage, final</h2>
+    return f"""<h2>Goals</h2>
 <dl class="stats">{st}</dl>
 <p class="fineprint">"Predicted" is the total of each match's locked most-likely
 scoreline - a deliberately conservative point estimate, since the single most-likely
