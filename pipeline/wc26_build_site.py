@@ -1667,6 +1667,7 @@ def ko_graded_1x2():
             "match_id": m["match_id"], "date_utc": m["date_utc"],
             "home": m["home"], "away": m["away"], "ko": True,
             "stage": ROUND_SHORT.get(m["round"], m["round"]),
+            "pens": bool(m.get("penalties")),
             "pred_score": top, "pred_result": pick,
             "actual_score": sc, "actual_result": res, "hit": pick == res,
             "p": p, "p_model": p_model, "p_market": p_market,
@@ -1816,6 +1817,32 @@ our advance pick then won the shoot-out (that call is graded in the knockout
 section above). "Results called" is honest and therefore harsh on draw-heavy
 rounds; the log-loss column is the fair judge.</p>"""
 
+    # the full results list — every graded match of the tournament
+    all_rows = ""
+    for p in sorted(graded, key=lambda r: r["date_utc"], reverse=True):
+        stage = (p["stage"] if p.get("ko")
+                 else f"MD{md_of.get(p['match_id'], '?')}")
+        pick_lbl = {"H": p["home"], "D": "Draw",
+                    "A": p["away"]}[p["pred_result"]]
+        mark = ('<i class="f W">✓</i>' if p.get("hit")
+                else '<i class="f L">✗</i>')
+        pens = " (p)" if p.get("pens") else ""
+        all_rows += (f'<tr><td>{escape(str(stage))}</td>'
+                     f'<td>{escape(p["home"])} <em>v</em> {escape(p["away"])}</td>'
+                     f'<td><b>{escape(pick_lbl)}</b></td>'
+                     f'<td class="num">{p["p"][p["pred_result"]] * 100:.0f}%</td>'
+                     f'<td class="num score">{escape(p["actual_score"])}{pens}</td>'
+                     f'<td>{mark}</td></tr>')
+    full_html = f"""<h2>Every match, graded</h2>
+<p class="fineprint">The complete results list — all {len(graded)} graded matches
+of the tournament, newest first. The pick is the blend's most-likely 1X2 outcome;
+knockout scores are the 90-minute result, and <b>(p)</b> marks a tie decided on
+penalties, which grades as a Draw here (the advance call is graded in the
+knockout section above).</p>
+<table class="ko"><thead><tr><th>Stage</th><th>Match</th><th>Pick</th>
+<th class="num" title="the blend's probability on its pick">Conf.</th>
+<th class="num">Result</th><th></th></tr></thead><tbody>{all_rows}</tbody></table>"""
+
     # sharpest / roughest calls vs the market
     scored = []
     for p in graded:
@@ -1902,6 +1929,7 @@ book. Who goes <em>through</em> each tie is a separate call, graded next.</p>
 {comp}
 {trend_chart(graded)}
 {md_html}
+{full_html}
 {goals_html}
 {calls}
 {cal}

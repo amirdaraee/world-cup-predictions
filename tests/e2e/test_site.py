@@ -273,7 +273,7 @@ class TestBuiltSite(unittest.TestCase):
             html = (Path(b.OUT) / "report.html").read_text()
             for needle in ("Who forecasts best", "Matchday by matchday",
                            "Sharpest calls", "Calibration",
-                           "Matches graded"):
+                           "Matches graded", "Every match, graded"):
                 self.assertIn(needle, html)
             # reframed headline leads with model log-loss vs the market,
             # not raw hit-rate — pooled from the graded picks themselves
