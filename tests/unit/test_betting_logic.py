@@ -193,6 +193,50 @@ class TestKoDrawCaution(unittest.TestCase):
         self.assertEqual(by["k1"], 2 * by["k2"])
 
 
+class TestFullBudget(unittest.TestCase):
+    """--full-budget: the remaining bankroll is a TARGET — stakes scale up
+    toward it, but never past the per-bet / per-match caps, and reduce-only
+    cautions are never re-inflated."""
+    CFG = {"max_total_stake_usdc": 40.0, "max_per_bet_usdc": 10.0,
+           "kelly_fraction": 0.4, "min_stake_usdc": 1.0, "max_bets": 10,
+           "deploy_full_budget": True}
+
+    def test_plan_scales_up_to_the_budget(self):
+        cands = [cand("moneyline", 0.10), cand("totals", 0.10),
+                 cand("btts", 0.10), cand("golden_boot", 0.05)]
+        _, total = build_plan(cands, self.CFG)
+        self.assertAlmostEqual(total, 40.0, delta=0.05)
+
+    def test_per_bet_cap_still_binds(self):
+        _, total = build_plan([cand("moneyline", 0.10)], self.CFG)
+        self.assertAlmostEqual(total, 10.0, delta=0.01)
+
+    def test_per_match_cap_still_binds(self):
+        cands = [cand("moneyline", 0.10, match_id="m1"),
+                 cand("btts", 0.10, match_id="m1")]
+        _, total = build_plan(cands, dict(self.CFG, max_per_match_usdc=8.0))
+        self.assertAlmostEqual(total, 8.0, delta=0.01)
+
+    def test_awards_fill_past_the_match_cap(self):
+        cands = [cand("golden_boot", 0.05), cand("golden_boot", 0.04)]
+        _, total = build_plan(cands, dict(self.CFG, max_per_match_usdc=8.0))
+        self.assertAlmostEqual(total, 20.0, delta=0.02)   # 2 x per-bet cap
+
+    def test_reduced_ko_draw_bet_not_reinflated(self):
+        c = cand("moneyline", 0.20, match_id="k1")
+        c["ko"], c["p_draw"] = True, 0.35
+        plan, _ = build_plan([c, cand("totals", 0.20, match_id="m2")],
+                             self.CFG)
+        by = {b["match_id"]: b["stake_usdc"] for b in plan}
+        self.assertLessEqual(by["k1"], 5.0)       # stayed halved
+        self.assertAlmostEqual(by["m2"], 10.0, delta=0.01)   # took the fill
+
+    def test_off_by_default(self):
+        _, total = build_plan([cand("moneyline", 0.10)],
+                              dict(self.CFG, deploy_full_budget=False))
+        self.assertLess(total, 10.0)              # pure Kelly, no fill
+
+
 class TestExactScoreScanner(unittest.TestCase):
     def test_parse_home_first(self):
         self.assertEqual(parse_score_question(

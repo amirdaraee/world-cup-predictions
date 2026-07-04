@@ -99,6 +99,10 @@ def main():
     ap.add_argument("--news-check", action="store_true",
                     help="LLM news gate between plan and execution "
                          "(needs Anthropic key; costs API spend)")
+    ap.add_argument("--full-budget", action="store_true",
+                    help="treat the remaining cap headroom as a TARGET: "
+                         "scale qualifying stakes up until it (or a cap) "
+                         "is reached, instead of pure Kelly sizing")
     args = ap.parse_args()
     py = sys.executable
 
@@ -117,7 +121,10 @@ def main():
         # non-fatal because scan prices come live from Gamma anyway
         step("refresh Polymarket snapshot",
              [py, "pipeline/wc26_polymarket.py"], fatal=False)
-    step("scan markets + build plan", [py, "betting/find_bets.py"])
+    scan_cmd = [py, "betting/find_bets.py"]
+    if args.full_budget:
+        scan_cmd.append("--full-budget")
+    step("scan markets + build plan", scan_cmd)
 
     if args.news_check:
         # fatal: if the user asked for the gate, executing without it

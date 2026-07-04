@@ -528,8 +528,9 @@ def build_plan(cands, cfg):
             if c["category"] == "moneyline" and c.get("ko") and \
                     c.get("p_draw", 0) >= thr:
                 c["stake_usdc"] = round(c["stake_usdc"] * factor, 2)
-                if c["stake_usdc"] < cfg.get("min_stake_usdc", 1):
-                    continue
+                c["ko_draw_flagged"] = True   # reduce-only: full-budget
+                if c["stake_usdc"] < cfg.get("min_stake_usdc", 1):   # mode
+                    continue                  # must not re-inflate this
             kept.append(c)
         cands = kept
     # per-fixture exposure cap: many markets, one opinion — five
@@ -553,6 +554,59 @@ def build_plan(cands, cfg):
         for c in cands:
             c["stake_usdc"] = round(c["stake_usdc"] * scale, 2)
         planned = sum(c["stake_usdc"] for c in cands)
+    # full-budget mode (--full-budget): the remaining bankroll is a TARGET,
+    # not just a ceiling. Kelly sizing above is per-edge and will happily
+    # leave money on the table; when the user says "deploy $X", water-fill
+    # the shortfall across the qualifying bets, proportional to edge, until
+    # every cap binds. Reduce-only cautions stay reduced (ko_draw_flagged),
+    # awards are exempt from the per-match cap (not one fixture — same rule
+    # as select_todo in place_bets), and if the caps bind before the target
+    # is reached we say so out loud instead of pretending.
+    if cfg.get("deploy_full_budget") and cands:
+        per_bet = cfg["max_per_bet_usdc"]
+        spent_m = {}
+        for c in cands:
+            mid = c.get("match_id") or c["bet"]
+            spent_m[mid] = spent_m.get(mid, 0.0) + c["stake_usdc"]
+        for _ in range(50):
+            shortfall = bankroll - sum(c["stake_usdc"] for c in cands)
+            if shortfall < 0.01:
+                break
+            fillable = []
+            for c in cands:
+                if c.get("ko_draw_flagged"):
+                    continue
+                room = per_bet - c["stake_usdc"]
+                if cap and c["category"] not in award_cats \
+                        and c.get("match_id"):
+                    room = min(room, cap - spent_m.get(c["match_id"], 0.0))
+                if room > 0.01:
+                    fillable.append((c, room))
+            if not fillable:
+                break
+            wsum = sum(c["edge"] for c, _ in fillable) or 1.0
+            moved = 0.0
+            for c, _ in fillable:
+                # recompute room LIVE: a same-match sibling may have taken
+                # part of the match cap earlier in this very pass
+                room = per_bet - c["stake_usdc"]
+                if cap and c["category"] not in award_cats \
+                        and c.get("match_id"):
+                    room = min(room, cap - spent_m.get(c["match_id"], 0.0))
+                add = round(min(room, shortfall * c["edge"] / wsum), 2)
+                if add < 0.01:
+                    continue
+                c["stake_usdc"] = round(c["stake_usdc"] + add, 2)
+                mid = c.get("match_id") or c["bet"]
+                spent_m[mid] = spent_m.get(mid, 0.0) + add
+                moved += add
+            if moved < 0.01:
+                break
+        planned = sum(c["stake_usdc"] for c in cands)
+        if planned < bankroll - 0.01:
+            print(f"full-budget: caps bind at ${planned:.2f} of the "
+                  f"${bankroll:.2f} target (per-bet ${per_bet}, per-match "
+                  f"${cap}) — raise them in config.local.json to deploy more")
     return cands, round(planned, 2)
 
 
@@ -603,6 +657,8 @@ def record_paper(cands):
 
 
 def main():
+    if "--full-budget" in sys.argv:
+        CFG["deploy_full_budget"] = True   # budget is a target, not a ceiling
     cands = []
     if CFG["include"].get("moneyline"):
         print("scanning match moneylines...", flush=True)

@@ -275,22 +275,37 @@ def main():
             print(f"  SKIP: {why}")
             continue
         b["price_at_exec"] = ask
-        try:
-            # multi-outcome books (moneylines, awards, group winners) are
-            # neg-risk; standalone binaries (totals, BTTS, stage-reach)
-            # are NOT — signing with the wrong flavor is rejected by the
-            # exchange ("invalid POLY_PROXY signature")
-            order = client.create_market_order(
-                MarketOrderArgsV2(token_id=b["token_id"],
-                                  amount=b["stake_usdc"], side="BUY"),
-                PartialCreateOrderOptions(neg_risk=b.get("neg_risk", True)))
-            resp = client.post_order(order, OrderType.FOK)
-            ok = bool(resp and resp.get("success"))
-            print("  ->", resp)
-        except Exception as e:
-            print(f"  FAILED: {e}")
-            ok = False
+        stake = b["stake_usdc"]
+        min_stake = CFG.get("min_stake_usdc", 1)
+        while True:
+            try:
+                # multi-outcome books (moneylines, awards, group winners) are
+                # neg-risk; standalone binaries (totals, BTTS, stage-reach)
+                # are NOT — signing with the wrong flavor is rejected by the
+                # exchange ("invalid POLY_PROXY signature")
+                order = client.create_market_order(
+                    MarketOrderArgsV2(token_id=b["token_id"],
+                                      amount=stake, side="BUY"),
+                    PartialCreateOrderOptions(neg_risk=b.get("neg_risk", True)))
+                resp = client.post_order(order, OrderType.FOK)
+                ok = bool(resp and resp.get("success"))
+                print("  ->", resp)
+            except Exception as e:
+                # a FOK kill means the book can't absorb this SIZE at this
+                # price — the edge was already re-verified against the live
+                # ask above, only depth is short. Halve and retry down to
+                # min_stake instead of walking away with nothing.
+                if "fully filled" in str(e) and stake / 2 >= min_stake:
+                    stake = round(stake / 2, 2)
+                    print(f"  book too thin for full size — "
+                          f"retrying at ${stake:.2f}")
+                    time.sleep(1)
+                    continue
+                print(f"  FAILED: {e}")
+                ok = False
+            break
         if ok:
+            b["stake_usdc"] = stake   # the ledger records what FILLED
             ledger["placed"].append({
                 "at": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
                 "bet": b["bet"], "token_id": b["token_id"],
