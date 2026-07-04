@@ -2598,12 +2598,10 @@ what changes between versions are the simulations, prices, futures and award odd
 def take_snapshot():
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     dst = OUT / "archive" / stamp
-    k = 2
-    while dst.exists():          # same-day re-snapshots get a suffix -
-        dst = OUT / "archive" / f"{stamp}-{k}"   # never overwrite history
-        k += 1
-    stamp = dst.name
-    dst.mkdir(parents=True)
+    if dst.exists():             # one snapshot per date: the workflow runs
+        print(f"snapshot for {stamp} already frozen — skipping")   # 2x/day +
+        return                   # manual dispatches, and each extra copy
+    dst.mkdir(parents=True)      # bloats the Pages artifact forever
     for item in OUT.iterdir():
         if item.name == "archive":
             continue
