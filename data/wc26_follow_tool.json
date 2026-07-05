@@ -644,14 +644,14 @@
   "knockout": {
     "summary": {
       "threshold": 0.08,
-      "n_bets": 4,
+      "n_bets": 5,
       "wins": 0,
       "win_rate": 0.0,
-      "staked": 4.0,
+      "staked": 5.0,
       "returned": 0.0,
-      "profit": -4.0,
+      "profit": -5.0,
       "roi": -1.0,
-      "avg_edge": 0.118,
+      "avg_edge": 0.116,
       "stake_unit": 1.0
     },
     "bets": [
@@ -680,6 +680,19 @@
         "payout": 0.0,
         "profit": -1.0,
         "priced_at": "2026-07-03 08:12 UTC"
+      },
+      {
+        "match": "Paraguay v France",
+        "round": "Round of 16",
+        "side": "Draw",
+        "model": 0.242,
+        "market": 0.135,
+        "edge": 0.107,
+        "won": false,
+        "stake": 1.0,
+        "payout": 0.0,
+        "profit": -1.0,
+        "priced_at": "2026-07-04 19:56 UTC"
       },
       {
         "match": "Mexico v Ecuador",

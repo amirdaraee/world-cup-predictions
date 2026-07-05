@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04 22:21 UTC",
+  "updated": "2026-07-05 06:20 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -230,9 +230,9 @@
       "away": "France",
       "venue": "Lincoln Financial Field",
       "city": "Philadelphia",
-      "status": "Second Half",
-      "score": null,
-      "score_90": null,
+      "status": "Match Finished",
+      "score": "0-1",
+      "score_90": "0-1",
       "penalties": null
     },
     {
@@ -306,6 +306,19 @@
       "date_utc": "2026-07-07T20:00:00+00:00",
       "home": "Switzerland",
       "away": "Colombia",
+      "venue": null,
+      "city": null,
+      "status": "Not Started",
+      "score": null,
+      "score_90": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1578539,
+      "round": "Quarter-finals",
+      "date_utc": "2026-07-09T20:00:00+00:00",
+      "home": "France",
+      "away": "Morocco",
       "venue": null,
       "city": null,
       "status": "Not Started",

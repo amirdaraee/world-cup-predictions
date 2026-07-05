@@ -88,7 +88,8 @@
     1567310,
     1567311,
     1567312,
-    1567824
+    1567824,
+    1569870
   ],
   "scorers": {
     "L. Messi": {
@@ -98,7 +99,7 @@
     },
     "Kylian Mbappé": {
       "team": "France",
-      "goals": 4,
+      "goals": 5,
       "assists_from": []
     },
     "M. Oyarzabal": {
