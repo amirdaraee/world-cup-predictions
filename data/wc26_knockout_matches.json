@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05 06:20 UTC",
+  "updated": "2026-07-05 21:27 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -242,8 +242,8 @@
       "home": "Brazil",
       "away": "Norway",
       "venue": "MetLife Stadium",
-      "city": null,
-      "status": "Not Started",
+      "city": "East Rutherford",
+      "status": "Second Half",
       "score": null,
       "score_90": null,
       "penalties": null
