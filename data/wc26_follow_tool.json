@@ -644,14 +644,14 @@
   "knockout": {
     "summary": {
       "threshold": 0.08,
-      "n_bets": 5,
-      "wins": 0,
-      "win_rate": 0.0,
-      "staked": 5.0,
-      "returned": 0.0,
-      "profit": -5.0,
-      "roi": -1.0,
-      "avg_edge": 0.116,
+      "n_bets": 6,
+      "wins": 1,
+      "win_rate": 0.1667,
+      "staked": 6.0,
+      "returned": 2.67,
+      "profit": -3.33,
+      "roi": -0.5555,
+      "avg_edge": 0.121,
       "stake_unit": 1.0
     },
     "bets": [
@@ -667,6 +667,19 @@
         "payout": 0.0,
         "profit": -1.0,
         "priced_at": "2026-07-02 22:15 UTC"
+      },
+      {
+        "match": "Mexico v England",
+        "round": "Round of 16",
+        "side": "England",
+        "model": 0.522,
+        "market": 0.375,
+        "edge": 0.147,
+        "won": true,
+        "stake": 1.0,
+        "payout": 2.667,
+        "profit": 1.667,
+        "priced_at": "2026-07-05 21:30 UTC"
       },
       {
         "match": "Australia v Egypt",

@@ -602,6 +602,14 @@
    "over_model": 0.2849,
    "over_market": null,
    "over_blend": 0.2849
+  },
+  "1581037": {
+   "locked_at": "2026-07-06 06:35 UTC",
+   "kickoff": "2026-07-11T21:00:00+00:00",
+   "line": 2.5,
+   "over_model": 0.427,
+   "over_market": null,
+   "over_blend": 0.427
   }
  }
 }

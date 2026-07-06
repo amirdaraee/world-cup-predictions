@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05 21:27 UTC",
+  "updated": "2026-07-06 06:33 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -243,22 +243,22 @@
       "away": "Norway",
       "venue": "MetLife Stadium",
       "city": "East Rutherford",
-      "status": "Second Half",
-      "score": null,
-      "score_90": null,
+      "status": "Match Finished",
+      "score": "1-2",
+      "score_90": "1-2",
       "penalties": null
     },
     {
       "match_id": 1570714,
       "round": "Round of 16",
-      "date_utc": "2026-07-06T00:00:00+00:00",
+      "date_utc": "2026-07-06T01:00:00+00:00",
       "home": "Mexico",
       "away": "England",
-      "venue": "Estadio Banorte",
+      "venue": "Estadio Azteca",
       "city": "Mexico City",
-      "status": "Not Started",
-      "score": null,
-      "score_90": null,
+      "status": "Match Finished",
+      "score": "2-3",
+      "score_90": "2-3",
       "penalties": null
     },
     {
@@ -319,6 +319,19 @@
       "date_utc": "2026-07-09T20:00:00+00:00",
       "home": "France",
       "away": "Morocco",
+      "venue": null,
+      "city": null,
+      "status": "Not Started",
+      "score": null,
+      "score_90": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1581037,
+      "round": "Quarter-finals",
+      "date_utc": "2026-07-11T21:00:00+00:00",
+      "home": "Norway",
+      "away": "England",
       "venue": null,
       "city": null,
       "status": "Not Started",

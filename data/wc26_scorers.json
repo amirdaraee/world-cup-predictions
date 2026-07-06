@@ -89,7 +89,9 @@
     1567311,
     1567312,
     1567824,
-    1569870
+    1568100,
+    1569870,
+    1570714
   ],
   "scorers": {
     "L. Messi": {
@@ -104,6 +106,16 @@
     },
     "M. Oyarzabal": {
       "team": "Spain",
+      "goals": 4,
+      "assists_from": []
+    },
+    "J. Quinones": {
+      "team": "Mexico",
+      "goals": 4,
+      "assists_from": []
+    },
+    "Erling Haaland": {
+      "team": "Norway",
       "goals": 4,
       "assists_from": []
     },
@@ -162,11 +174,6 @@
       "goals": 3,
       "assists_from": []
     },
-    "J. Quinones": {
-      "team": "Mexico",
-      "goals": 3,
-      "assists_from": []
-    },
     "F. Balogun": {
       "team": "United States",
       "goals": 3,
@@ -177,6 +184,16 @@
       "goals": 3,
       "assists_from": []
     },
+    "R. Jimenez": {
+      "team": "Mexico",
+      "goals": 3,
+      "assists_from": []
+    },
+    "H. Kane": {
+      "team": "England",
+      "goals": 3,
+      "assists_from": []
+    },
     "Y. Ayari": {
       "team": "Sweden",
       "goals": 2,
@@ -184,11 +201,6 @@
     },
     "K. Mbappe": {
       "team": "France",
-      "goals": 2,
-      "assists_from": []
-    },
-    "Erling Haaland": {
-      "team": "Norway",
       "goals": 2,
       "assists_from": []
     },
@@ -287,16 +299,6 @@
       "goals": 2,
       "assists_from": []
     },
-    "R. Jimenez": {
-      "team": "Mexico",
-      "goals": 2,
-      "assists_from": []
-    },
-    "H. Kane": {
-      "team": "England",
-      "goals": 2,
-      "assists_from": []
-    },
     "Youri Tielemans": {
       "team": "Belgium",
       "goals": 2,
@@ -314,6 +316,11 @@
     },
     "A. Ounahi": {
       "team": "Morocco",
+      "goals": 2,
+      "assists_from": []
+    },
+    "J. Bellingham": {
+      "team": "England",
       "goals": 2,
       "assists_from": []
     },
@@ -984,6 +991,11 @@
     },
     "S. Rahimi": {
       "team": "Morocco",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Neymar": {
+      "team": "Brazil",
       "goals": 1,
       "assists_from": []
     }
