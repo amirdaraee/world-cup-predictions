@@ -91,7 +91,8 @@
     1567824,
     1568100,
     1569870,
-    1570714
+    1570714,
+    1576756
   ],
   "scorers": {
     "L. Messi": {
@@ -996,6 +997,11 @@
     },
     "Neymar": {
       "team": "Brazil",
+      "goals": 1,
+      "assists_from": []
+    },
+    "M. Merino": {
+      "team": "Spain",
       "goals": 1,
       "assists_from": []
     }
