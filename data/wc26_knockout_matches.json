@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06 21:36 UTC",
+  "updated": "2026-07-07 06:23 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -282,9 +282,9 @@
       "away": "Belgium",
       "venue": "Lumen Field",
       "city": "Seattle",
-      "status": "Not Started",
-      "score": null,
-      "score_90": null,
+      "status": "Match Finished",
+      "score": "1-4",
+      "score_90": "1-4",
       "penalties": null
     },
     {
@@ -321,6 +321,19 @@
       "away": "Morocco",
       "venue": "Gillette Stadium",
       "city": "Boston",
+      "status": "Not Started",
+      "score": null,
+      "score_90": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1581821,
+      "round": "Quarter-finals",
+      "date_utc": "2026-07-10T19:00:00+00:00",
+      "home": "Spain",
+      "away": "Belgium",
+      "venue": null,
+      "city": null,
       "status": "Not Started",
       "score": null,
       "score_90": null,

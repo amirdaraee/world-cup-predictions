@@ -92,6 +92,7 @@
     1568100,
     1569870,
     1570714,
+    1570715,
     1576756
   ],
   "scorers": {
@@ -322,6 +323,21 @@
     },
     "J. Bellingham": {
       "team": "England",
+      "goals": 2,
+      "assists_from": []
+    },
+    "R. Lukaku": {
+      "team": "Belgium",
+      "goals": 2,
+      "assists_from": []
+    },
+    "M. Tillman": {
+      "team": "United States",
+      "goals": 2,
+      "assists_from": []
+    },
+    "C. De Ketelaere": {
+      "team": "Belgium",
       "goals": 2,
       "assists_from": []
     },
@@ -815,11 +831,6 @@
       "goals": 1,
       "assists_from": []
     },
-    "R. Lukaku": {
-      "team": "Belgium",
-      "goals": 1,
-      "assists_from": []
-    },
     "A. Saelemaekers": {
       "team": "Belgium",
       "goals": 1,
@@ -940,11 +951,6 @@
       "goals": 1,
       "assists_from": []
     },
-    "M. Tillman": {
-      "team": "United States",
-      "goals": 1,
-      "assists_from": []
-    },
     "P. Porro": {
       "team": "Spain",
       "goals": 1,
@@ -1002,6 +1008,11 @@
     },
     "M. Merino": {
       "team": "Spain",
+      "goals": 1,
+      "assists_from": []
+    },
+    "H. Vanaken": {
+      "team": "Belgium",
       "goals": 1,
       "assists_from": []
     }
