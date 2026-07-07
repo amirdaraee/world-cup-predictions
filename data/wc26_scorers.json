@@ -93,12 +93,13 @@
     1569870,
     1570714,
     1570715,
-    1576756
+    1576756,
+    1576804
   ],
   "scorers": {
     "L. Messi": {
       "team": "Argentina",
-      "goals": 6,
+      "goals": 7,
       "assists_from": []
     },
     "Kylian Mbappé": {
@@ -338,6 +339,11 @@
     },
     "C. De Ketelaere": {
       "team": "Belgium",
+      "goals": 2,
+      "assists_from": []
+    },
+    "M. Ziko": {
+      "team": "Egypt",
       "goals": 2,
       "assists_from": []
     },
@@ -628,11 +634,6 @@
     },
     "F. Surman": {
       "team": "New Zealand",
-      "goals": 1,
-      "assists_from": []
-    },
-    "M. Ziko": {
-      "team": "Egypt",
       "goals": 1,
       "assists_from": []
     },
@@ -1013,6 +1014,21 @@
     },
     "H. Vanaken": {
       "team": "Belgium",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Y. Ibrahim": {
+      "team": "Egypt",
+      "goals": 1,
+      "assists_from": []
+    },
+    "C. Romero": {
+      "team": "Argentina",
+      "goals": 1,
+      "assists_from": []
+    },
+    "E. Fernandez": {
+      "team": "Argentina",
       "goals": 1,
       "assists_from": []
     }

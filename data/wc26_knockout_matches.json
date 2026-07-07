@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07 06:23 UTC",
+  "updated": "2026-07-07 21:34 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -295,9 +295,9 @@
       "away": "Egypt",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta",
-      "status": "Not Started",
-      "score": null,
-      "score_90": null,
+      "status": "Match Finished",
+      "score": "3-2",
+      "score_90": "3-2",
       "penalties": null
     },
     {
@@ -308,7 +308,7 @@
       "away": "Colombia",
       "venue": "BC Place",
       "city": "Vancouver",
-      "status": "Not Started",
+      "status": "Second Half",
       "score": null,
       "score_90": null,
       "penalties": null
@@ -332,8 +332,8 @@
       "date_utc": "2026-07-10T19:00:00+00:00",
       "home": "Spain",
       "away": "Belgium",
-      "venue": null,
-      "city": null,
+      "venue": "SoFi Stadium",
+      "city": "Los Angeles",
       "status": "Not Started",
       "score": null,
       "score_90": null,
