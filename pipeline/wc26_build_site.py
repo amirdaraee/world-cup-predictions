@@ -130,6 +130,45 @@ ROUND_SHORT = {"Round of 32": "R32", "Round of 16": "R16",
                "Quarter-finals": "QF", "Semi-finals": "SF",
                "3rd Place Final": "3rd", "Final": "Final"}
 
+
+def wc_form(name):
+    """This tournament's finished matches for a team, shaped like the
+    fetched last_10 records. DISPLAY only: the model stays WC-blind by
+    design, but a reader's 'form' that omits the World Cup itself is
+    stale — so team pages merge these in, newest first."""
+    out = []
+    for m in MATCHES + KOS:
+        if not (str(m.get("status", "")).startswith("Match Finished")
+                and m.get("score")):
+            continue
+        if name not in (m["home"], m["away"]):
+            continue
+        home = m["home"] == name
+        h, a = (int(x) for x in m["score"].split("-"))
+        f, g = (h, a) if home else (a, h)
+        rec = {"date": m["date_utc"][:10],
+               "opponent": m["away"] if home else m["home"],
+               "home_away": "H" if home else "A",
+               "score": f"{f}-{g}",
+               "result": "W" if f > g else "L" if f < g else "D",
+               "competition": ("World Cup " + ROUND_SHORT[m["round"]]
+                               if m.get("round") else "World Cup")}
+        pens = m.get("penalties")
+        if pens and f == g:                      # pens count as draws;
+            ph, pa = (int(x) for x in pens.split("-"))   # note who went on
+            won = (ph > pa) if home else (pa > ph)
+            rec["note"] = f"{'won' if won else 'lost'} pens {pens}"
+        out.append(rec)
+    out.sort(key=lambda r: r["date"], reverse=True)
+    return out
+
+
+# merge tournament form into every team's displayed last-10 (newest first).
+# wc26_awards.py and the LLM read the frozen JSON directly — untouched.
+for _t in TEAMS.values():
+    _t["last_10_matches"] = (wc_form(_t["country"])
+                             + _t["last_10_matches"])[:10]
+
 team_group = {}
 for m in MATCHES:
     team_group[m["home"]] = m["group"]

@@ -49,7 +49,7 @@ try {
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=202607082137">
+<link rel="stylesheet" href="../style.css?v=202607082214">
 <script>
 (function() {
   var t = localStorage.getItem("theme");
@@ -84,7 +84,7 @@ function toggleTheme() {
 <span class="chip">AFC</span>
 
 </p>
-<span class="form" data-tip="last 10 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i><i class="f D">D</i></span>
+<span class="form" data-tip="last 10 internationals, most recent first - W win, D draw (incl. pen shoot-outs), L loss"><i class="f D">D</i><i class="f D">D</i><i class="f D">D</i><i class="f W">W</i><i class="f W">W</i><i class="f W">W</i><i class="f L">L</i><i class="f L">L</i><i class="f W">W</i><i class="f W">W</i></span>
 </div>
 <dl class="stats odds" data-tip="from 100,000 simulated tournaments - see Futures"><div><dt>Win group</dt><dd>0.0%</dd></div><div><dt>Reach R32</dt><dd>0.0%</dd></div><div><dt>QF</dt><dd>0.0%</dd></div><div><dt>SF</dt><dd>0.0%</dd></div><div><dt>Final</dt><dd>0.0%</dd></div><div><dt>Champion</dt><dd>0.0%</dd></div></dl>
 <h2>Key players</h2>
@@ -95,11 +95,11 @@ function toggleTheme() {
 <th class="num" data-tip="international appearances 2024-26">Apps</th></tr></thead>
 <tbody><tr><td>M. Taremi</td><td>Attacker</td><td class="num">33</td><td class="num">7</td><td class="num">26%</td><td class="num">24</td></tr><tr><td>M. Mohebi</td><td>Midfielder</td><td class="num">27</td><td class="num">6</td><td class="num">22%</td><td class="num">13</td></tr><tr><td>R. Rezaeian</td><td>Midfielder</td><td class="num">35</td><td class="num">4</td><td class="num">15%</td><td class="num">11</td></tr><tr><td>M. Ghaedi</td><td>Attacker</td><td class="num">27</td><td class="num">4</td><td class="num">15%</td><td class="num">3</td></tr><tr><td>A. Beiranvand</td><td>Goalkeeper</td><td class="num">33</td><td class="num">-</td><td class="num">-</td><td class="num">20</td></tr></tbody></table>
 <dl class="stats">
-<div><dt data-tip="wins-draws-losses over the last 10 internationals">Record</dt><dd>5–1–4</dd></div>
+<div><dt data-tip="wins-draws-losses over the last 10 internationals">Record</dt><dd>5–3–2</dd></div>
 <div><dt data-tip="goals scored per game, last 10">Goals / game</dt><dd>1.6</dd></div>
-<div><dt data-tip="goals conceded per game, last 10">Conceded / game</dt><dd>0.8</dd></div>
-<div><dt data-tip="games without conceding, last 10">Clean sheets</dt><dd>5/10</dd></div>
-<div><dt data-tip="games with 3+ total goals - the standard totals betting line">Over 2.5</dt><dd>5/10</dd></div>
+<div><dt data-tip="goals conceded per game, last 10">Conceded / game</dt><dd>0.6</dd></div>
+<div><dt data-tip="games without conceding, last 10">Clean sheets</dt><dd>6/10</dd></div>
+<div><dt data-tip="games with 3+ total goals - the standard totals betting line">Over 2.5</dt><dd>4/10</dd></div>
 <div><dt data-tip="both teams scored - a standard prediction-market category">BTTS</dt><dd>4/10</dd></div>
 </dl>
 <p class="fineprint">Over 2.5 (three-plus total goals) and BTTS (both teams scored) are counted
@@ -112,6 +112,27 @@ and how the model scores them.</p>
 <table class="last10">
 <thead><tr><th class="num">Date</th><th>Opponent</th><th class="num" data-tip="home or away, from this team's perspective">H/A</th><th class="num" data-tip="goals for-against, from this team's perspective">Score</th><th data-tip="result: W win, D draw (pens count as draws), L loss">Res</th><th>Competition</th></tr></thead>
 <tbody><tr>
+<td class="num">2026-06-27</td>
+<td>Egypt</td>
+<td class="num">A</td>
+<td class="num score">1-1</td>
+<td><i class="f D">D</i></td>
+<td class="comp">World Cup</td>
+</tr><tr>
+<td class="num">2026-06-21</td>
+<td>Belgium</td>
+<td class="num">A</td>
+<td class="num score">0-0</td>
+<td><i class="f D">D</i></td>
+<td class="comp">World Cup</td>
+</tr><tr>
+<td class="num">2026-06-16</td>
+<td>New Zealand</td>
+<td class="num">H</td>
+<td class="num score">2-2</td>
+<td><i class="f D">D</i></td>
+<td class="comp">World Cup</td>
+</tr><tr>
 <td class="num">2026-06-04</td>
 <td>Mali</td>
 <td class="num">H</td>
@@ -160,27 +181,6 @@ and how the model scores them.</p>
 <td class="num score">2-0</td>
 <td><i class="f W">W</i></td>
 <td class="comp">Friendlies</td>
-</tr><tr>
-<td class="num">2025-10-10</td>
-<td>Russia</td>
-<td class="num">A</td>
-<td class="num score">1-2</td>
-<td><i class="f L">L</i></td>
-<td class="comp">Friendlies</td>
-</tr><tr>
-<td class="num">2025-09-08</td>
-<td>Uzbekistan</td>
-<td class="num">H</td>
-<td class="num score">0-1</td>
-<td><i class="f L">L</i></td>
-<td class="comp">CAFA Nations Cup</td>
-</tr><tr>
-<td class="num">2025-09-04</td>
-<td>Tajikistan</td>
-<td class="num">A</td>
-<td class="num score">2-2</td>
-<td><i class="f D">D</i></td>
-<td class="comp">CAFA Nations Cup</td>
 </tr></tbody>
 </table>
 <h2>Group G fixtures</h2>
