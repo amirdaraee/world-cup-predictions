@@ -171,7 +171,8 @@ def _match_dossier(m, sim, mkt, src):
                          ("fifa_ranking", "confederation", "last_10",
                           "squad_value_eur_m", "key_players")}
     return {
-        "fixture": f"{m['home']} v {m['away']}, group {m.get('group')}, "
+        "fixture": f"{m['home']} v {m['away']}, "
+                   f"{'group ' + m['group'] if m.get('group') else m.get('round', '')}, "
                    f"{m['date_utc'][:10]}, {m.get('venue')} ({m.get('city')})",
         "model": {k: sim.get(k) for k in
                   ("xg", "moneyline", "totals", "btts", "first_to_score",
@@ -292,6 +293,11 @@ def generate(only=None, limit=None, force=False, refresh_days=0):
     prices = json.load(open(f"{DATA}/wc26_market_prices.json"))["prices"]
     fixtures = json.load(
         open(f"{DATA}/fifa_world_cup_2026_group_matches.json"))["matches"]
+    try:   # knockout ties get previews/reviews too once teams are known
+        fixtures = fixtures + json.load(
+            open(f"{DATA}/wc26_knockout_matches.json"))["matches"]
+    except FileNotFoundError:
+        pass
     pred_by_mid = {}
     try:
         pred = json.load(open(f"{DATA}/wc26_predictions.json"))
@@ -326,7 +332,10 @@ def generate(only=None, limit=None, force=False, refresh_days=0):
             sim = sims.get(mid, {})
             mkt = prices.get(mid, {})
             slot = store["matches"].setdefault(mid, {})
-            if force or "preview" not in slot or mid in refresh_mids:
+            # a preview written AFTER the result would be look-ahead dressed
+            # up as foresight — played matches only ever get reviews
+            if not m.get("score") and \
+                    (force or "preview" not in slot or mid in refresh_mids):
                 todo.append(("preview", mid,
                              build_preview_prompt(m, sim, mkt, src)))
             if m.get("score") and (force or "review" not in slot):
