@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08 06:01 UTC",
+  "updated": "2026-07-08 21:29 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -358,8 +358,8 @@
       "date_utc": "2026-07-12T01:00:00+00:00",
       "home": "Argentina",
       "away": "Switzerland",
-      "venue": null,
-      "city": null,
+      "venue": "Arrowhead Stadium",
+      "city": "Kansas City",
       "status": "Not Started",
       "score": null,
       "score_90": null,
