@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07 21:34 UTC",
+  "updated": "2026-07-08 06:01 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -308,10 +308,10 @@
       "away": "Colombia",
       "venue": "BC Place",
       "city": "Vancouver",
-      "status": "Second Half",
-      "score": null,
-      "score_90": null,
-      "penalties": null
+      "status": "Match Finished",
+      "score": "0-0",
+      "score_90": "0-0",
+      "penalties": "4-3"
     },
     {
       "match_id": 1578539,
@@ -347,6 +347,19 @@
       "away": "England",
       "venue": "Hard Rock Stadium",
       "city": "Miami",
+      "status": "Not Started",
+      "score": null,
+      "score_90": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1582681,
+      "round": "Quarter-finals",
+      "date_utc": "2026-07-12T01:00:00+00:00",
+      "home": "Argentina",
+      "away": "Switzerland",
+      "venue": null,
+      "city": null,
       "status": "Not Started",
       "score": null,
       "score_90": null,
