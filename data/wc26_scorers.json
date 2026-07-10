@@ -95,7 +95,8 @@
     1570715,
     1576756,
     1576804,
-    1576805
+    1576805,
+    1578539
   ],
   "scorers": {
     "L. Messi": {
@@ -105,7 +106,7 @@
     },
     "Kylian Mbappé": {
       "team": "France",
-      "goals": 5,
+      "goals": 6,
       "assists_from": []
     },
     "M. Oyarzabal": {
@@ -345,6 +346,11 @@
     },
     "M. Ziko": {
       "team": "Egypt",
+      "goals": 2,
+      "assists_from": []
+    },
+    "Ousmane Dembélé": {
+      "team": "France",
       "goals": 2,
       "assists_from": []
     },
@@ -645,11 +651,6 @@
     },
     "Trezeguet": {
       "team": "Egypt",
-      "goals": 1,
-      "assists_from": []
-    },
-    "Ousmane Dembélé": {
-      "team": "France",
       "goals": 1,
       "assists_from": []
     },

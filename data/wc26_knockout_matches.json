@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09 21:34 UTC",
+  "updated": "2026-07-10 06:21 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -321,9 +321,9 @@
       "away": "Morocco",
       "venue": "Gillette Stadium",
       "city": "Boston",
-      "status": "Second Half",
-      "score": null,
-      "score_90": null,
+      "status": "Match Finished",
+      "score": "2-0",
+      "score_90": "2-0",
       "penalties": null
     },
     {

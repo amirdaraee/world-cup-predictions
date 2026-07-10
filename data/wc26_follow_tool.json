@@ -644,14 +644,14 @@
   "knockout": {
     "summary": {
       "threshold": 0.08,
-      "n_bets": 6,
+      "n_bets": 8,
       "wins": 1,
-      "win_rate": 0.1667,
-      "staked": 6.0,
+      "win_rate": 0.125,
+      "staked": 8.0,
       "returned": 2.67,
-      "profit": -3.33,
-      "roi": -0.5555,
-      "avg_edge": 0.121,
+      "profit": -5.33,
+      "roi": -0.6666,
+      "avg_edge": 0.123,
       "stake_unit": 1.0
     },
     "bets": [
@@ -667,6 +667,19 @@
         "payout": 0.0,
         "profit": -1.0,
         "priced_at": "2026-07-02 22:15 UTC"
+      },
+      {
+        "match": "France v Morocco",
+        "round": "Quarter-finals",
+        "side": "Morocco",
+        "model": 0.291,
+        "market": 0.135,
+        "edge": 0.156,
+        "won": false,
+        "stake": 1.0,
+        "payout": 0.0,
+        "profit": -1.0,
+        "priced_at": "2026-07-09 06:23 UTC"
       },
       {
         "match": "Mexico v England",
@@ -706,6 +719,19 @@
         "payout": 0.0,
         "profit": -1.0,
         "priced_at": "2026-07-04 19:56 UTC"
+      },
+      {
+        "match": "France v Morocco",
+        "round": "Quarter-finals",
+        "side": "Draw",
+        "model": 0.348,
+        "market": 0.245,
+        "edge": 0.103,
+        "won": false,
+        "stake": 1.0,
+        "payout": 0.0,
+        "profit": -1.0,
+        "priced_at": "2026-07-09 06:23 UTC"
       },
       {
         "match": "Mexico v Ecuador",
