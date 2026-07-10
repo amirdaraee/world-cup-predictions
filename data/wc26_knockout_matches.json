@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10 06:21 UTC",
+  "updated": "2026-07-10 21:28 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -334,9 +334,9 @@
       "away": "Belgium",
       "venue": "SoFi Stadium",
       "city": "Los Angeles",
-      "status": "Not Started",
-      "score": null,
-      "score_90": null,
+      "status": "Match Finished",
+      "score": "2-1",
+      "score_90": "2-1",
       "penalties": null
     },
     {
@@ -360,6 +360,19 @@
       "away": "Switzerland",
       "venue": "Arrowhead Stadium",
       "city": "Kansas City",
+      "status": "Not Started",
+      "score": null,
+      "score_90": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1585131,
+      "round": "Semi-finals",
+      "date_utc": "2026-07-14T19:00:00+00:00",
+      "home": "France",
+      "away": "Spain",
+      "venue": null,
+      "city": null,
       "status": "Not Started",
       "score": null,
       "score_90": null,

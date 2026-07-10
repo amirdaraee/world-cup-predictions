@@ -96,7 +96,8 @@
     1576756,
     1576804,
     1576805,
-    1578539
+    1578539,
+    1581821
   ],
   "scorers": {
     "L. Messi": {
@@ -196,6 +197,11 @@
     },
     "H. Kane": {
       "team": "England",
+      "goals": 3,
+      "assists_from": []
+    },
+    "C. De Ketelaere": {
+      "team": "Belgium",
       "goals": 3,
       "assists_from": []
     },
@@ -339,11 +345,6 @@
       "goals": 2,
       "assists_from": []
     },
-    "C. De Ketelaere": {
-      "team": "Belgium",
-      "goals": 2,
-      "assists_from": []
-    },
     "M. Ziko": {
       "team": "Egypt",
       "goals": 2,
@@ -351,6 +352,11 @@
     },
     "Ousmane Dembélé": {
       "team": "France",
+      "goals": 2,
+      "assists_from": []
+    },
+    "M. Merino": {
+      "team": "Spain",
       "goals": 2,
       "assists_from": []
     },
@@ -1009,11 +1015,6 @@
       "goals": 1,
       "assists_from": []
     },
-    "M. Merino": {
-      "team": "Spain",
-      "goals": 1,
-      "assists_from": []
-    },
     "H. Vanaken": {
       "team": "Belgium",
       "goals": 1,
@@ -1031,6 +1032,11 @@
     },
     "E. Fernandez": {
       "team": "Argentina",
+      "goals": 1,
+      "assists_from": []
+    },
+    "F. Ruiz": {
+      "team": "Spain",
       "goals": 1,
       "assists_from": []
     }
