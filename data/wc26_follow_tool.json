@@ -644,14 +644,14 @@
   "knockout": {
     "summary": {
       "threshold": 0.08,
-      "n_bets": 8,
-      "wins": 1,
-      "win_rate": 0.125,
-      "staked": 8.0,
-      "returned": 2.67,
-      "profit": -5.33,
-      "roi": -0.6666,
-      "avg_edge": 0.123,
+      "n_bets": 9,
+      "wins": 2,
+      "win_rate": 0.2222,
+      "staked": 9.0,
+      "returned": 4.42,
+      "profit": -4.58,
+      "roi": -0.5083,
+      "avg_edge": 0.12,
       "stake_unit": 1.0
     },
     "bets": [
@@ -745,6 +745,19 @@
         "payout": 0.0,
         "profit": -1.0,
         "priced_at": "2026-06-30 22:21 UTC"
+      },
+      {
+        "match": "Argentina v Switzerland",
+        "round": "Quarter-finals",
+        "side": "Argentina",
+        "model": 0.662,
+        "market": 0.569,
+        "edge": 0.094,
+        "won": true,
+        "stake": 1.0,
+        "payout": 1.758,
+        "profit": 0.758,
+        "priced_at": "2026-07-11 21:23 UTC"
       },
       {
         "match": "Netherlands v Morocco",

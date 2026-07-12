@@ -97,7 +97,9 @@
     1576804,
     1576805,
     1578539,
-    1581821
+    1581037,
+    1581821,
+    1582681
   ],
   "scorers": {
     "L. Messi": {
@@ -122,6 +124,11 @@
     },
     "Erling Haaland": {
       "team": "Norway",
+      "goals": 4,
+      "assists_from": []
+    },
+    "Jude Bellingham": {
+      "team": "England",
       "goals": 4,
       "assists_from": []
     },
@@ -275,11 +282,6 @@
       "goals": 2,
       "assists_from": []
     },
-    "Jude Bellingham": {
-      "team": "England",
-      "goals": 2,
-      "assists_from": []
-    },
     "A. Elanga": {
       "team": "Sweden",
       "goals": 2,
@@ -357,6 +359,16 @@
     },
     "M. Merino": {
       "team": "Spain",
+      "goals": 2,
+      "assists_from": []
+    },
+    "L. Martinez": {
+      "team": "Argentina",
+      "goals": 2,
+      "assists_from": []
+    },
+    "D. Ndoye": {
+      "team": "Switzerland",
       "goals": 2,
       "assists_from": []
     },
@@ -890,11 +902,6 @@
       "goals": 1,
       "assists_from": []
     },
-    "L. Martinez": {
-      "team": "Argentina",
-      "goals": 1,
-      "assists_from": []
-    },
     "M. Tamari": {
       "team": "Jordan",
       "goals": 1,
@@ -975,11 +982,6 @@
       "goals": 1,
       "assists_from": []
     },
-    "D. Ndoye": {
-      "team": "Switzerland",
-      "goals": 1,
-      "assists_from": []
-    },
     "Lionel Messi": {
       "team": "Argentina",
       "goals": 1,
@@ -1037,6 +1039,21 @@
     },
     "F. Ruiz": {
       "team": "Spain",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Andreas Schjelderup": {
+      "team": "Norway",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Mac Allister": {
+      "team": "Argentina",
+      "goals": 1,
+      "assists_from": []
+    },
+    "J. Alvarez": {
+      "team": "Argentina",
       "goals": 1,
       "assists_from": []
     }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-11 21:21 UTC",
+  "updated": "2026-07-12 05:17 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -347,9 +347,9 @@
       "away": "England",
       "venue": "Hard Rock Stadium",
       "city": "Miami",
-      "status": "First Half",
-      "score": null,
-      "score_90": null,
+      "status": "Match Finished",
+      "score": "1-2",
+      "score_90": "1-1",
       "penalties": null
     },
     {
@@ -360,9 +360,9 @@
       "away": "Switzerland",
       "venue": "Arrowhead Stadium",
       "city": "Kansas City",
-      "status": "Not Started",
-      "score": null,
-      "score_90": null,
+      "status": "Match Finished",
+      "score": "3-1",
+      "score_90": "1-1",
       "penalties": null
     },
     {
