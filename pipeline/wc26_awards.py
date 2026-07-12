@@ -36,7 +36,52 @@ def norm(s):
 
 
 # ---------------- Golden Boot ----------------
-cand_names, cand_teams, cand_shares, cand_meta = [], [], [], []
+# The race must be conditioned on reality: ~100 tournament goals have real
+# scorers. Re-simulating them from career-share priors kept "re-awarding"
+# them by binomial draw (Haaland 23% while eliminated on 4 actual goals vs
+# Messi's actual 7). Credit each candidate's REAL tally and simulate only
+# the goals their team hasn't scored yet.
+try:
+    scorers = json.load(open(f"{DATA}/wc26_scorers.json"))["scorers"]
+except FileNotFoundError:
+    scorers = {}
+
+
+def played_goals():
+    """Goals each team has already scored this tournament (group + KO)."""
+    gm = json.load(open(f"{DATA}/fifa_world_cup_2026_group_matches.json"))["matches"]
+    try:
+        ko = json.load(open(f"{DATA}/wc26_knockout_matches.json"))["matches"]
+    except FileNotFoundError:
+        ko = []
+    out = {}
+    for m in gm + ko:
+        if not (str(m.get("status", "")).startswith("Match Finished")
+                and m.get("score")):
+            continue
+        h, a = (int(x) for x in m["score"].split("-"))
+        out[m["home"]] = out.get(m["home"], 0) + h
+        out[m["away"]] = out.get(m["away"], 0) + a
+    return out
+
+
+PLAYED = played_goals()
+
+
+def actual_tally(name, team):
+    """This tournament's goals for a squad player — scorer names come from
+    fixture events and squad names from the squads endpoint, so match on
+    normalized full name first, then same-team last name."""
+    n = norm(name)
+    last = n.split()[-1]
+    for k, v in scorers.items():
+        if v.get("team") == team and (norm(k) == n
+                                      or norm(k).split()[-1] == last):
+            return v["goals"]
+    return 0
+
+
+cand_names, cand_teams, cand_shares, cand_meta, cand_actual = [], [], [], [], []
 for team, squad in players["squads"].items():
     total = sum(p["goals"] for p in squad)
     if team not in TEAMS or total == 0:
@@ -49,6 +94,7 @@ for team, squad in players["squads"].items():
         cand_names.append(p["name"])
         cand_teams.append(team)
         cand_shares.append(share)
+        cand_actual.append(actual_tally(p["name"], team))
         cand_meta.append({"intl_goals": p["goals"], "apps": p["apps"],
                           "position": p["position"]})
 
@@ -57,7 +103,8 @@ C = len(cand_names)
 mat = np.zeros((C, S), dtype=np.int16)
 for i in range(C):
     tg = GOALS[:, TEAMS.index(cand_teams[i])]
-    mat[i] = rng.binomial(tg, cand_shares[i])
+    future = np.clip(tg - PLAYED.get(cand_teams[i], 0), 0, None)
+    mat[i] = cand_actual[i] + rng.binomial(future, cand_shares[i])
 mx = mat.max(axis=0)
 winners = (mat == mx) & (mx > 0)
 ties = winners.sum(axis=0)
