@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-12 05:17 UTC",
+  "updated": "2026-07-12 06:02 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -371,6 +371,19 @@
       "date_utc": "2026-07-14T19:00:00+00:00",
       "home": "France",
       "away": "Spain",
+      "venue": null,
+      "city": null,
+      "status": "Not Started",
+      "score": null,
+      "score_90": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1586077,
+      "round": "Semi-finals",
+      "date_utc": "2026-07-15T19:00:00+00:00",
+      "home": "England",
+      "away": "Argentina",
       "venue": null,
       "city": null,
       "status": "Not Started",
