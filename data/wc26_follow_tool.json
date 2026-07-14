@@ -644,13 +644,13 @@
   "knockout": {
     "summary": {
       "threshold": 0.08,
-      "n_bets": 9,
-      "wins": 2,
-      "win_rate": 0.2222,
-      "staked": 9.0,
-      "returned": 4.42,
-      "profit": -4.58,
-      "roi": -0.5083,
+      "n_bets": 10,
+      "wins": 3,
+      "win_rate": 0.3,
+      "staked": 10.0,
+      "returned": 7.77,
+      "profit": -2.23,
+      "roi": -0.2228,
       "avg_edge": 0.12,
       "stake_unit": 1.0
     },
@@ -706,6 +706,19 @@
         "payout": 0.0,
         "profit": -1.0,
         "priced_at": "2026-07-03 08:12 UTC"
+      },
+      {
+        "match": "France v Spain",
+        "round": "Semi-finals",
+        "side": "Spain",
+        "model": 0.415,
+        "market": 0.299,
+        "edge": 0.116,
+        "won": true,
+        "stake": 1.0,
+        "payout": 3.347,
+        "profit": 2.347,
+        "priced_at": "2026-07-14 05:50 UTC"
       },
       {
         "match": "Paraguay v France",

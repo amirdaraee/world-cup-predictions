@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14 05:48 UTC",
+  "updated": "2026-07-14 21:25 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -371,11 +371,11 @@
       "date_utc": "2026-07-14T19:00:00+00:00",
       "home": "France",
       "away": "Spain",
-      "venue": null,
-      "city": null,
-      "status": "Not Started",
-      "score": null,
-      "score_90": null,
+      "venue": "Dallas Stadium",
+      "city": "Arlington",
+      "status": "Match Finished",
+      "score": "0-2",
+      "score_90": "0-2",
       "penalties": null
     },
     {
@@ -384,8 +384,8 @@
       "date_utc": "2026-07-15T19:00:00+00:00",
       "home": "England",
       "away": "Argentina",
-      "venue": null,
-      "city": null,
+      "venue": "Mercedes-Benz Stadium",
+      "city": "Atlanta",
       "status": "Not Started",
       "score": null,
       "score_90": null,
