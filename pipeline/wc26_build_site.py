@@ -1315,6 +1315,57 @@ def _rank_of(round_name):
     return "5f"
 
 
+def predicted_bracket_html():
+    """The locked picks as a visual bracket — the full knockout tree filled
+    with the model's predicted winners, both halves converging on the
+    predicted champion in the centre (the flag-bracket style). Every node is
+    already resolved: PRED['knockout'] stores team1/team2/pick per match, so
+    the tree is just a lookup. Reuses the homepage .bracket CSS; the champion
+    card and predicted finalists sit in the middle column. The 3rd-place
+    match (#103) isn't part of the tree. '' when no locked picks exist."""
+    if not PRED or not PRED.get("knockout"):
+        return ""
+    pick_of = {k["match"]: k for k in PRED["knockout"]}
+    if 104 not in pick_of:
+        return ""
+
+    def frow(team, win, p=None):
+        cell = (f'<span class="bp">{p * 100:.0f}</span>'
+                if win and p is not None else "")
+        return (f'<span class="brow{" bwin" if win else ""}">'
+                f'<span class="bt">{flag(team)} {escape(team)}</span>{cell}</span>')
+
+    def pnode(no):
+        k = pick_of[no]
+        return (f'<div class="bnode">'
+                f'{frow(k["team1"], k["team1"] == k["pick"], k["p_pick"])}'
+                f'{frow(k["team2"], k["team2"] == k["pick"], k["p_pick"])}</div>')
+
+    def side(cols):
+        return "".join('<div class="bcol">'
+                       + "".join(pnode(no) for no in col) + "</div>"
+                       for col in cols)
+
+    champ, fin = PRED["champion"], pick_of[104]
+    centre = (f'<div class="bcol bfinal"><div class="pchamp">'
+              f'<span class="pchtrophy">\U0001F3C6</span>'
+              f'<span class="pchlab">Predicted champion</span>'
+              f'<span class="pchflag">{flag(champ)}</span>'
+              f'<span class="pchname">{escape(champ)}</span></div>'
+              f'<div class="pfinalists">Final: {flag(fin["team1"])} '
+              f'{escape(fin["team1"])} <em>v</em> {flag(fin["team2"])} '
+              f'{escape(fin["team2"])}</div></div>')
+    bracket = (f'<div class="bracket pbracket">{side(KO_LEFT)}{centre}'
+               f'{side(list(reversed(KO_RIGHT)))}</div>')
+    return (f'<div class="brackwrap">{bracket}</div>'
+            f'<p class="fineprint">The locked knockout picks as a bracket — '
+            f'each tie shows the model’s predicted winner (bold, with its '
+            f'win probability) advancing. This is the pre-tournament call from '
+            f'{escape(PRED["locked_at"])}; reality re-drew the real bracket, '
+            f'graded tie-by-tie in the tables below. Scroll sideways on a '
+            f'narrow screen.</p>')
+
+
 def locked_tournament_html():
     """The locked pre-tournament bracket, predicted standings and group-stage
     pick tracker — folded into the Report page (was the standalone Bracket
@@ -1421,6 +1472,7 @@ graded against reality as results land. Picks are modal outcomes from the mean m
 official FIFA bracket decides who meets whom. How they scored lives on the
 <a href="report.html">report card</a>.</p>
 <div class="champ">Predicted champion: <b>{team_link(PRED['champion'])}</b></div>
+{predicted_bracket_html()}
 <p class="fineprint">Two pick columns, two different questions — don't conflate them. <b>Result
 pick</b> is the call: who wins (or a draw), with the model's probability beside it. <b>Modal
 score</b> is the single most likely exact scoreline, typically a 10-15% shot — because goals
@@ -2997,6 +3049,18 @@ td.twin { color: var(--green); } td.tloss { color: var(--ink-soft); }
 .bchamp a { color: var(--ink); text-decoration: none; font-weight: 600; }
 .bchamp b { color: var(--green); margin-left: .35rem; }
 .bchamp span { display: block; font-size: .68rem; color: var(--ink-soft); margin-top: .1rem; }
+/* predicted bracket: full flag tree converging on the champion card */
+.pbracket { min-width: 940px; }
+.pbracket .bfinal { min-width: 132px; }
+.pchamp { text-align: center; border: 2px solid var(--amber); border-radius: 10px;
+  padding: .55rem .5rem; background: var(--paper-2); }
+.pchtrophy { display: block; font-size: 1.3rem; line-height: 1; }
+.pchlab { display: block; font-size: .56rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--amber); font-weight: 700; margin-top: .15rem; }
+.pchflag { display: block; font-size: 2rem; line-height: 1.25; }
+.pchname { display: block; font-weight: 700; color: var(--green); font-size: .95rem; }
+.pfinalists { text-align: center; font-size: .7rem; color: var(--ink-soft); margin-top: .55rem; }
+.pfinalists em { font-style: normal; color: var(--ink-soft); margin: 0 .1rem; }
 /* mobile: round-by-round list instead of the sideways tree */
 .kolist { display: none; }
 .koround { margin-top: 1.3rem; }
