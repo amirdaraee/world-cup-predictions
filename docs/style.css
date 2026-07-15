@@ -176,6 +176,18 @@ td.twin { color: var(--green); } td.tloss { color: var(--ink-soft); }
 .bchamp a { color: var(--ink); text-decoration: none; font-weight: 600; }
 .bchamp b { color: var(--green); margin-left: .35rem; }
 .bchamp span { display: block; font-size: .68rem; color: var(--ink-soft); margin-top: .1rem; }
+/* predicted bracket: full flag tree converging on the champion card */
+.pbracket { min-width: 940px; }
+.pbracket .bfinal { min-width: 132px; }
+.pchamp { text-align: center; border: 2px solid var(--amber); border-radius: 10px;
+  padding: .55rem .5rem; background: var(--paper-2); }
+.pchtrophy { display: block; font-size: 1.3rem; line-height: 1; }
+.pchlab { display: block; font-size: .56rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--amber); font-weight: 700; margin-top: .15rem; }
+.pchflag { display: block; font-size: 2rem; line-height: 1.25; }
+.pchname { display: block; font-weight: 700; color: var(--green); font-size: .95rem; }
+.pfinalists { text-align: center; font-size: .7rem; color: var(--ink-soft); margin-top: .55rem; }
+.pfinalists em { font-style: normal; color: var(--ink-soft); margin: 0 .1rem; }
 /* mobile: round-by-round list instead of the sideways tree */
 .kolist { display: none; }
 .koround { margin-top: 1.3rem; }
