@@ -100,7 +100,8 @@
     1581037,
     1581821,
     1582681,
-    1585131
+    1585131,
+    1586077
   ],
   "scorers": {
     "L. Messi": {
@@ -210,6 +211,11 @@
     },
     "C. De Ketelaere": {
       "team": "Belgium",
+      "goals": 3,
+      "assists_from": []
+    },
+    "L. Martinez": {
+      "team": "Argentina",
       "goals": 3,
       "assists_from": []
     },
@@ -363,11 +369,6 @@
       "goals": 2,
       "assists_from": []
     },
-    "L. Martinez": {
-      "team": "Argentina",
-      "goals": 2,
-      "assists_from": []
-    },
     "D. Ndoye": {
       "team": "Switzerland",
       "goals": 2,
@@ -375,6 +376,11 @@
     },
     "P. Porro": {
       "team": "Spain",
+      "goals": 2,
+      "assists_from": []
+    },
+    "E. Fernandez": {
+      "team": "Argentina",
       "goals": 2,
       "assists_from": []
     },
@@ -1033,11 +1039,6 @@
       "goals": 1,
       "assists_from": []
     },
-    "E. Fernandez": {
-      "team": "Argentina",
-      "goals": 1,
-      "assists_from": []
-    },
     "F. Ruiz": {
       "team": "Spain",
       "goals": 1,
@@ -1055,6 +1056,11 @@
     },
     "J. Alvarez": {
       "team": "Argentina",
+      "goals": 1,
+      "assists_from": []
+    },
+    "A. Gordon": {
+      "team": "England",
       "goals": 1,
       "assists_from": []
     }

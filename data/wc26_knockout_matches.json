@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15 05:48 UTC",
+  "updated": "2026-07-15 21:25 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -386,6 +386,32 @@
       "away": "Argentina",
       "venue": "Mercedes-Benz Stadium",
       "city": "Atlanta",
+      "status": "Match Finished",
+      "score": "1-2",
+      "score_90": "1-2",
+      "penalties": null
+    },
+    {
+      "match_id": 1591865,
+      "round": "3rd Place Final",
+      "date_utc": "2026-07-18T21:00:00+00:00",
+      "home": "France",
+      "away": "England",
+      "venue": null,
+      "city": null,
+      "status": "Not Started",
+      "score": null,
+      "score_90": null,
+      "penalties": null
+    },
+    {
+      "match_id": 1591866,
+      "round": "Final",
+      "date_utc": "2026-07-19T19:00:00+00:00",
+      "home": "Spain",
+      "away": "Argentina",
+      "venue": null,
+      "city": null,
       "status": "Not Started",
       "score": null,
       "score_90": null,
