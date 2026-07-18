@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18 09:56 UTC",
+  "updated": "2026-07-18 21:21 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -397,9 +397,9 @@
       "date_utc": "2026-07-18T21:00:00+00:00",
       "home": "France",
       "away": "England",
-      "venue": null,
-      "city": null,
-      "status": "Not Started",
+      "venue": "Hard Rock Stadium, Miami Garden",
+      "city": "Miami",
+      "status": "First Half",
       "score": null,
       "score_90": null,
       "penalties": null
