@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19 21:21 UTC",
+  "updated": "2026-07-19 22:22 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -412,9 +412,9 @@
       "away": "Argentina",
       "venue": "MetLife Stadium",
       "city": "East Rutherford",
-      "status": "Extra Time",
-      "score": null,
-      "score_90": null,
+      "status": "Match Finished",
+      "score": "1-0",
+      "score_90": "0-0",
       "penalties": null
     }
   ]
