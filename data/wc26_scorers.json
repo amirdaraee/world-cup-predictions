@@ -101,21 +101,27 @@
     1581821,
     1582681,
     1585131,
-    1586077
+    1586077,
+    1591865
   ],
   "scorers": {
+    "Kylian Mbappé": {
+      "team": "France",
+      "goals": 8,
+      "assists_from": []
+    },
     "L. Messi": {
       "team": "Argentina",
       "goals": 7,
       "assists_from": []
     },
-    "Kylian Mbappé": {
-      "team": "France",
-      "goals": 6,
-      "assists_from": []
-    },
     "M. Oyarzabal": {
       "team": "Spain",
+      "goals": 5,
+      "assists_from": []
+    },
+    "Jude Bellingham": {
+      "team": "England",
       "goals": 5,
       "assists_from": []
     },
@@ -126,11 +132,6 @@
     },
     "Erling Haaland": {
       "team": "Norway",
-      "goals": 4,
-      "assists_from": []
-    },
-    "Jude Bellingham": {
-      "team": "England",
       "goals": 4,
       "assists_from": []
     },
@@ -216,6 +217,16 @@
     },
     "L. Martinez": {
       "team": "Argentina",
+      "goals": 3,
+      "assists_from": []
+    },
+    "Ousmane Dembélé": {
+      "team": "France",
+      "goals": 3,
+      "assists_from": []
+    },
+    "Bukayo Saka": {
+      "team": "England",
       "goals": 3,
       "assists_from": []
     },
@@ -359,11 +370,6 @@
       "goals": 2,
       "assists_from": []
     },
-    "Ousmane Dembélé": {
-      "team": "France",
-      "goals": 2,
-      "assists_from": []
-    },
     "M. Merino": {
       "team": "Spain",
       "goals": 2,
@@ -381,6 +387,11 @@
     },
     "E. Fernandez": {
       "team": "Argentina",
+      "goals": 2,
+      "assists_from": []
+    },
+    "Bradley Barcola": {
+      "team": "France",
       "goals": 2,
       "assists_from": []
     },
@@ -954,11 +965,6 @@
       "goals": 1,
       "assists_from": []
     },
-    "Bradley Barcola": {
-      "team": "France",
-      "goals": 1,
-      "assists_from": []
-    },
     "B. Cipenga": {
       "team": "DR Congo",
       "goals": 1,
@@ -1060,6 +1066,16 @@
       "assists_from": []
     },
     "A. Gordon": {
+      "team": "England",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Declan Rice": {
+      "team": "England",
+      "goals": 1,
+      "assists_from": []
+    },
+    "Ezri Konsa": {
       "team": "England",
       "goals": 1,
       "assists_from": []

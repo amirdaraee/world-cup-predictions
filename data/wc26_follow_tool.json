@@ -644,13 +644,13 @@
   "knockout": {
     "summary": {
       "threshold": 0.08,
-      "n_bets": 10,
-      "wins": 3,
-      "win_rate": 0.3,
-      "staked": 10.0,
-      "returned": 7.77,
-      "profit": -2.23,
-      "roi": -0.2228,
+      "n_bets": 11,
+      "wins": 4,
+      "win_rate": 0.3636,
+      "staked": 11.0,
+      "returned": 11.85,
+      "profit": 0.85,
+      "roi": 0.0776,
       "avg_edge": 0.12,
       "stake_unit": 1.0
     },
@@ -693,6 +693,19 @@
         "payout": 2.667,
         "profit": 1.667,
         "priced_at": "2026-07-05 21:30 UTC"
+      },
+      {
+        "match": "France v England",
+        "round": "3rd Place Final",
+        "side": "England",
+        "model": 0.369,
+        "market": 0.245,
+        "edge": 0.124,
+        "won": true,
+        "stake": 1.0,
+        "payout": 4.082,
+        "profit": 3.082,
+        "priced_at": "2026-07-18 09:58 UTC"
       },
       {
         "match": "Australia v Egypt",

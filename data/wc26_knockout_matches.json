@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18 21:21 UTC",
+  "updated": "2026-07-19 06:01 UTC",
   "matches": [
     {
       "match_id": 1561329,
@@ -399,9 +399,9 @@
       "away": "England",
       "venue": "Hard Rock Stadium, Miami Garden",
       "city": "Miami",
-      "status": "First Half",
-      "score": null,
-      "score_90": null,
+      "status": "Match Finished",
+      "score": "4-6",
+      "score_90": "4-6",
       "penalties": null
     },
     {
