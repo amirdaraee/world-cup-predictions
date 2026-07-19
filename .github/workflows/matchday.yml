@@ -10,11 +10,15 @@ name: matchday
 # runner — CI physically cannot touch funds or leak a position.
 
 on:
-  schedule:
-    # twice daily UTC — morning and evening. Bump/trim these lines freely,
-    # it is free on a public repo.
-    - cron: "0 5 * * *"
-    - cron: "0 21 * * *"
+  # The 2026 World Cup finished on 2026-07-19 (Spain 1-0 Argentina), so the
+  # nightly schedule is retired — there is nothing left to fetch or grade and
+  # the site is frozen on the final results. The scheduled crons below are
+  # commented out (and the workflow is also disabled in the Actions tab) so it
+  # no longer fires twice a day forever. workflow_dispatch is kept as a manual
+  # escape hatch: re-enable the crons here to bring it back for a future event.
+  # schedule:
+  #   - cron: "0 5 * * *"
+  #   - cron: "0 21 * * *"
   workflow_dispatch: {}   # manual "Run workflow" button / `gh workflow run matchday`
 
 permissions:
