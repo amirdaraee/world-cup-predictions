@@ -1808,6 +1808,105 @@ probability, a shoot-out treated as a coin flip). It grows with every round
 through the final.</p>"""
 
 
+def awards_accuracy_html():
+    """Grade the pre-tournament AWARD predictions against the settled
+    honours. Only the objective awards are graded (decided by the numbers,
+    not a vote): the champion, the Golden Boot (most goals) and the
+    top-scoring nation. The pre-tournament model is the earliest archived
+    awards run — same 'locked call, graded in public' contract as the rest
+    of this page. Empty until the final is played and a golden-boot scorer
+    exists. Golden Glove / Golden Ball are official/voted awards with no
+    result in our data, so they are left out rather than guessed."""
+    import glob
+    from collections import defaultdict
+    finals = [m for m in KOS if m.get("round") == "Final"
+              and str(m.get("status", "")).startswith("Match Finished")
+              and m.get("score")]
+    try:
+        scorers = json.load(open(DATA / "wc26_scorers.json"))["scorers"]
+    except (FileNotFoundError, KeyError):
+        scorers = {}
+    aw_runs = sorted(glob.glob(str(ROOT / "runs" / "*_awards.json")))
+    if not finals or not scorers or not aw_runs or not PRED:
+        return ""
+    pre = json.load(open(aw_runs[0]))          # pre-tournament award model
+    champ_actual = _ko_winner(finals[0])
+    if not champ_actual:
+        return ""
+
+    # actual honours from the numbers
+    boot_actual = max(scorers.items(), key=lambda kv: kv[1]["goals"])
+    nation_goals = defaultdict(int)
+    for _n, d in scorers.items():
+        nation_goals[d["team"]] += d["goals"]
+    top_g = max(nation_goals.values())
+    nation_actual = sorted(t for t, g in nation_goals.items() if g == top_g)
+
+    def rank_prob(cat, key, name):
+        for i, x in enumerate(pre.get(cat, [])):
+            if x.get(key) == name:
+                return i + 1, x.get("p_model", 0.0)
+        return None, 0.0
+
+    def gave(cat, key, names):                 # best of tied winners
+        best = max((rank_prob(cat, key, n) for n in names),
+                   key=lambda rp: rp[1])
+        rk, p = best
+        return (f'{p * 100:.0f}% (#{rk})' if rk
+                else '&lt;1% (unranked)')
+
+    champ_pick = PRED["champion"]
+    boot_pick = (pre["golden_boot"][0]["player"] if pre.get("golden_boot")
+                 else "—")
+    nation_pick = (pre["top_scorer_nation"][0]["team"]
+                   if pre.get("top_scorer_nation") else "—")
+    boot_win = f'{boot_actual[0]} ({boot_actual[1]["team"]}, {boot_actual[1]["goals"]})'
+    nation_win = (" & ".join(nation_actual)
+                  + (f' (tie, {top_g})' if len(nation_actual) > 1
+                     else f' ({top_g})'))
+
+    def mark(pick, winners):
+        return ('<i class="f W">✓</i>' if pick in winners
+                else '<i class="f L">✗</i>')
+
+    # champion prob for the actual winner: from the earliest tournament run
+    champ_gave = "—"
+    t_runs = sorted(glob.glob(str(ROOT / "runs" / "*_tournament.json")))
+    if t_runs:
+        teams0 = json.load(open(t_runs[0])).get("teams", {})
+        if champ_actual in teams0:
+            champ_gave = f'{teams0[champ_actual]["champion"] * 100:.0f}%'
+
+    rows = [
+        ("Champion", team_link(champ_pick), escape(champ_actual),
+         champ_gave, mark(champ_pick, {champ_actual})),
+        ("Golden Boot (most goals)", escape(boot_pick), escape(boot_win),
+         gave("golden_boot", "player", [boot_actual[0]]),
+         mark(boot_pick, {boot_actual[0]})),
+        ("Top-scoring nation", team_link(nation_pick), escape(nation_win),
+         gave("top_scorer_nation", "team", nation_actual),
+         mark(nation_pick, set(nation_actual))),
+    ]
+    body = "".join(
+        f'<tr><td>{a}</td><td class="pick">{pick}</td><td>{act}</td>'
+        f'<td class="num">{gv}</td><td>{mk}</td></tr>'
+        for a, pick, act, gv, mk in rows)
+    return f"""<h2>Awards — the pre-tournament calls, graded</h2>
+<table class="ko"><thead><tr><th>Honour</th>
+<th>Model’s pre-tournament pick</th><th>Actual winner</th>
+<th class="num" title="the probability the pre-tournament model gave the team/player who actually won, and where they ranked">Model gave the winner</th><th></th></tr></thead>
+<tbody>{body}</tbody></table>
+<p class="fineprint">These are the <em>outright</em> markets, decided by the numbers
+(goals, the final result) rather than a vote — the pre-tournament model’s single
+favourite against who actually won. All three favourites missed, but read the
+fourth column before writing the model off: these are wide-open fields where the
+top pick was only a 13–19% shot, so the honest question is how much probability the
+model put on the eventual winner. The champion call is the near-miss of the set —
+it named the exact final pairing (Spain v Argentina) months out, then took
+Argentina. Golden Glove and Golden Ball are voted awards with no numeric result, so
+they’re not graded here.</p>"""
+
+
 # ---------- accuracy report page ----------
 def build_report():
     md_of = {m["match_id"]: m["matchday"] for m in MATCHES}
@@ -2004,6 +2103,7 @@ tournament, so tonight's refit reproduces the pre-match numbers); market
 comparisons use the last committed pre-kickoff price snapshot, never the settled
 book. Who goes <em>through</em> each tie is a separate call, graded next.</p>
 {knockout_scorecard()}
+{awards_accuracy_html()}
 {comp}
 {trend_chart(graded)}
 {md_html}
